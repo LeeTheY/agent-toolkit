@@ -54,3 +54,13 @@ test('동일 baseline이라도 로컬 수정이 달라지면 snapshot 식별자�
  assert.notEqual(snapshotHash(source,{'SKILL.md':'one'}),snapshotHash(source,{'SKILL.md':'two'}));
  assert.equal(snapshotHash(source,{b:'2',a:'1'}),snapshotHash(source,{a:'1',b:'2'}));
 });
+test('상황별 프롬프트는 호출명을 포함하고 도구별 사용 순서를 유지한다',async()=>{
+ const {tools}=JSON.parse(await readFile(new URL('../src/data/catalog.json',import.meta.url),'utf8'));
+ for(const tool of tools){
+  if(tool.kind!=='external')assert.ok(tool.usage.length>=3);
+  for(const example of tool.promptExamples??[]){assert.ok(example.title);assert.ok(example.prompt.startsWith('$'+tool.callName+'로 '));}
+ }
+ const presentation=tools.find(t=>t.id==='universal-project-presentation');
+ assert.ok(presentation.promptExamples.some(p=>p.prompt.includes('qna 모드')&&p.prompt.includes('본편과 백업 슬라이드는 새로 만들지 마')));
+ for(const id of ['frontend','persona'])assert.ok(tools.find(t=>t.id===id).prompt.includes('원본 저장소 밖'));
+});

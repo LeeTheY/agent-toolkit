@@ -7,3 +7,6 @@
 @media(max-width:420px){.catalog-grid:not(.list-view){grid-template-columns:1fr}.card-title{font-size:16px}.card-body>p{min-height:0}.use-case{font-size:11px}.use-case>span{display:inline;margin-right:5px}.card-top{padding:18px}.card-body{padding:0 18px}.card-bottom{padding:16px 18px}.kind{font-size:10px}.tool-slug{font-size:10px}.status,.category-tag{font-size:9px}.intro-copy h2{font-size:19px}.intro-copy{padding:22px}.section-top{display:block}.section-top .tag{display:inline-block;margin-bottom:14px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
 @media(max-width:700px){.sidebar{visibility:hidden}.sidebar.open{visibility:visible}}
+
+.prompt-example + .prompt-example { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border); }
+.prompt-example h3 { font-size: 15px; margin: 0 0 12px; }

@@ -1,7 +1,8 @@
+import { guides } from './guides.mjs';
 // Editorial content is separate from source snapshots so synchronizing never overwrites it.
 const rows = [
-['frontend','Frontend Harness','harness','프론트엔드','기존 웹 화면을 실제로 조작하고 기능·반응형·UI/UX를 평가합니다.','배포 전 화면과 핵심 사용자 흐름을 점검할 때','현재 프로젝트의 기존 프론트엔드를 평가해줘. 앱 소스는 수정하지 말고 화면 크기별 점수, 기능 오류, 개선 우선순위와 미검증 범위를 보고해줘. 연결 설정과 결과는 하네스 저장소의 local 폴더에 저장해줘.','CLI만으로 시각 채점이 완성되지 않습니다. 브라우저 증거를 읽는 에이전트가 필요합니다.'],
-['persona','Persona Harness','harness','평가·분석','페르소나 명세와 프롬프트 응답을 사례별로 평가하고 회귀를 비교합니다.','기준 프롬프트와 후보 프롬프트의 품질을 비교할 때','현재 프로젝트의 페르소나 명세와 기준·후보 프롬프트를 평가해줘. 사례별 실제 인용, 실패 근거, 회귀와 미검증 범위를 보고해줘.','합성 예제 통과와 실제 모델 품질 검증은 구분합니다.'],
+['frontend','Frontend Harness','harness','프론트엔드','기존 웹 화면을 실제로 조작하고 기능·반응형·UI/UX를 평가합니다.','배포 전 화면과 핵심 사용자 흐름을 점검할 때','현재 프로젝트의 기존 프론트엔드를 평가해줘. 앱 소스는 수정하지 말고 화면 크기별 점수, 기능 오류, 개선 우선순위와 미검증 범위를 보고해줘. 하네스 저장소는 수정하지 말고 연결 설정과 결과는 원본 저장소 밖의 별도 작업 폴더에 저장해줘.','CLI만으로 시각 채점이 완성되지 않습니다. 브라우저 증거를 읽는 에이전트가 필요합니다.'],
+['persona','Persona Harness','harness','평가·분석','페르소나 명세와 프롬프트 응답을 사례별로 평가하고 회귀를 비교합니다.','기준 프롬프트와 후보 프롬프트의 품질을 비교할 때','현재 프로젝트의 페르소나 명세와 기준·후보 프롬프트를 평가해줘. 사례별 실제 인용, 실패 근거, 회귀와 미검증 범위를 보고해줘. 하네스 저장소는 수정하지 말고 설정과 결과는 원본 저장소 밖의 별도 작업 폴더에 저장해줘.','합성 예제 통과와 실제 모델 품질 검증은 구분합니다.'],
 ['static-repository-architecture-audit','저장소 아키텍처 분석','custom','평가·분석','코드를 실행하지 않고 구조·호출·상태·외부 경계를 추적합니다.','낯선 저장소를 인수하거나 기존 설계 문서를 검증할 때','현재 저장소를 실행하거나 수정하지 않고 아키텍처를 분석해줘. 진입점, 주요 호출 흐름, 상태 소유자, 외부 경계를 파일 근거와 함께 정리하고 미확인 범위를 밝혀줘.','정적 근거만으로 런타임 성능이나 동작을 확정하지 않습니다.'],
 ['agent-execution-flow-map','에이전트 실행 흐름','custom','평가·분석','반복·재시도·종료 조건과 취소 전파를 코드에서 추적합니다.','무한 반복, maxTurns 불일치, 중복 실행이 의심될 때','에이전트의 모델·도구 반복, 재시도, 종료와 취소 전파를 추적해줘. 각 한도의 소유자와 reset 지점, 중복 효과가 가능한 분기를 코드 근거로 정리해줘.','단발 API 분석보다 여러 실행 단계가 연결된 문제에 적합합니다.'],
 ['tool-permission-boundary-review','도구 권한 경계 검토','custom','평가·분석','도구 입력이 검증·승인을 거쳐 실제 효과를 내는 경계를 확인합니다.','승인받은 입력과 실제 실행 입력이 달라질 수 있을 때','현재 저장소의 도구 입력부터 승인과 실제 실행까지 추적해줘. Hook 입력 변경, deny/ask/allow 우선순위, 우회 가능한 조건과 회귀 사례를 근거로 보고해줘.','일반 코드 수정에 불필요한 보안 절차를 추가하지 않습니다.'],
@@ -45,7 +46,7 @@ const rows = [
 ['token-dashboard','Token Dashboard','external','환경·토큰','토큰 사용 추이와 세션 정보를 대시보드로 엽니다.','사용량과 환경 정보를 화면에서 확인할 때','설치된 Token Optimizer 런타임을 확인하고 토큰 대시보드를 열어줘. 필요한 런타임이나 로그가 없으면 준비 사항을 알려줘.','이 사이트 내부의 대시보드가 아닌 별도 로컬 런타임을 엽니다.'],
 ['token-optimizer','Token Optimizer','external','환경·토큰','컨텍스트 낭비를 조사하고 설정 개선 효과를 측정합니다.','컨텍스트가 빠르게 차거나 지침이 비대해졌을 때','현재 에이전트 설정과 컨텍스트 낭비를 조사해줘. 변경 후보와 영향부터 제시하고 적용 전후를 같은 기준으로 측정해줘.','스킬 파일 외에 원본 런타임과 측정 스크립트가 필요할 수 있습니다.'],
 ];
-export const entries = rows.map(([id,title,kind,category,summary,when,prompt,note])=>({id,title,kind,category,summary,when,prompt,note}));
+export const entries = rows.map(([id,title,kind,category,summary,when,prompt,note])=>({id,title,kind,category,summary,when,prompt,note,...guides[id]}));
 export const workflows = [
  {id:'build',title:'아이디어에서 구현까지',description:'목적을 정하고, 계획을 세우고, 필요한 만큼 구현하세요.',steps:['brainstorming','writing-plans','ponytail','pre-pr-verification']},
  {id:'review',title:'PR을 준비할 때',description:'변경을 검증하고 Git 작업과 리뷰 피드백을 이어갑니다.',steps:['pre-pr-verification','git-workflow','pr-review-feedback']},

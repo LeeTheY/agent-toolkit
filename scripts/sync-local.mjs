@@ -34,7 +34,8 @@ for(const entry of entries){
  const old=previous?.tools.find(t=>t.id===entry.id);
  const unchanged=old&&JSON.stringify(old.files)===JSON.stringify(files);
  tools.push({...entry,callName,commands,source,files,snapshotHash:snapshotHash(source,files),syncedAt:unchanged?old.syncedAt:date,prompt:`$${callName}로 ${entry.prompt}`,
-  usage:entry.kind==='harness'?['Node.js 24 이상을 준비하고 해당 하네스를 설치합니다.','Codex 또는 Claude Code에 호출 스킬을 연결합니다.','대상 프로젝트에서 프롬프트를 실행하고 결과와 미검증 범위를 확인합니다.']:['로컬 스킬 폴더와 연결 상태를 확인합니다.','작업할 프로젝트를 열고 필요한 자료를 첨부합니다.','추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.']});
+  promptExamples:entry.promptExamples?.map(example=>({...example,prompt:`$${callName}로 ${example.prompt}`})),
+  usage:entry.usage??(entry.kind==='harness'?['Node.js 24 이상을 준비하고 해당 하네스를 설치합니다.','Codex 또는 Claude Code에 호출 스킬을 연결합니다.','대상 프로젝트에서 프롬프트를 실행하고 결과와 미검증 범위를 확인합니다.']:['로컬 스킬 폴더와 연결 상태를 확인합니다.','작업할 프로젝트를 열고 필요한 자료를 첨부합니다.','추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.'])});
 }
 if(new Set(tools.map(t=>t.id)).size!==tools.length)throw new Error('Duplicate tool IDs');
 await mkdir(join(root,'src/data'),{recursive:true});
