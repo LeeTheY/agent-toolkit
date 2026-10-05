@@ -1,0 +1,405 @@
+{
+  "checkedAt": "2026-10-05T15:03:47.203Z",
+  "tools": {
+    "brainstorming": {
+      "checkedAt": "2026-10-05T15:03:39.913Z",
+      "baseline": "b36e0829c6d0140e93cfef2ca599b1b07d4a7797",
+      "snapshotHash": "112234ae75826d4df9eb1b585e4b010f0f8434e12d2ecd13454d26a5bec698e0",
+      "path": "skills/brainstorming",
+      "status": "changed",
+      "personal": "same",
+      "changes": [
+        {
+          "path": "SKILL.md",
+          "type": "modified"
+        },
+        {
+          "path": "visual-companion.md",
+          "type": "modified"
+        }
+      ],
+      "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
+      "latest": "8ca22dba9a94f28898bbce59f2537ff4d87c747d",
+      "latestAt": "2026-09-25T18:06:27Z",
+      "changedSinceLastCheck": false
+    },
+    "writing-plans": {
+      "checkedAt": "2026-10-05T15:03:41.370Z",
+      "baseline": null,
+      "snapshotHash": "c02bba6540ccfaec754a60c450dd51a469c42f511e2f69b2f9cf83cf79f4e840",
+      "status": "unknown",
+      "personal": "unknown",
+      "changes": [],
+      "reason": "별도 설치 스킬입니다. 설치 당시 커밋이 기록되어 있지 않습니다."
+    },
+    "grill-me": {
+      "checkedAt": "2026-10-05T15:03:41.370Z",
+      "baseline": "3cca18b368ae95cdbdebbff572ccafa662551015",
+      "snapshotHash": "a48b47141b1b02f584626d81fe0ccbd998e983c66e0d93af1576e6085e5c348e",
+      "path": "skills/productivity/grill-me",
+      "status": "current",
+      "personal": "modified",
+      "changes": [],
+      "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
+      "latest": "4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d",
+      "latestAt": "2026-10-05T11:17:18Z",
+      "changedSinceLastCheck": false
+    },
+    "grilling": {
+      "checkedAt": "2026-10-05T15:03:42.623Z",
+      "baseline": "3cca18b368ae95cdbdebbff572ccafa662551015",
+      "snapshotHash": "849bcc88065280c8fa0633ee0cb327cc788e81289df5cf719134fb0567aa28f6",
+      "path": "skills/productivity/grilling",
+      "status": "current",
+      "personal": "same",
+      "changes": [],
+      "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
+      "latest": "4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d",
+      "latestAt": "2026-10-05T11:17:18Z",
+      "changedSinceLastCheck": false
+    },
+    "ponytail": {
+      "checkedAt": "2026-10-05T15:03:42.623Z",
+      "baseline": "356918eba965ee1eac64bd3a7f0dd02108350de5",
+      "snapshotHash": "a71e8f9d1fd73b6ab3fb0c77d7dd8c452bef27e79913b2a95604b946a06b5ec7",
+      "path": "skills/ponytail",
+      "status": "current",
+      "personal": "same",
+      "changes": [],
+      "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
+      "latest": "944b5dcc253cb0561db525207db5b804072ab127",
+      "latestAt": "2026-10-05T14:44:51Z",
+      "changedSinceLastCheck": false
+    },
+    "ponytail-review": {
+      "checkedAt": "2026-10-05T15:03:43.732Z",
+      "baseline": "356918eba965ee1eac64bd3a7f0dd02108350de5",
+      "snapshotHash": "993953de04281d77f4c5f8881477dc850a638c94edaa784f69ae49169295cc12",
+      "path": "skills/ponytail-review",
+      "status": "changed",
+      "personal": "same",
+      "changes": [
+        {
+          "path": "SKILL.md",
+          "type": "modified"
+        }
+      ],
+      "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
+      "latest": "944b5dcc253cb0561db525207db5b804072ab127",
+      "latestAt": "2026-10-05T14:44:51Z",
+      "changedSinceLastCheck": false
+    },
+    "ponytail-audit": {
+      "checkedAt": "2026-10-05T15:03:43.732Z",
+      "baseline": "356918eba965ee1eac64bd3a7f0dd02108350de5",
+      "snapshotHash": "8fbf7c5f28329fd4ede5b0c1eac4b9acc077875d29e6bde7042e68218569359c",
+      "path": "skills/ponytail-audit",
+      "status": "changed",
+      "personal": "same",
+      "changes": [
+        {
+          "path": "SKILL.md",
+          "type": "modified"
+        }
+      ],
+      "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
+      "latest": "944b5dcc253cb0561db525207db5b804072ab127",
+      "latestAt": "2026-10-05T14:44:51Z",
+      "changedSinceLastCheck": false
+    },
+    "ponytail-debt": {
+      "checkedAt": "2026-10-05T15:03:43.732Z",
+      "baseline": "356918eba965ee1eac64bd3a7f0dd02108350de5",
+      "snapshotHash": "032a53b30b5fc5de01bf1560ac0366327fa33d9ea8d5afa5380c4a4a8237573f",
+      "path": "skills/ponytail-debt",
+      "status": "changed",
+      "personal": "same",
+      "changes": [
+        {
+          "path": "SKILL.md",
+          "type": "modified"
+        }
+      ],
+      "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
+      "latest": "944b5dcc253cb0561db525207db5b804072ab127",
+      "latestAt": "2026-10-05T14:44:51Z",
+      "changedSinceLastCheck": false
+    },
+    "ponytail-gain": {
+      "checkedAt": "2026-10-05T15:03:43.732Z",
+      "baseline": "356918eba965ee1eac64bd3a7f0dd02108350de5",
+      "snapshotHash": "d7e393f440f1a4301a969ecd9209457f04d26f006197fb74abb826e79bafb499",
+      "path": "skills/ponytail-gain",
+      "status": "changed",
+      "personal": "same",
+      "changes": [
+        {
+          "path": "SKILL.md",
+          "type": "modified"
+        }
+      ],
+      "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
+      "latest": "944b5dcc253cb0561db525207db5b804072ab127",
+      "latestAt": "2026-10-05T14:44:51Z",
+      "changedSinceLastCheck": false
+    },
+    "ponytail-help": {
+      "checkedAt": "2026-10-05T15:03:43.732Z",
+      "baseline": "356918eba965ee1eac64bd3a7f0dd02108350de5",
+      "snapshotHash": "66e7b583a1ac31666aaebb453a739cad37f0759cb8588ec00dbe3d0619354d6d",
+      "path": "skills/ponytail-help",
+      "status": "changed",
+      "personal": "same",
+      "changes": [
+        {
+          "path": "SKILL.md",
+          "type": "modified"
+        }
+      ],
+      "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
+      "latest": "944b5dcc253cb0561db525207db5b804072ab127",
+      "latestAt": "2026-10-05T14:44:51Z",
+      "changedSinceLastCheck": false
+    },
+    "frontend-design": {
+      "checkedAt": "2026-10-05T15:03:43.732Z",
+      "baseline": "34040c9c568585f6929bedeaad110ad08f079624",
+      "snapshotHash": "75d61af24ee149a506d860c7d9b2e8e552019b44707ed6d0b4a9f12b204cdb94",
+      "path": "skills/frontend-design",
+      "status": "current",
+      "personal": "same",
+      "changes": [],
+      "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
+      "latest": "683bc88e56f3e09ba94f7055977f3d3aa499f202",
+      "latestAt": "2026-10-05T13:46:42Z",
+      "changedSinceLastCheck": false
+    },
+    "taste": {
+      "checkedAt": "2026-10-05T15:03:44.983Z",
+      "baseline": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
+      "snapshotHash": "aec8197c3fc95a3a1344b7dca941421fa28851c1ecf6a17d88bcc36dd33be0ef",
+      "path": "skills/taste-skill",
+      "status": "current",
+      "personal": "same",
+      "changes": [],
+      "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
+      "latest": "ce26fc25c0e5e8cab638f883de62d9a86ee5e45b",
+      "latestAt": "2026-09-26T09:01:50Z",
+      "changedSinceLastCheck": false
+    },
+    "pdf": {
+      "checkedAt": "2026-10-05T15:03:46.047Z",
+      "baseline": "34040c9c568585f6929bedeaad110ad08f079624",
+      "snapshotHash": "76fcc736617ef4f96fe3cf9290e07792d47a055b9096fe3fdd46a2a4d3cbca44",
+      "path": "skills/pdf",
+      "status": "current",
+      "personal": "same",
+      "changes": [],
+      "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
+      "latest": "683bc88e56f3e09ba94f7055977f3d3aa499f202",
+      "latestAt": "2026-10-05T13:46:42Z",
+      "changedSinceLastCheck": false
+    },
+    "docx": {
+      "checkedAt": "2026-10-05T15:03:46.048Z",
+      "baseline": "34040c9c568585f6929bedeaad110ad08f079624",
+      "snapshotHash": "123b977d2b12252f5e40d133d7004f945987ba8a453860fc4dc1b0b735dd3425",
+      "path": "skills/docx",
+      "status": "current",
+      "personal": "same",
+      "changes": [],
+      "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
+      "latest": "683bc88e56f3e09ba94f7055977f3d3aa499f202",
+      "latestAt": "2026-10-05T13:46:42Z",
+      "changedSinceLastCheck": false
+    },
+    "xlsx": {
+      "checkedAt": "2026-10-05T15:03:46.048Z",
+      "baseline": "34040c9c568585f6929bedeaad110ad08f079624",
+      "snapshotHash": "7978b159ce2c58ddd50938847768524b810727f7b58c6c38c0b5221238e73029",
+      "path": "skills/xlsx",
+      "status": "current",
+      "personal": "same",
+      "changes": [],
+      "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
+      "latest": "683bc88e56f3e09ba94f7055977f3d3aa499f202",
+      "latestAt": "2026-10-05T13:46:42Z",
+      "changedSinceLastCheck": false
+    },
+    "pptx": {
+      "checkedAt": "2026-10-05T15:03:46.048Z",
+      "baseline": "34040c9c568585f6929bedeaad110ad08f079624",
+      "snapshotHash": "e4d2e33b09f8c263023e761f4995f1489f51222ae999ff72ad5e9511d489d029",
+      "path": "skills/pptx",
+      "status": "current",
+      "personal": "same",
+      "changes": [],
+      "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
+      "latest": "683bc88e56f3e09ba94f7055977f3d3aa499f202",
+      "latestAt": "2026-10-05T13:46:42Z",
+      "changedSinceLastCheck": false
+    },
+    "humanizer": {
+      "checkedAt": "2026-10-05T15:03:46.050Z",
+      "baseline": "9862685f575c65a8247f90369951df1b3416e3d6",
+      "snapshotHash": "3ed0def7c77c7b50197c856a0f4deb5b3833c26552797f9766573349ee961665",
+      "path": "",
+      "status": "changed",
+      "personal": "same",
+      "changes": [
+        {
+          "path": "SKILL.md",
+          "type": "modified"
+        },
+        {
+          "path": "scripts/validate-package.py",
+          "type": "modified"
+        }
+      ],
+      "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
+      "latest": "225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8",
+      "latestAt": "2026-09-28T05:54:38Z",
+      "changedSinceLastCheck": false
+    },
+    "korean-humanizer": {
+      "checkedAt": "2026-10-05T15:03:47.168Z",
+      "baseline": "ae12ba27982ebeff03b46dc738365aaa34260d9a",
+      "snapshotHash": "72ab014f003c2252f2e8e6ebe099568f4a77702fae0433920082c6cd1db80977",
+      "status": "error",
+      "personal": "unknown",
+      "changes": [],
+      "reason": "GitHub 조회 제한 또는 권한 오류",
+      "lastSuccessAt": "2026-10-05T14:57:32.679Z"
+    },
+    "korean-grammar-checker": {
+      "checkedAt": "2026-10-05T15:03:47.179Z",
+      "baseline": "ae12ba27982ebeff03b46dc738365aaa34260d9a",
+      "snapshotHash": "7c6ebe5173daeabaf11ca567fe9434593a068f92cf46fe39e25d518af0a9238d",
+      "status": "error",
+      "personal": "unknown",
+      "changes": [],
+      "reason": "GitHub 조회 제한 또는 권한 오류",
+      "lastSuccessAt": "2026-10-05T14:57:33.477Z"
+    },
+    "korean-style-guide": {
+      "checkedAt": "2026-10-05T15:03:47.179Z",
+      "baseline": "ae12ba27982ebeff03b46dc738365aaa34260d9a",
+      "snapshotHash": "3e3f9e90b44ed42b9e1877f6142958c7dfc61f6e8e9275cf6c2167439550f585",
+      "status": "error",
+      "personal": "unknown",
+      "changes": [],
+      "reason": "GitHub 조회 제한 또는 권한 오류",
+      "lastSuccessAt": "2026-10-05T14:57:33.477Z"
+    },
+    "caveman": {
+      "checkedAt": "2026-10-05T15:03:47.179Z",
+      "baseline": "15581d14007fd01fb3f132016741962f34936ca2",
+      "snapshotHash": "c94301883563f4158570669fcf1e5d3fd1cecea1819279170538d6cd6e0d110a",
+      "status": "error",
+      "personal": "unknown",
+      "changes": [],
+      "reason": "GitHub 조회 제한 또는 권한 오류",
+      "lastSuccessAt": "2026-10-05T14:57:33.477Z"
+    },
+    "caveman-commit": {
+      "checkedAt": "2026-10-05T15:03:47.191Z",
+      "baseline": "15581d14007fd01fb3f132016741962f34936ca2",
+      "snapshotHash": "8eaa16d40ac8a6f54314fb2a5b1714d537c877d1fe9fb22a9244aeec799b2706",
+      "status": "error",
+      "personal": "unknown",
+      "changes": [],
+      "reason": "GitHub 조회 제한 또는 권한 오류",
+      "lastSuccessAt": "2026-10-05T14:57:34.760Z"
+    },
+    "caveman-review": {
+      "checkedAt": "2026-10-05T15:03:47.191Z",
+      "baseline": "15581d14007fd01fb3f132016741962f34936ca2",
+      "snapshotHash": "bbc53a7d849bc6901b4dbba061c26109fc1494acf9ceac82273dd844cdd98db2",
+      "status": "error",
+      "personal": "unknown",
+      "changes": [],
+      "reason": "GitHub 조회 제한 또는 권한 오류",
+      "lastSuccessAt": "2026-10-05T14:57:34.760Z"
+    },
+    "caveman-compress": {
+      "checkedAt": "2026-10-05T15:03:47.191Z",
+      "baseline": "15581d14007fd01fb3f132016741962f34936ca2",
+      "snapshotHash": "492d20b1b23e6173e8d0c3eea47fba2c7efb6eaeeb3692a0338020881aae7c05",
+      "status": "error",
+      "personal": "unknown",
+      "changes": [],
+      "reason": "GitHub 조회 제한 또는 권한 오류",
+      "lastSuccessAt": "2026-10-05T14:57:34.760Z"
+    },
+    "caveman-help": {
+      "checkedAt": "2026-10-05T15:03:47.191Z",
+      "baseline": "15581d14007fd01fb3f132016741962f34936ca2",
+      "snapshotHash": "4e207b1a49041ca41e05fe596d4439c2752579822655debfce419b7144c64789",
+      "status": "error",
+      "personal": "unknown",
+      "changes": [],
+      "reason": "GitHub 조회 제한 또는 권한 오류",
+      "lastSuccessAt": "2026-10-05T14:57:34.761Z"
+    },
+    "caveman-stats": {
+      "checkedAt": "2026-10-05T15:03:47.191Z",
+      "baseline": "15581d14007fd01fb3f132016741962f34936ca2",
+      "snapshotHash": "0cb72e34f566efd2c39683f3cee0a93699ab86cbe2beb6b0fd5e49a9b364b13d",
+      "status": "error",
+      "personal": "unknown",
+      "changes": [],
+      "reason": "GitHub 조회 제한 또는 권한 오류",
+      "lastSuccessAt": "2026-10-05T14:57:34.761Z"
+    },
+    "fleet-auditor": {
+      "checkedAt": "2026-10-05T15:03:47.191Z",
+      "baseline": "856244132d302182b1b40ccd80fd49e4eec67704",
+      "snapshotHash": "0d2f0307588ac45bbb6975a66523bb635aefcf44e0473ddb97825e4708c9bf5e",
+      "status": "error",
+      "personal": "unknown",
+      "changes": [],
+      "reason": "GitHub 조회 제한 또는 권한 오류",
+      "lastSuccessAt": "2026-10-05T14:57:34.762Z"
+    },
+    "resume-checkpoint": {
+      "checkedAt": "2026-10-05T15:03:47.202Z",
+      "baseline": "856244132d302182b1b40ccd80fd49e4eec67704",
+      "snapshotHash": "88069fa6156dc035d8309c37e6a93b5620b4c075e3aa689948688694d2e7f1e6",
+      "status": "error",
+      "personal": "unknown",
+      "changes": [],
+      "reason": "GitHub 조회 제한 또는 권한 오류",
+      "lastSuccessAt": "2026-10-05T14:57:36.249Z"
+    },
+    "token-coach": {
+      "checkedAt": "2026-10-05T15:03:47.202Z",
+      "baseline": "856244132d302182b1b40ccd80fd49e4eec67704",
+      "snapshotHash": "7dd88f285fe085e546486d21420cdd1562d213a6dc7a37993e0b349aca28c2ff",
+      "status": "error",
+      "personal": "unknown",
+      "changes": [],
+      "reason": "GitHub 조회 제한 또는 권한 오류",
+      "lastSuccessAt": "2026-10-05T14:57:36.249Z"
+    },
+    "token-dashboard": {
+      "checkedAt": "2026-10-05T15:03:47.203Z",
+      "baseline": "856244132d302182b1b40ccd80fd49e4eec67704",
+      "snapshotHash": "ee9f36abe0d8ce60a49bae26d7b22885fcf383c6211c13cd0e00e88b8bcddea3",
+      "status": "error",
+      "personal": "unknown",
+      "changes": [],
+      "reason": "GitHub 조회 제한 또는 권한 오류",
+      "lastSuccessAt": "2026-10-05T14:57:36.250Z"
+    },
+    "token-optimizer": {
+      "checkedAt": "2026-10-05T15:03:47.203Z",
+      "baseline": "856244132d302182b1b40ccd80fd49e4eec67704",
+      "snapshotHash": "2b79eff2fbcc30a4024eb74207e372964029bb045d46cd444af62b44fc118f4a",
+      "status": "error",
+      "personal": "unknown",
+      "changes": [],
+      "reason": "GitHub 조회 제한 또는 권한 오류",
+      "lastSuccessAt": "2026-10-05T14:57:36.251Z"
+    }
+  }
+}

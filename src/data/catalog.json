@@ -1,0 +1,1933 @@
+{
+  "syncedAt": "2026-10-05T15:03:04.603Z",
+  "tools": [
+    {
+      "id": "frontend",
+      "title": "Frontend Harness",
+      "kind": "harness",
+      "category": "프론트엔드",
+      "summary": "기존 웹 화면을 실제로 조작하고 기능·반응형·UI/UX를 평가합니다.",
+      "when": "배포 전 화면과 핵심 사용자 흐름을 점검할 때",
+      "prompt": "$frontend-harness로 현재 프로젝트의 기존 프론트엔드를 평가해줘. 앱 소스는 수정하지 말고 화면 크기별 점수, 기능 오류, 개선 우선순위와 미검증 범위를 보고해줘. 연결 설정과 결과는 하네스 저장소의 local 폴더에 저장해줘.",
+      "note": "CLI만으로 시각 채점이 완성되지 않습니다. 브라우저 증거를 읽는 에이전트가 필요합니다.",
+      "callName": "frontend-harness",
+      "commands": [
+        "cd \"$HOME/agent/agent-harnesses\"",
+        "node scripts/harness.ts setup frontend",
+        "./scripts/link-codex.sh --id frontend"
+      ],
+      "source": {
+        "repo": "LeeTheY/agent-harnesses",
+        "local": "skills/frontend-harness",
+        "baseline": "09d4a9e5b2b941dce146dc18a5c16a0448c4a75b"
+      },
+      "files": {
+        "SKILL.md": "08e651a791f0a17c0aa3e72935f1da1684206c7c",
+        "agents/openai.yaml": "11a6d0ae41ab9b8ba043b51828755bae6de14218",
+        "scripts/run.ts": "9c7b07b73e97fd1a0594695f49f9ac2183fc20f0"
+      },
+      "snapshotHash": "f83a22556f73fd8b5bd8783b869c64f30cab18dae84c440829b38f92fca36f24",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "Node.js 24 이상을 준비하고 해당 하네스를 설치합니다.",
+        "Codex 또는 Claude Code에 호출 스킬을 연결합니다.",
+        "대상 프로젝트에서 프롬프트를 실행하고 결과와 미검증 범위를 확인합니다."
+      ]
+    },
+    {
+      "id": "persona",
+      "title": "Persona Harness",
+      "kind": "harness",
+      "category": "평가·분석",
+      "summary": "페르소나 명세와 프롬프트 응답을 사례별로 평가하고 회귀를 비교합니다.",
+      "when": "기준 프롬프트와 후보 프롬프트의 품질을 비교할 때",
+      "prompt": "$persona-harness로 현재 프로젝트의 페르소나 명세와 기준·후보 프롬프트를 평가해줘. 사례별 실제 인용, 실패 근거, 회귀와 미검증 범위를 보고해줘.",
+      "note": "합성 예제 통과와 실제 모델 품질 검증은 구분합니다.",
+      "callName": "persona-harness",
+      "commands": [
+        "cd \"$HOME/agent/agent-harnesses\"",
+        "node scripts/harness.ts setup persona",
+        "./scripts/link-codex.sh --id persona"
+      ],
+      "source": {
+        "repo": "LeeTheY/agent-harnesses",
+        "local": "skills/persona-harness",
+        "baseline": "09d4a9e5b2b941dce146dc18a5c16a0448c4a75b"
+      },
+      "files": {
+        "SKILL.md": "f2c0ea9d0ff0a830b686ff440d622bb861e7e9d3",
+        "agents/openai.yaml": "b9ed42accf866f47351cc1b887e02599f26811fd",
+        "scripts/run.ts": "b5a31095b6bcb79a36f12e45f6e347850afbbb32"
+      },
+      "snapshotHash": "e505f1ccf6f2805f1e7215d05048e802331b23de0cc3f263d0a69f85f95ef7b2",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "Node.js 24 이상을 준비하고 해당 하네스를 설치합니다.",
+        "Codex 또는 Claude Code에 호출 스킬을 연결합니다.",
+        "대상 프로젝트에서 프롬프트를 실행하고 결과와 미검증 범위를 확인합니다."
+      ]
+    },
+    {
+      "id": "static-repository-architecture-audit",
+      "title": "저장소 아키텍처 분석",
+      "kind": "custom",
+      "category": "평가·분석",
+      "summary": "코드를 실행하지 않고 구조·호출·상태·외부 경계를 추적합니다.",
+      "when": "낯선 저장소를 인수하거나 기존 설계 문서를 검증할 때",
+      "prompt": "$static-repository-architecture-audit로 현재 저장소를 실행하거나 수정하지 않고 아키텍처를 분석해줘. 진입점, 주요 호출 흐름, 상태 소유자, 외부 경계를 파일 근거와 함께 정리하고 미확인 범위를 밝혀줘.",
+      "note": "정적 근거만으로 런타임 성능이나 동작을 확정하지 않습니다.",
+      "callName": "static-repository-architecture-audit",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "LeeTheY/agent-skills",
+        "local": "custom/skills/static-repository-architecture-audit",
+        "baseline": "f0a5b418fd2b7484f65547b0c65da48b1558820f"
+      },
+      "files": {
+        "SKILL.md": "7fd21432e723484ab99a8d12332cb70b4d47b4d0",
+        "evals/cases.md": "1fa8a2dc72a1e14a59a56da8c1f481c52ce3b084",
+        "evals/test_helpers.py": "0c0728628a8c839dadba4c87a323a74c917e14c7",
+        "references/design-spec.md": "494907be48f61211bae75f659a5869820241e4ba",
+        "references/evidence-format.md": "869c88b21d4640f2933181273f569fe57b37c8f7",
+        "references/quality-checklist.md": "a95e74e8257d51986f34db77b4ab50369e33ed35",
+        "references/workflow.md": "426b0901f1fc1e6eb4dd8ab6a93482595dcd09e2",
+        "scripts/README.md": "f94a81827f90dda09e13759e6bc80a8967e60cdf",
+        "scripts/audit_snapshot.py": "e87e4ce7edf3827e0628bbe2fa59fc063ce206e4",
+        "scripts/validate_evidence.py": "0c7facc36bbd7d5ef42b81585b762401bd997787"
+      },
+      "snapshotHash": "13d498ee492bf3c73ca9caa2de1966f751b1ae262424311379b3f7545fa04417",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "agent-execution-flow-map",
+      "title": "에이전트 실행 흐름",
+      "kind": "custom",
+      "category": "평가·분석",
+      "summary": "반복·재시도·종료 조건과 취소 전파를 코드에서 추적합니다.",
+      "when": "무한 반복, maxTurns 불일치, 중복 실행이 의심될 때",
+      "prompt": "$agent-execution-flow-map로 에이전트의 모델·도구 반복, 재시도, 종료와 취소 전파를 추적해줘. 각 한도의 소유자와 reset 지점, 중복 효과가 가능한 분기를 코드 근거로 정리해줘.",
+      "note": "단발 API 분석보다 여러 실행 단계가 연결된 문제에 적합합니다.",
+      "callName": "agent-execution-flow-map",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "LeeTheY/agent-skills",
+        "local": "custom/skills/agent-execution-flow-map",
+        "baseline": "f0a5b418fd2b7484f65547b0c65da48b1558820f"
+      },
+      "files": {
+        "SKILL.md": "671dc77d915f471d8a68d6a77779872566511b5d",
+        "evals/cases.md": "5dffb4ac016085b02d1f4714bf4d8983bf2421a0",
+        "references/design-spec.md": "1eba592100862591cc626c9b5c635edbe2f06ea1",
+        "references/quality-checklist.md": "b955cf173d7041158a94b21ae2967b76825301d4",
+        "references/workflow.md": "019d3b0cb6ef671a9c522e2fa2b56bc1ca3f5ec6",
+        "scripts/README.md": "1b21d8b27828b5a982a99f1408a628fc91db06d9"
+      },
+      "snapshotHash": "62f2aa2dbb92f2792ce8fd561aeddab4954defdc980199b9ffd17ba28e7fe197",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "tool-permission-boundary-review",
+      "title": "도구 권한 경계 검토",
+      "kind": "custom",
+      "category": "평가·분석",
+      "summary": "도구 입력이 검증·승인을 거쳐 실제 효과를 내는 경계를 확인합니다.",
+      "when": "승인받은 입력과 실제 실행 입력이 달라질 수 있을 때",
+      "prompt": "$tool-permission-boundary-review로 현재 저장소의 도구 입력부터 승인과 실제 실행까지 추적해줘. Hook 입력 변경, deny/ask/allow 우선순위, 우회 가능한 조건과 회귀 사례를 근거로 보고해줘.",
+      "note": "일반 코드 수정에 불필요한 보안 절차를 추가하지 않습니다.",
+      "callName": "tool-permission-boundary-review",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "LeeTheY/agent-skills",
+        "local": "custom/skills/tool-permission-boundary-review",
+        "baseline": "f0a5b418fd2b7484f65547b0c65da48b1558820f"
+      },
+      "files": {
+        "SKILL.md": "c54ca3bd1a2a02e7ce82e13dbbe26621222b2625",
+        "evals/cases.md": "c68d1b3277bdaf0467f1ececbe3e3192f78b9688",
+        "references/design-spec.md": "2b0e23eba1e721db4a406295310c6ff9398fea03",
+        "references/quality-checklist.md": "d4a8e382a6bd6fb0cf69c9ab99ef74c6513b843e",
+        "references/workflow.md": "4f5cc1755127a87676a486c362521d69e6331f0f",
+        "scripts/README.md": "f4835616df5cc2acd302c761dd99065aa2fe64bb"
+      },
+      "snapshotHash": "6e0eaecd5ad2b5578f1e79af635030b718b3b01ebfd8d83ef77735cc110940bd",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "context-lifecycle-review",
+      "title": "컨텍스트 생명주기",
+      "kind": "custom",
+      "category": "평가·분석",
+      "summary": "컨텍스트 수집·예산·압축·저장·복원·삭제 흐름을 분석합니다.",
+      "when": "긴 대화에서 정보가 사라지거나 압축이 반복될 때",
+      "prompt": "$context-lifecycle-review로 컨텍스트의 수집부터 압축·저장·복원·삭제까지 추적해줘. 모델 입력과 영속 데이터의 차이, 보존 순서, 캐시 안정성과 미확인 동작을 정리해줘.",
+      "note": "특정 세션 재개 손상만 있다면 세션 재개 무결성 스킬을 사용하세요.",
+      "callName": "context-lifecycle-review",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "LeeTheY/agent-skills",
+        "local": "custom/skills/context-lifecycle-review",
+        "baseline": "f0a5b418fd2b7484f65547b0c65da48b1558820f"
+      },
+      "files": {
+        "SKILL.md": "047ba1abab05952e51edae35028531b506cc1286",
+        "evals/cases.md": "4c23a40619b5c1b46a39d327f7652c03f96847a4",
+        "references/design-spec.md": "004d789511d5b680a8e8c0f19a8b4e422572243d",
+        "references/quality-checklist.md": "5c3e6eedf44adf1618332ab916749429ff07591a",
+        "references/workflow.md": "bf47b25c5333ba5c9705bd9225817eb551d2fad9",
+        "scripts/README.md": "2e768b073576bb48f963ad7cb1e428b6c17baef0"
+      },
+      "snapshotHash": "ca4384ea62caccfa634131fd440c342300c2290de2e2a9ad9d83d5f903227391",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "extension-surface-risk-review",
+      "title": "확장 기능 경계 검토",
+      "kind": "custom",
+      "category": "평가·분석",
+      "summary": "플러그인·Hook·Skill·MCP의 설치와 권한 경계를 검토합니다.",
+      "when": "확장 설치, 경로 검증, 프록시 또는 캐시 잔존을 조사할 때",
+      "prompt": "$extension-surface-risk-review로 확장 기능의 발견·설치·활성·제거 흐름을 정적으로 검토해줘. 경로 검증과 권한 확대, 프록시와 캐시 경계를 근거로 정리하고 외부 코드는 실행하지 마.",
+      "note": "해시가 일치한다는 것만으로 안전하다고 판단하지 않습니다.",
+      "callName": "extension-surface-risk-review",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "LeeTheY/agent-skills",
+        "local": "custom/skills/extension-surface-risk-review",
+        "baseline": "f0a5b418fd2b7484f65547b0c65da48b1558820f"
+      },
+      "files": {
+        "SKILL.md": "c4a99a4ab1b17cba619cf1657db67ba9074d8805",
+        "evals/cases.md": "761ceca2bb878ef6fc92d49f08db457f6f87b1de",
+        "references/design-spec.md": "c93b6560605704d0f4e8abf86a3087e118e78251",
+        "references/quality-checklist.md": "9a913adf0b38c78391c3155a9abf3e692feeed6d",
+        "references/workflow.md": "311ea4f10683bbb11d3f57d445dce5ef59fe95ae",
+        "scripts/README.md": "3500462c4500afd0158cac2e7c2d324419c3b1b4"
+      },
+      "snapshotHash": "61ff385d94e4b3216383012ede2b6a931037fe44c9f79db995dd8e44d12e846f",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "session-resume-integrity-review",
+      "title": "세션 재개 무결성",
+      "kind": "custom",
+      "category": "평가·분석",
+      "summary": "저장 후 재개한 대화의 메시지 누락·중복·재등장을 조사합니다.",
+      "when": "재개 후 도구 결과가 사라지거나 압축 상태가 달라질 때",
+      "prompt": "$session-resume-integrity-review로 세션 재개 후 도구 결과가 사라지는 원인을 분석해줘. 저장·flush·부모 연결·병렬 분기·압축 복원을 추적하고 원본 로그는 수정하거나 재생하지 마.",
+      "note": "원본 로그 복구나 자동 재생을 수행하는 도구가 아닙니다.",
+      "callName": "session-resume-integrity-review",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "LeeTheY/agent-skills",
+        "local": "custom/skills/session-resume-integrity-review",
+        "baseline": "f0a5b418fd2b7484f65547b0c65da48b1558820f"
+      },
+      "files": {
+        "SKILL.md": "82a20c7514bdbfca7921d9685b5d4ec99ed7cf9f",
+        "evals/cases.md": "c2c548ed1f75f4f41ac8e846dc743b61359c2cf4",
+        "references/quality-checklist.md": "cbcc28124e7859332fafac8185c43b3a15f739f4",
+        "references/workflow.md": "388c3ad91b49ae38b830718302d339d8eba1ea27"
+      },
+      "snapshotHash": "0b25ec7be9a5dea77df569f5c6828a6581192e90fbedc76d9304fcc73a7b80bf",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "pre-pr-verification",
+      "title": "PR 전 검증",
+      "kind": "custom",
+      "category": "Git·리뷰",
+      "summary": "변경의 핵심 주장을 코드·테스트·최종 소비 결과로 검증합니다.",
+      "when": "PR을 열거나 리뷰를 요청하기 직전",
+      "prompt": "$pre-pr-verification로 현재 변경을 검증해줘. 핵심 주장을 반증할 실패 경로, 관련 테스트와 최신 diff를 확인하고 검증 결과·미검증 범위·리뷰 요청 가능 여부를 보고해줘.",
+      "note": "검증 요청만으로 커밋·push·PR 생성 권한이 생기지는 않습니다.",
+      "callName": "pre-pr-verification",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "LeeTheY/agent-skills",
+        "local": "custom/skills/pre-pr-verification",
+        "baseline": "f0a5b418fd2b7484f65547b0c65da48b1558820f"
+      },
+      "files": {
+        "SKILL.md": "a747f3253ddeeecb2c0e23c9e93b9b80cfaa3af3",
+        "references/adversarial-scenarios.md": "076a64188f5fad408b220503c782aa6ac6de53af",
+        "references/change-lifecycle.md": "decc35779455d80ada23578845194e41314232f2",
+        "references/claim-falsification.md": "bb43cf4c67b2fa9f7a7b5c1961ec7ff577be4b74",
+        "references/execution-evidence.md": "bb0229a5ac828d3d1a27a5f38018a2fb6ce8f2af",
+        "references/operational-state.md": "56ec4024753242844484e4a3ab0e26dbb42c5f6f",
+        "references/review-report.md": "17f45e615bf69e28225c64092808ede0f10e8093"
+      },
+      "snapshotHash": "3dc744e4e06f34ff329ac3fbcbf6ef54eb13cfdf152ae8754610b58dd987e49a",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "git-workflow",
+      "title": "Git 작업 흐름",
+      "kind": "custom",
+      "category": "Git·리뷰",
+      "summary": "실제 diff와 저장소 규칙에 맞춰 요청한 Git 작업을 수행합니다.",
+      "when": "브랜치, 커밋, push 또는 PR 작업을 진행할 때",
+      "prompt": "$git-workflow로 현재 변경을 확인하고 저장소 규칙에 맞게 커밋해줘. 목적 문단과 주요 변경사항을 한국어 본문에 포함하고, 관련 없는 변경은 보존해줘. push는 하지 마.",
+      "note": "원격 변경은 요청에 명시한 범위에서만 수행합니다.",
+      "callName": "git-workflow",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "LeeTheY/agent-skills",
+        "local": "custom/skills/git-workflow",
+        "baseline": "f0a5b418fd2b7484f65547b0c65da48b1558820f"
+      },
+      "files": {
+        "SKILL.md": "141662818ac0c6b1f97336b9bdb24981b516071c"
+      },
+      "snapshotHash": "aa8529f754ecac52f92ae0053f62963de254b1cc7cfecc44627698dd7088a11c",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "pr-review-feedback",
+      "title": "리뷰 피드백 처리",
+      "kind": "custom",
+      "category": "Git·리뷰",
+      "summary": "받은 리뷰 의견을 코드 근거로 판정하고 필요한 수정을 진행합니다.",
+      "when": "PR 리뷰를 받고 지적의 타당성을 확인할 때",
+      "prompt": "$pr-review-feedback로 전달한 PR 리뷰 피드백을 코드 근거로 판정해줘. 타당한 지적은 최소 수정하고 검증한 뒤 등록용 답변을 작성해줘. 실제 댓글 등록과 push는 하지 마.",
+      "note": "새로운 전체 리뷰와 받은 피드백 처리를 구분합니다.",
+      "callName": "pr-review-feedback",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "LeeTheY/agent-skills",
+        "local": "custom/skills/pr-review-feedback",
+        "baseline": "f0a5b418fd2b7484f65547b0c65da48b1558820f"
+      },
+      "files": {
+        "SKILL.md": "e3639541943fd33b584e8fa03713e198e517a308"
+      },
+      "snapshotHash": "861616f7e2fab08e61e91ea74a87e03c14aaa468e4395052d1a31853e46367e2",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "write-project-readme-docs",
+      "title": "프로젝트 README",
+      "kind": "custom",
+      "category": "문서·발표",
+      "summary": "현재 구현과 일치하는 README와 필요한 프로젝트 문서를 만듭니다.",
+      "when": "프로젝트 소개와 사용법을 실제 코드에 맞춰 정리할 때",
+      "prompt": "$write-project-readme-docs로 현재 저장소를 조사해 standard 모드로 README와 필요한 핵심 문서를 정리해줘. 유효한 기존 이미지는 보존하고, 구현된 기능과 계획을 구분해줘.",
+      "note": "quick은 README, standard는 핵심 문서, complete는 필요한 상세 명세까지 다룹니다.",
+      "callName": "write-project-readme-docs",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "LeeTheY/agent-skills",
+        "local": "custom/skills/write-project-readme-docs",
+        "baseline": "f0a5b418fd2b7484f65547b0c65da48b1558820f"
+      },
+      "files": {
+        "SKILL.md": "3c92d8bd9d563c4c4b4ee835fe8b49ad5515b8a8",
+        "references/api-specification.md": "253592decb514a0428380e94714de11ecaeab549",
+        "references/architecture.md": "8e77d54f858b0edf0d8fd0cd8517291a3f8efa5b",
+        "references/document-selection.md": "8f9470cfd8b8475db495c8c99242af11f3ca42a6",
+        "references/erd.md": "f91496e77fc222693ea671994f9c0e9c373158fb",
+        "references/functional-specification.md": "cae27250845768c4cd0a93e8630b98fc8a982093",
+        "references/information-architecture.md": "e42f4246556182c2a5564192e95aa095ac00e203",
+        "references/readme-structure.md": "131755bfa87ac24f6da382d9d688fe8030e918f9",
+        "references/repository-analysis.md": "00993c9b3b80a9257b4c4648fff1c4768f761d4c",
+        "references/verification.md": "3266088589bfda7598c0792bdf850c0dc2dff4b8"
+      },
+      "snapshotHash": "7917e05218a13e5c1509c6b55be3560bd7e81d7d53e3979f1fe01ae480f5e008",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "universal-project-presentation",
+      "title": "프로젝트 발표 제작",
+      "kind": "custom",
+      "category": "문서·발표",
+      "summary": "코드·문서·데이터를 근거로 발표 자료와 발표자 대본을 만듭니다.",
+      "when": "프로젝트 발표, 해커톤, 기술 발표 또는 피치덱을 준비할 때",
+      "prompt": "$universal-project-presentation로 현재 프로젝트를 처음 보는 개발자를 대상으로 10분 기술 발표를 준비해줘. PPTX와 발표자 대본을 만들고 구현 근거와 한계를 구분해줘. 사진은 나중에 넣을 수 있게 추천 장면과 자리를 마련해줘.",
+      "note": "Q&A나 백업 슬라이드는 요청할 때 추가합니다.",
+      "callName": "universal-project-presentation",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "LeeTheY/agent-skills",
+        "local": "custom/skills/universal-project-presentation",
+        "baseline": "f0a5b418fd2b7484f65547b0c65da48b1558820f"
+      },
+      "files": {
+        "SKILL.md": "17df6ebe7232dc59044493805796491c0c8ebdb4",
+        "references/charts-and-sources.md": "6102ace5434b7139d921d8762905c50d8ae7cd93",
+        "references/demo-and-qna.md": "c573963134b39210146f5ee0880b9d8d4299936d",
+        "references/korean-presentation.md": "da521ec7a11ba9f4c11da0550b24ac4d2eb06a64",
+        "references/presentation-routing.md": "f0cd08e783e80513b338c325dbc9b276a7c66345",
+        "references/project-types.md": "65484a313d9c8ea435c79bad923e648814bfccb7",
+        "references/qna-mode.md": "c16d84573c1847d2569aaa7269675417e06bf6ce",
+        "references/quality-checklist.md": "8d063a829b8e1486f0f281c3ab14ddf481b5e593",
+        "references/slide-density.md": "e9ced5533c66943bafd61facc83499e91dbb1c4e",
+        "references/slide-structures.md": "51b249ee7cb7f0fa2ede5fa11d70a0452ea84f3a",
+        "references/source-analysis.md": "6b6f7bc5000116d20277f717227488868b22302a",
+        "references/story-and-audience.md": "d368587ddaf671215d06ddf8f130999be8c8bba8",
+        "references/technical-presentation.md": "493b73a2af025514c6b1a3b544f199fcfc8a7329",
+        "references/template-analysis.md": "cb7b4a44ee48c952d354e7df4ad6fd5ba85cfc4d",
+        "references/visual-design.md": "080b2b28eaea6b684555b887c74a5b35368b58af"
+      },
+      "snapshotHash": "35cfd6cd144c809e70e0c6f796f7f67884479edd57a53da556dc55a4d67866f5",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "brainstorming",
+      "title": "Brainstorming",
+      "kind": "external",
+      "category": "설계·개발",
+      "summary": "아이디어를 질문과 대안 비교를 통해 구체적인 설계로 정리합니다.",
+      "when": "새 기능을 구현하기 전에 목적과 범위를 정할 때",
+      "prompt": "$brainstorming로 이번 기능의 목적과 요구사항을 함께 구체화해줘. 현재 구조를 확인하고 접근법의 장단점을 비교한 뒤 구현 전에 설계를 제안해줘.",
+      "note": "설계 승인을 받은 뒤 구현으로 넘어갑니다.",
+      "callName": "brainstorming",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "obra/superpowers",
+        "paths": [
+          "skills/brainstorming"
+        ],
+        "local": "external/development/brainstorming",
+        "unrecorded": false,
+        "baseline": "b36e0829c6d0140e93cfef2ca599b1b07d4a7797"
+      },
+      "files": {
+        "SKILL.md": "b56a3b5ed6ea0d6216501e0e401ecb00a1b4675f",
+        "scripts/frame-template.html": "f540bb8a4f88107e2b37b2871a4c1a55a3b6f720",
+        "scripts/helper.js": "e11d26489ce248f37af3e4dd01ddec6a4e88287f",
+        "scripts/server.cjs": "a828b35af64d5c64ca68b9ec78473999ce698874",
+        "scripts/start-server.sh": "016a8e4870142ce2adbe81a021d8b6b9073e7618",
+        "scripts/stop-server.sh": "7cacfe9440043f7a46eac555cd835fad0769c425",
+        "spec-document-reviewer-prompt.md": "60993129de3c445efeff53987b5297dc1acf3eb1",
+        "visual-companion.md": "c145e64388d4441710da016ea665fed5699e2e91"
+      },
+      "snapshotHash": "112234ae75826d4df9eb1b585e4b010f0f8434e12d2ecd13454d26a5bec698e0",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "writing-plans",
+      "title": "Writing Plans",
+      "kind": "external",
+      "category": "설계·개발",
+      "summary": "확정한 설계를 파일·작업 순서·검증 단위로 나눕니다.",
+      "when": "여러 파일에 걸친 구현을 단계적으로 진행할 때",
+      "prompt": "$writing-plans로 확정한 설계를 구현 계획으로 정리해줘. 수정할 파일, 작업 순서, 의존관계와 단계별 검증 방법을 포함해줘.",
+      "note": "현재 로컬 설치 스크립트의 자동 갱신 대상에서 제외된 별도 설치 스킬입니다.",
+      "callName": "writing-plans",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "obra/superpowers",
+        "paths": [
+          "skills/writing-plans"
+        ],
+        "local": "external/development/writing-plans",
+        "unrecorded": true,
+        "baseline": null
+      },
+      "files": {
+        "SKILL.md": "f74605bfa9af7a3fb7e4ad7f17750a86a9b0d728",
+        "plan-document-reviewer-prompt.md": "1c12c1d6180395262d7150bdb12a9a90efc9cfa0"
+      },
+      "snapshotHash": "c02bba6540ccfaec754a60c450dd51a469c42f511e2f69b2f9cf83cf79f4e840",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "grill-me",
+      "title": "Grill Me",
+      "kind": "external",
+      "category": "설계·개발",
+      "summary": "빠뜨린 결정과 가정을 질문으로 드러내는 인터뷰를 시작합니다.",
+      "when": "계획의 빈틈을 구현 전에 찾고 싶을 때",
+      "prompt": "$grill-me로 현재 계획을 날카롭게 검토해줘. 결정의 전제와 누락된 요구사항을 질문하고, 추천 답과 선택의 영향을 함께 제시해줘.",
+      "note": "grilling 스킬을 호출하는 진입점입니다. 개인 설정이 적용되어 있습니다.",
+      "callName": "grill-me",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "mattpocock/skills",
+        "paths": [
+          "skills/productivity/grill-me"
+        ],
+        "local": "external/development/grill-me",
+        "baseline": "3cca18b368ae95cdbdebbff572ccafa662551015"
+      },
+      "files": {
+        "SKILL.md": "3c450aa82b148e6398e3e5d9908faca02e91d9ac",
+        "agents/openai.yaml": "f148c44e331ffaa23dc844d4eab083f2b38059fe"
+      },
+      "snapshotHash": "a48b47141b1b02f584626d81fe0ccbd998e983c66e0d93af1576e6085e5c348e",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "grilling",
+      "title": "Grilling",
+      "kind": "external",
+      "category": "설계·개발",
+      "summary": "결정 간 의존관계를 따라 질문하며 계획을 검증합니다.",
+      "when": "제품 방향이나 기술 선택을 깊이 검토할 때",
+      "prompt": "$grilling로 현재 설계의 결정 관계를 정리하고 지금 답할 수 있는 질문을 묶어서 제시해줘. 각 질문에 추천안을 포함하고 답변을 받은 뒤 다음 단계로 진행해줘.",
+      "note": "여러 차례 질문과 답변이 필요한 인터뷰 방식입니다.",
+      "callName": "grilling",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "mattpocock/skills",
+        "paths": [
+          "skills/productivity/grilling"
+        ],
+        "local": "external/development/grilling",
+        "baseline": "3cca18b368ae95cdbdebbff572ccafa662551015"
+      },
+      "files": {
+        "SKILL.md": "8ca78c6d8f901aab0c5a1f896034b70e666ff2a3",
+        "agents/openai.yaml": "ddbdb96139c0c1dfe6bca698f39d0465674b8a39"
+      },
+      "snapshotHash": "849bcc88065280c8fa0633ee0cb327cc788e81289df5cf719134fb0567aa28f6",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "ponytail",
+      "title": "Ponytail",
+      "kind": "external",
+      "category": "설계·개발",
+      "summary": "요구사항을 만족하는 가장 단순한 구현을 찾습니다.",
+      "when": "불필요한 추상화와 의존성을 줄이며 개발할 때",
+      "prompt": "$ponytail로 현재 요구사항을 만족하는 가장 단순한 구현을 제안해줘. 기존 코드와 표준 라이브러리를 먼저 살피고 꼭 필요한 변경만 적용해줘.",
+      "note": "단순화가 기능 요구사항을 삭제하는 근거가 되지는 않습니다.",
+      "callName": "ponytail",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "DietrichGebert/ponytail",
+        "paths": [
+          "skills/ponytail"
+        ],
+        "local": "external/development/ponytail",
+        "baseline": "356918eba965ee1eac64bd3a7f0dd02108350de5"
+      },
+      "files": {
+        "SKILL.md": "02c0712c86277d49d18a77da3a2b825657bf02d1"
+      },
+      "snapshotHash": "a71e8f9d1fd73b6ab3fb0c77d7dd8c452bef27e79913b2a95604b946a06b5ec7",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "ponytail-review",
+      "title": "Ponytail Review",
+      "kind": "external",
+      "category": "Git·리뷰",
+      "summary": "변경된 코드에서 불필요한 복잡성과 삭제할 코드를 찾습니다.",
+      "when": "diff의 과잉 설계를 검토할 때",
+      "prompt": "$ponytail-review로 현재 diff에서 불필요한 추상화, 중복 구현과 사용하지 않는 유연성을 찾아줘. 위치, 삭제할 내용과 대안을 한 줄씩 제시해줘.",
+      "note": "정확성·보안 리뷰를 대체하지 않습니다.",
+      "callName": "ponytail-review",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "DietrichGebert/ponytail",
+        "paths": [
+          "skills/ponytail-review"
+        ],
+        "local": "external/development/ponytail-review",
+        "baseline": "356918eba965ee1eac64bd3a7f0dd02108350de5"
+      },
+      "files": {
+        "SKILL.md": "e137a855bd87119a4517895a1000a59b0999e1b8"
+      },
+      "snapshotHash": "993953de04281d77f4c5f8881477dc850a638c94edaa784f69ae49169295cc12",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "ponytail-audit",
+      "title": "Ponytail Audit",
+      "kind": "external",
+      "category": "평가·분석",
+      "summary": "저장소 전체에서 줄이거나 단순화할 코드를 찾습니다.",
+      "when": "프로젝트의 구조와 의존성이 비대해졌을 때",
+      "prompt": "$ponytail-audit로 저장소 전체를 과잉 설계 관점에서 감사해줘. 삭제·단순화 후보를 효과가 큰 순서로 보고하고 파일은 수정하지 마.",
+      "note": "일회성 보고서이며 자동 수정하지 않습니다.",
+      "callName": "ponytail-audit",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "DietrichGebert/ponytail",
+        "paths": [
+          "skills/ponytail-audit"
+        ],
+        "local": "external/development/ponytail-audit",
+        "baseline": "356918eba965ee1eac64bd3a7f0dd02108350de5"
+      },
+      "files": {
+        "SKILL.md": "5582d10335daff5b5947f9b77927fbc97f2047f3"
+      },
+      "snapshotHash": "8fbf7c5f28329fd4ede5b0c1eac4b9acc077875d29e6bde7042e68218569359c",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "ponytail-debt",
+      "title": "Ponytail Debt",
+      "kind": "external",
+      "category": "설계·개발",
+      "summary": "ponytail 주석에 남긴 지름길과 보류 사항을 모읍니다.",
+      "when": "의도적으로 미룬 기술 부채를 확인할 때",
+      "prompt": "$ponytail-debt로 현재 저장소의 ponytail 주석을 모아 부채 목록을 만들어줘. 각 항목의 한계, 개선 조건과 위치를 정리하고 원본은 수정하지 마.",
+      "note": "표시된 주석을 수집하므로 모든 기술 부채를 발견하는 것은 아닙니다.",
+      "callName": "ponytail-debt",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "DietrichGebert/ponytail",
+        "paths": [
+          "skills/ponytail-debt"
+        ],
+        "local": "external/development/ponytail-debt",
+        "baseline": "356918eba965ee1eac64bd3a7f0dd02108350de5"
+      },
+      "files": {
+        "SKILL.md": "ecbc0ca8161b25ced3b4f728398c2ec33988a777"
+      },
+      "snapshotHash": "032a53b30b5fc5de01bf1560ac0366327fa33d9ea8d5afa5380c4a4a8237573f",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "ponytail-gain",
+      "title": "Ponytail Gain",
+      "kind": "external",
+      "category": "설계·개발",
+      "summary": "Ponytail의 공개 벤치마크 결과를 간단히 보여줍니다.",
+      "when": "단순화 방식의 측정 결과를 참고하고 싶을 때",
+      "prompt": "$ponytail-gain로 공개된 ponytail 벤치마크 결과와 측정 조건을 보여줘. 현재 프로젝트에서 직접 측정한 수치와 구분해줘.",
+      "note": "현재 프로젝트의 성과 수치가 아닙니다.",
+      "callName": "ponytail-gain",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "DietrichGebert/ponytail",
+        "paths": [
+          "skills/ponytail-gain"
+        ],
+        "local": "external/development/ponytail-gain",
+        "baseline": "356918eba965ee1eac64bd3a7f0dd02108350de5"
+      },
+      "files": {
+        "SKILL.md": "012e37b6bf31da1ed4bf936ec8aff53974d5291e"
+      },
+      "snapshotHash": "d7e393f440f1a4301a969ecd9209457f04d26f006197fb74abb826e79bafb499",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "ponytail-help",
+      "title": "Ponytail Help",
+      "kind": "external",
+      "category": "설계·개발",
+      "summary": "Ponytail 모드와 관련 명령을 한눈에 안내합니다.",
+      "when": "Ponytail을 처음 사용하거나 명령을 확인할 때",
+      "prompt": "$ponytail-help로 ponytail 모드와 관련 스킬의 명령, 사용 시점과 차이를 간단히 알려줘.",
+      "note": "도움말 조회만으로 현재 모드를 변경하지 않습니다.",
+      "callName": "ponytail-help",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "DietrichGebert/ponytail",
+        "paths": [
+          "skills/ponytail-help"
+        ],
+        "local": "external/development/ponytail-help",
+        "baseline": "356918eba965ee1eac64bd3a7f0dd02108350de5"
+      },
+      "files": {
+        "SKILL.md": "ba145c0ebb7c7e5682bb2f36047af3bf2030d470"
+      },
+      "snapshotHash": "66e7b583a1ac31666aaebb453a739cad37f0759cb8588ec00dbe3d0619354d6d",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "frontend-design",
+      "title": "Frontend Design",
+      "kind": "external",
+      "category": "프론트엔드",
+      "summary": "서비스의 목적에 맞는 시각적 방향과 인터페이스를 설계합니다.",
+      "when": "새 웹 화면을 만들거나 기존 디자인을 개선할 때",
+      "prompt": "$frontend-design로 현재 서비스의 사용자와 목적을 확인하고 어울리는 디자인 방향을 제안해줘. 타이포그래피·색상·레이아웃을 일관되게 적용하고 모바일과 키보드 접근성을 검증해줘.",
+      "note": "기존 디자인을 변경할 때는 유지할 요소와 변경 범위를 명확히 합니다.",
+      "callName": "frontend-design",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "anthropics/skills",
+        "paths": [
+          "skills/frontend-design"
+        ],
+        "local": "external/frontend/frontend-design",
+        "baseline": "34040c9c568585f6929bedeaad110ad08f079624"
+      },
+      "files": {
+        "LICENSE.txt": "f433b1a53f5b830a205fd2df78e2b34974656c7b",
+        "SKILL.md": "a5333457c414d20d625f307df945842c0952ecc3"
+      },
+      "snapshotHash": "75d61af24ee149a506d860c7d9b2e8e552019b44707ed6d0b4a9f12b204cdb94",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "taste",
+      "title": "Design Taste",
+      "kind": "external",
+      "category": "프론트엔드",
+      "summary": "랜딩 페이지와 포트폴리오에 맞는 개성 있는 시각적 방향을 잡습니다.",
+      "when": "획일적인 느낌을 줄이고 브랜드에 맞게 디자인할 때",
+      "prompt": "$design-taste-frontend로 이 랜딩 페이지의 대상과 목적을 읽고 적합한 시각적 방향을 정해줘. 색상과 타이포그래피를 일관되게 적용하고 장식보다 콘텐츠를 우선해줘.",
+      "note": "대시보드나 복잡한 다단계 제품 UI보다 랜딩·포트폴리오에 적합합니다.",
+      "callName": "design-taste-frontend",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "Leonxlnx/taste-skill",
+        "paths": [
+          "skills/taste-skill",
+          "skills/design-taste-frontend"
+        ],
+        "local": "external/frontend/taste",
+        "baseline": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37"
+      },
+      "files": {
+        "SKILL.md": "b72132fcd466da605623ffe96e370b3991fc5285"
+      },
+      "snapshotHash": "aec8197c3fc95a3a1344b7dca941421fa28851c1ecf6a17d88bcc36dd33be0ef",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "pdf",
+      "title": "PDF",
+      "kind": "external",
+      "category": "문서·발표",
+      "summary": "PDF의 텍스트·표 추출, 병합·분할과 문서 생성을 돕습니다.",
+      "when": "PDF 내용을 읽거나 파일 구성을 바꿀 때",
+      "prompt": "$pdf로 첨부한 PDF의 구조를 확인하고 핵심 내용과 표를 추출해줘. 스캔 문서인지 확인하고 읽지 못한 페이지는 명시해줘.",
+      "note": "스캔 문서에는 OCR이 필요할 수 있습니다.",
+      "callName": "pdf",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "anthropics/skills",
+        "paths": [
+          "skills/pdf"
+        ],
+        "local": "external/document/pdf",
+        "baseline": "34040c9c568585f6929bedeaad110ad08f079624"
+      },
+      "files": {
+        "LICENSE.txt": "c55ab42224874608473643de0a85736b7fec0730",
+        "SKILL.md": "d3e046a5ae107a6cb23cfb16c219837094ab35d3",
+        "forms.md": "6e7e1e0d9e6ae17215db3e130aea3c3c546487e6",
+        "reference.md": "41400bf4fc67f15fb062d43695ec92f078226023",
+        "scripts/check_bounding_boxes.py": "2cc5e348f359b7aa7179e6a26772dacfdbbeba53",
+        "scripts/check_fillable_fields.py": "36dfb9513e2f54e051820b58c3cdd1f09bc6ff37",
+        "scripts/convert_pdf_to_images.py": "7939cef56c1220dd9dd0d04ec9594b2fe089ee74",
+        "scripts/create_validation_image.py": "10eadd8124b1f94f9b1a78708c2d947a3f6773e7",
+        "scripts/extract_form_field_info.py": "64cd4703a4af80bf6abe16f4c3065d8abd55d173",
+        "scripts/extract_form_structure.py": "f219e7d5b5e30616b2259abb924253afd0240aee",
+        "scripts/fill_fillable_fields.py": "51c2600f3895723cac15ec3ffcd8a482e42f95d7",
+        "scripts/fill_pdf_form_with_annotations.py": "b430069fd016cff11560d0f2b95c63074736e5e4"
+      },
+      "snapshotHash": "76fcc736617ef4f96fe3cf9290e07792d47a055b9096fe3fdd46a2a4d3cbca44",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "docx",
+      "title": "Word / DOCX",
+      "kind": "external",
+      "category": "문서·발표",
+      "summary": "Word 문서의 작성·편집과 형식 정리를 돕습니다.",
+      "when": "편집 가능한 보고서나 문서를 만들어야 할 때",
+      "prompt": "$docx로 제공한 자료로 Word 보고서를 만들어줘. 제목 체계, 목차와 표 형식을 일관되게 적용하고 최종 렌더링에서 잘림과 페이지 구성을 확인해줘.",
+      "note": "최종 산출물은 편집 가능한 Word 파일입니다.",
+      "callName": "docx",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "anthropics/skills",
+        "paths": [
+          "skills/docx"
+        ],
+        "local": "external/document/docx",
+        "baseline": "34040c9c568585f6929bedeaad110ad08f079624"
+      },
+      "files": {
+        "LICENSE.txt": "c55ab42224874608473643de0a85736b7fec0730",
+        "SKILL.md": "fb954a460a1ea2294e9595e87fecce8df043eeba",
+        "scripts/__init__.py": "8b137891791fe96927ad78e64b0aad7bded08bdc",
+        "scripts/accept_changes.py": "8e363161915d3720409bb8b6ef9bc4ade33b64e4",
+        "scripts/comment.py": "46ed5f52eb639934a8ead383976eecc2a6867fa7",
+        "scripts/merge_runs.py": "4c7c1bf261b1ec3febe4112e30f46c2aa9f4a141",
+        "scripts/office/helpers/__init__.py": "d3c5817c7e50b23bdd82032c8f89fed497bce9fa",
+        "scripts/office/helpers/pptx_chart.py": "209cb7c58b91b90ee685c082f7e20be21a1a6686",
+        "scripts/office/helpers/pptx_slide.py": "22f9aee0ff6c4797fa344f064d7cd6a1ab96b05b",
+        "scripts/office/helpers/pptx_theme.py": "84466201cf22ca237cd640c80a08e9e2cabcce90",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd": "6454ef9a94d52512e4905df61280a3fd1dafc0a4",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd": "afa4f463e3140a3f626c73f7966d689270d89b2c",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd": "64e66b8abd496d2e450c08110e40607e90b3fe13",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd": "687eea8297caa298581aa06c40ca40ef7b8a58bc",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-main.xsd": "6ac81b06b7a3ef916d677953084ae225504a77bc",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-picture.xsd": "1dbf05140d07fa014f18a5630acc0613d8058e52",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd": "f1af17db4e83b1c40152577eca4a575ab63a1ca7",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd": "0a185ab6ed0c2dd9b383a403c56c909bbab8b9a1",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/pml.xsd": "14ef488865f3ae6150776220ebbcf4788f89066a",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd": "c20f3bf14720d34247e8e1302dc3c40f7b832099",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd": "ac60252262534e7b87523fd04d252f085b38bec0",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd": "424b8ba8d1f9ebb22ba72cdd174c8a2ade0ecf89",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd": "2bddce29214882eb9fdf2be8a50ed5bdd0c69dfc",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd": "8a8c18ba2d5caa7e60a365e77ae0d1b872141bb0",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd": "5c42706a0d53c5e8b96818d9c29a292d1504f720",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd": "853c341c87feb51e10d757aea28b4185ae4c2731",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd": "da835ee82d5cc31be9fa9792512930f7ae3fb5ce",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-math.xsd": "87ad2658fa51cb4c172f82d0fdf33a492a750eca",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd": "9e86f1b2be0d431cd3c250ddeaf4efabdbcb088b",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/sml.xsd": "d0be42e757f3cce533c1c80770239f0097d3de6b",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/vml-main.xsd": "8821dd183caf9c8c3b809e0e2d9e0df56c4e9ed9",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd": "ca2575c753be78cdaa96de56b3ff8770173c324d",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd": "dd079e603f5770176212776a1d565b108875cf64",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd": "3dd6cf625a740398c2a4dc8abbe18e25e0ac5e9f",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd": "f1041e34ef365926f5670b896f5bb23e553ac36d",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/wml.xsd": "9c5b7a633411c2313ce839f748e4623bb0a70efe",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/xml.xsd": "0f13678d80a762375223f060e23b56c7b2eac89e",
+        "scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd": "a6de9d2733d3f0eea12ae87b24122495df1f0928",
+        "scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd": "10e978b661fc291cbeea9ab0c248601cf216f96d",
+        "scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd": "4248bf7a39c793c9f319bae7d09f92983efe5368",
+        "scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd": "56497467120b52b742756379959d4b2536be6df7",
+        "scripts/office/schemas/mce/mc.xsd": "ef725457cf39116672e285d021be69b7ad022574",
+        "scripts/office/schemas/microsoft/wml-2010.xsd": "f65f777730d82162f4248f03c703b1b85fda5fe2",
+        "scripts/office/schemas/microsoft/wml-2012.xsd": "6b00755a9a8733f0fb171a47b25d0d7b4c70dee8",
+        "scripts/office/schemas/microsoft/wml-2018.xsd": "f321d333a5e6ef98cbdfeeeaa334923e4cfc8a6c",
+        "scripts/office/schemas/microsoft/wml-cex-2018.xsd": "364c6a9b8df6e252bb5ae39e2ca031fcbfc4e8a5",
+        "scripts/office/schemas/microsoft/wml-cid-2016.xsd": "fed9d15b7f504e14ac82793d79db2d7ad83d56ed",
+        "scripts/office/schemas/microsoft/wml-sdtdatahash-2020.xsd": "680cf15400cd57ce2bf17a58ecd29caa0d8a8422",
+        "scripts/office/schemas/microsoft/wml-symex-2015.xsd": "89ada90837b2db3f3d453212ae426520acedbbea",
+        "scripts/office/soffice.py": "0b4c99deca54013c550458c9244ee63eea748dca",
+        "scripts/office/validate.py": "29ca186a12e5c102702029ab9e51e6c3b71b1403",
+        "scripts/office/validators/__init__.py": "db092ece7e21de98f87bd81471578259a1bc642f",
+        "scripts/office/validators/base.py": "33fc97bbe351949f9a8bd88998c78f81cd842c6a",
+        "scripts/office/validators/docx.py": "b18149945a7cf7ebd77c14655eb74d89baca3a00",
+        "scripts/office/validators/pptx.py": "318f0e61483972fb08e02be39c94331dba46445e",
+        "scripts/office/validators/redlining.py": "4185c51f4f10eeaf3227168e440ed378ce120ec6",
+        "scripts/templates/comments.xml": "cd01a7d7155f9a78cf3d11470e2ce2b5ccdac640",
+        "scripts/templates/commentsExtended.xml": "411003cc485356c560e29687ca359d64cd89d4b4",
+        "scripts/templates/commentsExtensible.xml": "f5572d710826dd7a1f455af7487e2157ef01ada0",
+        "scripts/templates/commentsIds.xml": "32f1629f2a8bb9aafebb0699349d0d799edce9f3",
+        "scripts/templates/people.xml": "3803d2de0faa635687a48947b52ab98b9655f631"
+      },
+      "snapshotHash": "123b977d2b12252f5e40d133d7004f945987ba8a453860fc4dc1b0b735dd3425",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "xlsx",
+      "title": "Excel / XLSX",
+      "kind": "external",
+      "category": "문서·발표",
+      "summary": "스프레드시트의 데이터 정리·수식·서식을 다룹니다.",
+      "when": "엑셀 파일을 분석하거나 계산표를 만들 때",
+      "prompt": "$xlsx로 첨부한 엑셀 파일의 구조와 수식을 확인해줘. 잘못된 데이터와 수식 오류를 정리하고 수정한 파일과 변경 내역을 제공해줘.",
+      "note": "수식 계산 결과와 원본 데이터 보존 여부를 함께 확인합니다.",
+      "callName": "xlsx",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "anthropics/skills",
+        "paths": [
+          "skills/xlsx"
+        ],
+        "local": "external/document/xlsx",
+        "baseline": "34040c9c568585f6929bedeaad110ad08f079624"
+      },
+      "files": {
+        "LICENSE.txt": "c55ab42224874608473643de0a85736b7fec0730",
+        "SKILL.md": "9da54804cc8c938586f89363c8da3b3a6e2a563d",
+        "scripts/office/helpers/__init__.py": "d3c5817c7e50b23bdd82032c8f89fed497bce9fa",
+        "scripts/office/helpers/pptx_chart.py": "209cb7c58b91b90ee685c082f7e20be21a1a6686",
+        "scripts/office/helpers/pptx_slide.py": "22f9aee0ff6c4797fa344f064d7cd6a1ab96b05b",
+        "scripts/office/helpers/pptx_theme.py": "84466201cf22ca237cd640c80a08e9e2cabcce90",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd": "6454ef9a94d52512e4905df61280a3fd1dafc0a4",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd": "afa4f463e3140a3f626c73f7966d689270d89b2c",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd": "64e66b8abd496d2e450c08110e40607e90b3fe13",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd": "687eea8297caa298581aa06c40ca40ef7b8a58bc",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-main.xsd": "6ac81b06b7a3ef916d677953084ae225504a77bc",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-picture.xsd": "1dbf05140d07fa014f18a5630acc0613d8058e52",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd": "f1af17db4e83b1c40152577eca4a575ab63a1ca7",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd": "0a185ab6ed0c2dd9b383a403c56c909bbab8b9a1",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/pml.xsd": "14ef488865f3ae6150776220ebbcf4788f89066a",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd": "c20f3bf14720d34247e8e1302dc3c40f7b832099",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd": "ac60252262534e7b87523fd04d252f085b38bec0",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd": "424b8ba8d1f9ebb22ba72cdd174c8a2ade0ecf89",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd": "2bddce29214882eb9fdf2be8a50ed5bdd0c69dfc",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd": "8a8c18ba2d5caa7e60a365e77ae0d1b872141bb0",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd": "5c42706a0d53c5e8b96818d9c29a292d1504f720",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd": "853c341c87feb51e10d757aea28b4185ae4c2731",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd": "da835ee82d5cc31be9fa9792512930f7ae3fb5ce",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-math.xsd": "87ad2658fa51cb4c172f82d0fdf33a492a750eca",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd": "9e86f1b2be0d431cd3c250ddeaf4efabdbcb088b",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/sml.xsd": "d0be42e757f3cce533c1c80770239f0097d3de6b",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/vml-main.xsd": "8821dd183caf9c8c3b809e0e2d9e0df56c4e9ed9",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd": "ca2575c753be78cdaa96de56b3ff8770173c324d",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd": "dd079e603f5770176212776a1d565b108875cf64",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd": "3dd6cf625a740398c2a4dc8abbe18e25e0ac5e9f",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd": "f1041e34ef365926f5670b896f5bb23e553ac36d",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/wml.xsd": "9c5b7a633411c2313ce839f748e4623bb0a70efe",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/xml.xsd": "0f13678d80a762375223f060e23b56c7b2eac89e",
+        "scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd": "a6de9d2733d3f0eea12ae87b24122495df1f0928",
+        "scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd": "10e978b661fc291cbeea9ab0c248601cf216f96d",
+        "scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd": "4248bf7a39c793c9f319bae7d09f92983efe5368",
+        "scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd": "56497467120b52b742756379959d4b2536be6df7",
+        "scripts/office/schemas/mce/mc.xsd": "ef725457cf39116672e285d021be69b7ad022574",
+        "scripts/office/schemas/microsoft/wml-2010.xsd": "f65f777730d82162f4248f03c703b1b85fda5fe2",
+        "scripts/office/schemas/microsoft/wml-2012.xsd": "6b00755a9a8733f0fb171a47b25d0d7b4c70dee8",
+        "scripts/office/schemas/microsoft/wml-2018.xsd": "f321d333a5e6ef98cbdfeeeaa334923e4cfc8a6c",
+        "scripts/office/schemas/microsoft/wml-cex-2018.xsd": "364c6a9b8df6e252bb5ae39e2ca031fcbfc4e8a5",
+        "scripts/office/schemas/microsoft/wml-cid-2016.xsd": "fed9d15b7f504e14ac82793d79db2d7ad83d56ed",
+        "scripts/office/schemas/microsoft/wml-sdtdatahash-2020.xsd": "680cf15400cd57ce2bf17a58ecd29caa0d8a8422",
+        "scripts/office/schemas/microsoft/wml-symex-2015.xsd": "89ada90837b2db3f3d453212ae426520acedbbea",
+        "scripts/office/soffice.py": "0b4c99deca54013c550458c9244ee63eea748dca",
+        "scripts/office/validate.py": "29ca186a12e5c102702029ab9e51e6c3b71b1403",
+        "scripts/office/validators/__init__.py": "db092ece7e21de98f87bd81471578259a1bc642f",
+        "scripts/office/validators/base.py": "33fc97bbe351949f9a8bd88998c78f81cd842c6a",
+        "scripts/office/validators/docx.py": "b18149945a7cf7ebd77c14655eb74d89baca3a00",
+        "scripts/office/validators/pptx.py": "318f0e61483972fb08e02be39c94331dba46445e",
+        "scripts/office/validators/redlining.py": "4185c51f4f10eeaf3227168e440ed378ce120ec6",
+        "scripts/recalc.py": "6232be2deea56cc97c1d8996e4d68adf2457059c"
+      },
+      "snapshotHash": "7978b159ce2c58ddd50938847768524b810727f7b58c6c38c0b5221238e73029",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "pptx",
+      "title": "PowerPoint / PPTX",
+      "kind": "external",
+      "category": "문서·발표",
+      "summary": "PowerPoint 파일의 생성·편집과 레이아웃 검증을 돕습니다.",
+      "when": "발표 파일을 만들거나 기존 슬라이드를 수정할 때",
+      "prompt": "$pptx로 제공한 발표 내용을 PPTX로 구성해줘. 슬라이드별 핵심 메시지와 발표자 노트를 작성하고 렌더링하여 잘림과 겹침을 확인해줘.",
+      "note": "프로젝트 분석부터 시작하려면 프로젝트 발표 제작 스킬을 먼저 사용하세요.",
+      "callName": "pptx",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "anthropics/skills",
+        "paths": [
+          "skills/pptx"
+        ],
+        "local": "external/document/pptx",
+        "baseline": "34040c9c568585f6929bedeaad110ad08f079624"
+      },
+      "files": {
+        "LICENSE.txt": "c55ab42224874608473643de0a85736b7fec0730",
+        "SKILL.md": "41cd2306977f269bb1d8169a9643b35053aa66bd",
+        "scripts/__init__.py": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "scripts/add_slide.py": "f013ea94d1785c8cf767fb69284ffb5b8dd9d390",
+        "scripts/clean.py": "551dd23192f6eae8e79d4b59b08a3cd9d10feadd",
+        "scripts/office/helpers/__init__.py": "d3c5817c7e50b23bdd82032c8f89fed497bce9fa",
+        "scripts/office/helpers/pptx_chart.py": "209cb7c58b91b90ee685c082f7e20be21a1a6686",
+        "scripts/office/helpers/pptx_slide.py": "22f9aee0ff6c4797fa344f064d7cd6a1ab96b05b",
+        "scripts/office/helpers/pptx_theme.py": "84466201cf22ca237cd640c80a08e9e2cabcce90",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd": "6454ef9a94d52512e4905df61280a3fd1dafc0a4",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd": "afa4f463e3140a3f626c73f7966d689270d89b2c",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd": "64e66b8abd496d2e450c08110e40607e90b3fe13",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd": "687eea8297caa298581aa06c40ca40ef7b8a58bc",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-main.xsd": "6ac81b06b7a3ef916d677953084ae225504a77bc",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-picture.xsd": "1dbf05140d07fa014f18a5630acc0613d8058e52",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd": "f1af17db4e83b1c40152577eca4a575ab63a1ca7",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd": "0a185ab6ed0c2dd9b383a403c56c909bbab8b9a1",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/pml.xsd": "14ef488865f3ae6150776220ebbcf4788f89066a",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd": "c20f3bf14720d34247e8e1302dc3c40f7b832099",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd": "ac60252262534e7b87523fd04d252f085b38bec0",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd": "424b8ba8d1f9ebb22ba72cdd174c8a2ade0ecf89",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd": "2bddce29214882eb9fdf2be8a50ed5bdd0c69dfc",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd": "8a8c18ba2d5caa7e60a365e77ae0d1b872141bb0",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd": "5c42706a0d53c5e8b96818d9c29a292d1504f720",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd": "853c341c87feb51e10d757aea28b4185ae4c2731",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd": "da835ee82d5cc31be9fa9792512930f7ae3fb5ce",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-math.xsd": "87ad2658fa51cb4c172f82d0fdf33a492a750eca",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd": "9e86f1b2be0d431cd3c250ddeaf4efabdbcb088b",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/sml.xsd": "d0be42e757f3cce533c1c80770239f0097d3de6b",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/vml-main.xsd": "8821dd183caf9c8c3b809e0e2d9e0df56c4e9ed9",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd": "ca2575c753be78cdaa96de56b3ff8770173c324d",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd": "dd079e603f5770176212776a1d565b108875cf64",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd": "3dd6cf625a740398c2a4dc8abbe18e25e0ac5e9f",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd": "f1041e34ef365926f5670b896f5bb23e553ac36d",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/wml.xsd": "9c5b7a633411c2313ce839f748e4623bb0a70efe",
+        "scripts/office/schemas/ISO-IEC29500-4_2016/xml.xsd": "0f13678d80a762375223f060e23b56c7b2eac89e",
+        "scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd": "a6de9d2733d3f0eea12ae87b24122495df1f0928",
+        "scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd": "10e978b661fc291cbeea9ab0c248601cf216f96d",
+        "scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd": "4248bf7a39c793c9f319bae7d09f92983efe5368",
+        "scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd": "56497467120b52b742756379959d4b2536be6df7",
+        "scripts/office/schemas/mce/mc.xsd": "ef725457cf39116672e285d021be69b7ad022574",
+        "scripts/office/schemas/microsoft/wml-2010.xsd": "f65f777730d82162f4248f03c703b1b85fda5fe2",
+        "scripts/office/schemas/microsoft/wml-2012.xsd": "6b00755a9a8733f0fb171a47b25d0d7b4c70dee8",
+        "scripts/office/schemas/microsoft/wml-2018.xsd": "f321d333a5e6ef98cbdfeeeaa334923e4cfc8a6c",
+        "scripts/office/schemas/microsoft/wml-cex-2018.xsd": "364c6a9b8df6e252bb5ae39e2ca031fcbfc4e8a5",
+        "scripts/office/schemas/microsoft/wml-cid-2016.xsd": "fed9d15b7f504e14ac82793d79db2d7ad83d56ed",
+        "scripts/office/schemas/microsoft/wml-sdtdatahash-2020.xsd": "680cf15400cd57ce2bf17a58ecd29caa0d8a8422",
+        "scripts/office/schemas/microsoft/wml-symex-2015.xsd": "89ada90837b2db3f3d453212ae426520acedbbea",
+        "scripts/office/soffice.py": "0b4c99deca54013c550458c9244ee63eea748dca",
+        "scripts/office/validate.py": "29ca186a12e5c102702029ab9e51e6c3b71b1403",
+        "scripts/office/validators/__init__.py": "db092ece7e21de98f87bd81471578259a1bc642f",
+        "scripts/office/validators/base.py": "33fc97bbe351949f9a8bd88998c78f81cd842c6a",
+        "scripts/office/validators/docx.py": "b18149945a7cf7ebd77c14655eb74d89baca3a00",
+        "scripts/office/validators/pptx.py": "318f0e61483972fb08e02be39c94331dba46445e",
+        "scripts/office/validators/redlining.py": "4185c51f4f10eeaf3227168e440ed378ce120ec6",
+        "scripts/thumbnail.py": "d49cac0e1a138fd0cbf46dece32b0da153cdc4f7"
+      },
+      "snapshotHash": "e4d2e33b09f8c263023e761f4995f1489f51222ae999ff72ad5e9511d489d029",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "humanizer",
+      "title": "Humanizer",
+      "kind": "external",
+      "category": "글쓰기",
+      "summary": "의미를 유지하면서 상투적이고 과장된 문장을 다듬습니다.",
+      "when": "글이 지나치게 정형적이거나 홍보 문구처럼 느껴질 때",
+      "prompt": "$humanizer로 아래 글의 의미와 사실을 유지하면서 상투적인 표현과 과장을 줄여줘. 작성자의 어조를 살리고 새로운 사실은 추가하지 마.",
+      "note": "blader/humanizer 원본입니다. 한국어 전용 스킬과 별개입니다.",
+      "callName": "humanizer",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "blader/humanizer",
+        "paths": [
+          "skills/humanizer",
+          ""
+        ],
+        "rootFiles": [
+          "SKILL.md",
+          "references/",
+          "scripts/",
+          "assets/"
+        ],
+        "local": "external/writing/humanizer",
+        "baseline": "9862685f575c65a8247f90369951df1b3416e3d6"
+      },
+      "files": {
+        "SKILL.md": "d375fbf3e3ee8fb047c379bced82df3713c6ed3b",
+        "scripts/validate-package.py": "ed4ed3f754f8b0abfd9cb88c1324393fbd692012"
+      },
+      "snapshotHash": "3ed0def7c77c7b50197c856a0f4deb5b3833c26552797f9766573349ee961665",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "korean-humanizer",
+      "title": "한국어 Humanizer",
+      "kind": "external",
+      "category": "글쓰기",
+      "summary": "한국어 번역투와 반복적인 문장 패턴을 자연스럽게 다듬습니다.",
+      "when": "한국어 문서의 어색한 표현을 개선할 때",
+      "prompt": "$korean-humanizer로 아래 한국어 글의 의미를 유지하면서 번역투, 과도한 쉼표와 반복 표현을 다듬어줘. 수정본을 먼저 주고 중요한 변경 이유만 설명해줘.",
+      "note": "DaleSeo/korean-skills 원본이며 연결 별칭은 korean-humanizer입니다.",
+      "callName": "korean-humanizer",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "DaleSeo/korean-skills",
+        "paths": [
+          "skills/humanizer"
+        ],
+        "local": "external/writing/korean-skills/humanizer",
+        "baseline": "ae12ba27982ebeff03b46dc738365aaa34260d9a"
+      },
+      "files": {
+        "SKILL.md": "cc6a9a6c3e3cb7ffb32f90b2303d4780d6c8245d",
+        "examples/after-1.md": "9651b9ade9f634c76da3be645a9508e5f23e813f",
+        "examples/after-2.md": "28695becc0223c6294ff13726f741c44722d8e08",
+        "examples/after-3.md": "5ed33e32385f5009ead461386108cd401789effa",
+        "examples/after-4.md": "1b46c5d8a7d0f9a554fd2207e7b03ca56271e63f",
+        "examples/before-1.md": "d3085693c541fe9cf164ccb5571fb7e52ed5748a",
+        "examples/before-2.md": "2ebbcfafeaa7652720734b577b01565816589594",
+        "examples/before-3.md": "7c9e12f3bde197d763a1e0667730f1c3c71a9b55",
+        "examples/before-4.md": "027f61f921f99f8a30d3a9ef17e2d62dde86cbc4",
+        "references/pos-patterns.md": "d1310d7f3d369b4530482a63b67ad8a2ec3376af",
+        "references/punctuation-patterns.md": "5fe005d202c74fc92606e3a678f2482a9d865aa4",
+        "references/spacing-patterns.md": "2d210df0e47f41a13bbc395e62979f4a456d20f4",
+        "references/structure-patterns.md": "d7ad93cbd034f54fdcff13e909c756e1fceac3bb",
+        "references/translation-ese-patterns.md": "308f130bdfdd5fa4b3a77be97540011a975286dd",
+        "references/vocabulary-patterns.md": "03ff30d3c60b8e3994a9dfe80b99ecb26fb2cea3"
+      },
+      "snapshotHash": "72ab014f003c2252f2e8e6ebe099568f4a77702fae0433920082c6cd1db80977",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "korean-grammar-checker",
+      "title": "한국어 맞춤법",
+      "kind": "external",
+      "category": "글쓰기",
+      "summary": "맞춤법·띄어쓰기·조사·구두점 오류를 교정합니다.",
+      "when": "문서를 제출하거나 게시하기 전에 교정할 때",
+      "prompt": "$korean-grammar-checker로 아래 한국어 문서의 맞춤법·띄어쓰기·문법·구두점을 검사해줘. 교정본을 먼저 제시하고 명확한 오류와 선택적 권장을 구분해줘.",
+      "note": "문체 통일은 한국어 스타일 가이드 스킬을 사용하세요.",
+      "callName": "korean-grammar-checker",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "DaleSeo/korean-skills",
+        "paths": [
+          "skills/grammar-checker"
+        ],
+        "local": "external/writing/korean-skills/grammar-checker",
+        "baseline": "ae12ba27982ebeff03b46dc738365aaa34260d9a"
+      },
+      "files": {
+        "SKILL.md": "a789720686698989bb67774265c51846c0d52c8d",
+        "examples/after.md": "cbdb6fcb34ed425fae1cd86a93bd60e49991a79c",
+        "examples/before.md": "db9c7d26a3f7355bfae11f2279a2a24f317c1314",
+        "references/common-errors.md": "fd92c6c7ac6b31fa85bb2bde2c8dbbe40835f806",
+        "references/rules.md": "15e574c963065cfa359f47f6c9a9518a5d740446"
+      },
+      "snapshotHash": "7c6ebe5173daeabaf11ca567fe9434593a068f92cf46fe39e25d518af0a9238d",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "korean-style-guide",
+      "title": "한국어 스타일 가이드",
+      "kind": "external",
+      "category": "글쓰기",
+      "summary": "어조·용어·숫자·날짜 표기를 일관되게 맞춥니다.",
+      "when": "여러 사람이 작성한 문서를 하나로 정리할 때",
+      "prompt": "$korean-style-guide로 아래 문서의 어조, 용어, 숫자와 날짜 표기를 검사해줘. 기존에 가장 일관되게 사용된 기준을 우선해 통일하고 변경 기준을 설명해줘.",
+      "note": "맞춤법 검사와 문서 내부 스타일 통일은 구분합니다.",
+      "callName": "korean-style-guide",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "DaleSeo/korean-skills",
+        "paths": [
+          "skills/style-guide"
+        ],
+        "local": "external/writing/korean-skills/style-guide",
+        "baseline": "ae12ba27982ebeff03b46dc738365aaa34260d9a"
+      },
+      "files": {
+        "SKILL.md": "bbb53876c5ffee54c06f8ab7a57de9d236846cba",
+        "examples/academic-style.md": "b65e7d98e4bd41ed6d35cfe486b299e0142b3c61",
+        "examples/analysis.md": "f7844f39e62ab2be3ede44a26206ab8e9d66460a",
+        "examples/blog-style.md": "3bc05751fb846b06c361ef8306270c140e5bd356",
+        "examples/business-style.md": "41caca332d06baf91dae51a7a0a290d03a0ef975",
+        "examples/consistent.md": "2a48cf9383631062c9336462d298cab5df080b8c",
+        "examples/inconsistent.md": "406d517f6165336dfc760602d38e729a4ac8fb78",
+        "examples/tech-style.md": "e3a8c21a3fba5b48a8bbc97d9f0d3aa5a4b9ae0a",
+        "references/datetime-reference.md": "ed2bf7f9256b6deeed3c5bfc446ead69401d0b5f",
+        "references/list-structure.md": "8f8441a635191aecf6f150501ad6cb5c5eef0912",
+        "references/numbering-units.md": "a0ff12159ad323bc126645a27a93639157178cb9",
+        "references/quotation-emphasis.md": "ec440edbcfed1f35e70d7308724758ffca463531",
+        "references/terminology.md": "e71447edd6ce786f50d498305eaa455e60c1c403",
+        "references/tone-consistency.md": "96faf5d46c4f186ffe5133c3a5c35c08de7173fa"
+      },
+      "snapshotHash": "3e3f9e90b44ed42b9e1877f6142958c7dfc61f6e8e9275cf6c2167439550f585",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "caveman",
+      "title": "Caveman",
+      "kind": "external",
+      "category": "글쓰기",
+      "summary": "기술적 의미를 유지하며 답변을 짧고 간결하게 만듭니다.",
+      "when": "설명이 너무 길어 핵심만 받고 싶을 때",
+      "prompt": "$caveman로 lite 모드로 답변을 간결하게 해줘. 기술적 근거, 필수 조건과 검증 방법은 유지해줘.",
+      "note": "선택한 모드가 대화에 지속될 수 있으며 off로 해제합니다.",
+      "callName": "caveman",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "JuliusBrussee/caveman",
+        "paths": [
+          "skills/caveman"
+        ],
+        "local": "external/writing/caveman",
+        "baseline": "15581d14007fd01fb3f132016741962f34936ca2"
+      },
+      "files": {
+        "README.md": "92a055c635cb2498f2171359b344015bf3a4d5b9",
+        "SKILL.md": "ea8bf271fc89cb783a19c54d9d0b5fdaec48a482"
+      },
+      "snapshotHash": "c94301883563f4158570669fcf1e5d3fd1cecea1819279170538d6cd6e0d110a",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "caveman-commit",
+      "title": "Caveman Commit",
+      "kind": "external",
+      "category": "Git·리뷰",
+      "summary": "변경 의도를 짧은 Conventional Commits 메시지로 정리합니다.",
+      "when": "커밋 메시지 문안을 간결하게 작성할 때",
+      "prompt": "$caveman-commit로 현재 diff의 목적을 담은 간결한 커밋 메시지를 작성해줘. 프로젝트에서 요구하는 한국어 목적 문단과 변경 목록은 반드시 포함하고 실제 커밋은 하지 마.",
+      "note": "스킬의 압축 선호보다 프로젝트의 본문 규칙을 우선합니다.",
+      "callName": "caveman-commit",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "JuliusBrussee/caveman",
+        "paths": [
+          "skills/caveman-commit"
+        ],
+        "local": "external/writing/caveman-commit",
+        "baseline": "15581d14007fd01fb3f132016741962f34936ca2"
+      },
+      "files": {
+        "README.md": "d5aee01395009525d3b4f68e80764cbc3de6bf57",
+        "SKILL.md": "e13d6afc293d3bdebbefe8b23a9d09144595e874"
+      },
+      "snapshotHash": "8eaa16d40ac8a6f54314fb2a5b1714d537c877d1fe9fb22a9244aeec799b2706",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "caveman-review",
+      "title": "Caveman Review",
+      "kind": "external",
+      "category": "Git·리뷰",
+      "summary": "리뷰 결과를 위치·문제·수정 방향 중심으로 압축합니다.",
+      "when": "리뷰의 핵심 지적만 빠르게 확인할 때",
+      "prompt": "$caveman-review로 현재 diff를 검토하고 각 발견사항을 위치, 문제와 수정 방향 한 줄로 정리해줘. 불확실한 후보와 확인된 문제를 구분해줘.",
+      "note": "간결하게 쓰더라도 판단의 근거를 생략하지 않습니다.",
+      "callName": "caveman-review",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "JuliusBrussee/caveman",
+        "paths": [
+          "skills/caveman-review"
+        ],
+        "local": "external/writing/caveman-review",
+        "baseline": "15581d14007fd01fb3f132016741962f34936ca2"
+      },
+      "files": {
+        "README.md": "acf519fe7a8c3970e6fd1d2557a3c741d63992b3",
+        "SKILL.md": "ed2bf49948c1514c147a699a484456a5ff7b27f7"
+      },
+      "snapshotHash": "bbc53a7d849bc6901b4dbba061c26109fc1494acf9ceac82273dd844cdd98db2",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "caveman-compress",
+      "title": "Caveman Compress",
+      "kind": "external",
+      "category": "글쓰기",
+      "summary": "메모리 문서나 할 일 목록을 백업 후 압축합니다.",
+      "when": "반복해서 읽는 지침의 길이를 줄일 때",
+      "prompt": "$caveman-compress로 지정한 메모리 문서를 읽고 의미를 보존하는 압축안을 만들어줘. 적용 전 원본 백업 위치와 손실될 수 있는 내용을 확인해줘.",
+      "note": "원본 파일을 수정하는 작업이므로 대상과 백업을 확인합니다.",
+      "callName": "caveman-compress",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "JuliusBrussee/caveman",
+        "paths": [
+          "skills/caveman-compress"
+        ],
+        "local": "external/writing/caveman-compress",
+        "baseline": "15581d14007fd01fb3f132016741962f34936ca2"
+      },
+      "files": {
+        "README.md": "2702f2c41635c1de79bb3cb5d1a0f63bd14aa4f7",
+        "SECURITY.md": "0efa9fe117a8de1b80b80480bdf0218291204eac",
+        "SKILL.md": "141cf972bf7541f6a92b14b40378af33c6f3f86b",
+        "scripts/__init__.py": "16b8c53c2ca7f8c7c105a0f6c72a46acbd02fec4",
+        "scripts/__main__.py": "4e28416e104515e90fca4b69cc60d0c61fd15d61",
+        "scripts/benchmark.py": "97d081b5c60cc2aaaf1735a4deeea59f7fbffe49",
+        "scripts/cli.py": "75ea8a667e1ef0ca6dfffb7c5b2914488bbeab4e",
+        "scripts/compress.py": "66cf4258184e4e04c5b67d3d097fd26b52ae218a",
+        "scripts/detect.py": "b7da1fa8528bf0c8dfad98fcb82c5eae52596794",
+        "scripts/validate.py": "ddab5fcc668a1b3cd7e8269be790abc062c222de"
+      },
+      "snapshotHash": "492d20b1b23e6173e8d0c3eea47fba2c7efb6eaeeb3692a0338020881aae7c05",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "caveman-help",
+      "title": "Caveman Help",
+      "kind": "external",
+      "category": "글쓰기",
+      "summary": "Caveman의 압축 모드와 명령을 안내합니다.",
+      "when": "압축 수준과 해제 방법을 확인할 때",
+      "prompt": "$caveman-help로 caveman의 모드별 차이, 관련 명령과 해제 방법을 보여줘. 현재 모드는 변경하지 마.",
+      "note": "도움말은 일회성 조회입니다.",
+      "callName": "caveman-help",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "JuliusBrussee/caveman",
+        "paths": [
+          "skills/caveman-help"
+        ],
+        "local": "external/writing/caveman-help",
+        "baseline": "15581d14007fd01fb3f132016741962f34936ca2"
+      },
+      "files": {
+        "README.md": "5841256fad5f042860c8924ccd6dd1452ee3d0f0",
+        "SKILL.md": "b760dfe9f90929c2353658ffceda0c297a56f29d"
+      },
+      "snapshotHash": "4e207b1a49041ca41e05fe596d4439c2752579822655debfce419b7144c64789",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "caveman-stats",
+      "title": "Caveman Stats",
+      "kind": "external",
+      "category": "환경·토큰",
+      "summary": "세션 로그를 바탕으로 토큰 사용과 절감 추정치를 보여줍니다.",
+      "when": "실제 세션의 토큰 사용량을 확인할 때",
+      "prompt": "$caveman-stats로 현재 세션의 실제 토큰 사용량과 추정 절감량을 확인해줘. 측정값과 추정값을 구분하고 로그나 Hook이 없으면 미지원으로 밝혀줘.",
+      "note": "원본 Hook과 세션 로그 지원이 필요하며 호스트에 따라 동작하지 않을 수 있습니다.",
+      "callName": "caveman-stats",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "JuliusBrussee/caveman",
+        "paths": [
+          "skills/caveman-stats"
+        ],
+        "local": "external/writing/caveman-stats",
+        "baseline": "15581d14007fd01fb3f132016741962f34936ca2"
+      },
+      "files": {
+        "README.md": "1dfdeab25bdd5bef287d35ea8260da83c9a1c135",
+        "SKILL.md": "762a6b05d8801c4220fb7a599cf9cd95364336b8"
+      },
+      "snapshotHash": "0cb72e34f566efd2c39683f3cee0a93699ab86cbe2beb6b0fd5e49a9b364b13d",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "fleet-auditor",
+      "title": "Fleet Auditor",
+      "kind": "external",
+      "category": "환경·토큰",
+      "summary": "여러 에이전트 환경의 토큰·비용 낭비를 비교합니다.",
+      "when": "여러 도구를 함께 쓰며 비용과 설정을 점검할 때",
+      "prompt": "$fleet-auditor로 사용 중인 에이전트 환경의 토큰·비용 낭비를 조사해줘. 확인 가능한 로그를 근거로 유휴 사용, 모델 선택과 설정 중복을 구분하고 추정의 한계를 밝혀줘.",
+      "note": "각 도구의 설치와 로그 접근이 필요합니다.",
+      "callName": "fleet-auditor",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "alexgreensh/token-optimizer",
+        "paths": [
+          "skills/fleet-auditor",
+          "plugins/token-optimizer/skills/fleet-auditor",
+          "cowork/token-optimizer/skills/fleet-auditor",
+          "openclaw/skills/fleet-auditor"
+        ],
+        "local": "external/development/fleet-auditor",
+        "baseline": "856244132d302182b1b40ccd80fd49e4eec67704"
+      },
+      "files": {
+        "SKILL.md": "918d4fe6e76f78be42b092154a66676fdea89510",
+        "references/fleet-systems.md": "232152cec472b14061424629b0d2b53af89ab2e0",
+        "references/waste-patterns.md": "378a94978ea975d4a34ff6f27c11d7b1ed1541bc",
+        "scripts/fleet.py": "366054c045b6422cd1e18974b918795570e7f22f",
+        "scripts/shared.py": "876c8301b170eec9adfad9cd419be91c3e5f99e3"
+      },
+      "snapshotHash": "0d2f0307588ac45bbb6975a66523bb635aefcf44e0473ddb97825e4708c9bf5e",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "resume-checkpoint",
+      "title": "Resume Checkpoint",
+      "kind": "external",
+      "category": "환경·토큰",
+      "summary": "이전 작업의 체크포인트를 필요할 때 복원합니다.",
+      "when": "이전 대화를 이어서 작업할 때",
+      "prompt": "$resume-checkpoint로 이전 작업의 체크포인트를 찾아 목표, 완료 사항, 미완료 사항과 제약을 복원해줘. 출처를 표시하고 현재 작업과 관련 없는 세션은 사용하지 마.",
+      "note": "새로운 무관한 작업에는 사용하지 않습니다.",
+      "callName": "resume-checkpoint",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "alexgreensh/token-optimizer",
+        "paths": [
+          "skills/resume-checkpoint",
+          "plugins/token-optimizer/skills/resume-checkpoint",
+          "cowork/token-optimizer/skills/resume-checkpoint",
+          "openclaw/skills/resume-checkpoint"
+        ],
+        "local": "external/development/resume-checkpoint",
+        "baseline": "856244132d302182b1b40ccd80fd49e4eec67704"
+      },
+      "files": {
+        "SKILL.md": "df46f1fd27cdbde21471429fd7f00196e91bcc17",
+        "scripts/pull_checkpoint.py": "d56ab00b0c264376921b0124b8ce0e9a4acc797c"
+      },
+      "snapshotHash": "88069fa6156dc035d8309c37e6a93b5620b4c075e3aa689948688694d2e7f1e6",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "token-coach",
+      "title": "Token Coach",
+      "kind": "external",
+      "category": "환경·토큰",
+      "summary": "토큰을 효율적으로 쓰는 환경 구성을 계획합니다.",
+      "when": "설정을 만들거나 빠르게 점검하고 싶을 때",
+      "prompt": "$token-coach로 현재 에이전트 설정을 간단히 점검하고 토큰 효율을 높일 방법을 제안해줘. 필요한 지침과 기능은 유지하고 변경 전 근거를 설명해줘.",
+      "note": "전체 감사와 실제 수정은 Token Optimizer에서 다룹니다.",
+      "callName": "token-coach",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "alexgreensh/token-optimizer",
+        "paths": [
+          "skills/token-coach",
+          "plugins/token-optimizer/skills/token-coach",
+          "cowork/token-optimizer/skills/token-coach",
+          "openclaw/skills/token-coach"
+        ],
+        "local": "external/development/token-coach",
+        "baseline": "856244132d302182b1b40ccd80fd49e4eec67704"
+      },
+      "files": {
+        "SKILL.md": "5f47614b85452ea9189666391ac973adb5b6ea67",
+        "assets/coach-dashboard-tab.html": "5c53df9689f2d90d08e2c19e88f44dd5c35f14f9",
+        "examples/coaching-session-agentic.md": "1febf54afafd9b6a706a0bc1b3efe25c61f93ba6",
+        "examples/coaching-session-heavy-setup.md": "bb8657eae8fdf040596515f3616e436ceb319a5b",
+        "examples/coaching-session-new-project.md": "b2de233e2bf7ddc79bc3c450f6ce5fb61f720b88",
+        "references/agentic-systems.md": "32dd6bb0c99b8dcd13f75c7d80151792d2c9925e",
+        "references/coach-patterns.md": "33e1b44ea13fd0e3d9826a10c5917019a584843e",
+        "references/coaching-scripts.md": "17b51dd7d0b8a11a4a89247bc3ac8cdae0888f45",
+        "references/quick-reference.md": "a1361418ac17cc72ab66927cf39b29f0148b876b"
+      },
+      "snapshotHash": "7dd88f285fe085e546486d21420cdd1562d213a6dc7a37993e0b349aca28c2ff",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "token-dashboard",
+      "title": "Token Dashboard",
+      "kind": "external",
+      "category": "환경·토큰",
+      "summary": "토큰 사용 추이와 세션 정보를 대시보드로 엽니다.",
+      "when": "사용량과 환경 정보를 화면에서 확인할 때",
+      "prompt": "$token-dashboard로 설치된 Token Optimizer 런타임을 확인하고 토큰 대시보드를 열어줘. 필요한 런타임이나 로그가 없으면 준비 사항을 알려줘.",
+      "note": "이 사이트 내부의 대시보드가 아닌 별도 로컬 런타임을 엽니다.",
+      "callName": "token-dashboard",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "alexgreensh/token-optimizer",
+        "paths": [
+          "skills/token-dashboard",
+          "plugins/token-optimizer/skills/token-dashboard",
+          "cowork/token-optimizer/skills/token-dashboard",
+          "openclaw/skills/token-dashboard"
+        ],
+        "local": "external/development/token-dashboard",
+        "baseline": "856244132d302182b1b40ccd80fd49e4eec67704"
+      },
+      "files": {
+        "SKILL.md": "26b6d813783dc0a3459b3b4510f39f2c393f1560"
+      },
+      "snapshotHash": "ee9f36abe0d8ce60a49bae26d7b22885fcf383c6211c13cd0e00e88b8bcddea3",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    },
+    {
+      "id": "token-optimizer",
+      "title": "Token Optimizer",
+      "kind": "external",
+      "category": "환경·토큰",
+      "summary": "컨텍스트 낭비를 조사하고 설정 개선 효과를 측정합니다.",
+      "when": "컨텍스트가 빠르게 차거나 지침이 비대해졌을 때",
+      "prompt": "$token-optimizer로 현재 에이전트 설정과 컨텍스트 낭비를 조사해줘. 변경 후보와 영향부터 제시하고 적용 전후를 같은 기준으로 측정해줘.",
+      "note": "스킬 파일 외에 원본 런타임과 측정 스크립트가 필요할 수 있습니다.",
+      "callName": "token-optimizer",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "alexgreensh/token-optimizer",
+        "paths": [
+          "skills/token-optimizer",
+          "plugins/token-optimizer/skills/token-optimizer",
+          "cowork/token-optimizer/skills/token-optimizer",
+          "openclaw/skills/token-optimizer"
+        ],
+        "local": "external/development/token-optimizer",
+        "baseline": "856244132d302182b1b40ccd80fd49e4eec67704"
+      },
+      "files": {
+        "SKILL.md": "3dafe90dba0ba52d0711be748edf5270948d10a6",
+        "assets/active-compression-hero.svg": "3adc47925b05d861ae33f74b3db0bc3619cf1488",
+        "assets/automated-flow.svg": "a488e7f67cb99b507a4dd3ceb77c95edf3150c4e",
+        "assets/bash-compression.svg": "fde52244f07336637a446536e845985961bd7d12",
+        "assets/before-after.svg": "efed72280c3cd7e9cc6d73f261a6c1f208315d85",
+        "assets/dashboard-demo.gif": "ff954f760ef3a29439f5f3ea43a0adf3fb198e6f",
+        "assets/dashboard-demo.mp4": "66fef8910cc68cf71dd1c5d84babad6565cac55c",
+        "assets/dashboard-overview.png": "b2025717ac88c528c0a0bb01a737d9eb7f6163e0",
+        "assets/dashboard.html": "bfd3a2f72c83a300337c6018a9443481f68b8ff6",
+        "assets/delta-mode.svg": "c5b85b855882cdac226fa58b4c0c022ca57685e2",
+        "assets/fleet-demo.html": "ed9bd344ec140e9953a849abf6c05bc8c590f4c5",
+        "assets/hero-terminal.svg": "cd6c4dc7d550bf5761d4ada56d36f71c3a69ea4d",
+        "assets/how-it-works.svg": "e79c7ac455a80b7c05942f5c5da63e0b7170765d",
+        "assets/logo.svg": "b9aa13bc3c778c4233dd5458fb221524bbc0d9d0",
+        "assets/logo.txt": "8aea3f3438f3754e3e7fa6ca1ee0cec24098c244",
+        "assets/quality-example.svg": "0c13b6adfac54fa03d9117305ed381c69070d70e",
+        "assets/quality-nudges-loops.svg": "9e266c9021cca26720979d4a743d2c42bf1008e4",
+        "assets/real-savings.svg": "3b7aa9d73f9681bc4e0c4ebfe1f841260b84766a",
+        "assets/session-database-flow.svg": "6ae45dc379fb91e194da062eb18cf73e6c73bb2e",
+        "assets/status-bar.svg": "73d7dc9abb8f5581c4ba929bfcba0faa3b528313",
+        "assets/user-profiles.svg": "c63436720ec3d67e2ec17a0f6d916c14d13476fd",
+        "examples/claude-md-optimized.md": "c499d799b53117b7458c2c10789b45228c18759a",
+        "examples/hooks-starter.json": "7afbac6f2261b42a6179628a86bfd216bfed9419",
+        "examples/permissions-deny-template.json": "1905eadcdc4af98dccc3b18d64fc554c07239dcc",
+        "references/agent-prompts.md": "bf41208744c9284b44461cceb3b51798e7e43025",
+        "references/cli-reference.md": "09f74ba59b3253954bf9a60e6aa8e27244ad15c1",
+        "references/codex-workflow.md": "505c0650a1adbdfd157227c35efe4ad0f6a5e61b",
+        "references/cursor-workflow.md": "9b746a574d130d57ff463d8c40202731c42b108f",
+        "references/error-recovery.md": "b841e441b801eb48ccbd0a150763d40db566bd9f",
+        "references/implementation-playbook.md": "f086f508d1a6b583bf7aabb20b9249ef377bbd06",
+        "references/opencode-workflow.md": "fa6d57ff1ee28129084d22756a51158a70742373",
+        "references/optimization-checklist.md": "a3b81347964444a300085cb146f349745cd38679",
+        "references/phase0-setup.md": "3d7df6326690e33daae14433df46044d3d687f9a",
+        "references/presentation-workflow.md": "26c4216938dc55cfa1ec137511a285e22fde37bb",
+        "references/token-flow-architecture.md": "20e7e646a699feba4b031834833fdfaeb788e01d",
+        "scripts/activity_tracker.py": "a934a2fb66d7f4d1d142e2bba64c1bf06e612f5e",
+        "scripts/antigravity_doctor.py": "f5e301d20f826990f290e44134cc40ebb2a8ee62",
+        "scripts/antigravity_hook_bridge.py": "a080c96a8148e9020910ccf5131d2c478c9a78c0",
+        "scripts/antigravity_install.py": "4ae5a0f5cd20ba60c0b23c0c3a81c0590ab77291",
+        "scripts/antigravity_proto.py": "29c43181dc83affd2eb2227fcdf7b6e0e958496b",
+        "scripts/antigravity_session.py": "1b7ac9b1bfc89b17933a0cdcac7d2064c60195e5",
+        "scripts/antigravity_state.py": "854d6b70761b645669a89818d2d14e56b35fe743",
+        "scripts/archive_result.py": "4b95d9dab21b2cf864c13fbf288203b09b10128e",
+        "scripts/bash_compress.py": "8733c42c396639c1835ed592c4c590449347ca27",
+        "scripts/bash_compress_hook.py": "16d883786094812b15eb47979710c6265e99254f",
+        "scripts/bash_hook.py": "209b12328f5ad60df5b5c41bae46ca2f943aba67",
+        "scripts/bash_whitelist.py": "38c4110126363300e2411217f63ead097fa75986",
+        "scripts/build_output_compress.py": "5631de0df41bea2471960cfd6665e944779b5735",
+        "scripts/codex_compact_prompt.py": "4962d5efc61fcc97c31c8ac139eda0755d1d6ac3",
+        "scripts/codex_doctor.py": "de761db48ab53890ea7bfe80eb9ecbcdec1e50f1",
+        "scripts/codex_hook_bridge.py": "8159ab4cec6c4796789f4a81d1a6b8f6959bca65",
+        "scripts/codex_install.py": "09dfbfe2bfe53e662930e9f51d770328c432b29a",
+        "scripts/codex_io.py": "a8eb9d07ff022a5bf74a2f2681436c05d569777c",
+        "scripts/codex_session.py": "ee07594a7dfa97f89538809ff117a62a3b596e4c",
+        "scripts/codex_state.py": "affa645bf97f1e5ca0e66fe2ea1f811431dad95c",
+        "scripts/codex_statusline.py": "1646e93a01a655447b652df87c7a14326fc81cd4",
+        "scripts/command_filters.py": "8846bcf32b0045449483ea960b992a239cd381db",
+        "scripts/compression_backfill.py": "e24ddf26620aeef6c0eea1550ab3edecb3f4ef2a",
+        "scripts/compression_log.py": "abf87c066e8ef461dfe89463e2c5e35332dc85e6",
+        "scripts/context_intel.py": "16136eb23e02e4f71905fb03450028cc24965fea",
+        "scripts/context_pressure.py": "b1f2ed263a485440c2d6997b2a54a460c0f6566f",
+        "scripts/copilot_doctor.py": "bbacc2a5125f3d10b55715a32d8147de20576e06",
+        "scripts/copilot_hook_bridge.py": "a44f878b2dc537334938a6d50f4d7fed942759ac",
+        "scripts/copilot_install.py": "41e8df3535538c1c87d9fcac29a2b10e2e8efeeb",
+        "scripts/copilot_session.py": "f9d4b74872e8fb1b4ba9cc10f2c52df3889520e7",
+        "scripts/copilot_state.py": "ab2da88c6f1dd33ddffb201ad2cf689df3cc5dbc",
+        "scripts/copilot_vscode.py": "ac27926520b430a3441f3e08677619357a3c3a78",
+        "scripts/cowork_doctor.py": "3877d2d5ffc138763a597cee52900f3ba27e09a6",
+        "scripts/cowork_install.py": "85953bbe60ad7b3a3beda9fe1354e408297049ab",
+        "scripts/credential_patterns.py": "5025b5f0ab799ef6188bb9ce46071fac53f889ac",
+        "scripts/cursor_doctor.py": "281a1629d28a917f9febeff51f83909b7907614c",
+        "scripts/cursor_hook_bridge.py": "fe9fa1859076840909de89fc785bbc3542ef0b45",
+        "scripts/cursor_install.py": "04d8dcadf9381a1f349fbd1cac9a278814a2c659",
+        "scripts/cursor_session.py": "a93f799923b6c9d1ec9182104eba11bfea980ed5",
+        "scripts/cursor_state.py": "112b8eb3ce2b8459b82b28e8c037edb3d9dd560f",
+        "scripts/delta_diff.py": "f02cf83135fb5c42ab156076adaf71e8319e7333",
+        "scripts/detectors/__init__.py": "da625a5166b2c6b6b61376afe9387641cc858df8",
+        "scripts/detectors/bad_decomposition.py": "6abb051f99db8c5aafe097386418b0b5f1fd0d8c",
+        "scripts/detectors/cache_instability.py": "a74949c3d111c1de2367fc10436179e1e66d8f48",
+        "scripts/detectors/looping.py": "124b4d9719f05068b77231a2edc72849c2de50a1",
+        "scripts/detectors/output_waste.py": "830a620367bbf5f4589cd88c57541f9cf7391afe",
+        "scripts/detectors/overpowered.py": "dcb63e790433b88920bdf63ff5a624bb7a6932e5",
+        "scripts/detectors/pdf_ingestion.py": "387ee7bac880da7c9455d55e1c5a21a5552cc719",
+        "scripts/detectors/registry.py": "ac84226b30c6813fe1c3987a08bc3018b42b1fd6",
+        "scripts/detectors/respond_to_bash.py": "af3ab2046958795456412c99a23940e6e1fa4c9a",
+        "scripts/detectors/retry_churn.py": "f80b90cb3c06156e8939e19c1eb930e83ddbc720",
+        "scripts/detectors/tool_cascade.py": "1b8c0f5b8b90246a4983ce1d5d7d47636023b953",
+        "scripts/detectors/wasteful_thinking.py": "3428147ceb05ea53ae3dfcd8110d29918329673d",
+        "scripts/detectors/weak_model.py": "82262b42b6d7c9eee363f1eff15ee78a9f0c02cb",
+        "scripts/detectors/websearch_routing.py": "9cf8794faaff2450c46eb1176bb42c02ea809d37",
+        "scripts/grok_doctor.py": "d5fe4462a31f4e45e0c25e7963aca1063c131dcb",
+        "scripts/grok_hook_bridge.py": "0e9f57d74a5c55ac4a62aa392dd8feb3f6f49cb0",
+        "scripts/grok_install.py": "b73479ef27da24e6a8b5980ad863ab67badd8e57",
+        "scripts/grok_session.py": "1ca6a12d1bdf67875d8f08b19717043ba18bdea0",
+        "scripts/grok_state.py": "b2f3a51a6cd1b5692a96d32d1b7b439cac3d21b2",
+        "scripts/hermes_doctor.py": "c4b50d887ae62a8b235f0b5e214958864723ae23",
+        "scripts/hermes_hook_bridge.py": "0231b6269af06c42d932685e0ec453051dc9d3d8",
+        "scripts/hermes_install.py": "500fe2642f574f1996545b654a4c59d6c6a2a839",
+        "scripts/hermes_session.py": "5e3257c79504ee6c1dad2f2bb48922d53fe26d06",
+        "scripts/hermes_state.py": "8894b7dfd298f2deae538303434d120d7c2bc313",
+        "scripts/hook_io.py": "250895c2daab33237ff525eb57d2c2f7d844f86f",
+        "scripts/hook_runtime.py": "5325d8262f3f0479917ce4b643729565116c0589",
+        "scripts/injection.py": "1f6e99622a57167c8dfe75931c2bcd30bc2d11b6",
+        "scripts/install_reconcile.py": "2cf012f75127da5140b91bb9256b78a9ac2b4f74",
+        "scripts/measure.py": "b1420d48f22dc6fe8667ac377117591c5f57bf2c",
+        "scripts/outline.py": "45d288c52cd99fd0774aa5a30d623c74f1b8fc2e",
+        "scripts/pipeline_analyzer.py": "688c1ffabda46297c71ef5bdb2cbad5cb90fdea9",
+        "scripts/plugin_env.py": "0325d9bf59ad71d9d5f202d535d8b25794fa04fe",
+        "scripts/py_trust.py": "cd40748155a35d0539d9e6058e3dc42d2dec0685",
+        "scripts/quality_cache_gate.py": "91622f00258c816611d8346ff2036dd8ac9d3042",
+        "scripts/read_cache.py": "37756f256512b1cbd20a99fdc652a39f3f52a5b2",
+        "scripts/refetch_fingerprint.py": "2c5f7ec229b132c997c512d2feb2c8ba9da7a0ba",
+        "scripts/refetch_guard.py": "b83ec805046183dba7a1ee3765fc5af446bef94a",
+        "scripts/routing_advisor.py": "ed081455f8424836db28ab8cc2323489a4d68566",
+        "scripts/runtime_env.py": "8d8389a1cf45d5f9edccd4c632e6c7ff55f0c3f2",
+        "scripts/session_store.py": "3ef82ff8fa5bfea967c829404bafd62b9c9cdb2e",
+        "scripts/spawn_utils.py": "f5265d7997ae79bebb701214eccbcc75aba18bec",
+        "scripts/statusline.js": "be73bbbce760d71c604e36cf4dccd7a0ca27eda4",
+        "scripts/structure_map.py": "be255f3d9cccfca2fc0e6c2a17a863dfcd7aa676",
+        "scripts/structure_map_ts.py": "1d1114ffe1d61fd9b5bf3d9803e5b9bddafd61f9",
+        "scripts/structure_replay.py": "e39abed383283117bd54e8f40b995530e190272e",
+        "scripts/thrash_guard.py": "8eecb44a5824d8c3cdb798cb95f6ca3cf6b4aa87",
+        "scripts/token_estimate.py": "da7b72a1d1cadaca1fc1a7e726d79b60ea3c7ff9",
+        "scripts/utf8_io.py": "a68a9df821cd0fcef4fee7a15fb74433b3fd8fd8"
+      },
+      "snapshotHash": "2b79eff2fbcc30a4024eb74207e372964029bb045d46cd444af62b44fc118f4a",
+      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "id": "build",
+      "title": "아이디어에서 구현까지",
+      "description": "목적을 정하고, 계획을 세우고, 필요한 만큼 구현하세요.",
+      "steps": [
+        "brainstorming",
+        "writing-plans",
+        "ponytail",
+        "pre-pr-verification"
+      ]
+    },
+    {
+      "id": "review",
+      "title": "PR을 준비할 때",
+      "description": "변경을 검증하고 Git 작업과 리뷰 피드백을 이어갑니다.",
+      "steps": [
+        "pre-pr-verification",
+        "git-workflow",
+        "pr-review-feedback"
+      ]
+    },
+    {
+      "id": "frontend",
+      "title": "화면을 만들고 검증할 때",
+      "description": "디자인 방향을 잡은 다음 실제 화면과 사용자 흐름을 평가합니다.",
+      "steps": [
+        "frontend-design",
+        "frontend"
+      ]
+    },
+    {
+      "id": "present",
+      "title": "프로젝트를 소개할 때",
+      "description": "구현에 맞는 문서와 청중에 맞는 발표를 준비합니다.",
+      "steps": [
+        "write-project-readme-docs",
+        "universal-project-presentation",
+        "pptx"
+      ]
+    },
+    {
+      "id": "writing",
+      "title": "한국어 문서를 다듬을 때",
+      "description": "자연스러운 표현부터 맞춤법, 문서 전체의 일관성까지.",
+      "steps": [
+        "korean-humanizer",
+        "korean-grammar-checker",
+        "korean-style-guide"
+      ]
+    }
+  ]
+}

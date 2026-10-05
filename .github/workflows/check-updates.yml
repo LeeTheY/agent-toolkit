@@ -1,0 +1,49 @@
+name: 외부 스킬 업데이트 확인
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 0 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: external-skill-updates
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: 외부 원본 비교
+        id: check
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/check-updates.mjs
+      - name: 데이터 검증
+        run: node --test tests/*.test.mjs
+      - name: 조회 결과 저장
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/data/updates.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: 외부 스킬 업데이트 상태 갱신' -m '원본 스킬의 변경 여부와 마지막 확인 시각을 사이트에 반영한다.' -m '- 적용 기준과 원본의 경로별 파일 비교 결과 저장'
+            git push origin HEAD:${{ github.event.repository.default_branch }}
+          fi
+      - name: Vercel 배포 갱신
+        env:
+          DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          if [ -n "$DEPLOY_HOOK" ]; then
+            curl --fail --silent --show-error --request POST "$DEPLOY_HOOK" > /dev/null
+          else
+            echo 'Deploy Hook 미설정: Git 연동의 자동 배포 결과를 확인하세요.'
+          fi
+      - name: 확인 실패 알림
+        if: steps.check.outcome == 'failure'
+        run: |
+          echo '일부 원본 조회에 실패했습니다. 마지막 결과를 실패 상태로 저장했습니다.'
+          exit 1
