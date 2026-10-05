@@ -10,7 +10,9 @@
 
 ## 시작하기
 
-Node.js 24 LTS와 npm을 권장합니다.
+Node.js 24 LTS와 npm을 권장합니다. 최소 지원 버전은 Node.js 22.18.0입니다.
+
+프론트엔드(`src/`)뿐 아니라 콘텐츠(`content/`), 동기화·업데이트 스크립트(`scripts/`), 테스트(`tests/`)도 TypeScript로 관리합니다. `npm run typecheck`는 브라우저와 Node 코드를 각각 strict 모드로 검사하며, 빌드 시에도 동일 검사를 실행합니다. Node 스크립트는 내장 타입 제거 기능으로 `.ts`를 직접 실행하므로 별도 런타임 패키지가 필요 없습니다.
 
 ```bash
 npm ci
@@ -42,7 +44,7 @@ AGENT_HARNESSES_HOME="$HOME/agent/agent-harnesses" \
 npm run sync
 ```
 
-동기화는 원본 파일을 수정하지 않고 스킬 메타데이터와 파일 해시만 수집합니다. 읽기 실패 시 기존 카탈로그를 유지합니다. 전체 외부 스킬 원문, 개인 실행 기록, 로그, 비밀값은 포함하지 않습니다. 도구별 한국어 소개와 프롬프트는 `content/entries.mjs`와 `content/guides.mjs`에서 관리합니다. 새로운 도구를 추가하면 이 파일과 `scripts/sources.mjs`의 원본 매핑을 먼저 등록합니다.
+동기화는 원본 파일을 수정하지 않고 스킬 메타데이터와 파일 해시만 수집합니다. 하네스는 호출 스킬과 Git 추적 엔진 파일을 함께 확인합니다. 읽기 실패 시 기존 카탈로그를 유지합니다. 전체 외부 스킬 원문, 개인 실행 기록, 로그, 비밀값은 포함하지 않습니다. 도구별 한국어 소개와 프롬프트는 `content/entries.ts`와 `content/guides.ts`에서 관리합니다. 새로운 도구를 추가하면 이 파일과 `scripts/sources.ts`의 원본 매핑을 먼저 등록합니다.
 
 `npm run sync` 뒤에는 반드시 `npm run check:updates`를 실행해 새 로컬 스냅샷 기준으로 비교합니다. 원본 매핑이나 로컬 파일이 바뀌면 기존 비교 결과는 화면에서 무효화됩니다. 변경된 `src/data/`를 커밋·push하면 사이트에 반영됩니다. 브라우저는 Mac 파일을 직접 읽거나 로컬 명령을 실행하지 않습니다. 즐겨찾기와 테마는 해당 브라우저에만 저장됩니다.
 
@@ -69,12 +71,12 @@ Vercel 프로젝트 이름은 `agent-toolkit`입니다. GitHub 저장소를 연�
 ## 구조
 
 ```text
-content/entries.mjs         한국어 소개·추천 프롬프트·작업별 가이드
-content/guides.mjs          도구별 사용 순서·상황별 프롬프트
-scripts/sources.mjs         외부 출처와 경로 매핑
-scripts/sync-local.mjs      로컬 스냅샷 생성
-scripts/check-updates.mjs   GitHub 원본 비교
-scripts/lib.mjs             파일 해시·경로 선택·차이 계산
+content/entries.ts         한국어 소개·추천 프롬프트·작업별 가이드
+content/guides.ts          도구별 사용 순서·상황별 프롬프트
+scripts/sources.ts         외부 출처와 경로 매핑
+scripts/sync-local.ts      로컬 스냅샷 생성
+scripts/check-updates.ts   GitHub 원본 비교
+scripts/lib.ts             파일 해시·경로 선택·차이 계산
 src/data/                  배포되는 카탈로그와 업데이트 상태
 src/App.tsx                검색·목록·상세·즐겨찾기 화면
 src/styles.css             반응형·테마·접근성 스타일
@@ -88,3 +90,13 @@ src/styles.css             반응형·테마·접근성 스타일
 2026-10-06 점검에서 하네스 2종·커스텀 11종·외부 연결 대상 31종의 전체 파일 해시가 기존 카탈로그와 일치했습니다. 외부 런타임의 플랫폼별 중복 사본은 별도 도구로 세지 않습니다. 원본 커밋은 agent-skills `f0a5b418fd2b7484f65547b0c65da48b1558820f`, agent-harnesses `09d4a9e5b2b941dce146dc18a5c16a0448c4a75b`입니다.
 
 누락되었던 웹 안내를 보강했습니다: 발표의 Q&A·템플릿 판단, 분석 근거·스냅샷 검증, PR 실행 증거, frontend 대기·재개·재평가, persona 실행·재채점·비교 절차. 원본 저장소 수정 금지 조건에 맞춰 웹의 하네스 추천 프롬프트는 설정·결과를 원본 저장소 밖에 저장하도록 안내합니다. 원본 스킬이나 하네스 자체를 실행·설치·수정하지 않습니다.
+
+## 요청할 때 원본 반영하기
+
+두 원본 저장소를 참조해 필요할 때 로컬에서 카탈로그와 안내 문구를 갱신하고, `agent-toolkit`에 일반 PR을 올립니다. 사용자가 main에 병합하면 Vercel이 배포합니다. 별도 PAT나 원본 동기화용 GitHub Actions 설정은 필요하지 않습니다.
+
+다음처럼 요청하면 됩니다.
+
+> 원본 두 저장소의 최신 main 변경사항을 agent-toolkit에 반영하고 일반 PR 올려줘. 원본은 읽기만 하고 소개·사용법·추천 프롬프트도 점검해줘.
+
+[동기화 절차와 복사 가능한 명령](docs/source-sync.md), [프로젝트 작업 지침](AGENTS.md)을 참고하세요. 기존 외부 스킬 업데이트 상태 확인은 유지하며, 설치된 스킬 자체를 자동으로 갱신하지 않습니다.
