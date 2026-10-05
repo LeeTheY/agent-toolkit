@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-05T15:16:38.151Z",
+  "syncedAt": "2026-10-05T15:22:42.709Z",
   "tools": [
     {
       "id": "frontend",
@@ -524,21 +524,20 @@
           "skills/brainstorming"
         ],
         "local": "external/development/brainstorming",
-        "unrecorded": false,
-        "baseline": "b36e0829c6d0140e93cfef2ca599b1b07d4a7797"
+        "baseline": "8ca22dba9a94f28898bbce59f2537ff4d87c747d"
       },
       "files": {
-        "SKILL.md": "b56a3b5ed6ea0d6216501e0e401ecb00a1b4675f",
+        "SKILL.md": "e3f17885f8d5f87d7a92f0469141662b476e1288",
         "scripts/frame-template.html": "f540bb8a4f88107e2b37b2871a4c1a55a3b6f720",
         "scripts/helper.js": "e11d26489ce248f37af3e4dd01ddec6a4e88287f",
         "scripts/server.cjs": "a828b35af64d5c64ca68b9ec78473999ce698874",
         "scripts/start-server.sh": "016a8e4870142ce2adbe81a021d8b6b9073e7618",
         "scripts/stop-server.sh": "7cacfe9440043f7a46eac555cd835fad0769c425",
         "spec-document-reviewer-prompt.md": "60993129de3c445efeff53987b5297dc1acf3eb1",
-        "visual-companion.md": "c145e64388d4441710da016ea665fed5699e2e91"
+        "visual-companion.md": "8dca065bd9adb9d4fa82a66acbb4176ea23259c6"
       },
-      "snapshotHash": "112234ae75826d4df9eb1b585e4b010f0f8434e12d2ecd13454d26a5bec698e0",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "snapshotHash": "71dc6312f01ea40e4fadc86e24513d366ad72f00cb39bfb458a1d92b5345d802",
+      "syncedAt": "2026-10-05T15:22:42.709Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
         "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
@@ -553,7 +552,7 @@
       "summary": "확정한 설계를 파일·작업 순서·검증 단위로 나눕니다.",
       "when": "여러 파일에 걸친 구현을 단계적으로 진행할 때",
       "prompt": "$writing-plans로 확정한 설계를 구현 계획으로 정리해줘. 수정할 파일, 작업 순서, 의존관계와 단계별 검증 방법을 포함해줘.",
-      "note": "원본은 obra/superpowers의 skills/writing-plans입니다. 설치 당시 커밋 기록이 없어 현재 자동 비교는 건너뜁니다. 원본 주소를 찾지 못했다는 뜻은 아닙니다.",
+      "note": "원본은 obra/superpowers의 skills/writing-plans입니다. brainstorming과 함께 설치·갱신하며 기록된 적용 커밋으로 원본 변경을 확인합니다.",
       "callName": "writing-plans",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -565,15 +564,13 @@
           "skills/writing-plans"
         ],
         "local": "external/development/writing-plans",
-        "unrecorded": true,
-        "baseline": null
+        "baseline": "8ca22dba9a94f28898bbce59f2537ff4d87c747d"
       },
       "files": {
-        "SKILL.md": "f74605bfa9af7a3fb7e4ad7f17750a86a9b0d728",
-        "plan-document-reviewer-prompt.md": "1c12c1d6180395262d7150bdb12a9a90efc9cfa0"
+        "SKILL.md": "4cf0275d88d67aa4ef09f4bbca9970ed6ff74a00"
       },
-      "snapshotHash": "c02bba6540ccfaec754a60c450dd51a469c42f511e2f69b2f9cf83cf79f4e840",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "snapshotHash": "5c00a3a15f35b165ce20654311a196198f1b198be4a3c123953677d860446b75",
+      "syncedAt": "2026-10-05T15:22:42.709Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
         "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
@@ -600,13 +597,13 @@
           "skills/productivity/grill-me"
         ],
         "local": "external/development/grill-me",
-        "baseline": "3cca18b368ae95cdbdebbff572ccafa662551015"
+        "baseline": "4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d"
       },
       "files": {
         "SKILL.md": "3c450aa82b148e6398e3e5d9908faca02e91d9ac",
         "agents/openai.yaml": "f148c44e331ffaa23dc844d4eab083f2b38059fe"
       },
-      "snapshotHash": "a48b47141b1b02f584626d81fe0ccbd998e983c66e0d93af1576e6085e5c348e",
+      "snapshotHash": "6640049a42780d4b845efafed58c78be96d5c447e79404bf33e2713cd07b1e47",
       "syncedAt": "2026-10-05T14:55:15.979Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
@@ -634,13 +631,13 @@
           "skills/productivity/grilling"
         ],
         "local": "external/development/grilling",
-        "baseline": "3cca18b368ae95cdbdebbff572ccafa662551015"
+        "baseline": "4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d"
       },
       "files": {
         "SKILL.md": "8ca78c6d8f901aab0c5a1f896034b70e666ff2a3",
         "agents/openai.yaml": "ddbdb96139c0c1dfe6bca698f39d0465674b8a39"
       },
-      "snapshotHash": "849bcc88065280c8fa0633ee0cb327cc788e81289df5cf719134fb0567aa28f6",
+      "snapshotHash": "e9e01b517edb7f5f0cd189635509bc7f0a1d4c8384d100f69eb9047772bfed48",
       "syncedAt": "2026-10-05T14:55:15.979Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
@@ -668,12 +665,12 @@
           "skills/ponytail"
         ],
         "local": "external/development/ponytail",
-        "baseline": "356918eba965ee1eac64bd3a7f0dd02108350de5"
+        "baseline": "c8f8f143ed93c77be00fdaa1b0e9491a6984dcba"
       },
       "files": {
         "SKILL.md": "02c0712c86277d49d18a77da3a2b825657bf02d1"
       },
-      "snapshotHash": "a71e8f9d1fd73b6ab3fb0c77d7dd8c452bef27e79913b2a95604b946a06b5ec7",
+      "snapshotHash": "0b108b1506d5c5e9b3f6926d3e6de1a83364d05500ef1ac8d43753a888a48f2f",
       "syncedAt": "2026-10-05T14:55:15.979Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
@@ -701,13 +698,13 @@
           "skills/ponytail-review"
         ],
         "local": "external/development/ponytail-review",
-        "baseline": "356918eba965ee1eac64bd3a7f0dd02108350de5"
+        "baseline": "c8f8f143ed93c77be00fdaa1b0e9491a6984dcba"
       },
       "files": {
-        "SKILL.md": "e137a855bd87119a4517895a1000a59b0999e1b8"
+        "SKILL.md": "b92e98304c1d0c101fc5e02aa33c4252f9a8db85"
       },
-      "snapshotHash": "993953de04281d77f4c5f8881477dc850a638c94edaa784f69ae49169295cc12",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "snapshotHash": "c01e1fe1978756cf34e205793b1cfa2244d17d0f78d864a018b918ae773759bb",
+      "syncedAt": "2026-10-05T15:22:42.709Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
         "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
@@ -734,13 +731,13 @@
           "skills/ponytail-audit"
         ],
         "local": "external/development/ponytail-audit",
-        "baseline": "356918eba965ee1eac64bd3a7f0dd02108350de5"
+        "baseline": "c8f8f143ed93c77be00fdaa1b0e9491a6984dcba"
       },
       "files": {
-        "SKILL.md": "5582d10335daff5b5947f9b77927fbc97f2047f3"
+        "SKILL.md": "a8302b0037c9749e5353aa4a561ebbeff97ae018"
       },
-      "snapshotHash": "8fbf7c5f28329fd4ede5b0c1eac4b9acc077875d29e6bde7042e68218569359c",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "snapshotHash": "cd351b87310d8344581856d18c15d5d3ec3a836eaa0be9ec53bab71be70a626f",
+      "syncedAt": "2026-10-05T15:22:42.709Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
         "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
@@ -767,13 +764,13 @@
           "skills/ponytail-debt"
         ],
         "local": "external/development/ponytail-debt",
-        "baseline": "356918eba965ee1eac64bd3a7f0dd02108350de5"
+        "baseline": "c8f8f143ed93c77be00fdaa1b0e9491a6984dcba"
       },
       "files": {
-        "SKILL.md": "ecbc0ca8161b25ced3b4f728398c2ec33988a777"
+        "SKILL.md": "d8fab97476531bf837c3d47efa979b4c308c43fd"
       },
-      "snapshotHash": "032a53b30b5fc5de01bf1560ac0366327fa33d9ea8d5afa5380c4a4a8237573f",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "snapshotHash": "691f30333e975fd515dfacc478b160d1921ea6cd7d3bba75491bc14c2789d075",
+      "syncedAt": "2026-10-05T15:22:42.709Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
         "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
@@ -800,13 +797,13 @@
           "skills/ponytail-gain"
         ],
         "local": "external/development/ponytail-gain",
-        "baseline": "356918eba965ee1eac64bd3a7f0dd02108350de5"
+        "baseline": "c8f8f143ed93c77be00fdaa1b0e9491a6984dcba"
       },
       "files": {
-        "SKILL.md": "012e37b6bf31da1ed4bf936ec8aff53974d5291e"
+        "SKILL.md": "574e319fb748f1ba2a90ccfd42403a3d7d12dbc6"
       },
-      "snapshotHash": "d7e393f440f1a4301a969ecd9209457f04d26f006197fb74abb826e79bafb499",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "snapshotHash": "d34e6047f7ba079f2d553b8b8d061cd6b4169d920a32a04a5b4033a606c15610",
+      "syncedAt": "2026-10-05T15:22:42.709Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
         "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
@@ -833,13 +830,13 @@
           "skills/ponytail-help"
         ],
         "local": "external/development/ponytail-help",
-        "baseline": "356918eba965ee1eac64bd3a7f0dd02108350de5"
+        "baseline": "c8f8f143ed93c77be00fdaa1b0e9491a6984dcba"
       },
       "files": {
-        "SKILL.md": "ba145c0ebb7c7e5682bb2f36047af3bf2030d470"
+        "SKILL.md": "b3a3f609bd4da78b5eb161438b541f68656a53d8"
       },
-      "snapshotHash": "66e7b583a1ac31666aaebb453a739cad37f0759cb8588ec00dbe3d0619354d6d",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "snapshotHash": "55dc3a2a6a648c77dc1fca06b7e4ade467a65d5f8771fd515f59e3bd9a87250b",
+      "syncedAt": "2026-10-05T15:22:42.709Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
         "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
@@ -866,13 +863,13 @@
           "skills/frontend-design"
         ],
         "local": "external/frontend/frontend-design",
-        "baseline": "34040c9c568585f6929bedeaad110ad08f079624"
+        "baseline": "683bc88e56f3e09ba94f7055977f3d3aa499f202"
       },
       "files": {
         "LICENSE.txt": "f433b1a53f5b830a205fd2df78e2b34974656c7b",
         "SKILL.md": "a5333457c414d20d625f307df945842c0952ecc3"
       },
-      "snapshotHash": "75d61af24ee149a506d860c7d9b2e8e552019b44707ed6d0b4a9f12b204cdb94",
+      "snapshotHash": "1444deee307974248e61dfb475d4a5091c2c83a0a5c5840657abb44df1a76b1f",
       "syncedAt": "2026-10-05T14:55:15.979Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
@@ -901,12 +898,12 @@
           "skills/design-taste-frontend"
         ],
         "local": "external/frontend/taste",
-        "baseline": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37"
+        "baseline": "ce26fc25c0e5e8cab638f883de62d9a86ee5e45b"
       },
       "files": {
         "SKILL.md": "b72132fcd466da605623ffe96e370b3991fc5285"
       },
-      "snapshotHash": "aec8197c3fc95a3a1344b7dca941421fa28851c1ecf6a17d88bcc36dd33be0ef",
+      "snapshotHash": "fcea4e66c291004754210bcad6702c7ec74406cce3816d525f12f4fbbf700ae1",
       "syncedAt": "2026-10-05T14:55:15.979Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
@@ -934,7 +931,7 @@
           "skills/pdf"
         ],
         "local": "external/document/pdf",
-        "baseline": "34040c9c568585f6929bedeaad110ad08f079624"
+        "baseline": "683bc88e56f3e09ba94f7055977f3d3aa499f202"
       },
       "files": {
         "LICENSE.txt": "c55ab42224874608473643de0a85736b7fec0730",
@@ -950,7 +947,7 @@
         "scripts/fill_fillable_fields.py": "51c2600f3895723cac15ec3ffcd8a482e42f95d7",
         "scripts/fill_pdf_form_with_annotations.py": "b430069fd016cff11560d0f2b95c63074736e5e4"
       },
-      "snapshotHash": "76fcc736617ef4f96fe3cf9290e07792d47a055b9096fe3fdd46a2a4d3cbca44",
+      "snapshotHash": "5a6ca1265f49c63b6cdfaedcaf3c4ed714b0b57be81b1870a4e7f528d616e8cb",
       "syncedAt": "2026-10-05T14:55:15.979Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
@@ -978,7 +975,7 @@
           "skills/docx"
         ],
         "local": "external/document/docx",
-        "baseline": "34040c9c568585f6929bedeaad110ad08f079624"
+        "baseline": "683bc88e56f3e09ba94f7055977f3d3aa499f202"
       },
       "files": {
         "LICENSE.txt": "c55ab42224874608473643de0a85736b7fec0730",
@@ -1043,7 +1040,7 @@
         "scripts/templates/commentsIds.xml": "32f1629f2a8bb9aafebb0699349d0d799edce9f3",
         "scripts/templates/people.xml": "3803d2de0faa635687a48947b52ab98b9655f631"
       },
-      "snapshotHash": "123b977d2b12252f5e40d133d7004f945987ba8a453860fc4dc1b0b735dd3425",
+      "snapshotHash": "d85c331754fc71c36b70b6a4c0a0ef7903a61a36655f546558cf3ae89783bd22",
       "syncedAt": "2026-10-05T14:55:15.979Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
@@ -1071,7 +1068,7 @@
           "skills/xlsx"
         ],
         "local": "external/document/xlsx",
-        "baseline": "34040c9c568585f6929bedeaad110ad08f079624"
+        "baseline": "683bc88e56f3e09ba94f7055977f3d3aa499f202"
       },
       "files": {
         "LICENSE.txt": "c55ab42224874608473643de0a85736b7fec0730",
@@ -1128,7 +1125,7 @@
         "scripts/office/validators/redlining.py": "4185c51f4f10eeaf3227168e440ed378ce120ec6",
         "scripts/recalc.py": "6232be2deea56cc97c1d8996e4d68adf2457059c"
       },
-      "snapshotHash": "7978b159ce2c58ddd50938847768524b810727f7b58c6c38c0b5221238e73029",
+      "snapshotHash": "6fa9c7f10adbcf4f3306ceeaa71fe79e2e400e5204d4dcf7b31be51147d10247",
       "syncedAt": "2026-10-05T14:55:15.979Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
@@ -1156,7 +1153,7 @@
           "skills/pptx"
         ],
         "local": "external/document/pptx",
-        "baseline": "34040c9c568585f6929bedeaad110ad08f079624"
+        "baseline": "683bc88e56f3e09ba94f7055977f3d3aa499f202"
       },
       "files": {
         "LICENSE.txt": "c55ab42224874608473643de0a85736b7fec0730",
@@ -1216,7 +1213,7 @@
         "scripts/office/validators/redlining.py": "4185c51f4f10eeaf3227168e440ed378ce120ec6",
         "scripts/thumbnail.py": "d49cac0e1a138fd0cbf46dece32b0da153cdc4f7"
       },
-      "snapshotHash": "e4d2e33b09f8c263023e761f4995f1489f51222ae999ff72ad5e9511d489d029",
+      "snapshotHash": "b6becd4bc4d8adc601c00c5617a6aa22f264b92730cbaa9b7ae7ba6e8185d60a",
       "syncedAt": "2026-10-05T14:55:15.979Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
@@ -1251,14 +1248,14 @@
           "assets/"
         ],
         "local": "external/writing/humanizer",
-        "baseline": "9862685f575c65a8247f90369951df1b3416e3d6"
+        "baseline": "225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8"
       },
       "files": {
-        "SKILL.md": "d375fbf3e3ee8fb047c379bced82df3713c6ed3b",
-        "scripts/validate-package.py": "ed4ed3f754f8b0abfd9cb88c1324393fbd692012"
+        "SKILL.md": "19fc634208e8cc6ae55d4ff287152583216fd244",
+        "scripts/validate-package.py": "9b20d72cecd28bb4589ca05039e8586f902e74b6"
       },
-      "snapshotHash": "3ed0def7c77c7b50197c856a0f4deb5b3833c26552797f9766573349ee961665",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "snapshotHash": "c09f3bebdfb43aacf01e453222464ed95835cad6ab66554c1ff33e70a89fa015",
+      "syncedAt": "2026-10-05T15:22:42.709Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
         "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
@@ -1415,14 +1412,14 @@
           "skills/caveman"
         ],
         "local": "external/writing/caveman",
-        "baseline": "15581d14007fd01fb3f132016741962f34936ca2"
+        "baseline": "6571943370f7c9d4de1946481177ee7b306cd8e8"
       },
       "files": {
-        "README.md": "92a055c635cb2498f2171359b344015bf3a4d5b9",
-        "SKILL.md": "ea8bf271fc89cb783a19c54d9d0b5fdaec48a482"
+        "README.md": "81b24f3dc0d668e08526b2c7d4e6bab2b8a57510",
+        "SKILL.md": "f029f003c1e9ef36d7cef8a76702192dea73c4cd"
       },
-      "snapshotHash": "c94301883563f4158570669fcf1e5d3fd1cecea1819279170538d6cd6e0d110a",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "snapshotHash": "69841790abcf0b6bc85c9c1ae58817b0281571995aa2643a8407a8f156b0a9f0",
+      "syncedAt": "2026-10-05T15:22:42.709Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
         "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
@@ -1449,13 +1446,13 @@
           "skills/caveman-commit"
         ],
         "local": "external/writing/caveman-commit",
-        "baseline": "15581d14007fd01fb3f132016741962f34936ca2"
+        "baseline": "6571943370f7c9d4de1946481177ee7b306cd8e8"
       },
       "files": {
         "README.md": "d5aee01395009525d3b4f68e80764cbc3de6bf57",
         "SKILL.md": "e13d6afc293d3bdebbefe8b23a9d09144595e874"
       },
-      "snapshotHash": "8eaa16d40ac8a6f54314fb2a5b1714d537c877d1fe9fb22a9244aeec799b2706",
+      "snapshotHash": "00e378fbca93c606e6b2f75538e3a519adfc034eab5c62536d1a41a320e2b3aa",
       "syncedAt": "2026-10-05T14:55:15.979Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
@@ -1483,13 +1480,13 @@
           "skills/caveman-review"
         ],
         "local": "external/writing/caveman-review",
-        "baseline": "15581d14007fd01fb3f132016741962f34936ca2"
+        "baseline": "6571943370f7c9d4de1946481177ee7b306cd8e8"
       },
       "files": {
         "README.md": "acf519fe7a8c3970e6fd1d2557a3c741d63992b3",
         "SKILL.md": "ed2bf49948c1514c147a699a484456a5ff7b27f7"
       },
-      "snapshotHash": "bbc53a7d849bc6901b4dbba061c26109fc1494acf9ceac82273dd844cdd98db2",
+      "snapshotHash": "297ceb5f4854f75c5789a7be9968d31aaf87a5fbcf68ad678d98099ac335578a",
       "syncedAt": "2026-10-05T14:55:15.979Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
@@ -1517,22 +1514,22 @@
           "skills/caveman-compress"
         ],
         "local": "external/writing/caveman-compress",
-        "baseline": "15581d14007fd01fb3f132016741962f34936ca2"
+        "baseline": "6571943370f7c9d4de1946481177ee7b306cd8e8"
       },
       "files": {
-        "README.md": "2702f2c41635c1de79bb3cb5d1a0f63bd14aa4f7",
+        "README.md": "892767aea430af51e51762cab79d559b59eddccf",
         "SECURITY.md": "0efa9fe117a8de1b80b80480bdf0218291204eac",
         "SKILL.md": "141cf972bf7541f6a92b14b40378af33c6f3f86b",
         "scripts/__init__.py": "16b8c53c2ca7f8c7c105a0f6c72a46acbd02fec4",
         "scripts/__main__.py": "4e28416e104515e90fca4b69cc60d0c61fd15d61",
         "scripts/benchmark.py": "97d081b5c60cc2aaaf1735a4deeea59f7fbffe49",
-        "scripts/cli.py": "75ea8a667e1ef0ca6dfffb7c5b2914488bbeab4e",
-        "scripts/compress.py": "66cf4258184e4e04c5b67d3d097fd26b52ae218a",
+        "scripts/cli.py": "cc23b142c10b92a85f794616af17a783c85c4b1a",
+        "scripts/compress.py": "c8ba53e7be5c23739c4bc38c2ad03e44767579f5",
         "scripts/detect.py": "b7da1fa8528bf0c8dfad98fcb82c5eae52596794",
-        "scripts/validate.py": "ddab5fcc668a1b3cd7e8269be790abc062c222de"
+        "scripts/validate.py": "da662b539b5b21d9a942b80ce16505754dc712f9"
       },
-      "snapshotHash": "492d20b1b23e6173e8d0c3eea47fba2c7efb6eaeeb3692a0338020881aae7c05",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "snapshotHash": "b9542b9f10855830065b7ba5789d224576b8aa5fbb275dd56f5f3e088b1ba0d1",
+      "syncedAt": "2026-10-05T15:22:42.709Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
         "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
@@ -1559,14 +1556,14 @@
           "skills/caveman-help"
         ],
         "local": "external/writing/caveman-help",
-        "baseline": "15581d14007fd01fb3f132016741962f34936ca2"
+        "baseline": "6571943370f7c9d4de1946481177ee7b306cd8e8"
       },
       "files": {
-        "README.md": "5841256fad5f042860c8924ccd6dd1452ee3d0f0",
-        "SKILL.md": "b760dfe9f90929c2353658ffceda0c297a56f29d"
+        "README.md": "1ee3b4e499c6ef0605aa28a94b80284b15ed4b95",
+        "SKILL.md": "6f6eacf8628a67d89dd058018c53997bd1d8d02f"
       },
-      "snapshotHash": "4e207b1a49041ca41e05fe596d4439c2752579822655debfce419b7144c64789",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "snapshotHash": "eee85bfd8068c3e0b71fa80e598557fad81269dd990135e66bc0a54f1b4b786d",
+      "syncedAt": "2026-10-05T15:22:42.709Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
         "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
@@ -1593,14 +1590,14 @@
           "skills/caveman-stats"
         ],
         "local": "external/writing/caveman-stats",
-        "baseline": "15581d14007fd01fb3f132016741962f34936ca2"
+        "baseline": "6571943370f7c9d4de1946481177ee7b306cd8e8"
       },
       "files": {
-        "README.md": "1dfdeab25bdd5bef287d35ea8260da83c9a1c135",
-        "SKILL.md": "762a6b05d8801c4220fb7a599cf9cd95364336b8"
+        "README.md": "b8e3293521dbd860f3520a2150beef280b60f51a",
+        "SKILL.md": "681136b629ca275da2391c72a11bcf8bcbf6eca5"
       },
-      "snapshotHash": "0cb72e34f566efd2c39683f3cee0a93699ab86cbe2beb6b0fd5e49a9b364b13d",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "snapshotHash": "c7d552a1ac18869bd0bdebae98437cd393d5cb27b28c288056b3bac2ca391671",
+      "syncedAt": "2026-10-05T15:22:42.709Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
         "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
@@ -1624,23 +1621,20 @@
       "source": {
         "repo": "alexgreensh/token-optimizer",
         "paths": [
-          "skills/fleet-auditor",
-          "plugins/token-optimizer/skills/fleet-auditor",
-          "cowork/token-optimizer/skills/fleet-auditor",
-          "openclaw/skills/fleet-auditor"
+          "plugins/token-optimizer/skills/fleet-auditor"
         ],
         "local": "external/development/fleet-auditor",
-        "baseline": "856244132d302182b1b40ccd80fd49e4eec67704"
+        "baseline": "247edced8f8baca0dab996eb8228816b821a8e11"
       },
       "files": {
         "SKILL.md": "918d4fe6e76f78be42b092154a66676fdea89510",
         "references/fleet-systems.md": "232152cec472b14061424629b0d2b53af89ab2e0",
         "references/waste-patterns.md": "378a94978ea975d4a34ff6f27c11d7b1ed1541bc",
-        "scripts/fleet.py": "366054c045b6422cd1e18974b918795570e7f22f",
-        "scripts/shared.py": "876c8301b170eec9adfad9cd419be91c3e5f99e3"
+        "scripts/fleet.py": "c0e51db138f4db546273d1615fa452323eb3b9cd",
+        "scripts/shared.py": "aa9f818bb5be935d1a7caf4b0c9e4d13b1005f3b"
       },
-      "snapshotHash": "0d2f0307588ac45bbb6975a66523bb635aefcf44e0473ddb97825e4708c9bf5e",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "snapshotHash": "53892b6cd72cd71398ca95b455dcdfa499ecaba1deb74ca151f393988c41e342",
+      "syncedAt": "2026-10-05T15:22:42.709Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
         "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
@@ -1664,19 +1658,16 @@
       "source": {
         "repo": "alexgreensh/token-optimizer",
         "paths": [
-          "skills/resume-checkpoint",
-          "plugins/token-optimizer/skills/resume-checkpoint",
-          "cowork/token-optimizer/skills/resume-checkpoint",
-          "openclaw/skills/resume-checkpoint"
+          "plugins/token-optimizer/skills/resume-checkpoint"
         ],
         "local": "external/development/resume-checkpoint",
-        "baseline": "856244132d302182b1b40ccd80fd49e4eec67704"
+        "baseline": "247edced8f8baca0dab996eb8228816b821a8e11"
       },
       "files": {
         "SKILL.md": "df46f1fd27cdbde21471429fd7f00196e91bcc17",
         "scripts/pull_checkpoint.py": "d56ab00b0c264376921b0124b8ce0e9a4acc797c"
       },
-      "snapshotHash": "88069fa6156dc035d8309c37e6a93b5620b4c075e3aa689948688694d2e7f1e6",
+      "snapshotHash": "be5d0033e5d0da763d91cc9a20b33528633b6a3bf3f97e8a6d8aad88c6097ee9",
       "syncedAt": "2026-10-05T14:55:15.979Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
@@ -1701,13 +1692,10 @@
       "source": {
         "repo": "alexgreensh/token-optimizer",
         "paths": [
-          "skills/token-coach",
-          "plugins/token-optimizer/skills/token-coach",
-          "cowork/token-optimizer/skills/token-coach",
-          "openclaw/skills/token-coach"
+          "plugins/token-optimizer/skills/token-coach"
         ],
         "local": "external/development/token-coach",
-        "baseline": "856244132d302182b1b40ccd80fd49e4eec67704"
+        "baseline": "247edced8f8baca0dab996eb8228816b821a8e11"
       },
       "files": {
         "SKILL.md": "5f47614b85452ea9189666391ac973adb5b6ea67",
@@ -1720,7 +1708,7 @@
         "references/coaching-scripts.md": "17b51dd7d0b8a11a4a89247bc3ac8cdae0888f45",
         "references/quick-reference.md": "a1361418ac17cc72ab66927cf39b29f0148b876b"
       },
-      "snapshotHash": "7dd88f285fe085e546486d21420cdd1562d213a6dc7a37993e0b349aca28c2ff",
+      "snapshotHash": "9d2b4dfc4a078f6ac309aa1b98fe52082d41342fee167cace16e75ab84e7cec0",
       "syncedAt": "2026-10-05T14:55:15.979Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
@@ -1745,18 +1733,15 @@
       "source": {
         "repo": "alexgreensh/token-optimizer",
         "paths": [
-          "skills/token-dashboard",
-          "plugins/token-optimizer/skills/token-dashboard",
-          "cowork/token-optimizer/skills/token-dashboard",
-          "openclaw/skills/token-dashboard"
+          "plugins/token-optimizer/skills/token-dashboard"
         ],
         "local": "external/development/token-dashboard",
-        "baseline": "856244132d302182b1b40ccd80fd49e4eec67704"
+        "baseline": "247edced8f8baca0dab996eb8228816b821a8e11"
       },
       "files": {
         "SKILL.md": "26b6d813783dc0a3459b3b4510f39f2c393f1560"
       },
-      "snapshotHash": "ee9f36abe0d8ce60a49bae26d7b22885fcf383c6211c13cd0e00e88b8bcddea3",
+      "snapshotHash": "d3f6ab1b6c775fe09662b242b34d486904984fd75ce2e74db25f0d586f4189b1",
       "syncedAt": "2026-10-05T14:55:15.979Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
@@ -1781,16 +1766,13 @@
       "source": {
         "repo": "alexgreensh/token-optimizer",
         "paths": [
-          "skills/token-optimizer",
-          "plugins/token-optimizer/skills/token-optimizer",
-          "cowork/token-optimizer/skills/token-optimizer",
-          "openclaw/skills/token-optimizer"
+          "plugins/token-optimizer/skills/token-optimizer"
         ],
         "local": "external/development/token-optimizer",
-        "baseline": "856244132d302182b1b40ccd80fd49e4eec67704"
+        "baseline": "247edced8f8baca0dab996eb8228816b821a8e11"
       },
       "files": {
-        "SKILL.md": "3dafe90dba0ba52d0711be748edf5270948d10a6",
+        "SKILL.md": "08866fb81eb665abd1857447cee6859b12df8da1",
         "assets/active-compression-hero.svg": "3adc47925b05d861ae33f74b3db0bc3619cf1488",
         "assets/automated-flow.svg": "a488e7f67cb99b507a4dd3ceb77c95edf3150c4e",
         "assets/bash-compression.svg": "fde52244f07336637a446536e845985961bd7d12",
@@ -1798,7 +1780,7 @@
         "assets/dashboard-demo.gif": "ff954f760ef3a29439f5f3ea43a0adf3fb198e6f",
         "assets/dashboard-demo.mp4": "66fef8910cc68cf71dd1c5d84babad6565cac55c",
         "assets/dashboard-overview.png": "b2025717ac88c528c0a0bb01a737d9eb7f6163e0",
-        "assets/dashboard.html": "bfd3a2f72c83a300337c6018a9443481f68b8ff6",
+        "assets/dashboard.html": "f33ef581d21363a0e5162ed70f6d0f7698844bcf",
         "assets/delta-mode.svg": "c5b85b855882cdac226fa58b4c0c022ca57685e2",
         "assets/fleet-demo.html": "ed9bd344ec140e9953a849abf6c05bc8c590f4c5",
         "assets/hero-terminal.svg": "cd6c4dc7d550bf5761d4ada56d36f71c3a69ea4d",
@@ -1807,13 +1789,14 @@
         "assets/logo.txt": "8aea3f3438f3754e3e7fa6ca1ee0cec24098c244",
         "assets/quality-example.svg": "0c13b6adfac54fa03d9117305ed381c69070d70e",
         "assets/quality-nudges-loops.svg": "9e266c9021cca26720979d4a743d2c42bf1008e4",
-        "assets/real-savings.svg": "3b7aa9d73f9681bc4e0c4ebfe1f841260b84766a",
+        "assets/real-savings.svg": "fef3c949225f6e6d7e310fbce4ee9b067167908d",
         "assets/session-database-flow.svg": "6ae45dc379fb91e194da062eb18cf73e6c73bb2e",
         "assets/status-bar.svg": "73d7dc9abb8f5581c4ba929bfcba0faa3b528313",
         "assets/user-profiles.svg": "c63436720ec3d67e2ec17a0f6d916c14d13476fd",
         "examples/claude-md-optimized.md": "c499d799b53117b7458c2c10789b45228c18759a",
         "examples/hooks-starter.json": "7afbac6f2261b42a6179628a86bfd216bfed9419",
         "examples/permissions-deny-template.json": "1905eadcdc4af98dccc3b18d64fc554c07239dcc",
+        "pricing/prices.json": "0ebc4dc2ab85e7cbe10fdad826f2d18105e38c22",
         "references/agent-prompts.md": "bf41208744c9284b44461cceb3b51798e7e43025",
         "references/cli-reference.md": "09f74ba59b3253954bf9a60e6aa8e27244ad15c1",
         "references/codex-workflow.md": "505c0650a1adbdfd157227c35efe4ad0f6a5e61b",
@@ -1830,22 +1813,25 @@
         "scripts/antigravity_hook_bridge.py": "a080c96a8148e9020910ccf5131d2c478c9a78c0",
         "scripts/antigravity_install.py": "4ae5a0f5cd20ba60c0b23c0c3a81c0590ab77291",
         "scripts/antigravity_proto.py": "29c43181dc83affd2eb2227fcdf7b6e0e958496b",
-        "scripts/antigravity_session.py": "1b7ac9b1bfc89b17933a0cdcac7d2064c60195e5",
-        "scripts/antigravity_state.py": "854d6b70761b645669a89818d2d14e56b35fe743",
-        "scripts/archive_result.py": "4b95d9dab21b2cf864c13fbf288203b09b10128e",
-        "scripts/bash_compress.py": "8733c42c396639c1835ed592c4c590449347ca27",
-        "scripts/bash_compress_hook.py": "16d883786094812b15eb47979710c6265e99254f",
+        "scripts/antigravity_session.py": "412156b8c8750f77dc751fe1d7bd8c78a617a3d5",
+        "scripts/antigravity_state.py": "415f4641ddfdb43df6702140637e97925967eafe",
+        "scripts/archive_result.py": "4b7cd62f2f49a8c42dfb9561606c343dd1f0b153",
+        "scripts/bash_compress.py": "c4ffea8d13abb77a7f3820c38c0e07e36b4bde46",
+        "scripts/bash_compress_hook.py": "fb4e3b9c6552585f4cfff96a0b0ff8a34d37a61e",
         "scripts/bash_hook.py": "209b12328f5ad60df5b5c41bae46ca2f943aba67",
         "scripts/bash_whitelist.py": "38c4110126363300e2411217f63ead097fa75986",
         "scripts/build_output_compress.py": "5631de0df41bea2471960cfd6665e944779b5735",
-        "scripts/codex_compact_prompt.py": "4962d5efc61fcc97c31c8ac139eda0755d1d6ac3",
-        "scripts/codex_doctor.py": "de761db48ab53890ea7bfe80eb9ecbcdec1e50f1",
+        "scripts/codex_command_compress.py": "49b47e8b5de4e86d59646e224701001cb8a3502c",
+        "scripts/codex_compact_prompt.py": "19c3e97ec6400ef358432b9c1e9399959603d026",
+        "scripts/codex_doctor.py": "740792bbadef26d0ccee2ba303a18b48b12537f0",
         "scripts/codex_hook_bridge.py": "8159ab4cec6c4796789f4a81d1a6b8f6959bca65",
-        "scripts/codex_install.py": "09dfbfe2bfe53e662930e9f51d770328c432b29a",
+        "scripts/codex_install.py": "3365c60c4705f7371f3b2555be0b3809bc5f1677",
         "scripts/codex_io.py": "a8eb9d07ff022a5bf74a2f2681436c05d569777c",
-        "scripts/codex_session.py": "ee07594a7dfa97f89538809ff117a62a3b596e4c",
+        "scripts/codex_log_index.py": "210405cd6d7025b4506e0865fe6fa334a79f9849",
+        "scripts/codex_models.py": "20f6ae3ab5510ddb60f0c5db82d597c634c76eea",
+        "scripts/codex_session.py": "135df68329bc1afb5b828dbac65c674b665f9f9b",
         "scripts/codex_state.py": "affa645bf97f1e5ca0e66fe2ea1f811431dad95c",
-        "scripts/codex_statusline.py": "1646e93a01a655447b652df87c7a14326fc81cd4",
+        "scripts/codex_statusline.py": "385d9542559826e9761997acf1be7a487baac116",
         "scripts/command_filters.py": "8846bcf32b0045449483ea960b992a239cd381db",
         "scripts/compression_backfill.py": "e24ddf26620aeef6c0eea1550ab3edecb3f4ef2a",
         "scripts/compression_log.py": "abf87c066e8ef461dfe89463e2c5e35332dc85e6",
@@ -1854,69 +1840,69 @@
         "scripts/copilot_doctor.py": "bbacc2a5125f3d10b55715a32d8147de20576e06",
         "scripts/copilot_hook_bridge.py": "a44f878b2dc537334938a6d50f4d7fed942759ac",
         "scripts/copilot_install.py": "41e8df3535538c1c87d9fcac29a2b10e2e8efeeb",
-        "scripts/copilot_session.py": "f9d4b74872e8fb1b4ba9cc10f2c52df3889520e7",
+        "scripts/copilot_session.py": "9e542a1fa35c3d3e6b8ff4934df5d7579c69236f",
         "scripts/copilot_state.py": "ab2da88c6f1dd33ddffb201ad2cf689df3cc5dbc",
         "scripts/copilot_vscode.py": "ac27926520b430a3441f3e08677619357a3c3a78",
-        "scripts/cowork_doctor.py": "3877d2d5ffc138763a597cee52900f3ba27e09a6",
-        "scripts/cowork_install.py": "85953bbe60ad7b3a3beda9fe1354e408297049ab",
-        "scripts/credential_patterns.py": "5025b5f0ab799ef6188bb9ce46071fac53f889ac",
+        "scripts/cowork_doctor.py": "38043c3cf668cb006f05e79cc6e3af45f7b12132",
+        "scripts/cowork_install.py": "12cc4b8cecf92f6350ba6d70e458f95b758d03f4",
+        "scripts/credential_patterns.py": "6fe01fd4d5b241c2db1619a98c41d09285619e7e",
         "scripts/cursor_doctor.py": "281a1629d28a917f9febeff51f83909b7907614c",
         "scripts/cursor_hook_bridge.py": "fe9fa1859076840909de89fc785bbc3542ef0b45",
         "scripts/cursor_install.py": "04d8dcadf9381a1f349fbd1cac9a278814a2c659",
-        "scripts/cursor_session.py": "a93f799923b6c9d1ec9182104eba11bfea980ed5",
+        "scripts/cursor_session.py": "5769c53c51000c695aad6be98ec29359d52db53f",
         "scripts/cursor_state.py": "112b8eb3ce2b8459b82b28e8c037edb3d9dd560f",
         "scripts/delta_diff.py": "f02cf83135fb5c42ab156076adaf71e8319e7333",
         "scripts/detectors/__init__.py": "da625a5166b2c6b6b61376afe9387641cc858df8",
         "scripts/detectors/bad_decomposition.py": "6abb051f99db8c5aafe097386418b0b5f1fd0d8c",
-        "scripts/detectors/cache_instability.py": "a74949c3d111c1de2367fc10436179e1e66d8f48",
+        "scripts/detectors/cache_instability.py": "bf4e7012b152e1ae9c341b09eb7fde43ee246375",
         "scripts/detectors/looping.py": "124b4d9719f05068b77231a2edc72849c2de50a1",
-        "scripts/detectors/output_waste.py": "830a620367bbf5f4589cd88c57541f9cf7391afe",
-        "scripts/detectors/overpowered.py": "dcb63e790433b88920bdf63ff5a624bb7a6932e5",
+        "scripts/detectors/output_waste.py": "f41d726f405495c53a33a043fa80bba3a50bef31",
+        "scripts/detectors/overpowered.py": "391adeb8a428724c47eff1fba5d53a2cf6488a86",
         "scripts/detectors/pdf_ingestion.py": "387ee7bac880da7c9455d55e1c5a21a5552cc719",
         "scripts/detectors/registry.py": "ac84226b30c6813fe1c3987a08bc3018b42b1fd6",
-        "scripts/detectors/respond_to_bash.py": "af3ab2046958795456412c99a23940e6e1fa4c9a",
+        "scripts/detectors/respond_to_bash.py": "b2cc3d050aadd66512c0d8daaefa3ab9538f77ca",
         "scripts/detectors/retry_churn.py": "f80b90cb3c06156e8939e19c1eb930e83ddbc720",
         "scripts/detectors/tool_cascade.py": "1b8c0f5b8b90246a4983ce1d5d7d47636023b953",
         "scripts/detectors/wasteful_thinking.py": "3428147ceb05ea53ae3dfcd8110d29918329673d",
-        "scripts/detectors/weak_model.py": "82262b42b6d7c9eee363f1eff15ee78a9f0c02cb",
+        "scripts/detectors/weak_model.py": "fe98fabcdb5e6c7ac1b5dd744c53e485d22cafb5",
         "scripts/detectors/websearch_routing.py": "9cf8794faaff2450c46eb1176bb42c02ea809d37",
         "scripts/grok_doctor.py": "d5fe4462a31f4e45e0c25e7963aca1063c131dcb",
         "scripts/grok_hook_bridge.py": "0e9f57d74a5c55ac4a62aa392dd8feb3f6f49cb0",
         "scripts/grok_install.py": "b73479ef27da24e6a8b5980ad863ab67badd8e57",
-        "scripts/grok_session.py": "1ca6a12d1bdf67875d8f08b19717043ba18bdea0",
-        "scripts/grok_state.py": "b2f3a51a6cd1b5692a96d32d1b7b439cac3d21b2",
+        "scripts/grok_session.py": "1fe8819ea19db5bc07b066415263beb0f27f1f48",
+        "scripts/grok_state.py": "b1804d57a0f240f082ee354234122ff552dd067f",
         "scripts/hermes_doctor.py": "c4b50d887ae62a8b235f0b5e214958864723ae23",
-        "scripts/hermes_hook_bridge.py": "0231b6269af06c42d932685e0ec453051dc9d3d8",
+        "scripts/hermes_hook_bridge.py": "2306c9403bd876db4006910effbac5930537cb44",
         "scripts/hermes_install.py": "500fe2642f574f1996545b654a4c59d6c6a2a839",
-        "scripts/hermes_session.py": "5e3257c79504ee6c1dad2f2bb48922d53fe26d06",
-        "scripts/hermes_state.py": "8894b7dfd298f2deae538303434d120d7c2bc313",
-        "scripts/hook_io.py": "250895c2daab33237ff525eb57d2c2f7d844f86f",
-        "scripts/hook_runtime.py": "5325d8262f3f0479917ce4b643729565116c0589",
+        "scripts/hermes_session.py": "b5c5981ff594cd195f21110681b80d90ac93dd2f",
+        "scripts/hermes_state.py": "9e46a5432fe794383df3d29d51b95c48d3e7c796",
+        "scripts/hook_io.py": "4b75b60fd35af44469cba0c7d30e52b5ffe025da",
+        "scripts/hook_runtime.py": "dc249b0ebb4aab849fe18ac2ea905c31eaa5744f",
         "scripts/injection.py": "1f6e99622a57167c8dfe75931c2bcd30bc2d11b6",
         "scripts/install_reconcile.py": "2cf012f75127da5140b91bb9256b78a9ac2b4f74",
-        "scripts/measure.py": "b1420d48f22dc6fe8667ac377117591c5f57bf2c",
+        "scripts/measure.py": "e725ddfcb892e4f3e4bb572af8e205eff7527610",
         "scripts/outline.py": "45d288c52cd99fd0774aa5a30d623c74f1b8fc2e",
         "scripts/pipeline_analyzer.py": "688c1ffabda46297c71ef5bdb2cbad5cb90fdea9",
         "scripts/plugin_env.py": "0325d9bf59ad71d9d5f202d535d8b25794fa04fe",
         "scripts/py_trust.py": "cd40748155a35d0539d9e6058e3dc42d2dec0685",
         "scripts/quality_cache_gate.py": "91622f00258c816611d8346ff2036dd8ac9d3042",
-        "scripts/read_cache.py": "37756f256512b1cbd20a99fdc652a39f3f52a5b2",
-        "scripts/refetch_fingerprint.py": "2c5f7ec229b132c997c512d2feb2c8ba9da7a0ba",
-        "scripts/refetch_guard.py": "b83ec805046183dba7a1ee3765fc5af446bef94a",
+        "scripts/read_cache.py": "cb6c4f6805a9619a7e5c4be994ebb05f27e90669",
+        "scripts/refetch_fingerprint.py": "aeb63a67b39c083e291ffc110d213738eca2584f",
+        "scripts/refetch_guard.py": "d7c34708ffa0bb23f43ffc05ea9ff9b7bdfdc904",
         "scripts/routing_advisor.py": "ed081455f8424836db28ab8cc2323489a4d68566",
-        "scripts/runtime_env.py": "8d8389a1cf45d5f9edccd4c632e6c7ff55f0c3f2",
-        "scripts/session_store.py": "3ef82ff8fa5bfea967c829404bafd62b9c9cdb2e",
+        "scripts/runtime_env.py": "617f1fa38df01c224ebe4471bb23c56b2836fa96",
+        "scripts/session_store.py": "3a8eb716ddd8429c0757ec1ad2df90a8e11aab55",
         "scripts/spawn_utils.py": "f5265d7997ae79bebb701214eccbcc75aba18bec",
-        "scripts/statusline.js": "be73bbbce760d71c604e36cf4dccd7a0ca27eda4",
+        "scripts/statusline.js": "2c91c10b2fa38450596fb4c1a78d4e20ab5e66bb",
         "scripts/structure_map.py": "be255f3d9cccfca2fc0e6c2a17a863dfcd7aa676",
         "scripts/structure_map_ts.py": "1d1114ffe1d61fd9b5bf3d9803e5b9bddafd61f9",
         "scripts/structure_replay.py": "e39abed383283117bd54e8f40b995530e190272e",
-        "scripts/thrash_guard.py": "8eecb44a5824d8c3cdb798cb95f6ca3cf6b4aa87",
+        "scripts/thrash_guard.py": "dcc667ec0f9e1f91f676e8eb1683b889d0b77d1d",
         "scripts/token_estimate.py": "da7b72a1d1cadaca1fc1a7e726d79b60ea3c7ff9",
         "scripts/utf8_io.py": "a68a9df821cd0fcef4fee7a15fb74433b3fd8fd8"
       },
-      "snapshotHash": "2b79eff2fbcc30a4024eb74207e372964029bb045d46cd444af62b44fc118f4a",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
+      "snapshotHash": "30f73f085adf403b1cefc84d09128f046e0105ed6632fc4f5bfb96a9e792d63a",
+      "syncedAt": "2026-10-05T15:22:42.709Z",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
         "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",

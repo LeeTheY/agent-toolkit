@@ -18,7 +18,7 @@ for(const entry of entries){
  let local,source,callName=entry.id,commands=[];
  if(entry.kind==='external'){
   const ref=externalSource(entry.id);local=join(skills,ref.local);
-  source={...ref,baseline:ref.unrecorded?null:commits[ref.repo]??null};
+  source={...ref,baseline:commits[ref.repo]??null};
  }else if(entry.kind==='custom'){
   local=join(skills,'custom/skills',entry.id);source={repo:'LeeTheY/agent-skills',local:`custom/skills/${entry.id}`,baseline:sourceCommit(skills)};
  }else{

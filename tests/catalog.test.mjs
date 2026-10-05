@@ -64,3 +64,12 @@ test('상황별 프롬프트는 호출명을 포함하고 도구별 사용 순�
  assert.ok(presentation.promptExamples.some(p=>p.prompt.includes('qna 모드')&&p.prompt.includes('본편과 백업 슬라이드는 새로 만들지 마')));
  for(const id of ['frontend','persona'])assert.ok(tools.find(t=>t.id===id).prompt.includes('원본 저장소 밖'));
 });
+test('writing-plans와 Token Optimizer의 설치 출처가 명시된 기준으로 연결된다',async()=>{
+ const {externalSource}=await import('../scripts/sources.mjs');
+ const {tools}=JSON.parse(await readFile(new URL('../src/data/catalog.json',import.meta.url),'utf8'));
+ const writing=tools.find(t=>t.id==='writing-plans');
+ assert.match(writing.source.baseline,/^[a-f0-9]{40}$/);
+ assert.equal(writing.source.baseline,tools.find(t=>t.id==='brainstorming').source.baseline);
+ assert.deepEqual(externalSource('writing-plans').paths,['skills/writing-plans']);
+ for(const id of ['fleet-auditor','resume-checkpoint','token-coach','token-dashboard','token-optimizer'])assert.deepEqual(externalSource(id).paths,[`plugins/token-optimizer/skills/${id}`]);
+});
