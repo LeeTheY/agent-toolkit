@@ -1,5 +1,6 @@
+import type { Guide } from '../src/types.ts';
 // 원본은 읽기 전용으로 참조하며, 웹사이트용 안내만 관리합니다.
-export const guides = {
+export const guides: Record<string, Guide> = {
  frontend: {
   usage: ['Node.js 24 이상에서 setup frontend로 의존성·Chromium을 준비하고 호출 스킬을 연결합니다.', '기존 앱의 경로·로컬 URL을 확인하고 init → doctor → assess 순서로 진행합니다. 설정과 결과는 원본 저장소 밖의 별도 작업 폴더에 지정합니다.', '실제 클릭·입력과 결과 단언을 시나리오에 넣습니다. 기본 경로 방문과 모바일 화면 크기만으로 기능·터치 검증을 완료했다고 판단하지 않습니다.', 'waiting-for-agent이면 요청의 PNG와 스키마를 읽고 response.json을 작성한 뒤 resume합니다. 종료 코드 2만으로 실패라고 판단하지 않습니다.', '최종 상태, 화면·상호작용 coverage와 미검증 범위를 확인합니다. 소스 개선은 별도 요청이 있을 때만 진행합니다.'],
   promptExamples: [{title:'저장된 화면 재평가',prompt:'지정한 기존 결과 폴더의 저장 증거를 reevaluate로 다시 평가해줘. 각 PNG를 직접 확인하고 이전 결과와 차이를 설명해줘. 현재 앱을 다시 실행한 결과와 구분하고, 새 결과는 원본 저장소 밖에 저장해줘.'},{title:'반응형·상태 유지 점검',prompt:'현재 앱의 핵심 사용자 흐름에 클릭·입력·결과 단언을 추가해 평가해줘. 지원 화면 크기와 테마를 확인하고 저장 후 reload로 상태 유지도 검사해줘. 앱 소스와 하네스 저장소는 수정하지 말고 설정·결과는 별도 작업 폴더에 저장해줘.'}]

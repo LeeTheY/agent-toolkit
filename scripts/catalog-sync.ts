@@ -1,12 +1,15 @@
+import type { Catalog, EditorialEntry, FileHashes, Tool, ToolSource, Workflow } from '../src/types.ts';
+interface SyncOptions { skills: string; harnesses: string; entries: EditorialEntry[]; workflows: Workflow[]; previous?: Catalog | null; now?: string }
+export interface SyncResult { catalog: Catalog; changed: string[]; pending: string[]; unchanged: boolean }
 import { readFile, readdir, lstat } from 'node:fs/promises';
 import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { localFiles, snapshotHash, blobHash } from './lib.mjs';
-import { externalSource } from './sources.mjs';
-const equal=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
-const sorted=files=>Object.fromEntries(Object.entries(files).sort(([a],[b])=>a.localeCompare(b)));
-async function discover(dir,prefix=''){
- const result=[];
+import { localFiles, snapshotHash, blobHash } from './lib.ts';
+import { externalSource } from './sources.ts';
+const equal=(a: unknown,b: unknown)=>JSON.stringify(a)===JSON.stringify(b);
+const sorted=(files: FileHashes)=>Object.fromEntries(Object.entries(files).sort(([a],[b])=>a.localeCompare(b)));
+async function discover(dir: string,prefix=''): Promise<string[]>{
+ const result: string[]=[];
  for(const e of await readdir(join(dir,prefix),{withFileTypes:true})){
   if(['.git','node_modules','.DS_Store','__pycache__'].includes(e.name))continue;
   const p=prefix?`${prefix}/${e.name}`:e.name;
@@ -14,14 +17,14 @@ async function discover(dir,prefix=''){
  }
  return result.sort();
 }
-export async function buildCatalog({skills,harnesses,entries,workflows,previous,now=new Date().toISOString()}){
+export async function buildCatalog({skills,harnesses,entries,workflows,previous,now=new Date().toISOString()}: SyncOptions): Promise<SyncResult>{
  if(new Set(entries.map(t=>t.id)).size!==entries.length)throw Error('Duplicate tool IDs');
  const manifest=await readFile(join(skills,'external/SOURCES.md'),'utf8');
  const commits=Object.fromEntries([...manifest.matchAll(/^- ([\w.-]+\/[\w.-]+): ([a-f0-9]{40})$/gm)].map(m=>[m[1],m[2]]));
- const revision=(dir,paths)=>execFileSync('git',['-C',dir,'log','-1','--format=%H','HEAD','--',...paths],{encoding:'utf8'}).trim();
- const tools=[];
+ const revision=(dir: string,paths: string[])=>execFileSync('git',['-C',dir,'log','-1','--format=%H','HEAD','--',...paths],{encoding:'utf8'}).trim();
+ const tools: Tool[]=[];
  for(const entry of entries){
-  let source,files,name,callName=entry.id,commands=[];
+  let source: ToolSource; let files: FileHashes | undefined; let name: string | undefined; let callName=entry.id; let commands: string[]=[];
   if(entry.kind==='external'){
    const ref=externalSource(entry.id);
    source={...ref,baseline:commits[ref.repo]??null};
@@ -57,7 +60,7 @@ export async function buildCatalog({skills,harnesses,entries,workflows,previous,
  const known=new Set(tools.map(t=>t.kind==='harness'?`harnesses/${t.source.local}`:t.source.local));
  const pending=detected.filter(p=>!known.has(p));
  const same=equal(previous?.tools,JSON.parse(JSON.stringify(tools)))&&equal(previous?.workflows,workflows)&&equal(previous?.pendingSources??[],pending);
- const catalog=JSON.parse(JSON.stringify({syncedAt:same?previous.syncedAt:now,tools,workflows,pendingSources:pending}));
+ const catalog: Catalog=JSON.parse(JSON.stringify({syncedAt:same&&previous?previous.syncedAt:now,tools,workflows,pendingSources:pending}));
  const changed=tools.filter(t=>{const old=previous?.tools.find(o=>o.id===t.id);return !equal(old,t);}).map(t=>t.id);
  return {catalog,changed,pending,unchanged:same};
 }

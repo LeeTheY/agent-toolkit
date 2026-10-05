@@ -1,4 +1,5 @@
-export function externalSource(id) {
+import type { ExternalSource } from '../src/types.ts';
+export function externalSource(id: string): ExternalSource {
   if (['pdf','docx','pptx','xlsx','frontend-design'].includes(id)) return {repo:'anthropics/skills',paths:[`skills/${id}`],local:`external/${id==='frontend-design'?'frontend':'document'}/${id}`};
   if (['brainstorming','writing-plans'].includes(id)) return {repo:'obra/superpowers',paths:[`skills/${id}`],local:`external/development/${id}`};
   if (['grill-me','grilling'].includes(id)) return {repo:'mattpocock/skills',paths:[`skills/productivity/${id}`],local:`external/development/${id}`};

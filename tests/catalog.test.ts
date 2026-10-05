@@ -1,8 +1,9 @@
+import type { Catalog, GitTreeEntry, ToolKind } from '../src/types.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { changes, compareSkill, blobHash } from '../scripts/lib.mjs';
-const blob=(path,sha)=>({path,sha,type:'blob'});
+import { changes, compareSkill, blobHash } from '../scripts/lib.ts';
+const blob=(path: string,sha: string): GitTreeEntry=>({path,sha,type:'blob'});
 test('같은 저장소의 다른 스킬 변경은 업데이트로 표시하지 않는다',()=>{
  const result=compareSkill([blob('skills/a/SKILL.md','one'),blob('skills/b/SKILL.md','old')],[blob('skills/a/SKILL.md','one'),blob('skills/b/SKILL.md','new')],{paths:['skills/a']},{'SKILL.md':'one'});
  assert.equal(result.status,'current');assert.equal(result.personal,'same');
@@ -28,12 +29,12 @@ test('Git blob 해시와 파일 삭제 비교가 안정적이다',()=>{
  assert.deepEqual(changes({'old':'x'},{}),[{path:'old',type:'removed'}]);
 });
 test('44개 항목에 실제 호출명·프롬프트·파일 근거가 있고 경로가 노출되지 않는다',async()=>{
- const raw=await readFile(new URL('../src/data/catalog.json',import.meta.url),'utf8');const catalog=JSON.parse(raw);
+ const raw=await readFile(new URL('../src/data/catalog.json',import.meta.url),'utf8');const catalog: Catalog=JSON.parse(raw);
  assert.equal(catalog.tools.length,44);assert.equal(new Set(catalog.tools.map(t=>t.id)).size,44);
- for(const kind of ['harness','custom','external'])assert.equal(catalog.tools.filter(t=>t.kind===kind).length,{harness:2,custom:11,external:31}[kind]);
+ for(const kind of ['harness','custom','external'] as ToolKind[])assert.equal(catalog.tools.filter(t=>t.kind===kind).length,{harness:2,custom:11,external:31}[kind]);
  for(const t of catalog.tools){assert.ok(t.callName);assert.ok(t.prompt.startsWith('$'+t.callName));assert.ok(t.files['SKILL.md']);assert.ok(t.usage.length);assert.ok(t.source.repo);}
  assert.doesNotMatch(raw,/\/Users\/|ghp_|github_pat_/);
- assert.notEqual(catalog.tools.find(t=>t.id==='humanizer').callName,catalog.tools.find(t=>t.id==='korean-humanizer').callName);
+ assert.notEqual(catalog.tools.find(t=>t.id==='humanizer')!.callName,catalog.tools.find(t=>t.id==='korean-humanizer')!.callName);
  for(const w of catalog.workflows)for(const id of w.steps)assert.ok(catalog.tools.some(t=>t.id===id));
 });
 test('동일 SKILL 해시라도 전체 파일이 일치하는 사본을 선택한다',()=>{
@@ -50,26 +51,26 @@ test('루트 스킬의 README와 CI 변경은 설치 범위에서 제외한다',
  assert.equal(result.status,'current');assert.equal(result.personal,'same');
 });
 test('동일 baseline이라도 로컬 수정이 달라지면 snapshot 식별자가 달라진다',async()=>{
- const {snapshotHash}=await import('../scripts/lib.mjs');const source={repo:'sample/skills',baseline:'abc'};
+ const {snapshotHash}=await import('../scripts/lib.ts');const source={repo:'sample/skills',baseline:'abc'};
  assert.notEqual(snapshotHash(source,{'SKILL.md':'one'}),snapshotHash(source,{'SKILL.md':'two'}));
  assert.equal(snapshotHash(source,{b:'2',a:'1'}),snapshotHash(source,{a:'1',b:'2'}));
 });
 test('상황별 프롬프트는 호출명을 포함하고 도구별 사용 순서를 유지한다',async()=>{
- const {tools}=JSON.parse(await readFile(new URL('../src/data/catalog.json',import.meta.url),'utf8'));
+ const {tools}: Catalog=JSON.parse(await readFile(new URL('../src/data/catalog.json',import.meta.url),'utf8'));
  for(const tool of tools){
   if(tool.kind!=='external')assert.ok(tool.usage.length>=3);
   for(const example of tool.promptExamples??[]){assert.ok(example.title);assert.ok(example.prompt.startsWith('$'+tool.callName+'로 '));}
  }
  const presentation=tools.find(t=>t.id==='universal-project-presentation');
- assert.ok(presentation.promptExamples.some(p=>p.prompt.includes('qna 모드')&&p.prompt.includes('본편과 백업 슬라이드는 새로 만들지 마')));
- for(const id of ['frontend','persona'])assert.ok(tools.find(t=>t.id===id).prompt.includes('원본 저장소 밖'));
+ assert.ok(presentation!.promptExamples!.some(p=>p.prompt.includes('qna 모드')&&p.prompt.includes('본편과 백업 슬라이드는 새로 만들지 마')));
+ for(const id of ['frontend','persona'])assert.ok(tools.find(t=>t.id===id)!.prompt.includes('원본 저장소 밖'));
 });
 test('writing-plans와 Token Optimizer의 설치 출처가 명시된 기준으로 연결된다',async()=>{
- const {externalSource}=await import('../scripts/sources.mjs');
- const {tools}=JSON.parse(await readFile(new URL('../src/data/catalog.json',import.meta.url),'utf8'));
+ const {externalSource}=await import('../scripts/sources.ts');
+ const {tools}: Catalog=JSON.parse(await readFile(new URL('../src/data/catalog.json',import.meta.url),'utf8'));
  const writing=tools.find(t=>t.id==='writing-plans');
- assert.match(writing.source.baseline,/^[a-f0-9]{40}$/);
- assert.equal(writing.source.baseline,tools.find(t=>t.id==='brainstorming').source.baseline);
+ assert.match(writing!.source.baseline!,/^[a-f0-9]{40}$/);
+ assert.equal(writing!.source.baseline,tools.find(t=>t.id==='brainstorming')!.source.baseline);
  assert.deepEqual(externalSource('writing-plans').paths,['skills/writing-plans']);
  for(const id of ['fleet-auditor','resume-checkpoint','token-coach','token-dashboard','token-optimizer'])assert.deepEqual(externalSource(id).paths,[`plugins/token-optimizer/skills/${id}`]);
 });

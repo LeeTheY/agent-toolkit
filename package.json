@@ -4,16 +4,16 @@
   "version": "1.0.0",
   "type": "module",
   "engines": {
-    "node": ">=22"
+    "node": ">=22.18.0"
   },
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "build": "tsc -b && vite build",
+    "build": "npm run typecheck && vite build",
     "preview": "vite preview --host 127.0.0.1",
-    "sync": "node scripts/sync-local.mjs",
-    "check:updates": "node scripts/check-updates.mjs",
-    "test": "node --test tests/*.test.mjs",
-    "typecheck": "tsc -b"
+    "sync": "node scripts/sync-local.ts",
+    "check:updates": "node scripts/check-updates.ts",
+    "test": "node --test tests/*.test.ts",
+    "typecheck": "tsc -b tsconfig.json tsconfig.node.json"
   },
   "dependencies": {
     "@fontsource-variable/noto-sans-kr": "^5.3.0",
@@ -22,6 +22,7 @@
     "react-dom": "^19.3.0"
   },
   "devDependencies": {
+    "@types/node": "^22.20.5",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.2",

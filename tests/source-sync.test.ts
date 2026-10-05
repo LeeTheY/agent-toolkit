@@ -1,24 +1,26 @@
+import type { TestContext } from 'node:test';
+import type { ToolKind, EditorialEntry } from '../src/types.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtemp, mkdir, writeFile, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { execFileSync as gitRun } from 'node:child_process';
-import { buildCatalog } from '../scripts/catalog-sync.mjs';
+import { buildCatalog } from '../scripts/catalog-sync.ts';
 const hash='a'.repeat(40);
 const record={id:'writing-plans',repo:'obra/superpowers',local:'external/development/writing-plans',path:'skills/writing-plans',baseline:hash,callName:'writing-plans',files:{'SKILL.md':hash}};
-const entry=(id,kind)=>({id,kind,title:id,category:'test',summary:'summary',when:'when',prompt:'실행해줘.',note:'note'});
-async function fixture(t){
+const entry=(id: string,kind: ToolKind): EditorialEntry=>({id,kind,title:id,category:'test',summary:'summary',when:'when',prompt:'실행해줘.',note:'note'});
+async function fixture(t: TestContext){
  const root=await mkdtemp(join(tmpdir(),'toolkit-sync-'));t.after(()=>rm(root,{recursive:true,force:true}));
  const skills=join(root,'skills'),harnesses=join(root,'harnesses');
- const put=async(root,path,body)=>{const target=join(root,path);await mkdir(join(target,'..'),{recursive:true});await writeFile(target,body);};
+ const put=async(root: string,path: string,body: string)=>{const target=join(root,path);await mkdir(join(target,'..'),{recursive:true});await writeFile(target,body);};
  for(const dir of [skills,harnesses]){await mkdir(dir);gitRun('git',['init','-q',dir]);}
  await put(skills,'custom/skills/sample/SKILL.md','---\nname: sample\n---\noriginal');
  await put(skills,'external/SOURCES.md',`- obra/superpowers: ${hash}\n`);
  await put(skills,record.local+'/SKILL.md','---\nname: writing-plans\n---\noriginal');
  await put(harnesses,'skills/frontend-harness/SKILL.md','---\nname: frontend-harness\n---\nwrapper');
  await put(harnesses,'harnesses/frontend/engine.ts','export const version=1;');
- const commit=dir=>{gitRun('git',['-C',dir,'add','.']);gitRun('git',['-C',dir,'-c','user.name=Fixture','-c','user.email=fixture@example.invalid','commit','-qm','fixture']);};
+ const commit=(dir: string)=>{gitRun('git',['-C',dir,'add','.']);gitRun('git',['-C',dir,'-c','user.name=Fixture','-c','user.email=fixture@example.invalid','commit','-qm','fixture']);};
  commit(skills);commit(harnesses);
  return {skills,harnesses,put,commit,entries:[entry('sample','custom'),entry('frontend','harness'),entry('writing-plans','external')],workflows:[],now:'2026-10-06T00:00:00Z'};
 }

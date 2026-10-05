@@ -1,12 +1,13 @@
+import type { Catalog } from '../src/types.ts';
 import { readFile, writeFile, mkdir, rename } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
 import { homedir } from 'node:os';
-import { entries, workflows } from '../content/entries.mjs';
-import { buildCatalog } from './catalog-sync.mjs';
+import { entries, workflows } from '../content/entries.ts';
+import { buildCatalog } from './catalog-sync.ts';
 if(process.argv.length>2)throw Error('지원하지 않는 옵션입니다. 로컬 원본 폴더를 준비하고 npm run sync를 실행하세요.');
 const root=resolve(import.meta.dirname,'..');
 const file=join(root,'src/data/catalog.json');
-const previous=await readFile(file,'utf8').then(JSON.parse).catch(()=>null);
+const previous: Catalog | null=await readFile(file,'utf8').then(JSON.parse).catch(()=>null);
 const result=await buildCatalog({skills:process.env.AGENT_SKILLS_HOME||join(homedir(),'agent/agent-skills'),harnesses:process.env.AGENT_HARNESSES_HOME||join(homedir(),'agent/agent-harnesses'),entries,workflows,previous});
 if(!result.unchanged){await mkdir(join(root,'src/data'),{recursive:true});await writeFile(file+'.tmp',JSON.stringify(result.catalog,null,2)+'\n');await rename(file+'.tmp',file);}
 if(process.env.SYNC_REPORT){

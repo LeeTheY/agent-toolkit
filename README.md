@@ -10,7 +10,9 @@
 
 ## 시작하기
 
-Node.js 24 LTS와 npm을 권장합니다.
+Node.js 24 LTS와 npm을 권장합니다. 최소 지원 버전은 Node.js 22.18.0입니다.
+
+프론트엔드(`src/`)뿐 아니라 콘텐츠(`content/`), 동기화·업데이트 스크립트(`scripts/`), 테스트(`tests/`)도 TypeScript로 관리합니다. `npm run typecheck`는 브라우저와 Node 코드를 각각 strict 모드로 검사하며, 빌드 시에도 동일 검사를 실행합니다. Node 스크립트는 내장 타입 제거 기능으로 `.ts`를 직접 실행하므로 별도 런타임 패키지가 필요 없습니다.
 
 ```bash
 npm ci
@@ -42,7 +44,7 @@ AGENT_HARNESSES_HOME="$HOME/agent/agent-harnesses" \
 npm run sync
 ```
 
-동기화는 원본 파일을 수정하지 않고 스킬 메타데이터와 파일 해시만 수집합니다. 하네스는 호출 스킬과 Git 추적 엔진 파일을 함께 확인합니다. 읽기 실패 시 기존 카탈로그를 유지합니다. 전체 외부 스킬 원문, 개인 실행 기록, 로그, 비밀값은 포함하지 않습니다. 도구별 한국어 소개와 프롬프트는 `content/entries.mjs`와 `content/guides.mjs`에서 관리합니다. 새로운 도구를 추가하면 이 파일과 `scripts/sources.mjs`의 원본 매핑을 먼저 등록합니다.
+동기화는 원본 파일을 수정하지 않고 스킬 메타데이터와 파일 해시만 수집합니다. 하네스는 호출 스킬과 Git 추적 엔진 파일을 함께 확인합니다. 읽기 실패 시 기존 카탈로그를 유지합니다. 전체 외부 스킬 원문, 개인 실행 기록, 로그, 비밀값은 포함하지 않습니다. 도구별 한국어 소개와 프롬프트는 `content/entries.ts`와 `content/guides.ts`에서 관리합니다. 새로운 도구를 추가하면 이 파일과 `scripts/sources.ts`의 원본 매핑을 먼저 등록합니다.
 
 `npm run sync` 뒤에는 반드시 `npm run check:updates`를 실행해 새 로컬 스냅샷 기준으로 비교합니다. 원본 매핑이나 로컬 파일이 바뀌면 기존 비교 결과는 화면에서 무효화됩니다. 변경된 `src/data/`를 커밋·push하면 사이트에 반영됩니다. 브라우저는 Mac 파일을 직접 읽거나 로컬 명령을 실행하지 않습니다. 즐겨찾기와 테마는 해당 브라우저에만 저장됩니다.
 
@@ -69,12 +71,12 @@ Vercel 프로젝트 이름은 `agent-toolkit`입니다. GitHub 저장소를 연�
 ## 구조
 
 ```text
-content/entries.mjs         한국어 소개·추천 프롬프트·작업별 가이드
-content/guides.mjs          도구별 사용 순서·상황별 프롬프트
-scripts/sources.mjs         외부 출처와 경로 매핑
-scripts/sync-local.mjs      로컬 스냅샷 생성
-scripts/check-updates.mjs   GitHub 원본 비교
-scripts/lib.mjs             파일 해시·경로 선택·차이 계산
+content/entries.ts         한국어 소개·추천 프롬프트·작업별 가이드
+content/guides.ts          도구별 사용 순서·상황별 프롬프트
+scripts/sources.ts         외부 출처와 경로 매핑
+scripts/sync-local.ts      로컬 스냅샷 생성
+scripts/check-updates.ts   GitHub 원본 비교
+scripts/lib.ts             파일 해시·경로 선택·차이 계산
 src/data/                  배포되는 카탈로그와 업데이트 상태
 src/App.tsx                검색·목록·상세·즐겨찾기 화면
 src/styles.css             반응형·테마·접근성 스타일
