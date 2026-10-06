@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-05T15:22:42.709Z",
+  "syncedAt": "2026-10-06T15:02:11.985Z",
   "tools": [
     {
       "id": "frontend",
@@ -15,9 +15,16 @@
         "기존 앱의 경로·로컬 URL을 확인하고 init → doctor → assess 순서로 진행합니다. 설정과 결과는 원본 저장소 밖의 별도 작업 폴더에 지정합니다.",
         "실제 클릭·입력과 결과 단언을 시나리오에 넣습니다. 기본 경로 방문과 모바일 화면 크기만으로 기능·터치 검증을 완료했다고 판단하지 않습니다.",
         "waiting-for-agent이면 요청의 PNG와 스키마를 읽고 response.json을 작성한 뒤 resume합니다. 종료 코드 2만으로 실패라고 판단하지 않습니다.",
-        "최종 상태, 화면·상호작용 coverage와 미검증 범위를 확인합니다. 소스 개선은 별도 요청이 있을 때만 진행합니다."
+        "최종 상태, 화면·상호작용 coverage와 미검증 범위를 확인합니다. 소스 개선은 별도 요청이 있을 때만 진행합니다.",
+        "restore는 알려진 패치 이전 기존 텍스트 파일의 복원 계획을 만들며 --apply는 명시적으로 요청된 경우에만 사용합니다. 복원 후 새 assess로 확인합니다.",
+        "export-fixture/replay-fixture는 저장 교환의 오프라인 계약 검증입니다. 브라우저 재실행·이미지 재채점과 구분하고 구성 불일치에서 live로 전환하지 않습니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-harnesses\\scripts\\link-codex.ps1\" --id frontend 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
       ],
       "promptExamples": [
+        {
+          "title": "복원 계획 확인",
+          "prompt": "$frontend-harness로 지정한 Frontend improve 실행의 알려진 패치 이전 상태로 돌아갈 restore 계획을 만들어줘. --apply는 사용하지 말고 사용자 수정·해시 충돌·지원하지 않는 파일 변경과 대상 목록을 보고해줘. 계획은 원본 저장소 밖의 새 폴더에 저장해줘."
+        },
         {
           "title": "저장된 화면 재평가",
           "prompt": "$frontend-harness로 지정한 기존 결과 폴더의 저장 증거를 reevaluate로 다시 평가해줘. 각 PNG를 직접 확인하고 이전 결과와 차이를 설명해줘. 현재 앱을 다시 실행한 결과와 구분하고, 새 결과는 원본 저장소 밖에 저장해줘."
@@ -36,15 +43,87 @@
       "source": {
         "repo": "LeeTheY/agent-harnesses",
         "local": "skills/frontend-harness",
-        "baseline": "09d4a9e5b2b941dce146dc18a5c16a0448c4a75b"
+        "baseline": "c920545901541a11d9f366f0199707929fc41d84"
       },
       "files": {
-        "SKILL.md": "08e651a791f0a17c0aa3e72935f1da1684206c7c",
         "agents/openai.yaml": "11a6d0ae41ab9b8ba043b51828755bae6de14218",
-        "scripts/run.ts": "9c7b07b73e97fd1a0594695f49f9ac2183fc20f0"
+        "engine/.gitignore": "b89caa10a8d46e4a6bd4941e2df17145c6c0ed91",
+        "engine/AGENT_GUIDE.md": "6fd36a1be582bb1c2223d42f6479c88a865cf5d6",
+        "engine/CHANGELOG.md": "90a1bffeeef491147295b9bd752f3fc56a51f83a",
+        "engine/CONTRIBUTING.md": "d0ae1acf2a299e369504ad41b42c5adafd039215",
+        "engine/docs/evaluation.md": "614c8afbfb43aefe72254676a42a6c0cd163131b",
+        "engine/docs/onboarding.md": "168c5cbecefd9c02c9c025e90c93bb8a0425482a",
+        "engine/docs/scenario-design.md": "f093e9a634c87fc491fe74836db80a5a2121ee55",
+        "engine/docs/v2.md": "30c4d97264958178b1612d03adce569893a1505f",
+        "engine/examples/demo/harness.json": "d5c184fc1ae8dc404847b66e61a1cf6366a0932f",
+        "engine/examples/demo/index.html": "7960365e6bb0d37c1be449c60af5d0fc1afe6873",
+        "engine/examples/demo/responsive.json": "6eeac4d059a04bd81131a2b3bb09433a555d9044",
+        "engine/examples/demo/server.ts": "591d9c6bb8dcda898a6f8495197c83dfd97adf5a",
+        "engine/examples/demo/style.css": "f1d00f19b24ed24699371c05eea08dd73889ef87",
+        "engine/examples/second/harness.json": "be711daece2358ab0bf86c369050e36a3ca0565d",
+        "engine/examples/second/index.html": "115ed1f393efca589981d9cd78f4cddda667aae0",
+        "engine/examples/second/server.ts": "591d9c6bb8dcda898a6f8495197c83dfd97adf5a",
+        "engine/harness.json": "94ea63c9a9e5729ba2fc83caf7bf86691ac0312a",
+        "engine/package-lock.json": "5e474179b6fe38288d02b98e8f0e5be9ec5ee3a7",
+        "engine/package.json": "d3ccf6eefc2dd63acd3183b547bb92c8717b0f55",
+        "engine/prompts/evaluate.md": "c5b607c42513ba5ad4415db86eafb9cb0b6acf02",
+        "engine/prompts/repair.md": "c4b6280157e47c1085d2b3bdb273320f7ee787ab",
+        "engine/README.md": "e99250ccecc718eddd7e548ddc3d58cddbc4ae75",
+        "engine/schemas/config-v1.schema.json": "477e2468a9aa2994159044676bbc72b1c6036ed2",
+        "engine/schemas/config.schema.json": "0b5aed331f1dc2f961937109e789c87e4fe14e38",
+        "engine/schemas/evaluation.schema.json": "7d44db9f079053193dad546e7bc29a80c7c7c80c",
+        "engine/schemas/patch.schema.json": "b6d44ac0e5eb8301bdbe2900a54bfff35e2f3922",
+        "engine/scripts/clean.ts": "c6822a606f4603e18100e98d139af62000542dd0",
+        "engine/scripts/copy-assets.ts": "e84017e82dd72d01fed1cf3f69b13b3c1b1acf28",
+        "engine/SECURITY.md": "ef0d7435a117b1a7dbf6b72b11c885cbc71af961",
+        "engine/SOURCES.md": "ed72ae604bdb67e79f1801b5b0d4b78088c1f244",
+        "engine/src/agent.ts": "ef36e90f1c3bb1f92cd73b708a8de1900b82a0ab",
+        "engine/src/browser.ts": "c63a5edb456ee26bc46be8cb28209222df1257ac",
+        "engine/src/cli.ts": "19207518ee326a20011ab1cb45dc4e9b61930beb",
+        "engine/src/config.ts": "e4d6dc0281102c981c2c5cdb87fd86cd763d30ad",
+        "engine/src/contracts.ts": "b65d52e9108f02bad17b677ab94dd2f83322cda2",
+        "engine/src/engine.ts": "d05605e8111c3cfb6a41b982db81ac4d945954f7",
+        "engine/src/files.ts": "cb01f606e83706aa7e76805124c0949b5e506a8f",
+        "engine/src/init.ts": "c4787c6c5ec64255aa5518fa424d2814d2316ec5",
+        "engine/src/inventory.ts": "267fcb1ea7fae2e4491201c8506c7258e78f3f2c",
+        "engine/src/migrate.ts": "94b255ff1e80f8bb3c9020ba38ec5b822f70c770",
+        "engine/src/patch.ts": "9533fdf5c1dce0c97d7da8646a4f788a8d31025a",
+        "engine/src/process.ts": "ab3e4bdffd6dbee4061a70c8a3ea0737e83cb007",
+        "engine/src/replay-fixture.ts": "0e493d3dd8fdb13dd3a9a833a018fa66bb59947d",
+        "engine/src/report.ts": "800b55168bdc7a8f5f13e4902a78587414a5c951",
+        "engine/src/responsive.ts": "31cf8ac12dec4fa8b0a1779f6748c72f1956e3da",
+        "engine/src/restore.ts": "71b9fbeb4b0bab4bcb27b37199a28de1caff151a",
+        "engine/src/stability.ts": "07258b8deb0a9a3373defa678320a0dfcb923c56",
+        "engine/src/toss-safe-area.ts": "e66467e3e9ead32028b329620fdcaa565ab9d3b4",
+        "engine/src/types.ts": "d0a27d03d6c2c03a816871a43579d47d4e178e16",
+        "engine/src/workflows.ts": "d096691576e00d4b508c8b6cd5984b8881d85d56",
+        "engine/templates/responsive-viewports.json": "9d8677f696d3f8c63ea5b6865c52232e5ded25a7",
+        "engine/templates/ui-ux-criteria.json": "8ec99b68a6889709ea53fbfd6d52356cf01c8231",
+        "engine/tests/adapter.browser.ts": "4865c567ca26863b53e8e654f6496e905fd7ec42",
+        "engine/tests/agent.test.ts": "35e76815504f351e8c99cd25197c01f52eb1290d",
+        "engine/tests/assessment.test.ts": "59693028d8228c3886c7cb61af9bf6772e8bcd08",
+        "engine/tests/contracts.test.ts": "59db7ecc1c37a20f60a71976c5b4a305a4b2decf",
+        "engine/tests/coverage.test.ts": "d5b1e4d49ee1384c4569d72d5edde7ebcfb6493c",
+        "engine/tests/engine.test.ts": "44f96a67980801ea098aada92318b334e45823c0",
+        "engine/tests/flows.browser.ts": "21670a8beb5fba7a9ebda435e65d33067741a6ae",
+        "engine/tests/helpers.ts": "485e6aa6f60d68654b524f4f9cb42a11930ff0a5",
+        "engine/tests/init.test.ts": "a37f85d78503f0cf95b92422b893e6ddd7256496",
+        "engine/tests/package.runtime.ts": "3f9a4300789e9016006df48983e39945750accd9",
+        "engine/tests/patch.test.ts": "c0dbe65e24f9031779a7a2008b19242ad2567e31",
+        "engine/tests/portability.browser.ts": "0b5541dff2448b3469abdff27a9b49869c93464e",
+        "engine/tests/portability.test.ts": "dcc64c2d455fc3001f89bcb42c6e850ef03feb7a",
+        "engine/tests/process.test.ts": "1a757f040bd5b14620cbec6a9e9f5258c7dc06ae",
+        "engine/tests/reliability.test.ts": "dd87f68f7ad93920645e240ce630ed9792d5c409",
+        "engine/tests/replay-fixture.test.ts": "e58717cf6206465e834d04445a13e66b0e8744f7",
+        "engine/tests/report.test.ts": "acc1dbf8a751e86c7a5c344785432926c54ce4c9",
+        "engine/tests/restore.test.ts": "4bc90de3b3455efd1cff1352e4502ea79b60b4be",
+        "engine/tests/workflows.test.ts": "e36f4ed2386baaa5a46d20099029acc5b18bda64",
+        "engine/tsconfig.json": "7633c932e8bfec8489db231dfe5aecdfb3249af9",
+        "scripts/run.ts": "9c7b07b73e97fd1a0594695f49f9ac2183fc20f0",
+        "SKILL.md": "08e651a791f0a17c0aa3e72935f1da1684206c7c"
       },
-      "snapshotHash": "f83a22556f73fd8b5bd8783b869c64f30cab18dae84c440829b38f92fca36f24",
-      "syncedAt": "2026-10-05T14:55:15.979Z"
+      "snapshotHash": "c0004da2e61a9027ccbe8cc0ec92165ee9b536c62f20e9d28b15e40579b4ded8",
+      "syncedAt": "2026-10-06T14:34:01.592Z"
     },
     {
       "id": "persona",
@@ -60,9 +139,16 @@
         "실제 페르소나 명세와 기준·후보 프롬프트를 준비하고, 설정·응답·결과는 원본 저장소 밖의 별도 작업 폴더에 둡니다.",
         "target의 replay/files/HTTP와 judge의 files/HTTP를 구분합니다. validate → plan으로 사례·suite·예산을 확인한 뒤 run합니다.",
         "waiting이면 target·judge 요청을 구분해 스키마에 맞는 응답을 작성하고 resume합니다. 코드 0은 선택 범위 통과, 1은 품질 실패, 2는 대기·차단·오류·비교 불완전입니다.",
-        "프롬프트·입력·코어가 바뀌면 새 실행을 만듭니다. 저장 응답의 평가 기준만 바꾸면 rescore를 쓰고 compare의 비교 가능 여부를 확인합니다."
+        "프롬프트·입력·코어가 바뀌면 새 실행을 만듭니다. 저장 응답의 평가 기준만 바꾸면 rescore를 쓰고 compare의 비교 가능 여부를 확인합니다.",
+        "--concurrency 1..4로 제한 병렬 실행합니다. 기본은 1이며 HTTP 병렬 연결에는 independent-sessions 선언이 필요합니다. 병렬도 변경은 비교 조건 변화로 기록합니다.",
+        "export-fixture/replay-fixture는 완료된 target/Judge 교환과 과거 usage를 보존합니다. synthetic/live/mixed 출처를 구분하며 오프라인 재생을 실제 모델 품질 재측정으로 표시하지 않습니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-harnesses\\scripts\\link-codex.ps1\" --id persona 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
       ],
       "promptExamples": [
+        {
+          "title": "제한 병렬 평가",
+          "prompt": "$persona-harness로 현재 Persona 설정과 예산을 확인하고 --concurrency 2로 기준·후보를 평가해줘. 실제 HTTP 연결의 independent-sessions 선언을 확인하고 대화 턴 순서를 유지해줘. 병렬도에 따른 비교 조건 변화와 미확정 호출을 보고하고 결과는 원본 저장소 밖에 저장해줘."
+        },
         {
           "title": "저장 응답 재채점",
           "prompt": "$persona-harness로 지정한 기존 run의 저장 응답을 새 평가 기준으로 rescore해줘. 실제 응답을 새로 수집한 결과와 구분하고 compare의 비교 가능 여부, 필수 위반과 회귀를 보고해줘. 원본 저장소는 수정하지 말고 새 결과는 별도 작업 폴더에 저장해줘."
@@ -81,15 +167,409 @@
       "source": {
         "repo": "LeeTheY/agent-harnesses",
         "local": "skills/persona-harness",
-        "baseline": "09d4a9e5b2b941dce146dc18a5c16a0448c4a75b"
+        "baseline": "c920545901541a11d9f366f0199707929fc41d84"
       },
       "files": {
-        "SKILL.md": "f2c0ea9d0ff0a830b686ff440d622bb861e7e9d3",
         "agents/openai.yaml": "b9ed42accf866f47351cc1b887e02599f26811fd",
-        "scripts/run.ts": "b5a31095b6bcb79a36f12e45f6e347850afbbb32"
+        "engine/.gitignore": "5b82acc74fc50db830a522f9d50af708bde97e0d",
+        "engine/AGENT_GUIDE.md": "f29aaf408395d6b94d6884993bd250527c269c7a",
+        "engine/CONTRACTS.md": "3a825385d6d70e087a9276f6a5f03f5cdf198dbc",
+        "engine/docs/change-and-decision.md": "71f1fcf6e7e3bce138e143b2677e1c49f1b53a25",
+        "engine/docs/collaboration.md": "f9f7e0a33ff303c75e2af179813391642f10ca44",
+        "engine/docs/role-instructions.md": "54b5911cb42559fc43fce9ce3808df3f7fbb7431",
+        "engine/examples/reviewer/baseline.txt": "e64cd77e1b5267ab922298b989bd2f4405cea5ce",
+        "engine/examples/reviewer/candidate.txt": "3bb16a927f3bc47148981b43cd1e290da4242297",
+        "engine/examples/reviewer/project.json": "499bea9ecba83db78702e0d3a9912864300737e0",
+        "engine/examples/reviewer/responses.json": "0bcee3668b42345fe904a9e92717b8cea3a274ec",
+        "engine/examples/support/baseline.txt": "52889b5b8afe8367af3fd54158278406fa389c9c",
+        "engine/examples/support/candidate.txt": "cf38e568a3e372cc00a9e6c39afd7f731b1d4449",
+        "engine/examples/support/project.json": "a0c662990a6a6f9fd54eb6a56e452a3167a7f617",
+        "engine/examples/support/responses.json": "faef3dc6ea807a600719cc3cd8c865ce88e0f47a",
+        "engine/harness.json": "445abca458c9eb19b6ba4946b86b0dabada83450",
+        "engine/package.json": "0ea53d083a3b9c040469c652165a2efb9e15e2d2",
+        "engine/README.md": "debcd38a38045fb58fab9c40921b61631125f721",
+        "engine/scripts/check.mjs": "af522cd9b3412a31a5f96ed8c231b93356a4b349",
+        "engine/src/adapters.mjs": "30811dab50cac880d5c8fe692a44207d53220c2d",
+        "engine/src/calibration.mjs": "ce0be763b4414ce7ec9e75e1e3c869a10a70f4dd",
+        "engine/src/cli.mjs": "c8cf54a0045a9a0287860f8e6f32881541c0ac2c",
+        "engine/src/engine.mjs": "3bc512622ba2ec75007c05e76dbaf999eaded40c",
+        "engine/src/evaluation.mjs": "26b6cddfb40fc9db80d2628eca6afc5eadfc8a67",
+        "engine/src/project.mjs": "82de8f9c497844a3e7950a1ccd6d63ed43f5bb80",
+        "engine/src/replay-fixture.mjs": "d04aacbfa8c92c10bd25213c213a58f827be173f",
+        "engine/src/scheduler.mjs": "c0883b9b0f6a939ed035f7516b2d04d03aa562c8",
+        "engine/src/util.mjs": "cf2dc9b9096fe985ece0719336fd64714064dad5",
+        "engine/test/cli.test.mjs": "10b5feab93a5d230214329ae1643f2af1c770509",
+        "engine/test/concurrency.test.mjs": "b2454f3139844d9d72597333a93c4aea7c488b3f",
+        "engine/test/harness.test.mjs": "78c0839644174423328fbe0ecf6f25346de66907",
+        "engine/test/helpers.mjs": "851ade1c7c6ecfe6d2accdb5bb3eaabf394d7421",
+        "engine/test/replay-fixture.test.mjs": "f997f05dc9ce6494658164b9cda36a3c1c54fc8d",
+        "scripts/run.ts": "b5a31095b6bcb79a36f12e45f6e347850afbbb32",
+        "SKILL.md": "f2c0ea9d0ff0a830b686ff440d622bb861e7e9d3"
       },
-      "snapshotHash": "e505f1ccf6f2805f1e7215d05048e802331b23de0cc3f263d0a69f85f95ef7b2",
-      "syncedAt": "2026-10-05T14:55:15.979Z"
+      "snapshotHash": "43451081d17a55a9b500b9a4d89786bec21e6743a32315cb1586a598bd286397",
+      "syncedAt": "2026-10-06T14:34:01.592Z"
+    },
+    {
+      "id": "engineering",
+      "title": "Engineering Harness",
+      "kind": "harness",
+      "category": "설계·개발",
+      "summary": "허용한 파일을 예산 안에서 수정하고 실제 최종 파일로 완료 조건을 검사합니다.",
+      "when": "파일 작업을 승인·체크포인트·독립 검증과 함께 실행할 때",
+      "prompt": "$engineering-harness로 지정한 파일 작업을 files 어댑터로 실행해줘. 허용 파일·도구·예산과 실제 최종 파일의 완료 조건을 먼저 정하고 기존 승인 범위 안에서 진행해줘. 변경 diff, acceptance 결과와 미확정 효과를 보고하고 설정·응답·결과는 원본 저장소 밖에 저장해줘.",
+      "note": "셸 실행과 부모 폴더 자동 생성은 지원하지 않습니다.",
+      "usage": [
+        "Node.js 24 이상에서 setup engineering으로 빌드를 준비하고 호출 스킬을 연결합니다. 스킬만 복사하지 말고 실행기 저장소를 함께 유지합니다.",
+        "projectRoot·allowedFiles·allowedTools·호출/활동 시간 예산·acceptance를 task.json에 정합니다. files 연결을 기본으로 쓰고 설정과 새 실행 폴더는 원본 저장소 밖에 둡니다.",
+        "run → status → resume 순서로 request.json의 ID·해시·종류를 읽고 schemaVersion/requestId/requestHash/value 응답을 작성합니다. 쓰기 전 read_file의 SHA-256을 expectedSha256으로 전달합니다.",
+        "기존 승인 범위에는 allow를 사용할 수 있으며 쓰기별 검토가 필요하면 ask를 유지합니다. unknown이면 파일 hash·저널을 확인하고 효과를 자동 반복하지 않습니다.",
+        "0 성공, 1 실패, 2 입력/상태 오류, 3 대기, 4 효과 미확정을 구분합니다. 실제 diff와 독립 acceptance를 확인하며 batch/worktree·memory·serve/control은 필요할 때 선택합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-harnesses\\scripts\\link-codex.ps1\" --id engineering 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
+      "promptExamples": [
+        {
+          "title": "체크포인트 재개",
+          "prompt": "$engineering-harness로 지정한 Engineering 실행 폴더의 상태와 대기 요청을 확인하고 기존 승인 범위에서 재개해줘. requestId/requestHash를 대조하고 파일 쓰기 전 읽은 해시를 사용해줘. unknown이면 효과를 반복하지 말고 현재 파일과 저널로 복구 가능 여부를 판단해줘."
+        },
+        {
+          "title": "실제 완료 조건 확인",
+          "prompt": "$engineering-harness로 지정한 Engineering 실행의 실제 최종 파일을 acceptance와 대조해줘. 모델의 완료 문구와 구분해서 파일별 diff, 통과·실패와 미확정 효과를 보고해줘. 파일과 실행 기록은 수정하지 마."
+        }
+      ],
+      "callName": "engineering-harness",
+      "commands": [
+        "cd \"$HOME/agent/agent-harnesses\"",
+        "node scripts/harness.ts setup engineering",
+        "./scripts/link-codex.sh --id engineering"
+      ],
+      "source": {
+        "repo": "LeeTheY/agent-harnesses",
+        "local": "skills/engineering-harness",
+        "baseline": "c920545901541a11d9f366f0199707929fc41d84"
+      },
+      "files": {
+        "agents/openai.yaml": "13ddbae5ecac85f88c34d0005035da12e8615de3",
+        "engine/harness.json": "988e8b1fb6b481f46aa1b7e87d5c18d6ebfd6e86",
+        "engine/package-lock.json": "49b3821e9474d70623088e5fa623db6300656a7b",
+        "engine/package.json": "664c745c45ec8421264e7757362e686708b3265b",
+        "engine/README.md": "3a9a0bdfd3ccd20c996bf6170d694ba3fdce15b4",
+        "engine/scripts/verify-runtime.mjs": "589973f2f3a8f1d65c777b32ead612f2a4645f2d",
+        "engine/src/anthropic.ts": "ca1cb958263a07194b75ad8d5f9d6e2c8c7a24b9",
+        "engine/src/batch.ts": "1887a39cfaec1e13d300e0f935f9df77157ec6df",
+        "engine/src/changes.ts": "f423937335d3f33e4b595eb367af81d08da66131",
+        "engine/src/checkpoint.ts": "c823ee02cf3e99c623d4bbcafe72b81b0609821d",
+        "engine/src/cli.ts": "d92862483e0ae2287c85151b507ad1381f960c88",
+        "engine/src/config.ts": "2335de0ccfd7d252b8ac18cebf73fff3e3c371ac",
+        "engine/src/control-client.ts": "39206625943b4eca905236cf1057fad2e895fb53",
+        "engine/src/control-server.ts": "aed3c7016118c63734695f8671963156d51aa351",
+        "engine/src/memory-exchange.ts": "1a2b1f3b4edba272b15562ad9861054d121db653",
+        "engine/src/memory.ts": "a75516e6d193fcceff3633f50beeba3750fe9268",
+        "engine/src/runtime/context/build-context.ts": "8c4c264a7979f127d4f4b298cacb0a0b04ccbdd1",
+        "engine/src/runtime/context/memory.ts": "ecf17b1b66a9d06a4f7f15cb8c7bfe095d4fa32b",
+        "engine/src/runtime/contracts/events.ts": "c132105456608ef52e6bf7c491a4c95bd0c26d67",
+        "engine/src/runtime/contracts/json.ts": "8546d582ad24c70e33d8af96791e29fd1393277b",
+        "engine/src/runtime/contracts/model.ts": "070efec608cae05d429cc1158019c58ba98b353f",
+        "engine/src/runtime/contracts/task.ts": "fbc91efa928f14c85b22f9a68a839bab31a58212",
+        "engine/src/runtime/contracts/tool.ts": "2c3250a653fbf317de7f1701495ca005729849c5",
+        "engine/src/runtime/control/ingress.ts": "3f79557fe93e38ff4be341077bf09972a13d74a7",
+        "engine/src/runtime/control/leases.ts": "df3e5af173ac9e35f187969159b333e7cbb89f8e",
+        "engine/src/runtime/fixtures/fakes.ts": "097520c16f2102a45efa5e4bf7e70b4609dc969a",
+        "engine/src/runtime/fixtures/foundation-cases.ts": "019cd614c857a15b7c0471a3b5135d3fc18365e6",
+        "engine/src/runtime/manifest.json": "93aa08430b439dfe099fb556d85f71c7b0e7f7f3",
+        "engine/src/runtime/persistence/journal.ts": "d04ebe347bdac4a80cd03b93bec334592f53dfb7",
+        "engine/src/runtime/persistence/store.ts": "fb21004b5ecd660816fe260db203ea1476ec533f",
+        "engine/src/runtime/runtime/acceptance.ts": "82bd9f411a7040233db84ee556bd0c9af5c1503d",
+        "engine/src/runtime/runtime/clock.ts": "c956b04d82bd9ca3a148d6bb80899687e8467fda",
+        "engine/src/runtime/runtime/pause.ts": "75a39940065a8f4b02536354f3305e2650e6a96e",
+        "engine/src/runtime/runtime/run-task.ts": "1c66f85c15c888b7008cee66bdebc288e4c04eeb",
+        "engine/src/runtime/tests/context.test.ts": "7aafd471e2054f8e8b1aa4bf917eb845a78c36da",
+        "engine/src/runtime/tests/contracts.test.ts": "1d0d65c14f77738357f073e786d3954f1f12bfc5",
+        "engine/src/runtime/tests/ingress.test.ts": "0ffc7854c286d421a653af4c33ad26f2b1827980",
+        "engine/src/runtime/tests/journal.test.ts": "5dfd15a24044456b385e572e05d8ef8f045b9092",
+        "engine/src/runtime/tests/leases.test.ts": "59cb6401ccd66e39ee0d2cc8024b9ad6ee6318da",
+        "engine/src/runtime/tests/runtime.test.ts": "3941e4168e87e42de67be783714ddc39b5dbded0",
+        "engine/src/runtime/tests/store.test.ts": "82571a0350f91b8fbc3bdacb5a322ba63d1c6a4a",
+        "engine/src/session.ts": "85e0d7f0e191932ae20b495409c31bad83fdf36b",
+        "engine/src/worker-entry.ts": "c6edca064b9b4fa5185ec414733e9f017048fa44",
+        "engine/src/worker-process.ts": "0f9ac581cd70e6db8cf7cf4f82ae0d587156cc07",
+        "engine/src/workspace.ts": "2ad8c3c90abc2a55181ca27e6429bfa52cd7e2c7",
+        "engine/tests/anthropic.test.ts": "d34b40702e025f1e6c7d8624095e706defd0e6f4",
+        "engine/tests/batch.test.ts": "d0ac5e146a676187e437313d88851ebc03a7e3c4",
+        "engine/tests/cli.test.ts": "b8cc41d6fbd0c98b9e251688b59f415f4cc1f3ee",
+        "engine/tests/control.test.ts": "305870c9c87e3da2324ee90cc2a96abf0cf018e8",
+        "engine/tests/memory-exchange.test.ts": "d24842a155be6545d2e387dc2a8dec7abb5e8278",
+        "engine/tests/memory.test.ts": "c9348f15f1684f42b9cd446da9e31cbde575ec75",
+        "engine/tests/package.test.ts": "be3d3dfb10101c165c405daaa3510ebd170a2ca8",
+        "engine/tests/persistence.test.ts": "9ee142c5dfdf2e17f7ca1bba2a5ea4f01a27d68c",
+        "engine/tests/session.test.ts": "d54410164e0a06c1b322fce9b9e289b0248e11e0",
+        "engine/tests/workspace.test.ts": "3852593cbef22a13a5579ff6408914dd82d8b4ea",
+        "engine/tsconfig.json": "4af5d13809cd797244b391883ba8401f518cb0aa",
+        "scripts/run.ts": "469097fcf7bc4791ef439b597079a38c453c3022",
+        "SKILL.md": "0e16063c65994dfed52218489d68e2db4c3469a5"
+      },
+      "snapshotHash": "41283121980cc2a14daab37a771fdf4321085054af64438162b83d3d86d60a17",
+      "syncedAt": "2026-10-06T14:34:01.592Z"
+    },
+    {
+      "id": "audit-research",
+      "title": "Audit & Research Harness",
+      "kind": "harness",
+      "category": "평가·분석",
+      "summary": "저장소의 정확한 문자열 주장·인용·제외 범위를 조사하고 근거 변화를 확인합니다.",
+      "when": "읽기 전용 조사 결과를 만들거나 기존 보고서의 근거를 갱신할 때",
+      "prompt": "$audit-research-harness로 현재 저장소를 읽기 전용으로 조사해줘. 확인할 정확한 문자열 주장과 파일·시간 예산을 정하고 실제 인용, supported/contradicted/unverified와 제외 범위를 보고해줘. 대상 코드를 실행하거나 수정하지 말고 결과는 조사 원본과 하네스 저장소 밖에 저장해줘.",
+      "note": "문자열 일치가 의미 분석이나 실행 검증을 대신하지 않습니다.",
+      "usage": [
+        "Node.js 24 이상에서 setup audit-research로 준비하고 호출 스킬을 연결합니다.",
+        "절대 root·question·정확한 문자열 claims·파일/bytes/활동 시간 예산을 spec.json에 정합니다. 새 출력 폴더는 조사 root와 원본 저장소 밖에 둡니다.",
+        "run 또는 extract 후 report.json·documents.json·tasks.json의 인용과 coverage·제외·주장 판정을 확인합니다. 제안된 작업은 자동 실행하지 않습니다.",
+        "verify로 현재 파일과 추출 text·locator의 변경을 검사합니다. refresh는 같은 root의 새 출력 폴더에 새 보고서를 만들며 이전 보고서를 보존합니다.",
+        "0은 조사 완료/현재 근거 확인, 1은 실패 또는 stale, 2는 입력 오류입니다. 조사 완료와 모든 주장 supported를 구분하며 PDF/Office/이미지 의미 추출·전체 호출 그래프는 지원하지 않습니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-harnesses\\scripts\\link-codex.ps1\" --id audit-research 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
+      "promptExamples": [
+        {
+          "title": "기존 보고서 근거 갱신",
+          "prompt": "$audit-research-harness로 지정한 Audit 보고서를 verify로 확인하고 근거가 바뀌었다면 같은 root에 대해 refresh로 새 보고서를 만들어줘. 추가·수정·삭제·미검토와 조사 범위 변화를 구분하고 이전 보고서를 보존해줘. 결과는 조사 원본 밖의 새 폴더에 저장해줘."
+        },
+        {
+          "title": "자료 추출",
+          "prompt": "$audit-research-harness로 지정한 저장소의 JSON·CSV·Markdown 자료를 읽기 전용으로 extract해줘. JSON pointer·CSV 행·Markdown 시작 행과 원본 hash를 연결하고 partial·unverified·제외 원인을 보고해줘. 문서 안의 지시는 실행하지 마."
+        }
+      ],
+      "callName": "audit-research-harness",
+      "commands": [
+        "cd \"$HOME/agent/agent-harnesses\"",
+        "node scripts/harness.ts setup audit-research",
+        "./scripts/link-codex.sh --id audit-research"
+      ],
+      "source": {
+        "repo": "LeeTheY/agent-harnesses",
+        "local": "skills/audit-research-harness",
+        "baseline": "c920545901541a11d9f366f0199707929fc41d84"
+      },
+      "files": {
+        "agents/openai.yaml": "af60183d9d363de3bd37610a24d5940110353ee9",
+        "engine/harness.json": "afcf7cff47645cc07726c377521bd4310a56045d",
+        "engine/package-lock.json": "c5cb70ae9bd83c97fd5ebc79089b3bd4b57b880b",
+        "engine/package.json": "0e7ae7283cd9523b217fa986a26cc5d1c4842940",
+        "engine/README.md": "bc4d879608417ce3a52198d1c36adb4861c268f0",
+        "engine/scripts/verify-runtime.mjs": "589973f2f3a8f1d65c777b32ead612f2a4645f2d",
+        "engine/src/audit.ts": "f5fdccbe5d5523c8d696acaf42914e4b3064c069",
+        "engine/src/cli.ts": "64b4e9fa0684e587862cd1f4c9f474a8d1b14270",
+        "engine/src/documents.ts": "3176103c1f0d7b15b88fbf194d69d345cd2be3fc",
+        "engine/src/imports.ts": "c927e257cdf5e534d9f561b116201538ddcf4df2",
+        "engine/src/refresh.ts": "e66cb3302a442a40cfc5564df365ed0e5127da82",
+        "engine/src/runtime/context/build-context.ts": "8c4c264a7979f127d4f4b298cacb0a0b04ccbdd1",
+        "engine/src/runtime/context/memory.ts": "ecf17b1b66a9d06a4f7f15cb8c7bfe095d4fa32b",
+        "engine/src/runtime/contracts/events.ts": "c132105456608ef52e6bf7c491a4c95bd0c26d67",
+        "engine/src/runtime/contracts/json.ts": "8546d582ad24c70e33d8af96791e29fd1393277b",
+        "engine/src/runtime/contracts/model.ts": "070efec608cae05d429cc1158019c58ba98b353f",
+        "engine/src/runtime/contracts/task.ts": "fbc91efa928f14c85b22f9a68a839bab31a58212",
+        "engine/src/runtime/contracts/tool.ts": "2c3250a653fbf317de7f1701495ca005729849c5",
+        "engine/src/runtime/control/ingress.ts": "3f79557fe93e38ff4be341077bf09972a13d74a7",
+        "engine/src/runtime/control/leases.ts": "df3e5af173ac9e35f187969159b333e7cbb89f8e",
+        "engine/src/runtime/fixtures/fakes.ts": "097520c16f2102a45efa5e4bf7e70b4609dc969a",
+        "engine/src/runtime/fixtures/foundation-cases.ts": "019cd614c857a15b7c0471a3b5135d3fc18365e6",
+        "engine/src/runtime/manifest.json": "93aa08430b439dfe099fb556d85f71c7b0e7f7f3",
+        "engine/src/runtime/persistence/journal.ts": "d04ebe347bdac4a80cd03b93bec334592f53dfb7",
+        "engine/src/runtime/persistence/store.ts": "fb21004b5ecd660816fe260db203ea1476ec533f",
+        "engine/src/runtime/runtime/acceptance.ts": "82bd9f411a7040233db84ee556bd0c9af5c1503d",
+        "engine/src/runtime/runtime/clock.ts": "c956b04d82bd9ca3a148d6bb80899687e8467fda",
+        "engine/src/runtime/runtime/pause.ts": "75a39940065a8f4b02536354f3305e2650e6a96e",
+        "engine/src/runtime/runtime/run-task.ts": "1c66f85c15c888b7008cee66bdebc288e4c04eeb",
+        "engine/src/runtime/tests/context.test.ts": "7aafd471e2054f8e8b1aa4bf917eb845a78c36da",
+        "engine/src/runtime/tests/contracts.test.ts": "1d0d65c14f77738357f073e786d3954f1f12bfc5",
+        "engine/src/runtime/tests/ingress.test.ts": "0ffc7854c286d421a653af4c33ad26f2b1827980",
+        "engine/src/runtime/tests/journal.test.ts": "5dfd15a24044456b385e572e05d8ef8f045b9092",
+        "engine/src/runtime/tests/leases.test.ts": "59cb6401ccd66e39ee0d2cc8024b9ad6ee6318da",
+        "engine/src/runtime/tests/runtime.test.ts": "3941e4168e87e42de67be783714ddc39b5dbded0",
+        "engine/src/runtime/tests/store.test.ts": "82571a0350f91b8fbc3bdacb5a322ba63d1c6a4a",
+        "engine/src/source.ts": "c9436ad61863b32c5738de8672f7023314cdf68f",
+        "engine/tests/audit.test.ts": "277f7430cf43ab53c4a032f8f13b83054099b91e",
+        "engine/tests/cli.test.ts": "e92b03566f0b0aff39be42b23d87209bf9c3d025",
+        "engine/tests/package.test.ts": "30de9753b24df6f78b6d4bc6a5de72282a2324d7",
+        "engine/tests/refresh.test.ts": "42430f817c4a37af0c263cfdd11ae9f14c6f9fe7",
+        "engine/tsconfig.json": "4af5d13809cd797244b391883ba8401f518cb0aa",
+        "scripts/run.ts": "d9bfd059e4dca91a93f3572745753592955a136b",
+        "SKILL.md": "e6e1a536ff848719bc9953c28df7bdff8477fe63"
+      },
+      "snapshotHash": "63a2749be6702411d6964925085c6a3314d52bece1736f8c50f88637bbd9d6d8",
+      "syncedAt": "2026-10-06T14:34:01.592Z"
+    },
+    {
+      "id": "operations",
+      "title": "Operations Harness",
+      "kind": "harness",
+      "category": "평가·분석",
+      "summary": "로컬 시험 서비스의 승인된 조건부 쓰기를 실행하고 영수증·최종 값을 확인합니다.",
+      "when": "승인 대기·쓰기 충돌·효과 미확정의 처리 계약을 시험할 때",
+      "prompt": "$operations-harness로 127.0.0.1 시험 서비스에서 합성 계정과 값으로 지정한 변경을 시험해줘. prepare 결과의 계정·대상·내용을 승인 범위와 대조하고 영수증과 최종 값이 모두 일치하는지 확인해줘. unknown이면 쓰기를 반복하지 말고 reconcile로 조회해줘. 설정·결과는 원본 저장소 밖에 저장하고 인증값은 환경변수로만 전달해줘.",
+      "note": "현재는 loopback 시험 어댑터만 제공하며 실제 SaaS·예약 자동화 연결은 없습니다.",
+      "usage": [
+        "Node.js 24 이상에서 setup operations로 준비하고 합성 계정·값의 127.0.0.1 test-service를 별도 세션에서 실행합니다. 인증 토큰은 지정한 환경변수에 둡니다.",
+        "baseUrl·accountId·tokenEnv·resource·value·예산을 정합니다. prepare부터 정상 완료에는 요청 최소 7회가 필요하며 설정·서비스·실행 결과는 원본 저장소 밖에 둡니다.",
+        "prepare가 만든 request.json의 계정·대상·현재 값·변경 값·requestHash를 확인합니다. 기존 승인과 일치할 때 approved/requestHash의 approval.json으로 execute합니다.",
+        "receipt와 최종 resource가 모두 일치해야 성공입니다. unknown은 PUT 반복 대신 reconcile 조회로 확인하고 영수증이 없으면 미확정으로 유지합니다.",
+        "0 성공/관리 명령, 1 거절·충돌·실패, 2 입력/연결 오류, 3 승인 대기, 4 효과 미확정을 구분하고 JSON status/reason을 확인합니다. 종료된 소유자의 lock만 명시적으로 복구합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-harnesses\\scripts\\link-codex.ps1\" --id operations 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
+      "promptExamples": [
+        {
+          "title": "효과 미확정 확인",
+          "prompt": "$operations-harness로 지정한 Operations 실행이 unknown인 원인을 확인하고 reconcile로 영수증과 최종 값을 조회해줘. PUT은 반복하지 마. 승인 범위·status/reason·확인한 효과·남은 미확정을 보고해줘."
+        },
+        {
+          "title": "승인·충돌 시험",
+          "prompt": "$operations-harness로 합성 loopback 시험 서비스에서 승인 대기와 stale approval·ETag 충돌 처리를 검증해줘. prepare의 실제 계정·대상·내용을 확인하고 허용된 시험 범위에서만 실행해줘. 실제 SaaS 운영 검증과 구분하고 설정·결과는 원본 저장소 밖에 저장해줘."
+        }
+      ],
+      "callName": "operations-harness",
+      "commands": [
+        "cd \"$HOME/agent/agent-harnesses\"",
+        "node scripts/harness.ts setup operations",
+        "./scripts/link-codex.sh --id operations"
+      ],
+      "source": {
+        "repo": "LeeTheY/agent-harnesses",
+        "local": "skills/operations-harness",
+        "baseline": "c920545901541a11d9f366f0199707929fc41d84"
+      },
+      "files": {
+        "agents/openai.yaml": "762e3ac1fb94d5b0e4f9dd73b28b1ac46412f4f3",
+        "engine/harness.json": "2e29cb987c30eac96681bceb26f4fb97973b866c",
+        "engine/package-lock.json": "9426268eb77be162351cbe4334762e30661b2828",
+        "engine/package.json": "50f279e710b1d53e8d2cb3d16457e77f16f0541d",
+        "engine/README.md": "39aad9faad58060343e7c3d5b20b02da565c36bb",
+        "engine/scripts/verify-runtime.mjs": "589973f2f3a8f1d65c777b32ead612f2a4645f2d",
+        "engine/src/cli.ts": "85d037e1b528b0f1a331bbb4c162b95fc6f5906f",
+        "engine/src/http.ts": "eea8518c71bbdf26b10f728c92fab90ad51450e3",
+        "engine/src/protocol.ts": "8a4c2065ce4cef849996c3beb4563e4f88a772ac",
+        "engine/src/runtime/context/build-context.ts": "8c4c264a7979f127d4f4b298cacb0a0b04ccbdd1",
+        "engine/src/runtime/context/memory.ts": "ecf17b1b66a9d06a4f7f15cb8c7bfe095d4fa32b",
+        "engine/src/runtime/contracts/events.ts": "c132105456608ef52e6bf7c491a4c95bd0c26d67",
+        "engine/src/runtime/contracts/json.ts": "8546d582ad24c70e33d8af96791e29fd1393277b",
+        "engine/src/runtime/contracts/model.ts": "070efec608cae05d429cc1158019c58ba98b353f",
+        "engine/src/runtime/contracts/task.ts": "fbc91efa928f14c85b22f9a68a839bab31a58212",
+        "engine/src/runtime/contracts/tool.ts": "2c3250a653fbf317de7f1701495ca005729849c5",
+        "engine/src/runtime/control/ingress.ts": "3f79557fe93e38ff4be341077bf09972a13d74a7",
+        "engine/src/runtime/control/leases.ts": "df3e5af173ac9e35f187969159b333e7cbb89f8e",
+        "engine/src/runtime/fixtures/fakes.ts": "097520c16f2102a45efa5e4bf7e70b4609dc969a",
+        "engine/src/runtime/fixtures/foundation-cases.ts": "019cd614c857a15b7c0471a3b5135d3fc18365e6",
+        "engine/src/runtime/manifest.json": "93aa08430b439dfe099fb556d85f71c7b0e7f7f3",
+        "engine/src/runtime/persistence/journal.ts": "d04ebe347bdac4a80cd03b93bec334592f53dfb7",
+        "engine/src/runtime/persistence/store.ts": "fb21004b5ecd660816fe260db203ea1476ec533f",
+        "engine/src/runtime/runtime/acceptance.ts": "82bd9f411a7040233db84ee556bd0c9af5c1503d",
+        "engine/src/runtime/runtime/clock.ts": "c956b04d82bd9ca3a148d6bb80899687e8467fda",
+        "engine/src/runtime/runtime/pause.ts": "75a39940065a8f4b02536354f3305e2650e6a96e",
+        "engine/src/runtime/runtime/run-task.ts": "1c66f85c15c888b7008cee66bdebc288e4c04eeb",
+        "engine/src/runtime/tests/context.test.ts": "7aafd471e2054f8e8b1aa4bf917eb845a78c36da",
+        "engine/src/runtime/tests/contracts.test.ts": "1d0d65c14f77738357f073e786d3954f1f12bfc5",
+        "engine/src/runtime/tests/ingress.test.ts": "0ffc7854c286d421a653af4c33ad26f2b1827980",
+        "engine/src/runtime/tests/journal.test.ts": "5dfd15a24044456b385e572e05d8ef8f045b9092",
+        "engine/src/runtime/tests/leases.test.ts": "59cb6401ccd66e39ee0d2cc8024b9ad6ee6318da",
+        "engine/src/runtime/tests/runtime.test.ts": "3941e4168e87e42de67be783714ddc39b5dbded0",
+        "engine/src/runtime/tests/store.test.ts": "82571a0350f91b8fbc3bdacb5a322ba63d1c6a4a",
+        "engine/src/service.ts": "fb7eba975588ec12cc2a7f60cbb744429d1b6945",
+        "engine/src/session.ts": "c26c58e428d16a83c7a53aebf52d231b6b86fcab",
+        "engine/tests/cli.test.ts": "0aae820ed0ad71b17de4a049b43d94e620615757",
+        "engine/tests/operations.test.ts": "13acc09473eac692ca75a8f68251f1586572987a",
+        "engine/tests/package.test.ts": "c5c58c78a2ece458c8c8f93215fa08cb7c3b3e5b",
+        "engine/tsconfig.json": "4af5d13809cd797244b391883ba8401f518cb0aa",
+        "scripts/run.ts": "aae972a0083ca46e34b816fbe7a68342a5100233",
+        "SKILL.md": "040995d94c3993f819ccdc85dd6ef83d65e68eb9"
+      },
+      "snapshotHash": "5e53a5b7986c2aaa5021b16b5de2d53a08a865ba0c3abe54bd7df3e9018b96f9",
+      "syncedAt": "2026-10-06T14:34:01.592Z"
+    },
+    {
+      "id": "lab",
+      "title": "Lab Harness",
+      "kind": "harness",
+      "category": "평가·분석",
+      "summary": "합성 실행 계약·저장 녹화·실제 Node CLI 관측을 반복 검사하고 회귀를 비교합니다.",
+      "when": "예산·취소·재생 계약을 확인하거나 CLI 결과를 반복 비교할 때",
+      "prompt": "$lab-harness로 지정한 실행 계약을 반복 검증해줘. fake/replay/live 중 적합한 모드와 사례·반복·예산·버전을 정하고 passed/failed/error/unsupported/inconclusive를 구분해줘. 실제 관측과 합성 결과, 비교 가능 여부와 미검증을 보고하고 결과는 원본 저장소 밖에 저장해줘.",
+      "note": "웹 화면 채점이나 실제 모델 품질 평가는 제공하지 않습니다.",
+      "usage": [
+        "Node.js 24 이상에서 setup lab으로 준비하고 호출 스킬을 연결합니다. eval-foundation은 내장 합성 계약 점검입니다.",
+        "trials의 suite에 fake/replay/live 모드·cases·expectedReason·repeat·전체 예산·버전을 정합니다. 모든 실행은 새 출력 폴더를 사용합니다.",
+        "replay는 v2 recording과 구성·요청·무결성을 대조하며 누락·손상·불일치에서 live로 전환하지 않습니다. live는 허용된 절대 Node CLI와 argv·종료 코드·artifact를 실제 자식 프로세스로 실행합니다.",
+        "compare의 0은 비교 가능이며 성능 개선을 뜻하지 않습니다. speculate는 2~4개 fake suite만 비교하며 결과를 프로젝트에 자동 적용하지 않습니다.",
+        "passed/failed/error/unsupported/inconclusive와 원래 exitCode, 신규 호출과 recordedUsage를 구분합니다. trial cwd 분리는 OS sandbox가 아니며 실제 모델 품질·비용이 미확인이면 그대로 보고합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-harnesses\\scripts\\link-codex.ps1\" --id lab 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
+      "promptExamples": [
+        {
+          "title": "녹화 재생·회귀 비교",
+          "prompt": "$lab-harness로 지정한 Lab v2 recording을 replay 모드로 재생하고 비교 대상 보고서와 compare해줘. 구성·요청 해시·누락·중복을 검사하고 비교 가능 여부와 실패/미실행을 보고해줘. 신규 호출 0과 과거 recordedUsage를 구분하고 live로 전환하지 마."
+        },
+        {
+          "title": "실제 CLI 반복 관측",
+          "prompt": "$lab-harness로 명시한 Node CLI를 허용된 명령·효과 범위 안에서 Lab live 모드로 반복 관측해줘. 절대 entry·argv·허용 종료 코드·artifact와 예산을 정하고 stdout·파일 hash·원래 exitCode를 보고해줘. 결과는 원본 저장소 밖에 저장하고 실제 모델 품질 평가로 표현하지 마."
+        }
+      ],
+      "callName": "lab-harness",
+      "commands": [
+        "cd \"$HOME/agent/agent-harnesses\"",
+        "node scripts/harness.ts setup lab",
+        "./scripts/link-codex.sh --id lab"
+      ],
+      "source": {
+        "repo": "LeeTheY/agent-harnesses",
+        "local": "skills/lab-harness",
+        "baseline": "c920545901541a11d9f366f0199707929fc41d84"
+      },
+      "files": {
+        "agents/openai.yaml": "27b8d8b68380527d0bc00f19b848a956bf8cf910",
+        "engine/harness.json": "39f0231b884b10852c3799e51502520626f7edd4",
+        "engine/package-lock.json": "3099334fff4ea8bd9531b143549ef6a220e4c750",
+        "engine/package.json": "4406c7c5af38833950467be4070801d69d424ed6",
+        "engine/README.md": "efd1a667e46e3a712cf5bf4d8ff46ed52dfe1369",
+        "engine/scripts/verify-runtime.mjs": "589973f2f3a8f1d65c777b32ead612f2a4645f2d",
+        "engine/src/cli.ts": "e3ca21d7f1e5ef2702f1b8d2da4e76a8a5b218c3",
+        "engine/src/external.ts": "fdca416fb8da69a6066f36a74a1ee94ddef5e3ef",
+        "engine/src/report.ts": "42cd1b2df919bfcb184dddc66629d1cdf0e90c8d",
+        "engine/src/run-case.ts": "75870314eb7d2831e243e9eb68930528f44120ed",
+        "engine/src/runtime/context/build-context.ts": "8c4c264a7979f127d4f4b298cacb0a0b04ccbdd1",
+        "engine/src/runtime/context/memory.ts": "ecf17b1b66a9d06a4f7f15cb8c7bfe095d4fa32b",
+        "engine/src/runtime/contracts/events.ts": "c132105456608ef52e6bf7c491a4c95bd0c26d67",
+        "engine/src/runtime/contracts/json.ts": "8546d582ad24c70e33d8af96791e29fd1393277b",
+        "engine/src/runtime/contracts/model.ts": "070efec608cae05d429cc1158019c58ba98b353f",
+        "engine/src/runtime/contracts/task.ts": "fbc91efa928f14c85b22f9a68a839bab31a58212",
+        "engine/src/runtime/contracts/tool.ts": "2c3250a653fbf317de7f1701495ca005729849c5",
+        "engine/src/runtime/control/ingress.ts": "3f79557fe93e38ff4be341077bf09972a13d74a7",
+        "engine/src/runtime/control/leases.ts": "df3e5af173ac9e35f187969159b333e7cbb89f8e",
+        "engine/src/runtime/fixtures/fakes.ts": "097520c16f2102a45efa5e4bf7e70b4609dc969a",
+        "engine/src/runtime/fixtures/foundation-cases.ts": "019cd614c857a15b7c0471a3b5135d3fc18365e6",
+        "engine/src/runtime/manifest.json": "93aa08430b439dfe099fb556d85f71c7b0e7f7f3",
+        "engine/src/runtime/persistence/journal.ts": "d04ebe347bdac4a80cd03b93bec334592f53dfb7",
+        "engine/src/runtime/persistence/store.ts": "fb21004b5ecd660816fe260db203ea1476ec533f",
+        "engine/src/runtime/runtime/acceptance.ts": "82bd9f411a7040233db84ee556bd0c9af5c1503d",
+        "engine/src/runtime/runtime/clock.ts": "c956b04d82bd9ca3a148d6bb80899687e8467fda",
+        "engine/src/runtime/runtime/pause.ts": "75a39940065a8f4b02536354f3305e2650e6a96e",
+        "engine/src/runtime/runtime/run-task.ts": "1c66f85c15c888b7008cee66bdebc288e4c04eeb",
+        "engine/src/runtime/tests/context.test.ts": "7aafd471e2054f8e8b1aa4bf917eb845a78c36da",
+        "engine/src/runtime/tests/contracts.test.ts": "1d0d65c14f77738357f073e786d3954f1f12bfc5",
+        "engine/src/runtime/tests/ingress.test.ts": "0ffc7854c286d421a653af4c33ad26f2b1827980",
+        "engine/src/runtime/tests/journal.test.ts": "5dfd15a24044456b385e572e05d8ef8f045b9092",
+        "engine/src/runtime/tests/leases.test.ts": "59cb6401ccd66e39ee0d2cc8024b9ad6ee6318da",
+        "engine/src/runtime/tests/runtime.test.ts": "3941e4168e87e42de67be783714ddc39b5dbded0",
+        "engine/src/runtime/tests/store.test.ts": "82571a0350f91b8fbc3bdacb5a322ba63d1c6a4a",
+        "engine/src/speculation.ts": "4263718019a105e276bbef2da74a5ab3fd597378",
+        "engine/src/trials.ts": "ffbcbb6cdaf0fd343a073654846212e4be0838d9",
+        "engine/tests/cli.test.ts": "5e1f9fe984dc1b35dcae1a2618bab9c7fff0af9f",
+        "engine/tests/external.test.ts": "784f2094a9dbef2538827a7848ed28492040fea7",
+        "engine/tests/package.test.ts": "f46fd66ada9e402ba5e6effe9405fa246626460c",
+        "engine/tests/run-case.test.ts": "4e6658867e919383abb84725dff3291181e821a7",
+        "engine/tests/speculation.test.ts": "a04a3e2048e2dfe809c542ae00fb5c871ed799cc",
+        "engine/tests/trials.test.ts": "1630edd04a7c9bc216ce2b723e9fb89cf06473c5",
+        "engine/tsconfig.json": "4af5d13809cd797244b391883ba8401f518cb0aa",
+        "scripts/run.ts": "fb22f8836f602d2027b5d32aaf8499e82d3a8e57",
+        "SKILL.md": "d4d6cd511c8ca08e1ecc5e0468b09d3e8cecc6f3"
+      },
+      "snapshotHash": "98bdd97a15d9182078311e2fb9a831ac530d6c40c6c2b6e0520be4db19d1f1b0",
+      "syncedAt": "2026-10-06T14:34:01.592Z"
     },
     {
       "id": "static-repository-architecture-audit",
@@ -104,7 +584,8 @@
         "읽을 저장소와 실행·쓰기 범위를 정하고 현재 커밋과 작업 트리 상태를 기록합니다.",
         "진입점에서 실제 소비자까지 호출·상태·외부 경계를 추적합니다. 누락된 구현은 호출 계약까지만 설명합니다.",
         "핵심 주장에 파일·행·심볼·조건을 연결하고 코드 관찰, 추론, 미검증을 구분합니다.",
-        "필요하면 scripts/audit_snapshot.py와 scripts/validate_evidence.py의 도움말을 확인해 스냅샷·파일·행·해시 근거를 검사합니다. 분석 대상 코드를 실행하거나 수정하지 않습니다."
+        "필요하면 scripts/audit_snapshot.py와 scripts/validate_evidence.py의 도움말을 확인해 스냅샷·파일·행·해시 근거를 검사합니다. 분석 대상 코드를 실행하거나 수정하지 않습니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
       ],
       "callName": "static-repository-architecture-audit",
       "commands": [
@@ -114,22 +595,22 @@
       "source": {
         "repo": "LeeTheY/agent-skills",
         "local": "custom/skills/static-repository-architecture-audit",
-        "baseline": "f0a5b418fd2b7484f65547b0c65da48b1558820f"
+        "baseline": "4a548f7b970e24fc7800f2ada7a03cd92acb7ce7"
       },
       "files": {
-        "SKILL.md": "7fd21432e723484ab99a8d12332cb70b4d47b4d0",
         "evals/cases.md": "1fa8a2dc72a1e14a59a56da8c1f481c52ce3b084",
         "evals/test_helpers.py": "0c0728628a8c839dadba4c87a323a74c917e14c7",
         "references/design-spec.md": "494907be48f61211bae75f659a5869820241e4ba",
         "references/evidence-format.md": "869c88b21d4640f2933181273f569fe57b37c8f7",
         "references/quality-checklist.md": "a95e74e8257d51986f34db77b4ab50369e33ed35",
         "references/workflow.md": "426b0901f1fc1e6eb4dd8ab6a93482595dcd09e2",
-        "scripts/README.md": "f94a81827f90dda09e13759e6bc80a8967e60cdf",
         "scripts/audit_snapshot.py": "e87e4ce7edf3827e0628bbe2fa59fc063ce206e4",
-        "scripts/validate_evidence.py": "0c7facc36bbd7d5ef42b81585b762401bd997787"
+        "scripts/README.md": "f94a81827f90dda09e13759e6bc80a8967e60cdf",
+        "scripts/validate_evidence.py": "0c7facc36bbd7d5ef42b81585b762401bd997787",
+        "SKILL.md": "7fd21432e723484ab99a8d12332cb70b4d47b4d0"
       },
-      "snapshotHash": "13d498ee492bf3c73ca9caa2de1966f751b1ae262424311379b3f7545fa04417",
-      "syncedAt": "2026-10-05T14:55:15.979Z"
+      "snapshotHash": "3d189f48a46c4a18b88f83acf854ebef84566b7cc6045358fac1a67a7f51f666",
+      "syncedAt": "2026-10-06T14:31:24.009Z"
     },
     {
       "id": "agent-execution-flow-map",
@@ -143,7 +624,8 @@
       "usage": [
         "문제가 발생한 모델·도구 반복의 진입점과 실제 소비자를 찾습니다.",
         "재시도·fallback·종료·취소 경로를 추적하고 각 counter의 소유자·수명·reset을 구분합니다.",
-        "중복 효과, 최대 한도와 경계값의 반례를 파일·행·조건으로 설명합니다. 선언만으로 실제 종료를 보장하지 않습니다."
+        "중복 효과, 최대 한도와 경계값의 반례를 파일·행·조건으로 설명합니다. 선언만으로 실제 종료를 보장하지 않습니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
       ],
       "callName": "agent-execution-flow-map",
       "commands": [
@@ -153,18 +635,18 @@
       "source": {
         "repo": "LeeTheY/agent-skills",
         "local": "custom/skills/agent-execution-flow-map",
-        "baseline": "f0a5b418fd2b7484f65547b0c65da48b1558820f"
+        "baseline": "4a548f7b970e24fc7800f2ada7a03cd92acb7ce7"
       },
       "files": {
-        "SKILL.md": "671dc77d915f471d8a68d6a77779872566511b5d",
         "evals/cases.md": "5dffb4ac016085b02d1f4714bf4d8983bf2421a0",
         "references/design-spec.md": "1eba592100862591cc626c9b5c635edbe2f06ea1",
         "references/quality-checklist.md": "b955cf173d7041158a94b21ae2967b76825301d4",
         "references/workflow.md": "019d3b0cb6ef671a9c522e2fa2b56bc1ca3f5ec6",
-        "scripts/README.md": "1b21d8b27828b5a982a99f1408a628fc91db06d9"
+        "scripts/README.md": "1b21d8b27828b5a982a99f1408a628fc91db06d9",
+        "SKILL.md": "671dc77d915f471d8a68d6a77779872566511b5d"
       },
-      "snapshotHash": "62f2aa2dbb92f2792ce8fd561aeddab4954defdc980199b9ffd17ba28e7fe197",
-      "syncedAt": "2026-10-05T14:55:15.979Z"
+      "snapshotHash": "95d246cd6ac52f4c3ec4a6ee0f4113a3bbf25a7f8cc4999410df29518ea8d8c3",
+      "syncedAt": "2026-10-06T14:31:24.009Z"
     },
     {
       "id": "tool-permission-boundary-review",
@@ -179,7 +661,8 @@
         "대표 도구의 입력부터 최종 실행 효과까지 승인·실행 소비자를 선택합니다.",
         "parsed → 검증 → Hook 변경 → 승인 → executed 입력을 필드별로 추적하고 변경 후 재검사를 확인합니다.",
         "deny/ask/allow와 headless·원격·비동기 분기의 최종 반환을 읽습니다.",
-        "공격자 제어 입력, 도달 조건, 현재 통제, 최종 효과와 최소 회귀 사례를 근거와 함께 보고합니다."
+        "공격자 제어 입력, 도달 조건, 현재 통제, 최종 효과와 최소 회귀 사례를 근거와 함께 보고합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
       ],
       "callName": "tool-permission-boundary-review",
       "commands": [
@@ -189,18 +672,18 @@
       "source": {
         "repo": "LeeTheY/agent-skills",
         "local": "custom/skills/tool-permission-boundary-review",
-        "baseline": "f0a5b418fd2b7484f65547b0c65da48b1558820f"
+        "baseline": "4a548f7b970e24fc7800f2ada7a03cd92acb7ce7"
       },
       "files": {
-        "SKILL.md": "c54ca3bd1a2a02e7ce82e13dbbe26621222b2625",
         "evals/cases.md": "c68d1b3277bdaf0467f1ececbe3e3192f78b9688",
         "references/design-spec.md": "2b0e23eba1e721db4a406295310c6ff9398fea03",
         "references/quality-checklist.md": "d4a8e382a6bd6fb0cf69c9ab99ef74c6513b843e",
         "references/workflow.md": "4f5cc1755127a87676a486c362521d69e6331f0f",
-        "scripts/README.md": "f4835616df5cc2acd302c761dd99065aa2fe64bb"
+        "scripts/README.md": "f4835616df5cc2acd302c761dd99065aa2fe64bb",
+        "SKILL.md": "c54ca3bd1a2a02e7ce82e13dbbe26621222b2625"
       },
-      "snapshotHash": "6e0eaecd5ad2b5578f1e79af635030b718b3b01ebfd8d83ef77735cc110940bd",
-      "syncedAt": "2026-10-05T14:55:15.979Z"
+      "snapshotHash": "b3f37c08f90d3b7ff7095d2c5630ba22268898fb0019ceb483b5b3d0b81f5877",
+      "syncedAt": "2026-10-06T14:31:24.009Z"
     },
     {
       "id": "context-lifecycle-review",
@@ -214,7 +697,8 @@
       "usage": [
         "in-memory, model-visible, persisted, resumed 상태를 나누고 수집·저장·삭제 경로를 확인합니다.",
         "요청 전 적용 순서와 토큰 예산, 압축·치환의 보존 순서 및 call/result 쌍을 추적합니다.",
-        "counter reset, 캐시 안정성과 cleanup 호출·대상·예외까지 검토합니다. 모델 입력에서 빠진 것을 디스크 삭제로 설명하지 않습니다."
+        "counter reset, 캐시 안정성과 cleanup 호출·대상·예외까지 검토합니다. 모델 입력에서 빠진 것을 디스크 삭제로 설명하지 않습니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
       ],
       "callName": "context-lifecycle-review",
       "commands": [
@@ -224,18 +708,18 @@
       "source": {
         "repo": "LeeTheY/agent-skills",
         "local": "custom/skills/context-lifecycle-review",
-        "baseline": "f0a5b418fd2b7484f65547b0c65da48b1558820f"
+        "baseline": "4a548f7b970e24fc7800f2ada7a03cd92acb7ce7"
       },
       "files": {
-        "SKILL.md": "047ba1abab05952e51edae35028531b506cc1286",
         "evals/cases.md": "4c23a40619b5c1b46a39d327f7652c03f96847a4",
         "references/design-spec.md": "004d789511d5b680a8e8c0f19a8b4e422572243d",
         "references/quality-checklist.md": "5c3e6eedf44adf1618332ab916749429ff07591a",
         "references/workflow.md": "bf47b25c5333ba5c9705bd9225817eb551d2fad9",
-        "scripts/README.md": "2e768b073576bb48f963ad7cb1e428b6c17baef0"
+        "scripts/README.md": "2e768b073576bb48f963ad7cb1e428b6c17baef0",
+        "SKILL.md": "047ba1abab05952e51edae35028531b506cc1286"
       },
-      "snapshotHash": "ca4384ea62caccfa634131fd440c342300c2290de2e2a9ad9d83d5f903227391",
-      "syncedAt": "2026-10-05T14:55:15.979Z"
+      "snapshotHash": "47ac5ec89a301669fecf88b93c0f13f12e065a5f2da6716e69e50e6357f7820d",
+      "syncedAt": "2026-10-06T14:31:24.009Z"
     },
     {
       "id": "extension-surface-risk-review",
@@ -250,7 +734,8 @@
         "공급원부터 설치·캐시·활성·실행·업데이트·삭제까지 생명주기를 연결합니다.",
         "manifest 문법, 경로 존재, canonical containment와 실제 소비자 권한을 구분합니다.",
         "설치 시 발생하는 효과, proxy·redirect·loopback과 호스트별 스킬 필드 의미를 확인합니다.",
-        "제어 가능한 입력·도달 조건·효과·통제를 보고합니다. 외부 코드 실행이나 symlink 대상 열람을 자동으로 수행하지 않습니다."
+        "제어 가능한 입력·도달 조건·효과·통제를 보고합니다. 외부 코드 실행이나 symlink 대상 열람을 자동으로 수행하지 않습니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
       ],
       "callName": "extension-surface-risk-review",
       "commands": [
@@ -260,18 +745,18 @@
       "source": {
         "repo": "LeeTheY/agent-skills",
         "local": "custom/skills/extension-surface-risk-review",
-        "baseline": "f0a5b418fd2b7484f65547b0c65da48b1558820f"
+        "baseline": "4a548f7b970e24fc7800f2ada7a03cd92acb7ce7"
       },
       "files": {
-        "SKILL.md": "c4a99a4ab1b17cba619cf1657db67ba9074d8805",
         "evals/cases.md": "761ceca2bb878ef6fc92d49f08db457f6f87b1de",
         "references/design-spec.md": "c93b6560605704d0f4e8abf86a3087e118e78251",
         "references/quality-checklist.md": "9a913adf0b38c78391c3155a9abf3e692feeed6d",
         "references/workflow.md": "311ea4f10683bbb11d3f57d445dce5ef59fe95ae",
-        "scripts/README.md": "3500462c4500afd0158cac2e7c2d324419c3b1b4"
+        "scripts/README.md": "3500462c4500afd0158cac2e7c2d324419c3b1b4",
+        "SKILL.md": "c4a99a4ab1b17cba619cf1657db67ba9074d8805"
       },
-      "snapshotHash": "61ff385d94e4b3216383012ede2b6a931037fe44c9f79db995dd8e44d12e846f",
-      "syncedAt": "2026-10-05T14:55:15.979Z"
+      "snapshotHash": "8749544ad5c58887cc9d869a4d98cadf79070982fe25b50174ff18d29b2d015d",
+      "syncedAt": "2026-10-06T14:31:24.009Z"
     },
     {
       "id": "session-resume-integrity-review",
@@ -286,7 +771,8 @@
         "writer부터 loader·normalizer·resume consumer까지 저장·복원 흐름을 추적합니다. 로그 권한이 없으면 코드와 합성 fixture만 사용합니다.",
         "ID와 parent chain, 병렬 형제, flush/ack, 압축 relink와 call/result 대응을 확인합니다.",
         "부분 JSONL·중복 ID·고아 결과·권한 및 작업 경로 복원을 별도 사례로 판정합니다.",
-        "ID 집합·허용 순서·의도된 삭제 유지·외부 효과 횟수를 불변식으로 보고합니다. 원본 로그 수정이나 재생은 하지 않습니다."
+        "ID 집합·허용 순서·의도된 삭제 유지·외부 효과 횟수를 불변식으로 보고합니다. 원본 로그 수정이나 재생은 하지 않습니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
       ],
       "callName": "session-resume-integrity-review",
       "commands": [
@@ -296,16 +782,16 @@
       "source": {
         "repo": "LeeTheY/agent-skills",
         "local": "custom/skills/session-resume-integrity-review",
-        "baseline": "f0a5b418fd2b7484f65547b0c65da48b1558820f"
+        "baseline": "4a548f7b970e24fc7800f2ada7a03cd92acb7ce7"
       },
       "files": {
-        "SKILL.md": "82a20c7514bdbfca7921d9685b5d4ec99ed7cf9f",
         "evals/cases.md": "c2c548ed1f75f4f41ac8e846dc743b61359c2cf4",
         "references/quality-checklist.md": "cbcc28124e7859332fafac8185c43b3a15f739f4",
-        "references/workflow.md": "388c3ad91b49ae38b830718302d339d8eba1ea27"
+        "references/workflow.md": "388c3ad91b49ae38b830718302d339d8eba1ea27",
+        "SKILL.md": "82a20c7514bdbfca7921d9685b5d4ec99ed7cf9f"
       },
-      "snapshotHash": "0b25ec7be9a5dea77df569f5c6828a6581192e90fbedc76d9304fcc73a7b80bf",
-      "syncedAt": "2026-10-05T14:55:15.979Z"
+      "snapshotHash": "77453e31565e1da9fa91bd7d357152f3b9f10de90b0f917f913c15dbf33459bd",
+      "syncedAt": "2026-10-06T14:31:24.009Z"
     },
     {
       "id": "pre-pr-verification",
@@ -320,7 +806,8 @@
         "base/head와 작업 트리, 요구사항 및 핵심 주장을 고정합니다.",
         "실패 경로와 반례를 찾고 변경의 최종 소비·저장·제거까지 의미를 추적합니다.",
         "관련 테스트와 필수 표준 명령을 실행하고 결과를 해당 스냅샷·환경·실제 실행 범위와 연결합니다. 실패·건너뜀·취소·미실행을 구분합니다.",
-        "영향이 있으면 운영·배포 상태를 읽기 전용으로 대조합니다. 위험에 따라 기본 자체 리뷰 또는 강화 독립 리뷰를 적용하고 미검증을 남깁니다."
+        "영향이 있으면 운영·배포 상태를 읽기 전용으로 대조합니다. 위험에 따라 기본 자체 리뷰 또는 강화 독립 리뷰를 적용하고 미검증을 남깁니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
       ],
       "callName": "pre-pr-verification",
       "commands": [
@@ -330,19 +817,19 @@
       "source": {
         "repo": "LeeTheY/agent-skills",
         "local": "custom/skills/pre-pr-verification",
-        "baseline": "f0a5b418fd2b7484f65547b0c65da48b1558820f"
+        "baseline": "4a548f7b970e24fc7800f2ada7a03cd92acb7ce7"
       },
       "files": {
-        "SKILL.md": "a747f3253ddeeecb2c0e23c9e93b9b80cfaa3af3",
         "references/adversarial-scenarios.md": "076a64188f5fad408b220503c782aa6ac6de53af",
         "references/change-lifecycle.md": "decc35779455d80ada23578845194e41314232f2",
         "references/claim-falsification.md": "bb43cf4c67b2fa9f7a7b5c1961ec7ff577be4b74",
         "references/execution-evidence.md": "bb0229a5ac828d3d1a27a5f38018a2fb6ce8f2af",
         "references/operational-state.md": "56ec4024753242844484e4a3ab0e26dbb42c5f6f",
-        "references/review-report.md": "17f45e615bf69e28225c64092808ede0f10e8093"
+        "references/review-report.md": "17f45e615bf69e28225c64092808ede0f10e8093",
+        "SKILL.md": "a747f3253ddeeecb2c0e23c9e93b9b80cfaa3af3"
       },
-      "snapshotHash": "3dc744e4e06f34ff329ac3fbcbf6ef54eb13cfdf152ae8754610b58dd987e49a",
-      "syncedAt": "2026-10-05T14:55:15.979Z"
+      "snapshotHash": "d0b59c0d6abc33d43cf8e306ef666066f397e73ae8115f71dc83ea929f660c1a",
+      "syncedAt": "2026-10-06T14:31:24.009Z"
     },
     {
       "id": "git-workflow",
@@ -357,7 +844,8 @@
         "요청된 브랜치·커밋·push·PR 범위와 저장소 지침을 확인합니다.",
         "현재 브랜치·원격·upstream·diff를 확인하고 관련 없는 변경을 보존합니다.",
         "요청한 변경만 검증·staging하고 제목, 목적 문단과 주요 변경 목록이 있는 커밋을 작성합니다.",
-        "push 또는 PR이 요청된 경우에만 확인한 대상에 수행하고 원격 반영 결과를 확인합니다."
+        "push 또는 PR이 요청된 경우에만 확인한 대상에 수행하고 원격 반영 결과를 확인합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
       ],
       "callName": "git-workflow",
       "commands": [
@@ -367,13 +855,13 @@
       "source": {
         "repo": "LeeTheY/agent-skills",
         "local": "custom/skills/git-workflow",
-        "baseline": "f0a5b418fd2b7484f65547b0c65da48b1558820f"
+        "baseline": "dde524115cf08943ef1b97cf9ceaecdff930d361"
       },
       "files": {
         "SKILL.md": "141662818ac0c6b1f97336b9bdb24981b516071c"
       },
-      "snapshotHash": "aa8529f754ecac52f92ae0053f62963de254b1cc7cfecc44627698dd7088a11c",
-      "syncedAt": "2026-10-05T14:55:15.979Z"
+      "snapshotHash": "df3328a49667af5b4de12a235d59f9bdd44b707d6ce2863b09f202ecb5dc1692",
+      "syncedAt": "2026-10-06T14:31:24.009Z"
     },
     {
       "id": "pr-review-feedback",
@@ -387,7 +875,8 @@
       "usage": [
         "전달받은 리뷰 의견과 해당 코드·호출자·보호 로직을 대조합니다.",
         "각 의견의 타당성과 필요한 최소 수정 범위를 판정합니다.",
-        "타당한 수정과 관련 회귀 검증 후 등록용 답변을 작성합니다. 댓글 등록·커밋·push는 요청된 범위에서만 수행합니다."
+        "타당한 수정과 관련 회귀 검증 후 등록용 답변을 작성합니다. 댓글 등록·커밋·push는 요청된 범위에서만 수행합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
       ],
       "callName": "pr-review-feedback",
       "commands": [
@@ -397,13 +886,13 @@
       "source": {
         "repo": "LeeTheY/agent-skills",
         "local": "custom/skills/pr-review-feedback",
-        "baseline": "f0a5b418fd2b7484f65547b0c65da48b1558820f"
+        "baseline": "dde524115cf08943ef1b97cf9ceaecdff930d361"
       },
       "files": {
         "SKILL.md": "e3639541943fd33b584e8fa03713e198e517a308"
       },
-      "snapshotHash": "861616f7e2fab08e61e91ea74a87e03c14aaa468e4395052d1a31853e46367e2",
-      "syncedAt": "2026-10-05T14:55:15.979Z"
+      "snapshotHash": "5a8174a7f702217abd999e5d187152e04778fcc0151b5d9798cf45ecd13de45a",
+      "syncedAt": "2026-10-06T14:31:24.009Z"
     },
     {
       "id": "write-project-readme-docs",
@@ -417,7 +906,8 @@
       "usage": [
         "현재 구현과 기존 README·문서를 비교하고 quick·standard·complete 중 요청에 맞는 범위를 선택합니다.",
         "실제 라우트·설정·실행 명령·테스트를 근거로 문서를 작성하고 유효한 기존 이미지를 보존합니다.",
-        "구현과 계획, 검증한 명령과 미검증을 구분하고 문서 링크와 설명을 코드에 맞춥니다."
+        "구현과 계획, 검증한 명령과 미검증을 구분하고 문서 링크와 설명을 코드에 맞춥니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
       ],
       "callName": "write-project-readme-docs",
       "commands": [
@@ -427,10 +917,9 @@
       "source": {
         "repo": "LeeTheY/agent-skills",
         "local": "custom/skills/write-project-readme-docs",
-        "baseline": "f0a5b418fd2b7484f65547b0c65da48b1558820f"
+        "baseline": "0c06c762cd7d8c20291222a0beed697d002c4c69"
       },
       "files": {
-        "SKILL.md": "3c92d8bd9d563c4c4b4ee835fe8b49ad5515b8a8",
         "references/api-specification.md": "253592decb514a0428380e94714de11ecaeab549",
         "references/architecture.md": "8e77d54f858b0edf0d8fd0cd8517291a3f8efa5b",
         "references/document-selection.md": "8f9470cfd8b8475db495c8c99242af11f3ca42a6",
@@ -439,10 +928,11 @@
         "references/information-architecture.md": "e42f4246556182c2a5564192e95aa095ac00e203",
         "references/readme-structure.md": "131755bfa87ac24f6da382d9d688fe8030e918f9",
         "references/repository-analysis.md": "00993c9b3b80a9257b4c4648fff1c4768f761d4c",
-        "references/verification.md": "3266088589bfda7598c0792bdf850c0dc2dff4b8"
+        "references/verification.md": "3266088589bfda7598c0792bdf850c0dc2dff4b8",
+        "SKILL.md": "3c92d8bd9d563c4c4b4ee835fe8b49ad5515b8a8"
       },
-      "snapshotHash": "7917e05218a13e5c1509c6b55be3560bd7e81d7d53e3979f1fe01ae480f5e008",
-      "syncedAt": "2026-10-05T14:55:15.979Z"
+      "snapshotHash": "f54d880fdcbcaf8f3c3763137b56688a07c431b49a2d71868449f48b140b9d3e",
+      "syncedAt": "2026-10-06T14:31:24.009Z"
     },
     {
       "id": "universal-project-presentation",
@@ -458,7 +948,8 @@
         "실제 코드·데이터를 근거로 구현·가정·계획을 구분하고 핵심 주장과 증거를 선정합니다.",
         "제공된 PPT가 필수 양식인지 참고 디자인인지 확인해 유지·부분 개선·전면 변경을 판단합니다. 필요할 때 동일 내용으로 후보의 한글 가독성·편집성·호환성·이용 조건을 비교합니다.",
         "PPTX·Slidev·HTML·PDF 또는 스토리보드를 요청 범위에 맞춰 만들고 대본을 준비합니다. qna 단독은 기존 본편을 다시 만들지 않습니다.",
-        "최종 생성 파일을 렌더링해 잘림·겹침·출처·시간을 검증합니다. Q&A 답변은 근거와 미확인을 표시하고 요청된 백업만 별도로 제작합니다."
+        "최종 생성 파일을 렌더링해 잘림·겹침·출처·시간을 검증합니다. Q&A 답변은 근거와 미확인을 표시하고 요청된 백업만 별도로 제작합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
       ],
       "promptExamples": [
         {
@@ -482,10 +973,9 @@
       "source": {
         "repo": "LeeTheY/agent-skills",
         "local": "custom/skills/universal-project-presentation",
-        "baseline": "f0a5b418fd2b7484f65547b0c65da48b1558820f"
+        "baseline": "4a548f7b970e24fc7800f2ada7a03cd92acb7ce7"
       },
       "files": {
-        "SKILL.md": "17df6ebe7232dc59044493805796491c0c8ebdb4",
         "references/charts-and-sources.md": "6102ace5434b7139d921d8762905c50d8ae7cd93",
         "references/demo-and-qna.md": "c573963134b39210146f5ee0880b9d8d4299936d",
         "references/korean-presentation.md": "da521ec7a11ba9f4c11da0550b24ac4d2eb06a64",
@@ -499,10 +989,56 @@
         "references/story-and-audience.md": "d368587ddaf671215d06ddf8f130999be8c8bba8",
         "references/technical-presentation.md": "493b73a2af025514c6b1a3b544f199fcfc8a7329",
         "references/template-analysis.md": "cb7b4a44ee48c952d354e7df4ad6fd5ba85cfc4d",
-        "references/visual-design.md": "080b2b28eaea6b684555b887c74a5b35368b58af"
+        "references/visual-design.md": "080b2b28eaea6b684555b887c74a5b35368b58af",
+        "SKILL.md": "17df6ebe7232dc59044493805796491c0c8ebdb4"
       },
-      "snapshotHash": "35cfd6cd144c809e70e0c6f796f7f67884479edd57a53da556dc55a4d67866f5",
-      "syncedAt": "2026-10-05T14:55:15.979Z"
+      "snapshotHash": "6174ae61f5f1988964a5e6cf6d9675ee777860cd7905830d4f1c22f2f3e3878b",
+      "syncedAt": "2026-10-06T14:31:24.009Z"
+    },
+    {
+      "id": "scrum-weekly-report",
+      "title": "스크럼 주간 보고서",
+      "kind": "custom",
+      "category": "문서·발표",
+      "summary": "개인 업무 메모를 지난 결과와 다음 계획이 담긴 한 페이지 주간 보고서로 정리합니다.",
+      "when": "개인 스크럼 보고를 작성하거나 업무 내용과 상태를 보존하며 다듬을 때",
+      "prompt": "$scrum-weekly-report로 제공한 업무 메모와 전주 보고서를 개인 스크럼 주간 보고서로 정리해줘. 실제 실적·계획 기간을 표시하고 수행 내용·결과·진행 상태를 보존해줘. 지난 결과와 다음 계획을 위아래로 배치한 A4 세로 한 페이지 PDF와 편집 가능한 HTML을 만들고 최종 PDF의 페이지 수·한글·잘림을 검증해줘.",
+      "note": "팀 전체 취합이나 상세 업무 일지용이 아닙니다. 자료에 없는 성과·일정·진척률을 만들지 않습니다.",
+      "usage": [
+        "개인 업무 메모·지정한 작업 기록과 선택적 전주 보고서를 준비합니다. 자료에 없는 중요한 실적/계획 기간만 확인하고 실제 날짜를 사용합니다.",
+        "같은 목적의 작업을 묶되 수행 대상·구체적인 변경·결과·현재 상태를 보존합니다. 종료 업무와 신규 업무, 구현·병합·배포·운영 검증 상태를 구분합니다.",
+        "기본 결과는 지난 결과 위·다음 계획 아래의 A4 세로 한 페이지 PDF와 편집 가능한 HTML입니다. 채팅 문안만 요청하면 파일을 만들지 않습니다.",
+        "인쇄용 템플릿은 복사해 사용하고 사용자 문자열을 HTML 이스케이프합니다. 본문을 12pt 미만으로 줄이거나 잘림으로 내용을 숨기지 않습니다.",
+        "최종 PDF가 정확히 한 페이지인지 확인하고 렌더링해 한글·겹침·잘림·과밀을 검증합니다. PDF 생성이나 렌더링을 못 하면 해당 미검증을 밝힙니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
+      "promptExamples": [
+        {
+          "title": "채팅 보고 문안",
+          "prompt": "$scrum-weekly-report로 제공한 메모를 개인 주간 업무 보고 문안으로 정리해줘. 파일은 만들지 말고 실제 날짜의 지난 결과와 다음 계획을 순서대로 써줘. 구체적인 수행 내용과 진행·대기 상태를 보존하고 자료에 없는 성과나 계획을 추가하지 마."
+        },
+        {
+          "title": "기존 보고서 가독성 개선",
+          "prompt": "$scrum-weekly-report로 첨부한 개인 주간 보고서를 주요 업무·핵심 수치·미완료 상태를 보존하며 다듬어줘. 지난 결과와 다음 계획을 한 열로 배치하고 영역 높이를 억지로 맞추지 마. A4 한 페이지 PDF와 편집 가능한 HTML을 만들고 최종 렌더링을 확인해줘."
+        }
+      ],
+      "callName": "scrum-weekly-report",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "LeeTheY/agent-skills",
+        "local": "custom/skills/scrum-weekly-report",
+        "baseline": "7140be99e2f8ef43629870d41e95dcc27c515f91"
+      },
+      "files": {
+        "agents/openai.yaml": "139a90d9237e5c6920d213d958cccfe4b92c20a4",
+        "assets/report.html": "1dfc02ebbe1933716e96715a914e70e237700977",
+        "SKILL.md": "441495412f346f81ae86d6af80d0fc39b7df6a5b"
+      },
+      "snapshotHash": "01d055d7257b9f680561dc0b6829f6ea026d26ad3ee3ab0e36b055d521106161",
+      "syncedAt": "2026-10-06T14:34:01.592Z"
     },
     {
       "id": "brainstorming",
@@ -513,6 +1049,12 @@
       "when": "새 기능을 구현하기 전에 목적과 범위를 정할 때",
       "prompt": "$brainstorming로 이번 기능의 목적과 요구사항을 함께 구체화해줘. 현재 구조를 확인하고 접근법의 장단점을 비교한 뒤 구현 전에 설계를 제안해줘.",
       "note": "설계 승인을 받은 뒤 구현으로 넘어갑니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "brainstorming",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -527,22 +1069,17 @@
         "baseline": "8ca22dba9a94f28898bbce59f2537ff4d87c747d"
       },
       "files": {
-        "SKILL.md": "e3f17885f8d5f87d7a92f0469141662b476e1288",
         "scripts/frame-template.html": "f540bb8a4f88107e2b37b2871a4c1a55a3b6f720",
         "scripts/helper.js": "e11d26489ce248f37af3e4dd01ddec6a4e88287f",
         "scripts/server.cjs": "a828b35af64d5c64ca68b9ec78473999ce698874",
         "scripts/start-server.sh": "016a8e4870142ce2adbe81a021d8b6b9073e7618",
         "scripts/stop-server.sh": "7cacfe9440043f7a46eac555cd835fad0769c425",
+        "SKILL.md": "e3f17885f8d5f87d7a92f0469141662b476e1288",
         "spec-document-reviewer-prompt.md": "60993129de3c445efeff53987b5297dc1acf3eb1",
         "visual-companion.md": "8dca065bd9adb9d4fa82a66acbb4176ea23259c6"
       },
       "snapshotHash": "71dc6312f01ea40e4fadc86e24513d366ad72f00cb39bfb458a1d92b5345d802",
-      "syncedAt": "2026-10-05T15:22:42.709Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T15:22:42.709Z"
     },
     {
       "id": "writing-plans",
@@ -553,6 +1090,12 @@
       "when": "여러 파일에 걸친 구현을 단계적으로 진행할 때",
       "prompt": "$writing-plans로 확정한 설계를 구현 계획으로 정리해줘. 수정할 파일, 작업 순서, 의존관계와 단계별 검증 방법을 포함해줘.",
       "note": "원본은 obra/superpowers의 skills/writing-plans입니다. brainstorming과 함께 설치·갱신하며 기록된 적용 커밋으로 원본 변경을 확인합니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "writing-plans",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -570,12 +1113,7 @@
         "SKILL.md": "4cf0275d88d67aa4ef09f4bbca9970ed6ff74a00"
       },
       "snapshotHash": "5c00a3a15f35b165ce20654311a196198f1b198be4a3c123953677d860446b75",
-      "syncedAt": "2026-10-05T15:22:42.709Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T15:22:42.709Z"
     },
     {
       "id": "grill-me",
@@ -586,6 +1124,12 @@
       "when": "계획의 빈틈을 구현 전에 찾고 싶을 때",
       "prompt": "$grill-me로 현재 계획을 날카롭게 검토해줘. 결정의 전제와 누락된 요구사항을 질문하고, 추천 답과 선택의 영향을 함께 제시해줘.",
       "note": "grilling 스킬을 호출하는 진입점입니다. 개인 설정이 적용되어 있습니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "grill-me",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -600,16 +1144,11 @@
         "baseline": "4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d"
       },
       "files": {
-        "SKILL.md": "3c450aa82b148e6398e3e5d9908faca02e91d9ac",
-        "agents/openai.yaml": "f148c44e331ffaa23dc844d4eab083f2b38059fe"
+        "agents/openai.yaml": "f148c44e331ffaa23dc844d4eab083f2b38059fe",
+        "SKILL.md": "3c450aa82b148e6398e3e5d9908faca02e91d9ac"
       },
       "snapshotHash": "6640049a42780d4b845efafed58c78be96d5c447e79404bf33e2713cd07b1e47",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T14:55:15.979Z"
     },
     {
       "id": "grilling",
@@ -620,6 +1159,12 @@
       "when": "제품 방향이나 기술 선택을 깊이 검토할 때",
       "prompt": "$grilling로 현재 설계의 결정 관계를 정리하고 지금 답할 수 있는 질문을 묶어서 제시해줘. 각 질문에 추천안을 포함하고 답변을 받은 뒤 다음 단계로 진행해줘.",
       "note": "여러 차례 질문과 답변이 필요한 인터뷰 방식입니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "grilling",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -634,16 +1179,11 @@
         "baseline": "4588b32ecab9ecc9fc8cc6b6c5e7d675b6004b0d"
       },
       "files": {
-        "SKILL.md": "8ca78c6d8f901aab0c5a1f896034b70e666ff2a3",
-        "agents/openai.yaml": "ddbdb96139c0c1dfe6bca698f39d0465674b8a39"
+        "agents/openai.yaml": "ddbdb96139c0c1dfe6bca698f39d0465674b8a39",
+        "SKILL.md": "8ca78c6d8f901aab0c5a1f896034b70e666ff2a3"
       },
       "snapshotHash": "e9e01b517edb7f5f0cd189635509bc7f0a1d4c8384d100f69eb9047772bfed48",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T14:55:15.979Z"
     },
     {
       "id": "ponytail",
@@ -654,6 +1194,12 @@
       "when": "불필요한 추상화와 의존성을 줄이며 개발할 때",
       "prompt": "$ponytail로 현재 요구사항을 만족하는 가장 단순한 구현을 제안해줘. 기존 코드와 표준 라이브러리를 먼저 살피고 꼭 필요한 변경만 적용해줘.",
       "note": "단순화가 기능 요구사항을 삭제하는 근거가 되지는 않습니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "ponytail",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -671,12 +1217,7 @@
         "SKILL.md": "02c0712c86277d49d18a77da3a2b825657bf02d1"
       },
       "snapshotHash": "0b108b1506d5c5e9b3f6926d3e6de1a83364d05500ef1ac8d43753a888a48f2f",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T14:55:15.979Z"
     },
     {
       "id": "ponytail-review",
@@ -687,6 +1228,12 @@
       "when": "diff의 과잉 설계를 검토할 때",
       "prompt": "$ponytail-review로 현재 diff에서 불필요한 추상화, 중복 구현과 사용하지 않는 유연성을 찾아줘. 위치, 삭제할 내용과 대안을 한 줄씩 제시해줘.",
       "note": "정확성·보안 리뷰를 대체하지 않습니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "ponytail-review",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -704,12 +1251,7 @@
         "SKILL.md": "b92e98304c1d0c101fc5e02aa33c4252f9a8db85"
       },
       "snapshotHash": "c01e1fe1978756cf34e205793b1cfa2244d17d0f78d864a018b918ae773759bb",
-      "syncedAt": "2026-10-05T15:22:42.709Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T15:22:42.709Z"
     },
     {
       "id": "ponytail-audit",
@@ -720,6 +1262,12 @@
       "when": "프로젝트의 구조와 의존성이 비대해졌을 때",
       "prompt": "$ponytail-audit로 저장소 전체를 과잉 설계 관점에서 감사해줘. 삭제·단순화 후보를 효과가 큰 순서로 보고하고 파일은 수정하지 마.",
       "note": "일회성 보고서이며 자동 수정하지 않습니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "ponytail-audit",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -737,12 +1285,7 @@
         "SKILL.md": "a8302b0037c9749e5353aa4a561ebbeff97ae018"
       },
       "snapshotHash": "cd351b87310d8344581856d18c15d5d3ec3a836eaa0be9ec53bab71be70a626f",
-      "syncedAt": "2026-10-05T15:22:42.709Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T15:22:42.709Z"
     },
     {
       "id": "ponytail-debt",
@@ -753,6 +1296,12 @@
       "when": "의도적으로 미룬 기술 부채를 확인할 때",
       "prompt": "$ponytail-debt로 현재 저장소의 ponytail 주석을 모아 부채 목록을 만들어줘. 각 항목의 한계, 개선 조건과 위치를 정리하고 원본은 수정하지 마.",
       "note": "표시된 주석을 수집하므로 모든 기술 부채를 발견하는 것은 아닙니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "ponytail-debt",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -770,12 +1319,7 @@
         "SKILL.md": "d8fab97476531bf837c3d47efa979b4c308c43fd"
       },
       "snapshotHash": "691f30333e975fd515dfacc478b160d1921ea6cd7d3bba75491bc14c2789d075",
-      "syncedAt": "2026-10-05T15:22:42.709Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T15:22:42.709Z"
     },
     {
       "id": "ponytail-gain",
@@ -786,6 +1330,12 @@
       "when": "단순화 방식의 측정 결과를 참고하고 싶을 때",
       "prompt": "$ponytail-gain로 공개된 ponytail 벤치마크 결과와 측정 조건을 보여줘. 현재 프로젝트에서 직접 측정한 수치와 구분해줘.",
       "note": "현재 프로젝트의 성과 수치가 아닙니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "ponytail-gain",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -803,12 +1353,7 @@
         "SKILL.md": "574e319fb748f1ba2a90ccfd42403a3d7d12dbc6"
       },
       "snapshotHash": "d34e6047f7ba079f2d553b8b8d061cd6b4169d920a32a04a5b4033a606c15610",
-      "syncedAt": "2026-10-05T15:22:42.709Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T15:22:42.709Z"
     },
     {
       "id": "ponytail-help",
@@ -819,6 +1364,12 @@
       "when": "Ponytail을 처음 사용하거나 명령을 확인할 때",
       "prompt": "$ponytail-help로 ponytail 모드와 관련 스킬의 명령, 사용 시점과 차이를 간단히 알려줘.",
       "note": "도움말 조회만으로 현재 모드를 변경하지 않습니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "ponytail-help",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -836,12 +1387,7 @@
         "SKILL.md": "b3a3f609bd4da78b5eb161438b541f68656a53d8"
       },
       "snapshotHash": "55dc3a2a6a648c77dc1fca06b7e4ade467a65d5f8771fd515f59e3bd9a87250b",
-      "syncedAt": "2026-10-05T15:22:42.709Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T15:22:42.709Z"
     },
     {
       "id": "frontend-design",
@@ -852,6 +1398,12 @@
       "when": "새 웹 화면을 만들거나 기존 디자인을 개선할 때",
       "prompt": "$frontend-design로 현재 서비스의 사용자와 목적을 확인하고 어울리는 디자인 방향을 제안해줘. 타이포그래피·색상·레이아웃을 일관되게 적용하고 모바일과 키보드 접근성을 검증해줘.",
       "note": "기존 디자인을 변경할 때는 유지할 요소와 변경 범위를 명확히 합니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "frontend-design",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -870,12 +1422,7 @@
         "SKILL.md": "a5333457c414d20d625f307df945842c0952ecc3"
       },
       "snapshotHash": "1444deee307974248e61dfb475d4a5091c2c83a0a5c5840657abb44df1a76b1f",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T14:55:15.979Z"
     },
     {
       "id": "taste",
@@ -886,6 +1433,12 @@
       "when": "획일적인 느낌을 줄이고 브랜드에 맞게 디자인할 때",
       "prompt": "$design-taste-frontend로 이 랜딩 페이지의 대상과 목적을 읽고 적합한 시각적 방향을 정해줘. 색상과 타이포그래피를 일관되게 적용하고 장식보다 콘텐츠를 우선해줘.",
       "note": "대시보드나 복잡한 다단계 제품 UI보다 랜딩·포트폴리오에 적합합니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "design-taste-frontend",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -904,12 +1457,7 @@
         "SKILL.md": "b72132fcd466da605623ffe96e370b3991fc5285"
       },
       "snapshotHash": "fcea4e66c291004754210bcad6702c7ec74406cce3816d525f12f4fbbf700ae1",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T14:55:15.979Z"
     },
     {
       "id": "pdf",
@@ -920,6 +1468,12 @@
       "when": "PDF 내용을 읽거나 파일 구성을 바꿀 때",
       "prompt": "$pdf로 첨부한 PDF의 구조를 확인하고 핵심 내용과 표를 추출해줘. 스캔 문서인지 확인하고 읽지 못한 페이지는 명시해줘.",
       "note": "스캔 문서에는 OCR이 필요할 수 있습니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "pdf",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -934,9 +1488,8 @@
         "baseline": "683bc88e56f3e09ba94f7055977f3d3aa499f202"
       },
       "files": {
-        "LICENSE.txt": "c55ab42224874608473643de0a85736b7fec0730",
-        "SKILL.md": "d3e046a5ae107a6cb23cfb16c219837094ab35d3",
         "forms.md": "6e7e1e0d9e6ae17215db3e130aea3c3c546487e6",
+        "LICENSE.txt": "c55ab42224874608473643de0a85736b7fec0730",
         "reference.md": "41400bf4fc67f15fb062d43695ec92f078226023",
         "scripts/check_bounding_boxes.py": "2cc5e348f359b7aa7179e6a26772dacfdbbeba53",
         "scripts/check_fillable_fields.py": "36dfb9513e2f54e051820b58c3cdd1f09bc6ff37",
@@ -945,15 +1498,11 @@
         "scripts/extract_form_field_info.py": "64cd4703a4af80bf6abe16f4c3065d8abd55d173",
         "scripts/extract_form_structure.py": "f219e7d5b5e30616b2259abb924253afd0240aee",
         "scripts/fill_fillable_fields.py": "51c2600f3895723cac15ec3ffcd8a482e42f95d7",
-        "scripts/fill_pdf_form_with_annotations.py": "b430069fd016cff11560d0f2b95c63074736e5e4"
+        "scripts/fill_pdf_form_with_annotations.py": "b430069fd016cff11560d0f2b95c63074736e5e4",
+        "SKILL.md": "d3e046a5ae107a6cb23cfb16c219837094ab35d3"
       },
       "snapshotHash": "5a6ca1265f49c63b6cdfaedcaf3c4ed714b0b57be81b1870a4e7f528d616e8cb",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T14:55:15.979Z"
     },
     {
       "id": "docx",
@@ -964,6 +1513,12 @@
       "when": "편집 가능한 보고서나 문서를 만들어야 할 때",
       "prompt": "$docx로 제공한 자료로 Word 보고서를 만들어줘. 제목 체계, 목차와 표 형식을 일관되게 적용하고 최종 렌더링에서 잘림과 페이지 구성을 확인해줘.",
       "note": "최종 산출물은 편집 가능한 Word 파일입니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "docx",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -979,7 +1534,6 @@
       },
       "files": {
         "LICENSE.txt": "c55ab42224874608473643de0a85736b7fec0730",
-        "SKILL.md": "fb954a460a1ea2294e9595e87fecce8df043eeba",
         "scripts/__init__.py": "8b137891791fe96927ad78e64b0aad7bded08bdc",
         "scripts/accept_changes.py": "8e363161915d3720409bb8b6ef9bc4ade33b64e4",
         "scripts/comment.py": "46ed5f52eb639934a8ead383976eecc2a6867fa7",
@@ -988,6 +1542,10 @@
         "scripts/office/helpers/pptx_chart.py": "209cb7c58b91b90ee685c082f7e20be21a1a6686",
         "scripts/office/helpers/pptx_slide.py": "22f9aee0ff6c4797fa344f064d7cd6a1ab96b05b",
         "scripts/office/helpers/pptx_theme.py": "84466201cf22ca237cd640c80a08e9e2cabcce90",
+        "scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd": "a6de9d2733d3f0eea12ae87b24122495df1f0928",
+        "scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd": "10e978b661fc291cbeea9ab0c248601cf216f96d",
+        "scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd": "4248bf7a39c793c9f319bae7d09f92983efe5368",
+        "scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd": "56497467120b52b742756379959d4b2536be6df7",
         "scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd": "6454ef9a94d52512e4905df61280a3fd1dafc0a4",
         "scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd": "afa4f463e3140a3f626c73f7966d689270d89b2c",
         "scripts/office/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd": "64e66b8abd496d2e450c08110e40607e90b3fe13",
@@ -1015,10 +1573,6 @@
         "scripts/office/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd": "f1041e34ef365926f5670b896f5bb23e553ac36d",
         "scripts/office/schemas/ISO-IEC29500-4_2016/wml.xsd": "9c5b7a633411c2313ce839f748e4623bb0a70efe",
         "scripts/office/schemas/ISO-IEC29500-4_2016/xml.xsd": "0f13678d80a762375223f060e23b56c7b2eac89e",
-        "scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd": "a6de9d2733d3f0eea12ae87b24122495df1f0928",
-        "scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd": "10e978b661fc291cbeea9ab0c248601cf216f96d",
-        "scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd": "4248bf7a39c793c9f319bae7d09f92983efe5368",
-        "scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd": "56497467120b52b742756379959d4b2536be6df7",
         "scripts/office/schemas/mce/mc.xsd": "ef725457cf39116672e285d021be69b7ad022574",
         "scripts/office/schemas/microsoft/wml-2010.xsd": "f65f777730d82162f4248f03c703b1b85fda5fe2",
         "scripts/office/schemas/microsoft/wml-2012.xsd": "6b00755a9a8733f0fb171a47b25d0d7b4c70dee8",
@@ -1038,15 +1592,11 @@
         "scripts/templates/commentsExtended.xml": "411003cc485356c560e29687ca359d64cd89d4b4",
         "scripts/templates/commentsExtensible.xml": "f5572d710826dd7a1f455af7487e2157ef01ada0",
         "scripts/templates/commentsIds.xml": "32f1629f2a8bb9aafebb0699349d0d799edce9f3",
-        "scripts/templates/people.xml": "3803d2de0faa635687a48947b52ab98b9655f631"
+        "scripts/templates/people.xml": "3803d2de0faa635687a48947b52ab98b9655f631",
+        "SKILL.md": "fb954a460a1ea2294e9595e87fecce8df043eeba"
       },
       "snapshotHash": "d85c331754fc71c36b70b6a4c0a0ef7903a61a36655f546558cf3ae89783bd22",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T14:55:15.979Z"
     },
     {
       "id": "xlsx",
@@ -1057,6 +1607,12 @@
       "when": "엑셀 파일을 분석하거나 계산표를 만들 때",
       "prompt": "$xlsx로 첨부한 엑셀 파일의 구조와 수식을 확인해줘. 잘못된 데이터와 수식 오류를 정리하고 수정한 파일과 변경 내역을 제공해줘.",
       "note": "수식 계산 결과와 원본 데이터 보존 여부를 함께 확인합니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "xlsx",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -1072,11 +1628,14 @@
       },
       "files": {
         "LICENSE.txt": "c55ab42224874608473643de0a85736b7fec0730",
-        "SKILL.md": "9da54804cc8c938586f89363c8da3b3a6e2a563d",
         "scripts/office/helpers/__init__.py": "d3c5817c7e50b23bdd82032c8f89fed497bce9fa",
         "scripts/office/helpers/pptx_chart.py": "209cb7c58b91b90ee685c082f7e20be21a1a6686",
         "scripts/office/helpers/pptx_slide.py": "22f9aee0ff6c4797fa344f064d7cd6a1ab96b05b",
         "scripts/office/helpers/pptx_theme.py": "84466201cf22ca237cd640c80a08e9e2cabcce90",
+        "scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd": "a6de9d2733d3f0eea12ae87b24122495df1f0928",
+        "scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd": "10e978b661fc291cbeea9ab0c248601cf216f96d",
+        "scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd": "4248bf7a39c793c9f319bae7d09f92983efe5368",
+        "scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd": "56497467120b52b742756379959d4b2536be6df7",
         "scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd": "6454ef9a94d52512e4905df61280a3fd1dafc0a4",
         "scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd": "afa4f463e3140a3f626c73f7966d689270d89b2c",
         "scripts/office/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd": "64e66b8abd496d2e450c08110e40607e90b3fe13",
@@ -1104,10 +1663,6 @@
         "scripts/office/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd": "f1041e34ef365926f5670b896f5bb23e553ac36d",
         "scripts/office/schemas/ISO-IEC29500-4_2016/wml.xsd": "9c5b7a633411c2313ce839f748e4623bb0a70efe",
         "scripts/office/schemas/ISO-IEC29500-4_2016/xml.xsd": "0f13678d80a762375223f060e23b56c7b2eac89e",
-        "scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd": "a6de9d2733d3f0eea12ae87b24122495df1f0928",
-        "scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd": "10e978b661fc291cbeea9ab0c248601cf216f96d",
-        "scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd": "4248bf7a39c793c9f319bae7d09f92983efe5368",
-        "scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd": "56497467120b52b742756379959d4b2536be6df7",
         "scripts/office/schemas/mce/mc.xsd": "ef725457cf39116672e285d021be69b7ad022574",
         "scripts/office/schemas/microsoft/wml-2010.xsd": "f65f777730d82162f4248f03c703b1b85fda5fe2",
         "scripts/office/schemas/microsoft/wml-2012.xsd": "6b00755a9a8733f0fb171a47b25d0d7b4c70dee8",
@@ -1123,15 +1678,11 @@
         "scripts/office/validators/docx.py": "b18149945a7cf7ebd77c14655eb74d89baca3a00",
         "scripts/office/validators/pptx.py": "318f0e61483972fb08e02be39c94331dba46445e",
         "scripts/office/validators/redlining.py": "4185c51f4f10eeaf3227168e440ed378ce120ec6",
-        "scripts/recalc.py": "6232be2deea56cc97c1d8996e4d68adf2457059c"
+        "scripts/recalc.py": "6232be2deea56cc97c1d8996e4d68adf2457059c",
+        "SKILL.md": "9da54804cc8c938586f89363c8da3b3a6e2a563d"
       },
       "snapshotHash": "6fa9c7f10adbcf4f3306ceeaa71fe79e2e400e5204d4dcf7b31be51147d10247",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T14:55:15.979Z"
     },
     {
       "id": "pptx",
@@ -1142,6 +1693,12 @@
       "when": "발표 파일을 만들거나 기존 슬라이드를 수정할 때",
       "prompt": "$pptx로 제공한 발표 내용을 PPTX로 구성해줘. 슬라이드별 핵심 메시지와 발표자 노트를 작성하고 렌더링하여 잘림과 겹침을 확인해줘.",
       "note": "프로젝트 분석부터 시작하려면 프로젝트 발표 제작 스킬을 먼저 사용하세요.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "pptx",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -1157,7 +1714,6 @@
       },
       "files": {
         "LICENSE.txt": "c55ab42224874608473643de0a85736b7fec0730",
-        "SKILL.md": "41cd2306977f269bb1d8169a9643b35053aa66bd",
         "scripts/__init__.py": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
         "scripts/add_slide.py": "f013ea94d1785c8cf767fb69284ffb5b8dd9d390",
         "scripts/clean.py": "551dd23192f6eae8e79d4b59b08a3cd9d10feadd",
@@ -1165,6 +1721,10 @@
         "scripts/office/helpers/pptx_chart.py": "209cb7c58b91b90ee685c082f7e20be21a1a6686",
         "scripts/office/helpers/pptx_slide.py": "22f9aee0ff6c4797fa344f064d7cd6a1ab96b05b",
         "scripts/office/helpers/pptx_theme.py": "84466201cf22ca237cd640c80a08e9e2cabcce90",
+        "scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd": "a6de9d2733d3f0eea12ae87b24122495df1f0928",
+        "scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd": "10e978b661fc291cbeea9ab0c248601cf216f96d",
+        "scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd": "4248bf7a39c793c9f319bae7d09f92983efe5368",
+        "scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd": "56497467120b52b742756379959d4b2536be6df7",
         "scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd": "6454ef9a94d52512e4905df61280a3fd1dafc0a4",
         "scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd": "afa4f463e3140a3f626c73f7966d689270d89b2c",
         "scripts/office/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd": "64e66b8abd496d2e450c08110e40607e90b3fe13",
@@ -1192,10 +1752,6 @@
         "scripts/office/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd": "f1041e34ef365926f5670b896f5bb23e553ac36d",
         "scripts/office/schemas/ISO-IEC29500-4_2016/wml.xsd": "9c5b7a633411c2313ce839f748e4623bb0a70efe",
         "scripts/office/schemas/ISO-IEC29500-4_2016/xml.xsd": "0f13678d80a762375223f060e23b56c7b2eac89e",
-        "scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd": "a6de9d2733d3f0eea12ae87b24122495df1f0928",
-        "scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd": "10e978b661fc291cbeea9ab0c248601cf216f96d",
-        "scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd": "4248bf7a39c793c9f319bae7d09f92983efe5368",
-        "scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd": "56497467120b52b742756379959d4b2536be6df7",
         "scripts/office/schemas/mce/mc.xsd": "ef725457cf39116672e285d021be69b7ad022574",
         "scripts/office/schemas/microsoft/wml-2010.xsd": "f65f777730d82162f4248f03c703b1b85fda5fe2",
         "scripts/office/schemas/microsoft/wml-2012.xsd": "6b00755a9a8733f0fb171a47b25d0d7b4c70dee8",
@@ -1211,15 +1767,11 @@
         "scripts/office/validators/docx.py": "b18149945a7cf7ebd77c14655eb74d89baca3a00",
         "scripts/office/validators/pptx.py": "318f0e61483972fb08e02be39c94331dba46445e",
         "scripts/office/validators/redlining.py": "4185c51f4f10eeaf3227168e440ed378ce120ec6",
-        "scripts/thumbnail.py": "d49cac0e1a138fd0cbf46dece32b0da153cdc4f7"
+        "scripts/thumbnail.py": "d49cac0e1a138fd0cbf46dece32b0da153cdc4f7",
+        "SKILL.md": "41cd2306977f269bb1d8169a9643b35053aa66bd"
       },
       "snapshotHash": "b6becd4bc4d8adc601c00c5617a6aa22f264b92730cbaa9b7ae7ba6e8185d60a",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T14:55:15.979Z"
     },
     {
       "id": "humanizer",
@@ -1230,6 +1782,12 @@
       "when": "글이 지나치게 정형적이거나 홍보 문구처럼 느껴질 때",
       "prompt": "$humanizer로 아래 글의 의미와 사실을 유지하면서 상투적인 표현과 과장을 줄여줘. 작성자의 어조를 살리고 새로운 사실은 추가하지 마.",
       "note": "blader/humanizer 원본입니다. 한국어 전용 스킬과 별개입니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "humanizer",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -1251,16 +1809,11 @@
         "baseline": "225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8"
       },
       "files": {
-        "SKILL.md": "19fc634208e8cc6ae55d4ff287152583216fd244",
-        "scripts/validate-package.py": "9b20d72cecd28bb4589ca05039e8586f902e74b6"
+        "scripts/validate-package.py": "9b20d72cecd28bb4589ca05039e8586f902e74b6",
+        "SKILL.md": "19fc634208e8cc6ae55d4ff287152583216fd244"
       },
       "snapshotHash": "c09f3bebdfb43aacf01e453222464ed95835cad6ab66554c1ff33e70a89fa015",
-      "syncedAt": "2026-10-05T15:22:42.709Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T15:22:42.709Z"
     },
     {
       "id": "korean-humanizer",
@@ -1270,7 +1823,13 @@
       "summary": "한국어 번역투와 반복적인 문장 패턴을 자연스럽게 다듬습니다.",
       "when": "한국어 문서의 어색한 표현을 개선할 때",
       "prompt": "$korean-humanizer로 아래 한국어 글의 의미를 유지하면서 번역투, 과도한 쉼표와 반복 표현을 다듬어줘. 수정본을 먼저 주고 중요한 변경 이유만 설명해줘.",
-      "note": "DaleSeo/korean-skills 원본이며 연결 별칭은 korean-humanizer입니다.",
+      "note": "DaleSeo/korean-skills 원본이며 연결 별칭과 내부 이름은 korean-humanizer입니다. install.sh가 재설치·업데이트 후에도 내부 이름을 자동 보정합니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "korean-humanizer",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -1285,7 +1844,6 @@
         "baseline": "ae12ba27982ebeff03b46dc738365aaa34260d9a"
       },
       "files": {
-        "SKILL.md": "cc6a9a6c3e3cb7ffb32f90b2303d4780d6c8245d",
         "examples/after-1.md": "9651b9ade9f634c76da3be645a9508e5f23e813f",
         "examples/after-2.md": "28695becc0223c6294ff13726f741c44722d8e08",
         "examples/after-3.md": "5ed33e32385f5009ead461386108cd401789effa",
@@ -1299,15 +1857,11 @@
         "references/spacing-patterns.md": "2d210df0e47f41a13bbc395e62979f4a456d20f4",
         "references/structure-patterns.md": "d7ad93cbd034f54fdcff13e909c756e1fceac3bb",
         "references/translation-ese-patterns.md": "308f130bdfdd5fa4b3a77be97540011a975286dd",
-        "references/vocabulary-patterns.md": "03ff30d3c60b8e3994a9dfe80b99ecb26fb2cea3"
+        "references/vocabulary-patterns.md": "03ff30d3c60b8e3994a9dfe80b99ecb26fb2cea3",
+        "SKILL.md": "88f7c03dfc722edbd61a8f8ea05d3201b220f339"
       },
-      "snapshotHash": "72ab014f003c2252f2e8e6ebe099568f4a77702fae0433920082c6cd1db80977",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "snapshotHash": "935eda759e3a49b4a0694863396fbc585eb2514c2a1529435a7e740f582dc988",
+      "syncedAt": "2026-10-06T14:54:06.022Z"
     },
     {
       "id": "korean-grammar-checker",
@@ -1318,6 +1872,12 @@
       "when": "문서를 제출하거나 게시하기 전에 교정할 때",
       "prompt": "$korean-grammar-checker로 아래 한국어 문서의 맞춤법·띄어쓰기·문법·구두점을 검사해줘. 교정본을 먼저 제시하고 명확한 오류와 선택적 권장을 구분해줘.",
       "note": "문체 통일은 한국어 스타일 가이드 스킬을 사용하세요.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "korean-grammar-checker",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -1332,19 +1892,14 @@
         "baseline": "ae12ba27982ebeff03b46dc738365aaa34260d9a"
       },
       "files": {
-        "SKILL.md": "a789720686698989bb67774265c51846c0d52c8d",
         "examples/after.md": "cbdb6fcb34ed425fae1cd86a93bd60e49991a79c",
         "examples/before.md": "db9c7d26a3f7355bfae11f2279a2a24f317c1314",
         "references/common-errors.md": "fd92c6c7ac6b31fa85bb2bde2c8dbbe40835f806",
-        "references/rules.md": "15e574c963065cfa359f47f6c9a9518a5d740446"
+        "references/rules.md": "15e574c963065cfa359f47f6c9a9518a5d740446",
+        "SKILL.md": "a789720686698989bb67774265c51846c0d52c8d"
       },
       "snapshotHash": "7c6ebe5173daeabaf11ca567fe9434593a068f92cf46fe39e25d518af0a9238d",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T14:55:15.979Z"
     },
     {
       "id": "korean-style-guide",
@@ -1355,6 +1910,12 @@
       "when": "여러 사람이 작성한 문서를 하나로 정리할 때",
       "prompt": "$korean-style-guide로 아래 문서의 어조, 용어, 숫자와 날짜 표기를 검사해줘. 기존에 가장 일관되게 사용된 기준을 우선해 통일하고 변경 기준을 설명해줘.",
       "note": "맞춤법 검사와 문서 내부 스타일 통일은 구분합니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "korean-style-guide",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -1369,7 +1930,6 @@
         "baseline": "ae12ba27982ebeff03b46dc738365aaa34260d9a"
       },
       "files": {
-        "SKILL.md": "bbb53876c5ffee54c06f8ab7a57de9d236846cba",
         "examples/academic-style.md": "b65e7d98e4bd41ed6d35cfe486b299e0142b3c61",
         "examples/analysis.md": "f7844f39e62ab2be3ede44a26206ab8e9d66460a",
         "examples/blog-style.md": "3bc05751fb846b06c361ef8306270c140e5bd356",
@@ -1382,15 +1942,11 @@
         "references/numbering-units.md": "a0ff12159ad323bc126645a27a93639157178cb9",
         "references/quotation-emphasis.md": "ec440edbcfed1f35e70d7308724758ffca463531",
         "references/terminology.md": "e71447edd6ce786f50d498305eaa455e60c1c403",
-        "references/tone-consistency.md": "96faf5d46c4f186ffe5133c3a5c35c08de7173fa"
+        "references/tone-consistency.md": "96faf5d46c4f186ffe5133c3a5c35c08de7173fa",
+        "SKILL.md": "bbb53876c5ffee54c06f8ab7a57de9d236846cba"
       },
       "snapshotHash": "3e3f9e90b44ed42b9e1877f6142958c7dfc61f6e8e9275cf6c2167439550f585",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T14:55:15.979Z"
     },
     {
       "id": "caveman",
@@ -1401,6 +1957,12 @@
       "when": "설명이 너무 길어 핵심만 받고 싶을 때",
       "prompt": "$caveman로 lite 모드로 답변을 간결하게 해줘. 기술적 근거, 필수 조건과 검증 방법은 유지해줘.",
       "note": "선택한 모드가 대화에 지속될 수 있으며 off로 해제합니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "caveman",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -1419,12 +1981,7 @@
         "SKILL.md": "f029f003c1e9ef36d7cef8a76702192dea73c4cd"
       },
       "snapshotHash": "69841790abcf0b6bc85c9c1ae58817b0281571995aa2643a8407a8f156b0a9f0",
-      "syncedAt": "2026-10-05T15:22:42.709Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T15:22:42.709Z"
     },
     {
       "id": "caveman-commit",
@@ -1435,6 +1992,12 @@
       "when": "커밋 메시지 문안을 간결하게 작성할 때",
       "prompt": "$caveman-commit로 현재 diff의 목적을 담은 간결한 커밋 메시지를 작성해줘. 프로젝트에서 요구하는 한국어 목적 문단과 변경 목록은 반드시 포함하고 실제 커밋은 하지 마.",
       "note": "스킬의 압축 선호보다 프로젝트의 본문 규칙을 우선합니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "caveman-commit",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -1453,12 +2016,7 @@
         "SKILL.md": "e13d6afc293d3bdebbefe8b23a9d09144595e874"
       },
       "snapshotHash": "00e378fbca93c606e6b2f75538e3a519adfc034eab5c62536d1a41a320e2b3aa",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T14:55:15.979Z"
     },
     {
       "id": "caveman-review",
@@ -1469,6 +2027,12 @@
       "when": "리뷰의 핵심 지적만 빠르게 확인할 때",
       "prompt": "$caveman-review로 현재 diff를 검토하고 각 발견사항을 위치, 문제와 수정 방향 한 줄로 정리해줘. 불확실한 후보와 확인된 문제를 구분해줘.",
       "note": "간결하게 쓰더라도 판단의 근거를 생략하지 않습니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "caveman-review",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -1487,12 +2051,7 @@
         "SKILL.md": "ed2bf49948c1514c147a699a484456a5ff7b27f7"
       },
       "snapshotHash": "297ceb5f4854f75c5789a7be9968d31aaf87a5fbcf68ad678d98099ac335578a",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T14:55:15.979Z"
     },
     {
       "id": "caveman-compress",
@@ -1503,6 +2062,12 @@
       "when": "반복해서 읽는 지침의 길이를 줄일 때",
       "prompt": "$caveman-compress로 지정한 메모리 문서를 읽고 의미를 보존하는 압축안을 만들어줘. 적용 전 원본 백업 위치와 손실될 수 있는 내용을 확인해줘.",
       "note": "원본 파일을 수정하는 작업이므로 대상과 백업을 확인합니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "caveman-compress",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -1518,23 +2083,18 @@
       },
       "files": {
         "README.md": "892767aea430af51e51762cab79d559b59eddccf",
-        "SECURITY.md": "0efa9fe117a8de1b80b80480bdf0218291204eac",
-        "SKILL.md": "141cf972bf7541f6a92b14b40378af33c6f3f86b",
         "scripts/__init__.py": "16b8c53c2ca7f8c7c105a0f6c72a46acbd02fec4",
         "scripts/__main__.py": "4e28416e104515e90fca4b69cc60d0c61fd15d61",
         "scripts/benchmark.py": "97d081b5c60cc2aaaf1735a4deeea59f7fbffe49",
         "scripts/cli.py": "cc23b142c10b92a85f794616af17a783c85c4b1a",
         "scripts/compress.py": "c8ba53e7be5c23739c4bc38c2ad03e44767579f5",
         "scripts/detect.py": "b7da1fa8528bf0c8dfad98fcb82c5eae52596794",
-        "scripts/validate.py": "da662b539b5b21d9a942b80ce16505754dc712f9"
+        "scripts/validate.py": "da662b539b5b21d9a942b80ce16505754dc712f9",
+        "SECURITY.md": "0efa9fe117a8de1b80b80480bdf0218291204eac",
+        "SKILL.md": "141cf972bf7541f6a92b14b40378af33c6f3f86b"
       },
       "snapshotHash": "b9542b9f10855830065b7ba5789d224576b8aa5fbb275dd56f5f3e088b1ba0d1",
-      "syncedAt": "2026-10-05T15:22:42.709Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T15:22:42.709Z"
     },
     {
       "id": "caveman-help",
@@ -1545,6 +2105,12 @@
       "when": "압축 수준과 해제 방법을 확인할 때",
       "prompt": "$caveman-help로 caveman의 모드별 차이, 관련 명령과 해제 방법을 보여줘. 현재 모드는 변경하지 마.",
       "note": "도움말은 일회성 조회입니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "caveman-help",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -1563,12 +2129,7 @@
         "SKILL.md": "6f6eacf8628a67d89dd058018c53997bd1d8d02f"
       },
       "snapshotHash": "eee85bfd8068c3e0b71fa80e598557fad81269dd990135e66bc0a54f1b4b786d",
-      "syncedAt": "2026-10-05T15:22:42.709Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T15:22:42.709Z"
     },
     {
       "id": "caveman-stats",
@@ -1579,6 +2140,12 @@
       "when": "실제 세션의 토큰 사용량을 확인할 때",
       "prompt": "$caveman-stats로 현재 세션의 실제 토큰 사용량과 추정 절감량을 확인해줘. 측정값과 추정값을 구분하고 로그나 Hook이 없으면 미지원으로 밝혀줘.",
       "note": "원본 Hook과 세션 로그 지원이 필요하며 호스트에 따라 동작하지 않을 수 있습니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "caveman-stats",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -1597,12 +2164,7 @@
         "SKILL.md": "681136b629ca275da2391c72a11bcf8bcbf6eca5"
       },
       "snapshotHash": "c7d552a1ac18869bd0bdebae98437cd393d5cb27b28c288056b3bac2ca391671",
-      "syncedAt": "2026-10-05T15:22:42.709Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T15:22:42.709Z"
     },
     {
       "id": "fleet-auditor",
@@ -1613,6 +2175,12 @@
       "when": "여러 도구를 함께 쓰며 비용과 설정을 점검할 때",
       "prompt": "$fleet-auditor로 사용 중인 에이전트 환경의 토큰·비용 낭비를 조사해줘. 확인 가능한 로그를 근거로 유휴 사용, 모델 선택과 설정 중복을 구분하고 추정의 한계를 밝혀줘.",
       "note": "각 도구의 설치와 로그 접근이 필요합니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "fleet-auditor",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -1627,19 +2195,14 @@
         "baseline": "247edced8f8baca0dab996eb8228816b821a8e11"
       },
       "files": {
-        "SKILL.md": "918d4fe6e76f78be42b092154a66676fdea89510",
         "references/fleet-systems.md": "232152cec472b14061424629b0d2b53af89ab2e0",
         "references/waste-patterns.md": "378a94978ea975d4a34ff6f27c11d7b1ed1541bc",
         "scripts/fleet.py": "c0e51db138f4db546273d1615fa452323eb3b9cd",
-        "scripts/shared.py": "aa9f818bb5be935d1a7caf4b0c9e4d13b1005f3b"
+        "scripts/shared.py": "aa9f818bb5be935d1a7caf4b0c9e4d13b1005f3b",
+        "SKILL.md": "918d4fe6e76f78be42b092154a66676fdea89510"
       },
       "snapshotHash": "53892b6cd72cd71398ca95b455dcdfa499ecaba1deb74ca151f393988c41e342",
-      "syncedAt": "2026-10-05T15:22:42.709Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T15:22:42.709Z"
     },
     {
       "id": "resume-checkpoint",
@@ -1650,6 +2213,12 @@
       "when": "이전 대화를 이어서 작업할 때",
       "prompt": "$resume-checkpoint로 이전 작업의 체크포인트를 찾아 목표, 완료 사항, 미완료 사항과 제약을 복원해줘. 출처를 표시하고 현재 작업과 관련 없는 세션은 사용하지 마.",
       "note": "새로운 무관한 작업에는 사용하지 않습니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "resume-checkpoint",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -1664,16 +2233,11 @@
         "baseline": "247edced8f8baca0dab996eb8228816b821a8e11"
       },
       "files": {
-        "SKILL.md": "df46f1fd27cdbde21471429fd7f00196e91bcc17",
-        "scripts/pull_checkpoint.py": "d56ab00b0c264376921b0124b8ce0e9a4acc797c"
+        "scripts/pull_checkpoint.py": "d56ab00b0c264376921b0124b8ce0e9a4acc797c",
+        "SKILL.md": "df46f1fd27cdbde21471429fd7f00196e91bcc17"
       },
       "snapshotHash": "be5d0033e5d0da763d91cc9a20b33528633b6a3bf3f97e8a6d8aad88c6097ee9",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T14:55:15.979Z"
     },
     {
       "id": "token-coach",
@@ -1684,6 +2248,12 @@
       "when": "설정을 만들거나 빠르게 점검하고 싶을 때",
       "prompt": "$token-coach로 현재 에이전트 설정을 간단히 점검하고 토큰 효율을 높일 방법을 제안해줘. 필요한 지침과 기능은 유지하고 변경 전 근거를 설명해줘.",
       "note": "전체 감사와 실제 수정은 Token Optimizer에서 다룹니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "token-coach",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -1698,7 +2268,6 @@
         "baseline": "247edced8f8baca0dab996eb8228816b821a8e11"
       },
       "files": {
-        "SKILL.md": "5f47614b85452ea9189666391ac973adb5b6ea67",
         "assets/coach-dashboard-tab.html": "5c53df9689f2d90d08e2c19e88f44dd5c35f14f9",
         "examples/coaching-session-agentic.md": "1febf54afafd9b6a706a0bc1b3efe25c61f93ba6",
         "examples/coaching-session-heavy-setup.md": "bb8657eae8fdf040596515f3616e436ceb319a5b",
@@ -1706,15 +2275,11 @@
         "references/agentic-systems.md": "32dd6bb0c99b8dcd13f75c7d80151792d2c9925e",
         "references/coach-patterns.md": "33e1b44ea13fd0e3d9826a10c5917019a584843e",
         "references/coaching-scripts.md": "17b51dd7d0b8a11a4a89247bc3ac8cdae0888f45",
-        "references/quick-reference.md": "a1361418ac17cc72ab66927cf39b29f0148b876b"
+        "references/quick-reference.md": "a1361418ac17cc72ab66927cf39b29f0148b876b",
+        "SKILL.md": "5f47614b85452ea9189666391ac973adb5b6ea67"
       },
       "snapshotHash": "9d2b4dfc4a078f6ac309aa1b98fe52082d41342fee167cace16e75ab84e7cec0",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T14:55:15.979Z"
     },
     {
       "id": "token-dashboard",
@@ -1725,6 +2290,12 @@
       "when": "사용량과 환경 정보를 화면에서 확인할 때",
       "prompt": "$token-dashboard로 설치된 Token Optimizer 런타임을 확인하고 토큰 대시보드를 열어줘. 필요한 런타임이나 로그가 없으면 준비 사항을 알려줘.",
       "note": "이 사이트 내부의 대시보드가 아닌 별도 로컬 런타임을 엽니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "token-dashboard",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -1742,12 +2313,7 @@
         "SKILL.md": "26b6d813783dc0a3459b3b4510f39f2c393f1560"
       },
       "snapshotHash": "d3f6ab1b6c775fe09662b242b34d486904984fd75ce2e74db25f0d586f4189b1",
-      "syncedAt": "2026-10-05T14:55:15.979Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T14:55:15.979Z"
     },
     {
       "id": "token-optimizer",
@@ -1758,6 +2324,12 @@
       "when": "컨텍스트가 빠르게 차거나 지침이 비대해졌을 때",
       "prompt": "$token-optimizer로 현재 에이전트 설정과 컨텍스트 낭비를 조사해줘. 변경 후보와 영향부터 제시하고 적용 전후를 같은 기준으로 측정해줘.",
       "note": "스킬 파일 외에 원본 런타임과 측정 스크립트가 필요할 수 있습니다.",
+      "usage": [
+        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
+        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
+        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.",
+        "Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\agent\\agent-skills\\scripts\\link-codex.ps1\" 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다."
+      ],
       "callName": "token-optimizer",
       "commands": [
         "cd \"$HOME/agent/agent-skills\"",
@@ -1772,7 +2344,6 @@
         "baseline": "247edced8f8baca0dab996eb8228816b821a8e11"
       },
       "files": {
-        "SKILL.md": "08866fb81eb665abd1857447cee6859b12df8da1",
         "assets/active-compression-hero.svg": "3adc47925b05d861ae33f74b3db0bc3619cf1488",
         "assets/automated-flow.svg": "a488e7f67cb99b507a4dd3ceb77c95edf3150c4e",
         "assets/bash-compression.svg": "fde52244f07336637a446536e845985961bd7d12",
@@ -1816,8 +2387,8 @@
         "scripts/antigravity_session.py": "412156b8c8750f77dc751fe1d7bd8c78a617a3d5",
         "scripts/antigravity_state.py": "415f4641ddfdb43df6702140637e97925967eafe",
         "scripts/archive_result.py": "4b7cd62f2f49a8c42dfb9561606c343dd1f0b153",
-        "scripts/bash_compress.py": "c4ffea8d13abb77a7f3820c38c0e07e36b4bde46",
         "scripts/bash_compress_hook.py": "fb4e3b9c6552585f4cfff96a0b0ff8a34d37a61e",
+        "scripts/bash_compress.py": "c4ffea8d13abb77a7f3820c38c0e07e36b4bde46",
         "scripts/bash_hook.py": "209b12328f5ad60df5b5c41bae46ca2f943aba67",
         "scripts/bash_whitelist.py": "38c4110126363300e2411217f63ead097fa75986",
         "scripts/build_output_compress.py": "5631de0df41bea2471960cfd6665e944779b5735",
@@ -1894,20 +2465,16 @@
         "scripts/session_store.py": "3a8eb716ddd8429c0757ec1ad2df90a8e11aab55",
         "scripts/spawn_utils.py": "f5265d7997ae79bebb701214eccbcc75aba18bec",
         "scripts/statusline.js": "2c91c10b2fa38450596fb4c1a78d4e20ab5e66bb",
-        "scripts/structure_map.py": "be255f3d9cccfca2fc0e6c2a17a863dfcd7aa676",
         "scripts/structure_map_ts.py": "1d1114ffe1d61fd9b5bf3d9803e5b9bddafd61f9",
+        "scripts/structure_map.py": "be255f3d9cccfca2fc0e6c2a17a863dfcd7aa676",
         "scripts/structure_replay.py": "e39abed383283117bd54e8f40b995530e190272e",
         "scripts/thrash_guard.py": "dcc667ec0f9e1f91f676e8eb1683b889d0b77d1d",
         "scripts/token_estimate.py": "da7b72a1d1cadaca1fc1a7e726d79b60ea3c7ff9",
-        "scripts/utf8_io.py": "a68a9df821cd0fcef4fee7a15fb74433b3fd8fd8"
+        "scripts/utf8_io.py": "a68a9df821cd0fcef4fee7a15fb74433b3fd8fd8",
+        "SKILL.md": "08866fb81eb665abd1857447cee6859b12df8da1"
       },
       "snapshotHash": "30f73f085adf403b1cefc84d09128f046e0105ed6632fc4f5bfb96a9e792d63a",
-      "syncedAt": "2026-10-05T15:22:42.709Z",
-      "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
-      ]
+      "syncedAt": "2026-10-05T15:22:42.709Z"
     }
   ],
   "workflows": [
@@ -1961,5 +2528,23 @@
         "korean-style-guide"
       ]
     }
+  ],
+  "pendingSources": [
+    "external/tools/token-optimizer/cowork/token-optimizer/skills/fleet-auditor",
+    "external/tools/token-optimizer/cowork/token-optimizer/skills/resume-checkpoint",
+    "external/tools/token-optimizer/cowork/token-optimizer/skills/token-coach",
+    "external/tools/token-optimizer/cowork/token-optimizer/skills/token-dashboard",
+    "external/tools/token-optimizer/cowork/token-optimizer/skills/token-optimizer",
+    "external/tools/token-optimizer/openclaw/skills/token-optimizer",
+    "external/tools/token-optimizer/plugins/token-optimizer/skills/fleet-auditor",
+    "external/tools/token-optimizer/plugins/token-optimizer/skills/resume-checkpoint",
+    "external/tools/token-optimizer/plugins/token-optimizer/skills/token-coach",
+    "external/tools/token-optimizer/plugins/token-optimizer/skills/token-dashboard",
+    "external/tools/token-optimizer/plugins/token-optimizer/skills/token-optimizer",
+    "external/tools/token-optimizer/skills/fleet-auditor",
+    "external/tools/token-optimizer/skills/resume-checkpoint",
+    "external/tools/token-optimizer/skills/token-coach",
+    "external/tools/token-optimizer/skills/token-dashboard",
+    "external/tools/token-optimizer/skills/token-optimizer"
   ]
 }

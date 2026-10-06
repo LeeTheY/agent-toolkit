@@ -31,8 +31,9 @@ export async function buildCatalog({skills,harnesses,entries,workflows,previous,
   }else{
    const repo=entry.kind==='harness'?'agent-harnesses':'agent-skills';
    const local=entry.kind==='harness'?`skills/${entry.id}-harness`:`custom/skills/${entry.id}`;
-   source={repo:`LeeTheY/${repo}`,local,baseline:revision(entry.kind==='harness'?harnesses:skills,entry.kind==='harness'?[local,`harnesses/${entry.id}`]:[local])};
-   if(!source.baseline)throw Error(`원본 Git 이력 누락: ${entry.id}`);
+   source={repo:`LeeTheY/${repo}`,local,baseline:revision(entry.kind==='harness'?harnesses:skills,entry.kind==='harness'?[local,`harnesses/${entry.id}`]:[local])||null};
+   // 신규 staged 하네스는 구현 파일로 확인하고 아직 없는 커밋을 추정하지 않는다.
+   if(!source.baseline&&entry.kind!=='harness')throw Error(`원본 Git 이력 누락: ${entry.id}`);
    if(entry.kind==='harness'){callName=`${entry.id}-harness`;commands=['cd "$HOME/agent/agent-harnesses"',`node scripts/harness.ts setup ${entry.id}`,`./scripts/link-codex.sh --id ${entry.id}`];}
   }
   if(!files){

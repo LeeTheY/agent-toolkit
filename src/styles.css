@@ -59,3 +59,7 @@
 
 @media (max-width: 1180px) { .workspace-label { flex-wrap: wrap; } }
 @media (max-width: 700px) { .catalog-grid:not(.list-view) { grid-template-columns: 1fr; } }
+
+/* 상세 안내의 긴 용어가 좁은 화면의 grid 너비를 확장하지 않도록 합니다. */
+.detail-columns > * { min-width: 0; }
+.steps { overflow-wrap: anywhere; }
