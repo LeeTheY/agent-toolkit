@@ -28,10 +28,10 @@ test('Git blob 해시와 파일 삭제 비교가 안정적이다',()=>{
  assert.equal(blobHash(Buffer.from('test content\n')),'d670460b4b4aece5915caf5c68d12f560a9fe3e4');
  assert.deepEqual(changes({'old':'x'},{}),[{path:'old',type:'removed'}]);
 });
-test('44개 항목에 실제 호출명·프롬프트·파일 근거가 있고 경로가 노출되지 않는다',async()=>{
+test('49개 항목에 실제 호출명·프롬프트·파일 근거가 있고 경로가 노출되지 않는다',async()=>{
  const raw=await readFile(new URL('../src/data/catalog.json',import.meta.url),'utf8');const catalog: Catalog=JSON.parse(raw);
- assert.equal(catalog.tools.length,44);assert.equal(new Set(catalog.tools.map(t=>t.id)).size,44);
- for(const kind of ['harness','custom','external'] as ToolKind[])assert.equal(catalog.tools.filter(t=>t.kind===kind).length,{harness:2,custom:11,external:31}[kind]);
+ assert.equal(catalog.tools.length,49);assert.equal(new Set(catalog.tools.map(t=>t.id)).size,49);
+ for(const kind of ['harness','custom','external'] as ToolKind[])assert.equal(catalog.tools.filter(t=>t.kind===kind).length,{harness:6,custom:12,external:31}[kind]);
  for(const t of catalog.tools){assert.ok(t.callName);assert.ok(t.prompt.startsWith('$'+t.callName));assert.ok(t.files['SKILL.md']);assert.ok(t.usage.length);assert.ok(t.source.repo);}
  assert.doesNotMatch(raw,/\/Users\/|ghp_|github_pat_/);
  assert.notEqual(catalog.tools.find(t=>t.id==='humanizer')!.callName,catalog.tools.find(t=>t.id==='korean-humanizer')!.callName);

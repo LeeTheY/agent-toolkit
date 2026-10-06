@@ -4,6 +4,10 @@ import { guides } from './guides.ts';
 const rows: [string, string, ToolKind, string, string, string, string, string][] = [
 ['frontend','Frontend Harness','harness','프론트엔드','기존 웹 화면을 실제로 조작하고 기능·반응형·UI/UX를 평가합니다.','배포 전 화면과 핵심 사용자 흐름을 점검할 때','현재 프로젝트의 기존 프론트엔드를 평가해줘. 앱 소스는 수정하지 말고 화면 크기별 점수, 기능 오류, 개선 우선순위와 미검증 범위를 보고해줘. 하네스 저장소는 수정하지 말고 연결 설정과 결과는 원본 저장소 밖의 별도 작업 폴더에 저장해줘.','CLI만으로 시각 채점이 완성되지 않습니다. 브라우저 증거를 읽는 에이전트가 필요합니다.'],
 ['persona','Persona Harness','harness','평가·분석','페르소나 명세와 프롬프트 응답을 사례별로 평가하고 회귀를 비교합니다.','기준 프롬프트와 후보 프롬프트의 품질을 비교할 때','현재 프로젝트의 페르소나 명세와 기준·후보 프롬프트를 평가해줘. 사례별 실제 인용, 실패 근거, 회귀와 미검증 범위를 보고해줘. 하네스 저장소는 수정하지 말고 설정과 결과는 원본 저장소 밖의 별도 작업 폴더에 저장해줘.','합성 예제 통과와 실제 모델 품질 검증은 구분합니다.'],
+['engineering','Engineering Harness','harness','설계·개발','허용한 파일을 예산 안에서 수정하고 실제 최종 파일로 완료 조건을 검사합니다.','파일 작업을 승인·체크포인트·독립 검증과 함께 실행할 때','지정한 파일 작업을 files 어댑터로 실행해줘. 허용 파일·도구·예산과 실제 최종 파일의 완료 조건을 먼저 정하고 기존 승인 범위 안에서 진행해줘. 변경 diff, acceptance 결과와 미확정 효과를 보고하고 설정·응답·결과는 원본 저장소 밖에 저장해줘.','셸 실행과 부모 폴더 자동 생성은 지원하지 않습니다.'],
+['audit-research','Audit & Research Harness','harness','평가·분석','저장소의 정확한 문자열 주장·인용·제외 범위를 조사하고 근거 변화를 확인합니다.','읽기 전용 조사 결과를 만들거나 기존 보고서의 근거를 갱신할 때','현재 저장소를 읽기 전용으로 조사해줘. 확인할 정확한 문자열 주장과 파일·시간 예산을 정하고 실제 인용, supported/contradicted/unverified와 제외 범위를 보고해줘. 대상 코드를 실행하거나 수정하지 말고 결과는 조사 원본과 하네스 저장소 밖에 저장해줘.','문자열 일치가 의미 분석이나 실행 검증을 대신하지 않습니다.'],
+['operations','Operations Harness','harness','평가·분석','로컬 시험 서비스의 승인된 조건부 쓰기를 실행하고 영수증·최종 값을 확인합니다.','승인 대기·쓰기 충돌·효과 미확정의 처리 계약을 시험할 때','127.0.0.1 시험 서비스에서 합성 계정과 값으로 지정한 변경을 시험해줘. prepare 결과의 계정·대상·내용을 승인 범위와 대조하고 영수증과 최종 값이 모두 일치하는지 확인해줘. unknown이면 쓰기를 반복하지 말고 reconcile로 조회해줘. 설정·결과는 원본 저장소 밖에 저장하고 인증값은 환경변수로만 전달해줘.','현재는 loopback 시험 어댑터만 제공하며 실제 SaaS·예약 자동화 연결은 없습니다.'],
+['lab','Lab Harness','harness','평가·분석','합성 실행 계약·저장 녹화·실제 Node CLI 관측을 반복 검사하고 회귀를 비교합니다.','예산·취소·재생 계약을 확인하거나 CLI 결과를 반복 비교할 때','지정한 실행 계약을 반복 검증해줘. fake/replay/live 중 적합한 모드와 사례·반복·예산·버전을 정하고 passed/failed/error/unsupported/inconclusive를 구분해줘. 실제 관측과 합성 결과, 비교 가능 여부와 미검증을 보고하고 결과는 원본 저장소 밖에 저장해줘.','웹 화면 채점이나 실제 모델 품질 평가는 제공하지 않습니다.'],
 ['static-repository-architecture-audit','저장소 아키텍처 분석','custom','평가·분석','코드를 실행하지 않고 구조·호출·상태·외부 경계를 추적합니다.','낯선 저장소를 인수하거나 기존 설계 문서를 검증할 때','현재 저장소를 실행하거나 수정하지 않고 아키텍처를 분석해줘. 진입점, 주요 호출 흐름, 상태 소유자, 외부 경계를 파일 근거와 함께 정리하고 미확인 범위를 밝혀줘.','정적 근거만으로 런타임 성능이나 동작을 확정하지 않습니다.'],
 ['agent-execution-flow-map','에이전트 실행 흐름','custom','평가·분석','반복·재시도·종료 조건과 취소 전파를 코드에서 추적합니다.','무한 반복, maxTurns 불일치, 중복 실행이 의심될 때','에이전트의 모델·도구 반복, 재시도, 종료와 취소 전파를 추적해줘. 각 한도의 소유자와 reset 지점, 중복 효과가 가능한 분기를 코드 근거로 정리해줘.','단발 API 분석보다 여러 실행 단계가 연결된 문제에 적합합니다.'],
 ['tool-permission-boundary-review','도구 권한 경계 검토','custom','평가·분석','도구 입력이 검증·승인을 거쳐 실제 효과를 내는 경계를 확인합니다.','승인받은 입력과 실제 실행 입력이 달라질 수 있을 때','현재 저장소의 도구 입력부터 승인과 실제 실행까지 추적해줘. Hook 입력 변경, deny/ask/allow 우선순위, 우회 가능한 조건과 회귀 사례를 근거로 보고해줘.','일반 코드 수정에 불필요한 보안 절차를 추가하지 않습니다.'],
@@ -15,6 +19,7 @@ const rows: [string, string, ToolKind, string, string, string, string, string][]
 ['pr-review-feedback','리뷰 피드백 처리','custom','Git·리뷰','받은 리뷰 의견을 코드 근거로 판정하고 필요한 수정을 진행합니다.','PR 리뷰를 받고 지적의 타당성을 확인할 때','전달한 PR 리뷰 피드백을 코드 근거로 판정해줘. 타당한 지적은 최소 수정하고 검증한 뒤 등록용 답변을 작성해줘. 실제 댓글 등록과 push는 하지 마.','새로운 전체 리뷰와 받은 피드백 처리를 구분합니다.'],
 ['write-project-readme-docs','프로젝트 README','custom','문서·발표','현재 구현과 일치하는 README와 필요한 프로젝트 문서를 만듭니다.','프로젝트 소개와 사용법을 실제 코드에 맞춰 정리할 때','현재 저장소를 조사해 standard 모드로 README와 필요한 핵심 문서를 정리해줘. 유효한 기존 이미지는 보존하고, 구현된 기능과 계획을 구분해줘.','quick은 README, standard는 핵심 문서, complete는 필요한 상세 명세까지 다룹니다.'],
 ['universal-project-presentation','프로젝트 발표 제작','custom','문서·발표','코드·문서·데이터를 근거로 발표 자료와 발표자 대본을 만듭니다.','프로젝트 발표, 해커톤, 기술 발표 또는 피치덱을 준비할 때','현재 프로젝트를 처음 보는 개발자를 대상으로 10분 기술 발표를 준비해줘. PPTX와 발표자 대본을 만들고 구현 근거와 한계를 구분해줘. 사진은 나중에 넣을 수 있게 추천 장면과 자리를 마련해줘.','Q&A나 백업 슬라이드는 요청할 때 추가합니다.'],
+['scrum-weekly-report','스크럼 주간 보고서','custom','문서·발표','개인 업무 메모를 지난 결과와 다음 계획이 담긴 한 페이지 주간 보고서로 정리합니다.','개인 스크럼 보고를 작성하거나 업무 내용과 상태를 보존하며 다듬을 때','제공한 업무 메모와 전주 보고서를 개인 스크럼 주간 보고서로 정리해줘. 실제 실적·계획 기간을 표시하고 수행 내용·결과·진행 상태를 보존해줘. 지난 결과와 다음 계획을 위아래로 배치한 A4 세로 한 페이지 PDF와 편집 가능한 HTML을 만들고 최종 PDF의 페이지 수·한글·잘림을 검증해줘.','팀 전체 취합이나 상세 업무 일지용이 아닙니다. 자료에 없는 성과·일정·진척률을 만들지 않습니다.'],
 ['brainstorming','Brainstorming','external','설계·개발','아이디어를 질문과 대안 비교를 통해 구체적인 설계로 정리합니다.','새 기능을 구현하기 전에 목적과 범위를 정할 때','이번 기능의 목적과 요구사항을 함께 구체화해줘. 현재 구조를 확인하고 접근법의 장단점을 비교한 뒤 구현 전에 설계를 제안해줘.','설계 승인을 받은 뒤 구현으로 넘어갑니다.'],
 ['writing-plans','Writing Plans','external','설계·개발','확정한 설계를 파일·작업 순서·검증 단위로 나눕니다.','여러 파일에 걸친 구현을 단계적으로 진행할 때','확정한 설계를 구현 계획으로 정리해줘. 수정할 파일, 작업 순서, 의존관계와 단계별 검증 방법을 포함해줘.','brainstorming과 함께 설치·갱신하며 적용 커밋을 기록합니다.'],
 ['grill-me','Grill Me','external','설계·개발','빠뜨린 결정과 가정을 질문으로 드러내는 인터뷰를 시작합니다.','계획의 빈틈을 구현 전에 찾고 싶을 때','현재 계획을 날카롭게 검토해줘. 결정의 전제와 누락된 요구사항을 질문하고, 추천 답과 선택의 영향을 함께 제시해줘.','grilling 스킬을 호출하는 진입점입니다. 개인 설정이 적용되어 있습니다.'],
@@ -32,7 +37,7 @@ const rows: [string, string, ToolKind, string, string, string, string, string][]
 ['xlsx','Excel / XLSX','external','문서·발표','스프레드시트의 데이터 정리·수식·서식을 다룹니다.','엑셀 파일을 분석하거나 계산표를 만들 때','첨부한 엑셀 파일의 구조와 수식을 확인해줘. 잘못된 데이터와 수식 오류를 정리하고 수정한 파일과 변경 내역을 제공해줘.','수식 계산 결과와 원본 데이터 보존 여부를 함께 확인합니다.'],
 ['pptx','PowerPoint / PPTX','external','문서·발표','PowerPoint 파일의 생성·편집과 레이아웃 검증을 돕습니다.','발표 파일을 만들거나 기존 슬라이드를 수정할 때','제공한 발표 내용을 PPTX로 구성해줘. 슬라이드별 핵심 메시지와 발표자 노트를 작성하고 렌더링하여 잘림과 겹침을 확인해줘.','프로젝트 분석부터 시작하려면 프로젝트 발표 제작 스킬을 먼저 사용하세요.'],
 ['humanizer','Humanizer','external','글쓰기','의미를 유지하면서 상투적이고 과장된 문장을 다듬습니다.','글이 지나치게 정형적이거나 홍보 문구처럼 느껴질 때','아래 글의 의미와 사실을 유지하면서 상투적인 표현과 과장을 줄여줘. 작성자의 어조를 살리고 새로운 사실은 추가하지 마.','blader/humanizer 원본입니다. 한국어 전용 스킬과 별개입니다.'],
-['korean-humanizer','한국어 Humanizer','external','글쓰기','한국어 번역투와 반복적인 문장 패턴을 자연스럽게 다듬습니다.','한국어 문서의 어색한 표현을 개선할 때','아래 한국어 글의 의미를 유지하면서 번역투, 과도한 쉼표와 반복 표현을 다듬어줘. 수정본을 먼저 주고 중요한 변경 이유만 설명해줘.','DaleSeo/korean-skills 원본이며 연결 별칭은 korean-humanizer입니다.'],
+['korean-humanizer','한국어 Humanizer','external','글쓰기','한국어 번역투와 반복적인 문장 패턴을 자연스럽게 다듬습니다.','한국어 문서의 어색한 표현을 개선할 때','아래 한국어 글의 의미를 유지하면서 번역투, 과도한 쉼표와 반복 표현을 다듬어줘. 수정본을 먼저 주고 중요한 변경 이유만 설명해줘.','DaleSeo/korean-skills 원본이며 연결 별칭과 내부 이름은 korean-humanizer입니다. install.sh가 재설치·업데이트 후에도 내부 이름을 자동 보정합니다.'],
 ['korean-grammar-checker','한국어 맞춤법','external','글쓰기','맞춤법·띄어쓰기·조사·구두점 오류를 교정합니다.','문서를 제출하거나 게시하기 전에 교정할 때','아래 한국어 문서의 맞춤법·띄어쓰기·문법·구두점을 검사해줘. 교정본을 먼저 제시하고 명확한 오류와 선택적 권장을 구분해줘.','문체 통일은 한국어 스타일 가이드 스킬을 사용하세요.'],
 ['korean-style-guide','한국어 스타일 가이드','external','글쓰기','어조·용어·숫자·날짜 표기를 일관되게 맞춥니다.','여러 사람이 작성한 문서를 하나로 정리할 때','아래 문서의 어조, 용어, 숫자와 날짜 표기를 검사해줘. 기존에 가장 일관되게 사용된 기준을 우선해 통일하고 변경 기준을 설명해줘.','맞춤법 검사와 문서 내부 스타일 통일은 구분합니다.'],
 ['caveman','Caveman','external','글쓰기','기술적 의미를 유지하며 답변을 짧고 간결하게 만듭니다.','설명이 너무 길어 핵심만 받고 싶을 때','lite 모드로 답변을 간결하게 해줘. 기술적 근거, 필수 조건과 검증 방법은 유지해줘.','선택한 모드가 대화에 지속될 수 있으며 off로 해제합니다.'],
@@ -47,7 +52,14 @@ const rows: [string, string, ToolKind, string, string, string, string, string][]
 ['token-dashboard','Token Dashboard','external','환경·토큰','토큰 사용 추이와 세션 정보를 대시보드로 엽니다.','사용량과 환경 정보를 화면에서 확인할 때','설치된 Token Optimizer 런타임을 확인하고 토큰 대시보드를 열어줘. 필요한 런타임이나 로그가 없으면 준비 사항을 알려줘.','이 사이트 내부의 대시보드가 아닌 별도 로컬 런타임을 엽니다.'],
 ['token-optimizer','Token Optimizer','external','환경·토큰','컨텍스트 낭비를 조사하고 설정 개선 효과를 측정합니다.','컨텍스트가 빠르게 차거나 지침이 비대해졌을 때','현재 에이전트 설정과 컨텍스트 낭비를 조사해줘. 변경 후보와 영향부터 제시하고 적용 전후를 같은 기준으로 측정해줘.','스킬 파일 외에 원본 런타임과 측정 스크립트가 필요할 수 있습니다.'],
 ];
-export const entries: EditorialEntry[] = rows.map(([id,title,kind,category,summary,when,prompt,note])=>({id,title,kind,category,summary,when,prompt,note,...guides[id]}));
+export const entries: EditorialEntry[] = rows.map(([id,title,kind,category,summary,when,prompt,note])=>{
+ const guide=guides[id];
+ const command=kind==='harness'
+  ? String.raw`powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$env:USERPROFILE\agent\agent-harnesses\scripts\link-codex.ps1" --id ${id}`
+  : String.raw`powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$env:USERPROFILE\agent\agent-skills\scripts\link-codex.ps1"`;
+ const usage=guide?.usage??['로컬 스킬 폴더와 연결 상태를 확인합니다.','작업할 프로젝트를 열고 필요한 자료를 첨부합니다.','추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.'];
+ return {id,title,kind,category,summary,when,prompt,note,...guide,usage:[...usage,`Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 ${command} 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다.`]};
+});
 export const workflows: Workflow[] = [
  {id:'build',title:'아이디어에서 구현까지',description:'목적을 정하고, 계획을 세우고, 필요한 만큼 구현하세요.',steps:['brainstorming','writing-plans','ponytail','pre-pr-verification']},
  {id:'review',title:'PR을 준비할 때',description:'변경을 검증하고 Git 작업과 리뷰 피드백을 이어갑니다.',steps:['pre-pr-verification','git-workflow','pr-review-feedback']},
