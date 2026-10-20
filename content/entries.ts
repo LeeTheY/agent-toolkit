@@ -15,6 +15,7 @@ const rows: [string, string, ToolKind, string, string, string, string, string][]
 ['extension-surface-risk-review','확장 기능 경계 검토','custom','평가·분석','플러그인·Hook·Skill·MCP의 설치와 권한 경계를 검토합니다.','확장 설치, 경로 검증, 프록시 또는 캐시 잔존을 조사할 때','확장 기능의 발견·설치·활성·제거 흐름을 정적으로 검토해줘. 경로 검증과 권한 확대, 프록시와 캐시 경계를 근거로 정리하고 외부 코드는 실행하지 마.','해시가 일치한다는 것만으로 안전하다고 판단하지 않습니다.'],
 ['session-resume-integrity-review','세션 재개 무결성','custom','평가·분석','저장 후 재개한 대화의 메시지 누락·중복·재등장을 조사합니다.','재개 후 도구 결과가 사라지거나 압축 상태가 달라질 때','세션 재개 후 도구 결과가 사라지는 원인을 분석해줘. 저장·flush·부모 연결·병렬 분기·압축 복원을 추적하고 원본 로그는 수정하거나 재생하지 마.','원본 로그 복구나 자동 재생을 수행하는 도구가 아닙니다.'],
 ['pre-pr-verification','PR 전 검증','custom','Git·리뷰','변경의 핵심 주장을 코드·테스트·최종 소비 결과로 검증합니다.','PR을 열거나 리뷰를 요청하기 직전','현재 변경을 검증해줘. 핵심 주장을 반증할 실패 경로, 관련 테스트와 최신 diff를 확인하고 검증 결과·미검증 범위·리뷰 요청 가능 여부를 보고해줘.','검증 요청만으로 커밋·push·PR 생성 권한이 생기지는 않습니다.'],
+['sedaily-git-pr','Sedaily Git·PR','custom','Git·리뷰','Sedaily 폴더의 프로젝트별 규칙을 찾아 작업 기록과 Git·PR 절차에 적용합니다.','지정된 Sedaily 경로의 프로젝트에서 커밋·push·PR을 진행할 때','현재 Sedaily 프로젝트의 실제 저장소 루트와 적용 규칙을 확인해줘. 관련 변경만 검증하고 작업 기록·커밋·push·PR을 요청한 범위에서 진행해줘.','지정된 macOS·Windows 경로 안에서만 적용합니다. 경로 밖에서는 Git 작업 흐름 스킬을 사용합니다.'],
 ['git-workflow','Git 작업 흐름','custom','Git·리뷰','실제 diff와 저장소 규칙에 맞춰 요청한 Git 작업을 수행합니다.','브랜치, 커밋, push 또는 PR 작업을 진행할 때','현재 변경을 확인하고 저장소 규칙에 맞게 커밋해줘. 목적 문단과 주요 변경사항을 한국어 본문에 포함하고, 관련 없는 변경은 보존해줘. push는 하지 마.','원격 변경은 요청에 명시한 범위에서만 수행합니다.'],
 ['pr-review-feedback','리뷰 피드백 처리','custom','Git·리뷰','받은 리뷰 의견을 코드 근거로 판정하고 필요한 수정을 진행합니다.','PR 리뷰를 받고 지적의 타당성을 확인할 때','전달한 PR 리뷰 피드백을 코드 근거로 판정해줘. 타당한 지적은 최소 수정하고 검증한 뒤 등록용 답변을 작성해줘. 실제 댓글 등록과 push는 하지 마.','새로운 전체 리뷰와 받은 피드백 처리를 구분합니다.'],
 ['write-project-readme-docs','프로젝트 README','custom','문서·발표','현재 구현과 일치하는 README와 필요한 프로젝트 문서를 만듭니다.','프로젝트 소개와 사용법을 실제 코드에 맞춰 정리할 때','현재 저장소를 조사해 standard 모드로 README와 필요한 핵심 문서를 정리해줘. 유효한 기존 이미지는 보존하고, 구현된 기능과 계획을 구분해줘.','quick은 README, standard는 핵심 문서, complete는 필요한 상세 명세까지 다룹니다.'],
@@ -54,15 +55,12 @@ const rows: [string, string, ToolKind, string, string, string, string, string][]
 ];
 export const entries: EditorialEntry[] = rows.map(([id,title,kind,category,summary,when,prompt,note])=>{
  const guide=guides[id];
- const command=kind==='harness'
-  ? String.raw`powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$env:USERPROFILE\agent\agent-harnesses\scripts\link-codex.ps1" --id ${id}`
-  : String.raw`powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$env:USERPROFILE\agent\agent-skills\scripts\link-codex.ps1"`;
  const usage=guide?.usage??['로컬 스킬 폴더와 연결 상태를 확인합니다.','작업할 프로젝트를 열고 필요한 자료를 첨부합니다.','추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다.'];
- return {id,title,kind,category,summary,when,prompt,note,...guide,usage:[...usage,`Windows에서는 Node.js 24 이상을 준비하고 PowerShell에서 ${command} 명령으로 연결합니다. 두 저장소를 사용자 폴더의 agent 아래에 둔 기준이며, 기존 데이터는 덮어쓰지 않습니다. 연결은 실행 의존성을 설치하지 않으며 실제 Windows 실행은 미검증입니다.`]};
+ return {id,title,kind,category,summary,when,prompt,note,...guide,usage};
 });
 export const workflows: Workflow[] = [
  {id:'build',title:'아이디어에서 구현까지',description:'목적을 정하고, 계획을 세우고, 필요한 만큼 구현하세요.',steps:['brainstorming','writing-plans','ponytail','pre-pr-verification']},
- {id:'review',title:'PR을 준비할 때',description:'변경을 검증하고 Git 작업과 리뷰 피드백을 이어갑니다.',steps:['pre-pr-verification','git-workflow','pr-review-feedback']},
+ {id:'review',title:'PR을 준비할 때',description:'변경을 검증하고 Git 작업과 리뷰 피드백을 이어갑니다.',steps:['pre-pr-verification','git-workflow','sedaily-git-pr','pr-review-feedback']},
  {id:'frontend',title:'화면을 만들고 검증할 때',description:'디자인 방향을 잡은 다음 실제 화면과 사용자 흐름을 평가합니다.',steps:['frontend-design','frontend']},
  {id:'present',title:'프로젝트를 소개할 때',description:'구현에 맞는 문서와 청중에 맞는 발표를 준비합니다.',steps:['write-project-readme-docs','universal-project-presentation','pptx']},
  {id:'writing',title:'한국어 문서를 다듬을 때',description:'자연스러운 표현부터 맞춤법, 문서 전체의 일관성까지.',steps:['korean-humanizer','korean-grammar-checker','korean-style-guide']},

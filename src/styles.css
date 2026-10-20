@@ -63,3 +63,7 @@
 /* 상세 안내의 긴 용어가 좁은 화면의 grid 너비를 확장하지 않도록 합니다. */
 .detail-columns > * { min-width: 0; }
 .steps { overflow-wrap: anywhere; }
+
+.setup-options { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0; }
+.setup-options .segmented { display: flex; flex-wrap: wrap; max-width: 100%; }
+.setup-options .segmented button { min-height: 36px; }
