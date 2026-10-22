@@ -1,21 +1,26 @@
 {
-  "checkedAt": "2026-10-21T05:00:40.144Z",
+  "checkedAt": "2026-10-22T05:02:58.494Z",
   "tools": {
     "brainstorming": {
-      "checkedAt": "2026-10-21T05:00:32.782Z",
+      "checkedAt": "2026-10-22T05:02:51.447Z",
       "baseline": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
       "snapshotHash": "f1ed15ea4c9484aeea0a38885a338a395eed0542b406248a052f572379a45397",
       "path": "skills/brainstorming",
-      "status": "current",
+      "status": "changed",
       "personal": "same",
-      "changes": [],
+      "changes": [
+        {
+          "path": "SKILL.md",
+          "type": "modified"
+        }
+      ],
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
-      "latest": "b739a8af570e10a95898f2bdf6cec97467fa6c12",
-      "latestAt": "2026-10-20T20:13:37Z",
+      "latest": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+      "latestAt": "2026-10-21T21:00:49Z",
       "changedSinceLastCheck": true
     },
     "writing-plans": {
-      "checkedAt": "2026-10-21T05:00:33.929Z",
+      "checkedAt": "2026-10-22T05:02:52.648Z",
       "baseline": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
       "snapshotHash": "2e3cc6a22de114586890be872685af7a09285166493c5b50af352fffefee1f54",
       "path": "skills/writing-plans",
@@ -23,12 +28,12 @@
       "personal": "same",
       "changes": [],
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
-      "latest": "b739a8af570e10a95898f2bdf6cec97467fa6c12",
-      "latestAt": "2026-10-20T20:13:37Z",
+      "latest": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+      "latestAt": "2026-10-21T21:00:49Z",
       "changedSinceLastCheck": true
     },
     "grill-me": {
-      "checkedAt": "2026-10-21T05:00:33.929Z",
+      "checkedAt": "2026-10-22T05:02:52.648Z",
       "baseline": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
       "snapshotHash": "c82252245d017398e8ccc595586e762603665d601d17da6d753f8e287be3a54c",
       "path": "skills/productivity/grill-me",
@@ -41,7 +46,7 @@
       "changedSinceLastCheck": false
     },
     "grilling": {
-      "checkedAt": "2026-10-21T05:00:34.621Z",
+      "checkedAt": "2026-10-22T05:02:53.251Z",
       "baseline": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
       "snapshotHash": "c5e3f09c5d7f2f5095ddd88a526fb6c0c7b45c6f624b008b93fe6ce879ad2977",
       "path": "skills/productivity/grilling",
@@ -54,7 +59,7 @@
       "changedSinceLastCheck": false
     },
     "ponytail": {
-      "checkedAt": "2026-10-21T05:00:34.621Z",
+      "checkedAt": "2026-10-22T05:02:53.251Z",
       "baseline": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "snapshotHash": "eb34a887f4020e11be97dbdbf5d2b71600ac61a43f7813025ee6f346077396a5",
       "path": "skills/ponytail",
@@ -67,7 +72,7 @@
       "changedSinceLastCheck": false
     },
     "ponytail-review": {
-      "checkedAt": "2026-10-21T05:00:35.243Z",
+      "checkedAt": "2026-10-22T05:02:53.913Z",
       "baseline": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "snapshotHash": "913dcc1a80b49ecbc649029a2475930fa0d4b0de619c22df8730b6533d6d412b",
       "path": "skills/ponytail-review",
@@ -80,7 +85,7 @@
       "changedSinceLastCheck": false
     },
     "ponytail-audit": {
-      "checkedAt": "2026-10-21T05:00:35.243Z",
+      "checkedAt": "2026-10-22T05:02:53.913Z",
       "baseline": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "snapshotHash": "5a7cdb6c7edb8f774e89dab7c1883423fc0a68a6e722e9c7803b72829fa60d38",
       "path": "skills/ponytail-audit",
@@ -93,7 +98,7 @@
       "changedSinceLastCheck": false
     },
     "ponytail-debt": {
-      "checkedAt": "2026-10-21T05:00:35.243Z",
+      "checkedAt": "2026-10-22T05:02:53.913Z",
       "baseline": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "snapshotHash": "f56a7f06c0d544b58a845fe2c32d6f8d5a5a9fde12b41a2cb0613a81522a98d6",
       "path": "skills/ponytail-debt",
@@ -106,7 +111,7 @@
       "changedSinceLastCheck": false
     },
     "ponytail-gain": {
-      "checkedAt": "2026-10-21T05:00:35.243Z",
+      "checkedAt": "2026-10-22T05:02:53.913Z",
       "baseline": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "snapshotHash": "3223952774f3f2f7814ba66fbb2448018b8269be007e99bff9f0d155cbee15b8",
       "path": "skills/ponytail-gain",
@@ -119,7 +124,7 @@
       "changedSinceLastCheck": false
     },
     "ponytail-help": {
-      "checkedAt": "2026-10-21T05:00:35.243Z",
+      "checkedAt": "2026-10-22T05:02:53.913Z",
       "baseline": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "snapshotHash": "608053914f7d5bdafa7a62633ba93481c1f02d3edfe6d0fec9e675a65c22c712",
       "path": "skills/ponytail-help",
@@ -132,7 +137,7 @@
       "changedSinceLastCheck": false
     },
     "frontend-design": {
-      "checkedAt": "2026-10-21T05:00:35.243Z",
+      "checkedAt": "2026-10-22T05:02:53.913Z",
       "baseline": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
       "snapshotHash": "9ec82feae7db448c6528a9bd414093bf811f2d2a15a411448c9933ac97b06208",
       "path": "skills/frontend-design",
@@ -145,7 +150,7 @@
       "changedSinceLastCheck": false
     },
     "taste": {
-      "checkedAt": "2026-10-21T05:00:36.082Z",
+      "checkedAt": "2026-10-22T05:02:54.663Z",
       "baseline": "63aba5f43b5056758b15bbe7d683da8c86a7a7ad",
       "snapshotHash": "42ece9d5e5c6b6eebe52fef3087e7dbe8f84f113e5e5811a52de5ebc7881eeb0",
       "path": "skills/taste-skill",
@@ -160,10 +165,10 @@
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
       "latest": "6010f91a9935f1c167dfc500fb1a475681892e6b",
       "latestAt": "2026-10-20T18:38:06Z",
-      "changedSinceLastCheck": true
+      "changedSinceLastCheck": false
     },
     "pdf": {
-      "checkedAt": "2026-10-21T05:00:37.114Z",
+      "checkedAt": "2026-10-22T05:02:55.711Z",
       "baseline": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
       "snapshotHash": "3cc4f36dac3d13cb3bc083b648aaa290c51c0b43035e2c502390901907950db9",
       "path": "skills/pdf",
@@ -176,7 +181,7 @@
       "changedSinceLastCheck": false
     },
     "docx": {
-      "checkedAt": "2026-10-21T05:00:37.114Z",
+      "checkedAt": "2026-10-22T05:02:55.711Z",
       "baseline": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
       "snapshotHash": "9eac0eecf80375ae67eebde0ab25a08f3e550e3a484ebe371a983ed6949b034f",
       "path": "skills/docx",
@@ -189,7 +194,7 @@
       "changedSinceLastCheck": false
     },
     "xlsx": {
-      "checkedAt": "2026-10-21T05:00:37.115Z",
+      "checkedAt": "2026-10-22T05:02:55.711Z",
       "baseline": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
       "snapshotHash": "7d8020c10d80d40f32fa6daf62d0670074d526abb49c67b45975ffedc9c728a4",
       "path": "skills/xlsx",
@@ -202,7 +207,7 @@
       "changedSinceLastCheck": false
     },
     "pptx": {
-      "checkedAt": "2026-10-21T05:00:37.115Z",
+      "checkedAt": "2026-10-22T05:02:55.712Z",
       "baseline": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
       "snapshotHash": "1dcc8c7e476ef25f61ffb55d81706cf9f9c4c346cba22002d072f521e2e74e3f",
       "path": "skills/pptx",
@@ -215,7 +220,7 @@
       "changedSinceLastCheck": false
     },
     "humanizer": {
-      "checkedAt": "2026-10-21T05:00:37.115Z",
+      "checkedAt": "2026-10-22T05:02:55.712Z",
       "baseline": "8c307f367c91bd974002f10f2be2965d642c13df",
       "snapshotHash": "edf78ffb4eedf051e13475d071307c68464b8e280fd1e754025c1abd738aef59",
       "path": "",
@@ -228,7 +233,7 @@
       "changedSinceLastCheck": false
     },
     "korean-humanizer": {
-      "checkedAt": "2026-10-21T05:00:37.768Z",
+      "checkedAt": "2026-10-22T05:02:56.364Z",
       "baseline": "ae12ba27982ebeff03b46dc738365aaa34260d9a",
       "snapshotHash": "935eda759e3a49b4a0694863396fbc585eb2514c2a1529435a7e740f582dc988",
       "path": "skills/humanizer",
@@ -241,7 +246,7 @@
       "changedSinceLastCheck": false
     },
     "korean-grammar-checker": {
-      "checkedAt": "2026-10-21T05:00:38.348Z",
+      "checkedAt": "2026-10-22T05:02:56.950Z",
       "baseline": "ae12ba27982ebeff03b46dc738365aaa34260d9a",
       "snapshotHash": "7c6ebe5173daeabaf11ca567fe9434593a068f92cf46fe39e25d518af0a9238d",
       "path": "skills/grammar-checker",
@@ -254,7 +259,7 @@
       "changedSinceLastCheck": false
     },
     "korean-style-guide": {
-      "checkedAt": "2026-10-21T05:00:38.348Z",
+      "checkedAt": "2026-10-22T05:02:56.950Z",
       "baseline": "ae12ba27982ebeff03b46dc738365aaa34260d9a",
       "snapshotHash": "3e3f9e90b44ed42b9e1877f6142958c7dfc61f6e8e9275cf6c2167439550f585",
       "path": "skills/style-guide",
@@ -267,7 +272,7 @@
       "changedSinceLastCheck": false
     },
     "caveman": {
-      "checkedAt": "2026-10-21T05:00:38.348Z",
+      "checkedAt": "2026-10-22T05:02:56.950Z",
       "baseline": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
       "snapshotHash": "cdf96ec445fd949ceba71ec39b8f82a6141d7e3bdcea9cc0952d08d4e22c68f2",
       "path": "skills/caveman",
@@ -280,7 +285,7 @@
       "changedSinceLastCheck": false
     },
     "caveman-commit": {
-      "checkedAt": "2026-10-21T05:00:39.041Z",
+      "checkedAt": "2026-10-22T05:02:57.614Z",
       "baseline": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
       "snapshotHash": "080ff2aba5093294b35d3eb78e870fa6e0cfb31937d720b2f883de9017af0748",
       "path": "skills/caveman-commit",
@@ -293,7 +298,7 @@
       "changedSinceLastCheck": false
     },
     "caveman-review": {
-      "checkedAt": "2026-10-21T05:00:39.041Z",
+      "checkedAt": "2026-10-22T05:02:57.614Z",
       "baseline": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
       "snapshotHash": "1a6f7dd81fd277acff3b1917f9555ffd64c0f56ea7c3651361221ed9cde8c307",
       "path": "skills/caveman-review",
@@ -306,7 +311,7 @@
       "changedSinceLastCheck": false
     },
     "caveman-compress": {
-      "checkedAt": "2026-10-21T05:00:39.041Z",
+      "checkedAt": "2026-10-22T05:02:57.614Z",
       "baseline": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
       "snapshotHash": "398e6123a36fe67efca8855ab9d58ac2eeaf060fff9efca38ee87352834a4f00",
       "path": "skills/caveman-compress",
@@ -319,7 +324,7 @@
       "changedSinceLastCheck": false
     },
     "caveman-help": {
-      "checkedAt": "2026-10-21T05:00:39.041Z",
+      "checkedAt": "2026-10-22T05:02:57.614Z",
       "baseline": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
       "snapshotHash": "947feef7b47f695213be10fd077ec4afbb35287de1881c3a36da50fa4ff89e0b",
       "path": "skills/caveman-help",
@@ -332,7 +337,7 @@
       "changedSinceLastCheck": false
     },
     "caveman-stats": {
-      "checkedAt": "2026-10-21T05:00:39.042Z",
+      "checkedAt": "2026-10-22T05:02:57.614Z",
       "baseline": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
       "snapshotHash": "2c67f6799d23e3ab1fb1e47750404e31964e9679381dc9d9238c68d22bd1987c",
       "path": "skills/caveman-stats",
@@ -345,7 +350,7 @@
       "changedSinceLastCheck": false
     },
     "fleet-auditor": {
-      "checkedAt": "2026-10-21T05:00:39.042Z",
+      "checkedAt": "2026-10-22T05:02:57.614Z",
       "baseline": "78c0ee33ed0bca0ec2c9ee0da5dc1cd4dd21af86",
       "snapshotHash": "02c350e20077692b07445811fe675c1837804f76a729bf8c5c6f15a9e4a5aeb8",
       "path": "plugins/token-optimizer/skills/fleet-auditor",
@@ -362,12 +367,12 @@
         }
       ],
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
-      "latest": "a0105b7308ded3c00ea4f7643a011e1bf476f30f",
-      "latestAt": "2026-10-20T20:20:24Z",
+      "latest": "638c2f3565712875917a2241c6974e07e1d0c95b",
+      "latestAt": "2026-10-21T21:07:26Z",
       "changedSinceLastCheck": true
     },
     "resume-checkpoint": {
-      "checkedAt": "2026-10-21T05:00:40.142Z",
+      "checkedAt": "2026-10-22T05:02:58.492Z",
       "baseline": "78c0ee33ed0bca0ec2c9ee0da5dc1cd4dd21af86",
       "snapshotHash": "3c309a7d7e7de050531bcaff71a1e8c98a9491a772c7bb2b72bc2d457ca26de0",
       "path": "plugins/token-optimizer/skills/resume-checkpoint",
@@ -375,12 +380,12 @@
       "personal": "same",
       "changes": [],
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
-      "latest": "a0105b7308ded3c00ea4f7643a011e1bf476f30f",
-      "latestAt": "2026-10-20T20:20:24Z",
+      "latest": "638c2f3565712875917a2241c6974e07e1d0c95b",
+      "latestAt": "2026-10-21T21:07:26Z",
       "changedSinceLastCheck": true
     },
     "token-coach": {
-      "checkedAt": "2026-10-21T05:00:40.143Z",
+      "checkedAt": "2026-10-22T05:02:58.493Z",
       "baseline": "78c0ee33ed0bca0ec2c9ee0da5dc1cd4dd21af86",
       "snapshotHash": "828701b58631f4f0b469ed112f9bdda8214b85929b8847ad0bf9cee5c01bc443",
       "path": "plugins/token-optimizer/skills/token-coach",
@@ -393,12 +398,12 @@
         }
       ],
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
-      "latest": "a0105b7308ded3c00ea4f7643a011e1bf476f30f",
-      "latestAt": "2026-10-20T20:20:24Z",
+      "latest": "638c2f3565712875917a2241c6974e07e1d0c95b",
+      "latestAt": "2026-10-21T21:07:26Z",
       "changedSinceLastCheck": true
     },
     "token-dashboard": {
-      "checkedAt": "2026-10-21T05:00:40.143Z",
+      "checkedAt": "2026-10-22T05:02:58.493Z",
       "baseline": "78c0ee33ed0bca0ec2c9ee0da5dc1cd4dd21af86",
       "snapshotHash": "84f0398e4db686d4b658e52b7b59546b23dea41b7f346df5b1f33b49e62d9c0e",
       "path": "plugins/token-optimizer/skills/token-dashboard",
@@ -411,12 +416,12 @@
         }
       ],
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
-      "latest": "a0105b7308ded3c00ea4f7643a011e1bf476f30f",
-      "latestAt": "2026-10-20T20:20:24Z",
+      "latest": "638c2f3565712875917a2241c6974e07e1d0c95b",
+      "latestAt": "2026-10-21T21:07:26Z",
       "changedSinceLastCheck": true
     },
     "token-optimizer": {
-      "checkedAt": "2026-10-21T05:00:40.143Z",
+      "checkedAt": "2026-10-22T05:02:58.493Z",
       "baseline": "78c0ee33ed0bca0ec2c9ee0da5dc1cd4dd21af86",
       "snapshotHash": "268cb493b56f90b34a8ef8a7eb4ff8ce95c3bd1f1f99e2c214d91dd7516f34da",
       "path": "plugins/token-optimizer/skills/token-optimizer",
@@ -456,6 +461,10 @@
           "type": "modified"
         },
         {
+          "path": "scripts/hook_io.py",
+          "type": "modified"
+        },
+        {
           "path": "scripts/hook_runtime.py",
           "type": "modified"
         },
@@ -477,8 +486,8 @@
         }
       ],
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
-      "latest": "a0105b7308ded3c00ea4f7643a011e1bf476f30f",
-      "latestAt": "2026-10-20T20:20:24Z",
+      "latest": "638c2f3565712875917a2241c6974e07e1d0c95b",
+      "latestAt": "2026-10-21T21:07:26Z",
       "changedSinceLastCheck": true
     }
   }
