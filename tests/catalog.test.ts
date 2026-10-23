@@ -28,10 +28,10 @@ test('Git blob 해시와 파일 삭제 비교가 안정적이다',()=>{
  assert.equal(blobHash(Buffer.from('test content\n')),'d670460b4b4aece5915caf5c68d12f560a9fe3e4');
  assert.deepEqual(changes({'old':'x'},{}),[{path:'old',type:'removed'}]);
 });
-test('55개 항목에 실제 호출명·프롬프트·파일 근거가 있고 경로가 노출되지 않는다',async()=>{
+test('56개 항목에 실제 호출명·프롬프트·파일 근거가 있고 경로가 노출되지 않는다',async()=>{
  const raw=await readFile(new URL('../src/data/catalog.json',import.meta.url),'utf8');const catalog: Catalog=JSON.parse(raw);
- assert.equal(catalog.tools.length,55);assert.equal(new Set(catalog.tools.map(t=>t.id)).size,55);
- for(const kind of ['harness','custom','external'] as ToolKind[])assert.equal(catalog.tools.filter(t=>t.kind===kind).length,{harness:6,custom:14,external:35}[kind]);
+ assert.equal(catalog.tools.length,56);assert.equal(new Set(catalog.tools.map(t=>t.id)).size,56);
+ for(const kind of ['harness','custom','external'] as ToolKind[])assert.equal(catalog.tools.filter(t=>t.kind===kind).length,{harness:7,custom:14,external:35}[kind]);
  for(const t of catalog.tools){assert.ok(t.callName);assert.ok(t.prompt.startsWith('$'+t.callName));assert.ok(t.files['SKILL.md']);assert.ok(t.usage.length);assert.ok(t.source.repo);}
  assert.doesNotMatch(raw,/\/Users\/|ghp_|github_pat_/);
  assert.notEqual(catalog.tools.find(t=>t.id==='humanizer')!.callName,catalog.tools.find(t=>t.id==='korean-humanizer')!.callName);
@@ -105,4 +105,18 @@ test('통합 워크플로는 커스텀 스킬로 등록하고 구현 가이드�
  assert.equal(build.steps.filter(id=>id==='code-quality-workflow').length,1);
  for(const id of ['ponytail','karpathy-guidelines','verification-before-completion','pre-pr-verification','attention-kind','install-anti-slop'])assert.ok(!build.steps.includes(id));
  assert.ok(!catalog.pendingSources?.some(path=>path.endsWith('/code-quality-workflow')||path.endsWith('/attention-kind')||path.endsWith('/install-anti-slop')||path.endsWith('/karpathy-guidelines')||path.endsWith('/verification-before-completion')));
+});
+
+test('Code Quality 호출 스킬과 구현 증거를 연결하고 통합 흐름에서 중복 실행하지 않는다',async()=>{
+ const catalog: Catalog=JSON.parse(await readFile(new URL('../src/data/catalog.json',import.meta.url),'utf8'));
+ const tool=catalog.tools.find(t=>t.id==='code-quality')!;
+ assert.equal(tool.kind,'harness');assert.equal(tool.callName,'code-quality-harness');
+ assert.equal(tool.source.repo,'LeeTheY/agent-harnesses');
+ assert.equal(tool.source.local,'skills/code-quality-harness');
+ assert.match(tool.source.baseline!,/^[a-f0-9]{40}$/);
+ for(const file of ['SKILL.md','scripts/run.ts','engine/src/runner.ts','engine/src/process.ts','engine/src/comparison.ts'])assert.match(tool.files[file],/^[a-f0-9]{40}$/);
+ assert.ok(tool.commands.some(command=>command==='node scripts/harness.ts setup code-quality'));
+ assert.ok(tool.promptExamples!.length>=3);
+ assert.ok(!catalog.pendingSources?.includes('harnesses/skills/code-quality-harness'));
+ assert.ok(!catalog.workflows.find(w=>w.id==='build')!.steps.includes('code-quality'));
 });

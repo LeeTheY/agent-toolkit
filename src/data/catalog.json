@@ -1,23 +1,28 @@
 {
-  "syncedAt": "2026-10-23T01:47:42.796Z",
+  "syncedAt": "2026-10-23T05:12:36.203Z",
   "tools": [
     {
       "id": "code-quality-workflow",
       "title": "코드 품질 워크플로",
       "kind": "custom",
       "category": "설계·개발",
-      "summary": "최소 구현부터 프로젝트 검사·완료 검증·결과 보고까지 필요한 스킬을 선택해 진행합니다.",
-      "when": "여러 품질 스킬을 중복 실행하지 않고 코드 작업을 마무리할 때",
-      "prompt": "$code-quality-workflow로 현재 요청을 필요한 최소 변경으로 구현해줘. 저장소 규칙과 완료 조건을 확인하고 적합한 구현·검증 스킬을 선택해줘. 프로젝트 필수 검사를 실행하고 변경 이유, 실제 검증 결과와 남은 문제를 간결한 한국어로 보고해줘.",
-      "note": "통합 스킬 한 번으로 시작할 수 있지만 하위 스킬의 설치·연결은 유지합니다. 실행형 하네스나 네 스킬의 일괄 실행이 아닙니다.",
+      "summary": "최소 구현부터 검사 선택·완료 검증·보고까지 조정하고, 필요하면 하네스로 실행 증거를 관리합니다.",
+      "when": "코드 작업을 마무리하며 직접 검사와 하네스 중 적합한 방식을 선택할 때",
+      "prompt": "$code-quality-workflow로 현재 요청을 필요한 최소 변경으로 구현해줘. 저장소 규칙과 완료 조건을 확인하고 직접 검사 또는 준비된 code-quality 하네스를 선택해줘. 같은 검사를 중복 실행하지 말고 하네스가 준비되지 않으면 필수 검사를 직접 수행해줘. 변경 이유, 실제 검증 결과와 남은 문제를 간결한 한국어로 보고해줘.",
+      "note": "검사 선택·해석은 이 스킬이, 실행·증거 관리는 선택한 하네스가 맡습니다. 호출만으로 하네스를 설치하거나 네 외부 스킬을 모두 실행하지 않습니다.",
       "usage": [
-        "통합 스킬과 필요한 하위 스킬을 기존 연결 스크립트로 연결한 뒤 작업 대상·요구사항을 함께 전달합니다. 한 번 호출하면 필요한 절차를 선택하며 네 외부 스킬을 모두 다시 호출하지 않습니다.",
-        "구현 지침은 현재 선택된 Ponytail 또는 Karpathy Guidelines 하나를 사용합니다. 자동 선택한 하위 스킬은 현재 작업과 후속 수정·검증에 적용하고 새 작업에서는 다시 판단합니다.",
-        "프로젝트의 필수 검사를 실행합니다. anti-slop 설치·갱신은 별도 요청이 있을 때만 진행하고, Attention-kind도 사용자가 명시적으로 켠 경우에만 적용합니다.",
-        "일반 완료는 완료 전 검증, PR 준비는 PR 전 검증을 선택합니다. 명령·옵션·코드·환경과 실제 dist·설치 사본·서버가 현재 상태를 입증할 때만 기존 증거를 재사용합니다.",
-        "회귀 비교는 기존 작업 트리를 되돌리지 않고 격리된 사본이나 재현 경로로 진행합니다. 결과·실패·미검증을 간결한 한국어로 보고하며 커밋·push·PR은 별도 요청 범위를 따릅니다."
+        "통합 스킬과 필요한 하위 스킬을 기존 연결 스크립트로 연결하고 작업 대상·요구사항을 전달합니다. 네 외부 스킬을 모두 다시 호출하지 않습니다.",
+        "구현 지침은 현재 선택된 Ponytail 또는 Karpathy Guidelines 하나를 사용합니다. 자동 선택한 지침은 현재 작업과 후속 수정·검증에 적용하고 새 작업에서는 다시 판단합니다.",
+        "작은 일회성 검사는 직접 실행합니다. 여러 검사의 순서·산출물·장기 증거·재검사 비교가 필요하면 준비된 code-quality-harness를 선택합니다. 없거나 실행할 수 없으면 필수 검사를 직접 수행하고 한계를 보고합니다.",
+        "워크플로는 완료 조건·검사 선택·해석을, 하네스는 실행·증거 보존을 담당합니다. 같은 검사를 중복 실행하지 않고 현재 입력·환경·실제 실행 대상에 유효한 근거만 재사용합니다.",
+        "일반 완료는 완료 전 검증, PR 준비는 PR 전 검증을 선택합니다. 재검사는 최초 결과와 이유·조건 변경을 보존하고 일부 통과를 전체 통과로 합산하지 않습니다.",
+        "기존 작업 트리를 되돌리지 않고 필요한 회귀를 확인합니다. 하네스·anti-slop 설치, Attention-kind 활성화와 Git·PR 작업은 각각 요청 범위를 따릅니다."
       ],
       "promptExamples": [
+        {
+          "title": "실행 방식 선택",
+          "prompt": "$code-quality-workflow로 현재 작업의 필수 검사와 증거 보존 필요성을 확인해 직접 검사와 준비된 code-quality 하네스 중 적합한 방식을 선택해줘. 같은 검사를 중복 실행하거나 하네스를 자동 설치하지 말고 선택 이유와 실제 결과를 보고해줘."
+        },
         {
           "title": "현재 변경을 검증",
           "prompt": "$code-quality-workflow로 현재 diff의 완료 조건과 필수 검사를 확인해줘. 이전 검사 결과는 명령·옵션·관련 파일·환경과 실제 실행 대상이 현재 상태를 뒷받침할 때만 재사용해줘. 영향받은 검사를 실행하고 재사용한 증거와 새 실행, 미검증을 구분해줘."
@@ -39,13 +44,78 @@
       "source": {
         "repo": "LeeTheY/agent-skills",
         "local": "custom/skills/code-quality-workflow",
-        "baseline": "efc823f1a87daa0b1e7bf51014389266e1b47862"
+        "baseline": "0f970d83ddbf159707c6c9b7d008f09d4f86d00f"
       },
       "files": {
-        "SKILL.md": "9bf48e4aca321bb1e376969ef23cadf094b68736"
+        "SKILL.md": "6b49f44ef3f8aa2dd55fe2cbffde027c8324e520"
       },
-      "snapshotHash": "4e22d5d29f69c3b20821f0ad11d7ad736dcf088ec08c7e6779148bde2d164ae5",
-      "syncedAt": "2026-10-23T01:47:42.796Z"
+      "snapshotHash": "5dd491cf33d626bd5da0809b39e5bc59f1f4bf7db7979026f506392b12db3c26",
+      "syncedAt": "2026-10-23T05:08:45.962Z"
+    },
+    {
+      "id": "code-quality",
+      "title": "Code Quality Harness",
+      "kind": "harness",
+      "category": "평가·분석",
+      "summary": "프로젝트 검사를 실행하고 로그·입력·산출물 증거를 보존하며 현재 유효 범위와 재검사 차이를 확인합니다.",
+      "when": "테스트·타입 검사·빌드 결과를 보관하거나 이전 실패와 부분 재검사를 비교할 때",
+      "prompt": "$code-quality-harness로 현재 프로젝트의 완료 조건과 필수 검사 명령을 확인해 명시한 argv로 실행해줘. 관련 입력·환경·산출물과 로그 증거를 새 결과 폴더에 보존하고 현재 spec으로 verify해줘. 정리 미확정·실패·미실행과 미검증 범위를 구분해 보고해줘. 하네스 저장소는 수정하지 말고 spec과 결과는 검사 프로젝트와 원본 저장소 밖에 저장해줘.",
+      "note": "Node.js 24 이상, macOS/Linux에서 실행하며 Windows는 지원하지 않습니다. 코드 자동 수정·Git·PR·배포 기능은 없고 compare 작성 성공은 전체 검사 통과가 아닙니다.",
+      "usage": [
+        "macOS 또는 Linux와 Node.js 24 이상에서 setup code-quality로 준비하고 code-quality-harness 호출 스킬을 연결합니다. Windows 실행은 지원하지 않습니다. Kiro Crew 연결은 ID 선택 없이 전체 하네스 스킬 경로를 등록합니다.",
+        "완료 조건과 신뢰하는 검사 argv를 spec.json에 명시합니다. 관련 소스·검사 코드·설정·lockfile은 inputs, 필요한 환경 이름은 passEnv에 넣고 제외 범위를 기록합니다. 빌드 산출물은 produces와 dependsOn으로 연결하며 입력에서 제외합니다.",
+        "run으로 검사하고 report.json·report.md·logs를 새 결과 폴더에 보존합니다. 결과 폴더의 부모를 먼저 만들고 검사 프로젝트 밖의 경로를 사용합니다. 기존 증거를 덮어쓰지 않습니다.",
+        "verify에 해당 report.json과 현재 spec.json을 전달해 명령 재실행 없이 현재 입력·환경·실행 파일·산출물·로그를 대조합니다. report는 저장 당시 결과 조회이므로 현재 검증과 구분합니다.",
+        "재검사는 다른 폴더에 run으로 저장한 뒤 compare에 이전 보고서·이후 보고서·새 비교 폴더와 --reason을 전달합니다. 원본 실패·누락 검사·조건 변경·미실행을 함께 확인하고 일부 통과를 전체 통과로 합산하지 않습니다.",
+        "run/verify/report의 0 통과·1 실패·2 입력/저장 오류·3 미확정을 구분합니다. compare의 0은 비교 작성 완료입니다. 프로세스 정리가 unconfirmed면 종료 코드 0인 검사도 미확정이며 후속 검사가 중단됩니다."
+      ],
+      "promptExamples": [
+        {
+          "title": "검사 실행과 증거 보존",
+          "prompt": "$code-quality-harness로 현재 프로젝트의 필수 검사 명령과 관련 입력·산출물 범위를 명시해 실행해줘. 기존 검사 결과를 중복 수집하지 말고 새 결과 폴더에 로그·JSON·Markdown 증거를 보존해줘. 현재 spec으로 verify하고 실패·미실행·정리 미확정과 증거 경로를 보고해줘. 자동 수정·커밋·배포는 하지 마."
+        },
+        {
+          "title": "저장된 증거 확인",
+          "prompt": "$code-quality-harness로 지정한 report.json과 현재 spec.json을 verify로 대조해줘. 검사를 재실행하거나 원본 증거를 고치지 말고 current/stale, 저장 당시 결과와 달라진 입력·환경·산출물·로그를 구분해줘. 선언하지 않은 범위를 검증 완료로 보고하지 마."
+        },
+        {
+          "title": "최초 실패와 재검사 비교",
+          "prompt": "$code-quality-harness로 지정한 같은 프로젝트의 이전·이후 report.json을 compare로 연결하고 비교 이유를 기록해줘. 두 원본 증거 폴더와 프로젝트 밖의 새 폴더에 결과를 저장해줘. 최초 실패, 누락·추가·미실행 검사와 조건 변경을 보존하고 부분 재검사 통과를 전체 통과로 합산하지 마. 현재 상태 검증과 저장 증거 비교를 구분해줘."
+        }
+      ],
+      "callName": "code-quality-harness",
+      "commands": [
+        "cd \"$HOME/agent/agent-harnesses\"",
+        "node scripts/harness.ts setup code-quality",
+        "./scripts/link-codex.sh --id code-quality"
+      ],
+      "source": {
+        "repo": "LeeTheY/agent-harnesses",
+        "local": "skills/code-quality-harness",
+        "baseline": "126988969dc40e175c9e97b01e60b6a2d338b19a"
+      },
+      "files": {
+        "agents/openai.yaml": "31e09d4cd047963e3e4d17eb32cf38e6e9f5e983",
+        "engine/examples/create-demo.mjs": "8578fc861d332a8ec68e4ba1d653687f4669885a",
+        "engine/harness.json": "26891b2e5cb50da5a0cf23891285c471668819dd",
+        "engine/package-lock.json": "3b70c9a2a5c793a1c67c96feacb695e9d744302e",
+        "engine/package.json": "ef952179cc13af0c00ab9c77c2f995520a3d8610",
+        "engine/README.md": "ac97f302ad8275bbc5b5f9f28d85e32a85dd7f7b",
+        "engine/src/cli.ts": "b2bbb4efa633b2a3bfe9db4220ce6d44efcb7df0",
+        "engine/src/comparison.ts": "6cb5f038dd742cd42cb906b59ffa4077acf95706",
+        "engine/src/evidence.ts": "3e015599af7dcff93bdf9cc7aca814cdb5bed4e2",
+        "engine/src/process.ts": "3af74663d27b632a23bb1e682772901c74cbb15e",
+        "engine/src/runner.ts": "5d03624879ad982f44b3d57baccc1bcb87c0166e",
+        "engine/src/spec.ts": "6876abc59a163e499cdf3da6b2b3047b82b82f48",
+        "engine/tests/cleanup.test.ts": "3aaa8a80593487db4cdfb73f71f8437a3c02dd54",
+        "engine/tests/comparison.test.ts": "5f8e62001349f1a70d2800a2128787e371997d09",
+        "engine/tests/quality.test.ts": "8809ccad26ae175fd64e16fe81a4f00c0553f98a",
+        "engine/tsconfig.json": "2b8ea0f1e96e3934f9d1a0c67841dbba7c6e2ae3",
+        "scripts/run.ts": "182af5fc15fb17a140d00f371230e0f84eaccf8b",
+        "SKILL.md": "5cec88e66b20b9d448d3729629601773f3b85db4"
+      },
+      "snapshotHash": "2e3b7c82925b48083426c074264293c1954fa42b0f53b80722e8745f572dde73",
+      "syncedAt": "2026-10-23T05:12:36.203Z"
     },
     {
       "id": "karpathy-guidelines",
@@ -2798,7 +2868,7 @@
     {
       "id": "build",
       "title": "아이디어에서 구현까지",
-      "description": "설계가 필요하면 목적·계획을 먼저 정하고, 구현·검증은 코드 품질 워크플로로 진행하세요.",
+      "description": "설계가 필요하면 목적·계획을 먼저 정하고 코드 품질 워크플로로 구현·검증을 진행하세요. 실행 증거가 필요하면 준비된 하네스를 선택합니다.",
       "steps": [
         "brainstorming",
         "writing-plans",
