@@ -2,7 +2,8 @@ import type { EditorialEntry, ToolKind, Workflow } from '../src/types.ts';
 import { guides } from './guides.ts';
 // Editorial content is separate from source snapshots so synchronizing never overwrites it.
 const rows: [string, string, ToolKind, string, string, string, string, string][] = [
-['code-quality-workflow','코드 품질 워크플로','custom','설계·개발','최소 구현부터 프로젝트 검사·완료 검증·결과 보고까지 필요한 스킬을 선택해 진행합니다.','여러 품질 스킬을 중복 실행하지 않고 코드 작업을 마무리할 때','현재 요청을 필요한 최소 변경으로 구현해줘. 저장소 규칙과 완료 조건을 확인하고 적합한 구현·검증 스킬을 선택해줘. 프로젝트 필수 검사를 실행하고 변경 이유, 실제 검증 결과와 남은 문제를 간결한 한국어로 보고해줘.','통합 스킬 한 번으로 시작할 수 있지만 하위 스킬의 설치·연결은 유지합니다. 실행형 하네스나 네 스킬의 일괄 실행이 아닙니다.'],
+['code-quality-workflow','코드 품질 워크플로','custom','설계·개발','최소 구현부터 검사 선택·완료 검증·보고까지 조정하고, 필요하면 하네스로 실행 증거를 관리합니다.','코드 작업을 마무리하며 직접 검사와 하네스 중 적합한 방식을 선택할 때','현재 요청을 필요한 최소 변경으로 구현해줘. 저장소 규칙과 완료 조건을 확인하고 직접 검사 또는 준비된 code-quality 하네스를 선택해줘. 같은 검사를 중복 실행하지 말고 하네스가 준비되지 않으면 필수 검사를 직접 수행해줘. 변경 이유, 실제 검증 결과와 남은 문제를 간결한 한국어로 보고해줘.','검사 선택·해석은 이 스킬이, 실행·증거 관리는 선택한 하네스가 맡습니다. 호출만으로 하네스를 설치하거나 네 외부 스킬을 모두 실행하지 않습니다.'],
+['code-quality','Code Quality Harness','harness','평가·분석','프로젝트 검사를 실행하고 로그·입력·산출물 증거를 보존하며 현재 유효 범위와 재검사 차이를 확인합니다.','테스트·타입 검사·빌드 결과를 보관하거나 이전 실패와 부분 재검사를 비교할 때','현재 프로젝트의 완료 조건과 필수 검사 명령을 확인해 명시한 argv로 실행해줘. 관련 입력·환경·산출물과 로그 증거를 새 결과 폴더에 보존하고 현재 spec으로 verify해줘. 정리 미확정·실패·미실행과 미검증 범위를 구분해 보고해줘. 하네스 저장소는 수정하지 말고 spec과 결과는 검사 프로젝트와 원본 저장소 밖에 저장해줘.','Node.js 24 이상, macOS/Linux에서 실행하며 Windows는 지원하지 않습니다. 코드 자동 수정·Git·PR·배포 기능은 없고 compare 작성 성공은 전체 검사 통과가 아닙니다.'],
 ['karpathy-guidelines','Karpathy Guidelines','external','설계·개발','중요한 가정을 드러내고 과잉 설계와 무관한 변경을 줄이며 검증 가능한 목표를 정합니다.','기존 코드를 필요한 범위만 구현·수정·리팩터링할 때','요구사항과 중요한 가정을 확인하고 완료 조건을 정해줘. 기존 패턴에 맞춰 필요한 코드만 수정하고 무관한 정리나 추상화는 추가하지 마. 결과를 뒷받침하는 검사를 실행해줘.','원본 지침을 단독 적용합니다. Ponytail과의 선택·중복 조정은 코드 품질 워크플로에서 담당합니다.'],
 ['verification-before-completion','완료 전 검증','external','Git·리뷰','완료·해결·검사 통과를 보고하기 전에 명령 실행 결과와 변경 내용을 대조합니다.','구현 결과를 완료로 보고하거나 커밋하기 전에 증거를 확인할 때','현재 변경의 완료 주장을 검증해줘. 각 주장을 입증할 명령을 실행하고 전체 출력과 종료 코드를 확인해줘. 실제 통과·실패·미검증을 구분하고 회귀 비교는 기존 작업 트리를 되돌리지 않는 격리된 사본에서 진행해줘.','원본은 보고 직전의 새 실행 증거를 요구합니다. 유효한 증거 재사용과 PR 전 검증의 역할 조정은 통합 워크플로에서 적용합니다.'],
 ['attention-kind','Attention-kind','external','글쓰기','핵심 결론을 먼저 전달하고 필요한 조건·수치·위험을 보존하며 답변을 간결하게 만듭니다.','현재 대화의 답변 스타일을 명시적으로 바꾸고 싶을 때','결론을 먼저 전달하고 답변을 간결하게 해줘. 판단에 필요한 조건·수치·위험은 남기고 상세 설명을 요청하면 충분히 설명해줘.','원본은 명시 호출 후 대화에 지속되는 스타일입니다. 영어·화살표 형식과 ADHD 전제가 포함되어 있으며 통합 워크플로의 한국어·형식 조정은 단독 호출에 자동 적용되지 않습니다.'],
@@ -64,7 +65,7 @@ export const entries: EditorialEntry[] = rows.map(([id,title,kind,category,summa
  return {id,title,kind,category,summary,when,prompt,note,...guide,usage};
 });
 export const workflows: Workflow[] = [
- {id:'build',title:'아이디어에서 구현까지',description:'설계가 필요하면 목적·계획을 먼저 정하고, 구현·검증은 코드 품질 워크플로로 진행하세요.',steps:['brainstorming','writing-plans','code-quality-workflow']},
+ {id:'build',title:'아이디어에서 구현까지',description:'설계가 필요하면 목적·계획을 먼저 정하고 코드 품질 워크플로로 구현·검증을 진행하세요. 실행 증거가 필요하면 준비된 하네스를 선택합니다.',steps:['brainstorming','writing-plans','code-quality-workflow']},
  {id:'review',title:'PR을 준비할 때',description:'변경을 검증하고 Git 작업과 리뷰 피드백을 이어갑니다.',steps:['pre-pr-verification','git-workflow','sedaily-git-pr','pr-review-feedback']},
  {id:'frontend',title:'화면을 만들고 검증할 때',description:'디자인 방향을 잡은 다음 실제 화면과 사용자 흐름을 평가합니다.',steps:['frontend-design','frontend']},
  {id:'present',title:'프로젝트를 소개할 때',description:'구현에 맞는 문서와 청중에 맞는 발표를 준비합니다.',steps:['write-project-readme-docs','universal-project-presentation','pptx']},
