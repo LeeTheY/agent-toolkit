@@ -28,10 +28,10 @@ test('Git blob 해시와 파일 삭제 비교가 안정적이다',()=>{
  assert.equal(blobHash(Buffer.from('test content\n')),'d670460b4b4aece5915caf5c68d12f560a9fe3e4');
  assert.deepEqual(changes({'old':'x'},{}),[{path:'old',type:'removed'}]);
 });
-test('50개 항목에 실제 호출명·프롬프트·파일 근거가 있고 경로가 노출되지 않는다',async()=>{
+test('55개 항목에 실제 호출명·프롬프트·파일 근거가 있고 경로가 노출되지 않는다',async()=>{
  const raw=await readFile(new URL('../src/data/catalog.json',import.meta.url),'utf8');const catalog: Catalog=JSON.parse(raw);
- assert.equal(catalog.tools.length,50);assert.equal(new Set(catalog.tools.map(t=>t.id)).size,50);
- for(const kind of ['harness','custom','external'] as ToolKind[])assert.equal(catalog.tools.filter(t=>t.kind===kind).length,{harness:6,custom:13,external:31}[kind]);
+ assert.equal(catalog.tools.length,55);assert.equal(new Set(catalog.tools.map(t=>t.id)).size,55);
+ for(const kind of ['harness','custom','external'] as ToolKind[])assert.equal(catalog.tools.filter(t=>t.kind===kind).length,{harness:6,custom:14,external:35}[kind]);
  for(const t of catalog.tools){assert.ok(t.callName);assert.ok(t.prompt.startsWith('$'+t.callName));assert.ok(t.files['SKILL.md']);assert.ok(t.usage.length);assert.ok(t.source.repo);}
  assert.doesNotMatch(raw,/\/Users\/|ghp_|github_pat_/);
  assert.notEqual(catalog.tools.find(t=>t.id==='humanizer')!.callName,catalog.tools.find(t=>t.id==='korean-humanizer')!.callName);
@@ -73,4 +73,36 @@ test('writing-plans와 Token Optimizer의 설치 출처가 명시된 기준으�
  assert.equal(writing!.source.baseline,tools.find(t=>t.id==='brainstorming')!.source.baseline);
  assert.deepEqual(externalSource('writing-plans').paths,['skills/writing-plans']);
  for(const id of ['fleet-auditor','resume-checkpoint','token-coach','token-dashboard','token-optimizer'])assert.deepEqual(externalSource(id).paths,[`plugins/token-optimizer/skills/${id}`]);
+});
+test('코드 품질 외부 스킬 네 종은 각 원본 경로와 설치 기록으로 연결된다',async()=>{
+ const {externalSource}=await import('../scripts/sources.ts');
+ const {tools}: Catalog=JSON.parse(await readFile(new URL('../src/data/catalog.json',import.meta.url),'utf8'));
+ const expected=[
+  {id:'verification-before-completion',repo:'obra/superpowers',path:'skills/verification-before-completion',local:'external/development/verification-before-completion'},
+  {id:'karpathy-guidelines',repo:'multica-ai/andrej-karpathy-skills',path:'skills/karpathy-guidelines',local:'external/development/karpathy-guidelines'},
+  {id:'attention-kind',repo:'alexgreensh/attention-span',path:'plugins/attention-span/skills/attention-kind',local:'external/writing/attention-kind'},
+  {id:'install-anti-slop',repo:'dmmulroy/anti-slop',path:'skills/install-anti-slop',local:'external/development/install-anti-slop'},
+ ];
+ for(const {id,repo,path,local} of expected){
+  assert.deepEqual(externalSource(id),{repo,paths:[path],local});
+  const tool=tools.find(t=>t.id===id)!;
+  assert.equal(tool.kind,'external');assert.equal(tool.callName,id);
+  assert.equal(tool.source.repo,repo);assert.deepEqual(tool.source.paths,[path]);assert.equal(tool.source.local,local);
+  assert.match(tool.source.baseline!,/^[a-f0-9]{40}$/);
+  assert.ok(tool.usage.length>=3);assert.ok(tool.promptExamples?.length);
+ }
+ assert.equal(tools.find(t=>t.id==='verification-before-completion')!.source.baseline,tools.find(t=>t.id==='brainstorming')!.source.baseline);
+ const anti=tools.find(t=>t.id==='install-anti-slop')!;
+ for(const file of ['scripts/install.mjs','references/update.md'])assert.ok(anti.files[file]);
+});
+test('통합 워크플로는 커스텀 스킬로 등록하고 구현 가이드에서 한 번 선택한다',async()=>{
+ const catalog: Catalog=JSON.parse(await readFile(new URL('../src/data/catalog.json',import.meta.url),'utf8'));
+ const tool=catalog.tools.find(t=>t.id==='code-quality-workflow')!;
+ assert.equal(tool.kind,'custom');assert.equal(tool.callName,'code-quality-workflow');
+ assert.equal(tool.source.repo,'LeeTheY/agent-skills');assert.equal(tool.source.local,'custom/skills/code-quality-workflow');
+ assert.ok(tool.promptExamples?.length);assert.ok(tool.usage.length>=3);
+ const build=catalog.workflows.find(w=>w.id==='build')!;
+ assert.equal(build.steps.filter(id=>id==='code-quality-workflow').length,1);
+ for(const id of ['ponytail','karpathy-guidelines','verification-before-completion','pre-pr-verification','attention-kind','install-anti-slop'])assert.ok(!build.steps.includes(id));
+ assert.ok(!catalog.pendingSources?.some(path=>path.endsWith('/code-quality-workflow')||path.endsWith('/attention-kind')||path.endsWith('/install-anti-slop')||path.endsWith('/karpathy-guidelines')||path.endsWith('/verification-before-completion')));
 });
