@@ -1,6 +1,249 @@
 {
-  "syncedAt": "2026-10-20T13:49:39.873Z",
+  "syncedAt": "2026-10-23T01:47:42.796Z",
   "tools": [
+    {
+      "id": "code-quality-workflow",
+      "title": "코드 품질 워크플로",
+      "kind": "custom",
+      "category": "설계·개발",
+      "summary": "최소 구현부터 프로젝트 검사·완료 검증·결과 보고까지 필요한 스킬을 선택해 진행합니다.",
+      "when": "여러 품질 스킬을 중복 실행하지 않고 코드 작업을 마무리할 때",
+      "prompt": "$code-quality-workflow로 현재 요청을 필요한 최소 변경으로 구현해줘. 저장소 규칙과 완료 조건을 확인하고 적합한 구현·검증 스킬을 선택해줘. 프로젝트 필수 검사를 실행하고 변경 이유, 실제 검증 결과와 남은 문제를 간결한 한국어로 보고해줘.",
+      "note": "통합 스킬 한 번으로 시작할 수 있지만 하위 스킬의 설치·연결은 유지합니다. 실행형 하네스나 네 스킬의 일괄 실행이 아닙니다.",
+      "usage": [
+        "통합 스킬과 필요한 하위 스킬을 기존 연결 스크립트로 연결한 뒤 작업 대상·요구사항을 함께 전달합니다. 한 번 호출하면 필요한 절차를 선택하며 네 외부 스킬을 모두 다시 호출하지 않습니다.",
+        "구현 지침은 현재 선택된 Ponytail 또는 Karpathy Guidelines 하나를 사용합니다. 자동 선택한 하위 스킬은 현재 작업과 후속 수정·검증에 적용하고 새 작업에서는 다시 판단합니다.",
+        "프로젝트의 필수 검사를 실행합니다. anti-slop 설치·갱신은 별도 요청이 있을 때만 진행하고, Attention-kind도 사용자가 명시적으로 켠 경우에만 적용합니다.",
+        "일반 완료는 완료 전 검증, PR 준비는 PR 전 검증을 선택합니다. 명령·옵션·코드·환경과 실제 dist·설치 사본·서버가 현재 상태를 입증할 때만 기존 증거를 재사용합니다.",
+        "회귀 비교는 기존 작업 트리를 되돌리지 않고 격리된 사본이나 재현 경로로 진행합니다. 결과·실패·미검증을 간결한 한국어로 보고하며 커밋·push·PR은 별도 요청 범위를 따릅니다."
+      ],
+      "promptExamples": [
+        {
+          "title": "현재 변경을 검증",
+          "prompt": "$code-quality-workflow로 현재 diff의 완료 조건과 필수 검사를 확인해줘. 이전 검사 결과는 명령·옵션·관련 파일·환경과 실제 실행 대상이 현재 상태를 뒷받침할 때만 재사용해줘. 영향받은 검사를 실행하고 재사용한 증거와 새 실행, 미검증을 구분해줘."
+        },
+        {
+          "title": "Ponytail 유지하며 수정",
+          "prompt": "$code-quality-workflow로 현재 선택한 Ponytail 지침을 유지하며 요청한 오류를 수정해줘. Karpathy 지침을 별도 재작성 단계로 중복 실행하지 말고 회귀 비교는 격리된 사본에서 진행해줘. 린터 설치나 답변 스타일 전환 없이 필수 검사와 결과 보고까지 마무리해줘."
+        },
+        {
+          "title": "PR 전 확인",
+          "prompt": "$code-quality-workflow로 현재 변경을 PR 준비 범위로 검증해줘. pre-pr-verification을 선택하고 완료 전 검증을 별도 루프로 반복하지 마. 실제 검증 근거와 미검증 범위를 보고하되 커밋·push·PR 생성은 하지 마."
+        }
+      ],
+      "callName": "code-quality-workflow",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "LeeTheY/agent-skills",
+        "local": "custom/skills/code-quality-workflow",
+        "baseline": "efc823f1a87daa0b1e7bf51014389266e1b47862"
+      },
+      "files": {
+        "SKILL.md": "9bf48e4aca321bb1e376969ef23cadf094b68736"
+      },
+      "snapshotHash": "4e22d5d29f69c3b20821f0ad11d7ad736dcf088ec08c7e6779148bde2d164ae5",
+      "syncedAt": "2026-10-23T01:47:42.796Z"
+    },
+    {
+      "id": "karpathy-guidelines",
+      "title": "Karpathy Guidelines",
+      "kind": "external",
+      "category": "설계·개발",
+      "summary": "중요한 가정을 드러내고 과잉 설계와 무관한 변경을 줄이며 검증 가능한 목표를 정합니다.",
+      "when": "기존 코드를 필요한 범위만 구현·수정·리팩터링할 때",
+      "prompt": "$karpathy-guidelines로 요구사항과 중요한 가정을 확인하고 완료 조건을 정해줘. 기존 패턴에 맞춰 필요한 코드만 수정하고 무관한 정리나 추상화는 추가하지 마. 결과를 뒷받침하는 검사를 실행해줘.",
+      "note": "원본 지침을 단독 적용합니다. Ponytail과의 선택·중복 조정은 코드 품질 워크플로에서 담당합니다.",
+      "usage": [
+        "수정할 기능과 허용 범위, 중요한 가정·불확실성을 정리합니다.",
+        "기존 패턴을 따라 요구사항을 만족하는 최소 구현을 선택하고 무관한 정리·추상화는 제외합니다.",
+        "확인 가능한 완료 조건과 검증 명령을 정하고 실제 결과로 확인합니다. 다른 구현 지침과 조정이 필요하면 통합 워크플로를 사용합니다."
+      ],
+      "promptExamples": [
+        {
+          "title": "필요한 범위만 리팩터링",
+          "prompt": "$karpathy-guidelines로 지정한 코드의 동작을 유지하며 요청한 부분만 리팩터링해줘. 호환성에 영향을 주는 가정을 밝히고 기존 테스트와 호출자를 확인해줘. 무관한 파일 정리와 새 의존성은 추가하지 마."
+        }
+      ],
+      "callName": "karpathy-guidelines",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "multica-ai/andrej-karpathy-skills",
+        "paths": [
+          "skills/karpathy-guidelines"
+        ],
+        "local": "external/development/karpathy-guidelines",
+        "baseline": "2c606141936f1eeef17fa3043a72095b4765b9c2"
+      },
+      "files": {
+        "SKILL.md": "6a62d0441753157ca6ca50479e490c2948033adb"
+      },
+      "snapshotHash": "3e3ba181955b21d5f25ed003a39a4d7ff9edf7777e4f56ad27fbfbef685aee9c",
+      "syncedAt": "2026-10-23T01:47:42.796Z"
+    },
+    {
+      "id": "verification-before-completion",
+      "title": "완료 전 검증",
+      "kind": "external",
+      "category": "Git·리뷰",
+      "summary": "완료·해결·검사 통과를 보고하기 전에 명령 실행 결과와 변경 내용을 대조합니다.",
+      "when": "구현 결과를 완료로 보고하거나 커밋하기 전에 증거를 확인할 때",
+      "prompt": "$verification-before-completion로 현재 변경의 완료 주장을 검증해줘. 각 주장을 입증할 명령을 실행하고 전체 출력과 종료 코드를 확인해줘. 실제 통과·실패·미검증을 구분하고 회귀 비교는 기존 작업 트리를 되돌리지 않는 격리된 사본에서 진행해줘.",
+      "note": "원본은 보고 직전의 새 실행 증거를 요구합니다. 유효한 증거 재사용과 PR 전 검증의 역할 조정은 통합 워크플로에서 적용합니다.",
+      "usage": [
+        "완료·해결·검사 통과 등 보고할 주장마다 입증할 명령을 정합니다.",
+        "원본 절차에 따라 보고 전에 새로 실행하고 전체 출력·종료 코드·실패 수를 확인합니다. 테스트 통과를 요구사항 전체의 충족으로 확대하지 않습니다.",
+        "실제 실행 결과와 변경 diff를 연결해 통과·실패·미검증을 보고합니다. 증거 재사용과 안전한 회귀 비교를 함께 조정하려면 통합 워크플로를 사용합니다."
+      ],
+      "promptExamples": [
+        {
+          "title": "수정 결과 확인",
+          "prompt": "$verification-before-completion로 보고된 오류가 실제로 해결됐는지 원래 재현 입력과 현재 변경으로 확인해줘. 필요한 명령을 새로 실행하고 출력·종료 코드와 검증 한계를 보고해줘. 수정 전 비교가 필요하면 기존 작업 트리를 보존한 격리 사본을 사용해줘."
+        }
+      ],
+      "callName": "verification-before-completion",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "obra/superpowers",
+        "paths": [
+          "skills/verification-before-completion"
+        ],
+        "local": "external/development/verification-before-completion",
+        "baseline": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b"
+      },
+      "files": {
+        "SKILL.md": "7d45333cc4a49c57a80df6c1fe2fa777a207afbc"
+      },
+      "snapshotHash": "b3ca63f3c06d514c81e4e8eaa00fcf7856e02a1a0d50b8bf32a446cbf9ad78ef",
+      "syncedAt": "2026-10-23T01:47:42.796Z"
+    },
+    {
+      "id": "attention-kind",
+      "title": "Attention-kind",
+      "kind": "external",
+      "category": "글쓰기",
+      "summary": "핵심 결론을 먼저 전달하고 필요한 조건·수치·위험을 보존하며 답변을 간결하게 만듭니다.",
+      "when": "현재 대화의 답변 스타일을 명시적으로 바꾸고 싶을 때",
+      "prompt": "$attention-kind로 결론을 먼저 전달하고 답변을 간결하게 해줘. 판단에 필요한 조건·수치·위험은 남기고 상세 설명을 요청하면 충분히 설명해줘.",
+      "note": "원본은 명시 호출 후 대화에 지속되는 스타일입니다. 영어·화살표 형식과 ADHD 전제가 포함되어 있으며 통합 워크플로의 한국어·형식 조정은 단독 호출에 자동 적용되지 않습니다.",
+      "usage": [
+        "사용자가 직접 Attention-kind를 호출해 응답 스타일을 활성화합니다. 원본은 자동 호출을 비활성화하고 대화 동안 적용하도록 지정합니다.",
+        "결론을 먼저 전달하되 행동에 필요한 조건·수치·위험은 유지합니다. 깊은 설명을 요청하면 길이 제한보다 충분한 설명을 우선합니다.",
+        "해제나 적용 기간 변경을 원하면 명시합니다. 한국어·기존 산출물 형식 유지와 다른 스타일과의 조정이 필요하면 통합 워크플로에서 이 모드를 명시적으로 요청합니다."
+      ],
+      "promptExamples": [
+        {
+          "title": "이번 답변만 간결하게",
+          "prompt": "$attention-kind로 이번 답변에만 간결한 응답 스타일을 적용해줘. 결론을 먼저 쓰고 판단에 필요한 근거·조건·위험은 유지해줘. 다음 답변부터는 기존 스타일로 돌아가줘."
+        }
+      ],
+      "callName": "attention-kind",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "alexgreensh/attention-span",
+        "paths": [
+          "plugins/attention-span/skills/attention-kind"
+        ],
+        "local": "external/writing/attention-kind",
+        "baseline": "f4ae0de76ed3ab98fa9398a56f30bbfbaa146590"
+      },
+      "files": {
+        "SKILL.md": "3f01645a1964b9a0ba4a0f01d8eafb4634a7b3c0"
+      },
+      "snapshotHash": "f8f590a669d046da705bf33ef6013ced377024c5c6ec397cdc640814063e1ca3",
+      "syncedAt": "2026-10-23T01:47:42.796Z"
+    },
+    {
+      "id": "install-anti-slop",
+      "title": "Install Anti-slop",
+      "kind": "external",
+      "category": "설계·개발",
+      "summary": "JS·TS 프로젝트에 anti-slop Oxlint 규칙을 설치하거나 기존 로컬 수정을 보존하며 갱신합니다.",
+      "when": "대상 프로젝트의 린트 규칙을 추가·설정·업데이트할 때",
+      "prompt": "$install-anti-slop로 현재 JS·TS 프로젝트의 패키지 관리자와 Oxlint 설정, 기존 anti-slop 설치 여부를 확인해줘. 신규 설치 또는 기존 설치 갱신 절차를 선택하고 로컬 수정·설정·출처를 보존하며 적용해줘. 변경한 의존성과 규칙, 검사 결과를 보고해줘.",
+      "note": "스킬 연결과 프로젝트 린터 설치는 별개입니다. 단독 신규 설치는 원본의 generic 규칙 전체 error 정책을 따르며 통합 워크플로에서는 요청·프로젝트 정책에 맞춰 선택합니다.",
+      "usage": [
+        "대상 JS·TS 프로젝트와 설치·갱신 목적을 명시하고 패키지 관리자, Oxlint 설정, 기존 플러그인 경로와 로컬 변경을 확인합니다.",
+        "신규 설치는 번들 플러그인을 복사하고 호환되는 Oxlint 의존성과 기존 설정을 병합합니다. 기존 설치는 update 참조 절차로 로컬 수정과 출처를 보존합니다.",
+        "원본 신규 설치의 generic 규칙은 모두 error이며 Effect 규칙은 직접 의존성 또는 명시 요청 조건을 따릅니다. 프로젝트별 규칙 선택을 조정하려면 통합 워크플로와 함께 설치를 요청합니다.",
+        "린트·타입 검사와 해당 프로젝트의 필수 검사를 실행하고 경로·출처·의존성·설정 변경과 남은 진단을 보고합니다. 앱 코드 정리는 요청한 범위에서만 수행합니다."
+      ],
+      "promptExamples": [
+        {
+          "title": "기존 설치 갱신",
+          "prompt": "$install-anti-slop로 현재 프로젝트에 설치된 anti-slop을 찾아 원문의 update 절차로 갱신해줘. 기존 규칙·로컬 수정·출처 기록을 보존하고 새 버전과 충돌하는 부분을 확인해줘. 앱 코드 정리는 하지 말고 검사 결과와 남은 진단을 보고해줘."
+        }
+      ],
+      "callName": "install-anti-slop",
+      "commands": [
+        "cd \"$HOME/agent/agent-skills\"",
+        "./scripts/link-codex.sh"
+      ],
+      "source": {
+        "repo": "dmmulroy/anti-slop",
+        "paths": [
+          "skills/install-anti-slop"
+        ],
+        "local": "external/development/install-anti-slop",
+        "baseline": "13909c9e07590f5a85d93c62712259fe14a883f7"
+      },
+      "files": {
+        "assets/anti-slop/effect/index.ts": "55eb13ddeace8e2f4a7005511c2a68a17d4fc2cf",
+        "assets/anti-slop/effect/rules/no-manual-effect-error-tag.ts": "daaa109ae95a6448b05194d8afb203831d51158d",
+        "assets/anti-slop/effect/rules/no-manual-tag-comparison.ts": "868d1d274bf9eb8697d93db581201f9bca8d7a6e",
+        "assets/anti-slop/effect/rules/no-manual-tagged-construction.ts": "382f166a1f0bdfcced51daf85653199702c467a9",
+        "assets/anti-slop/effect/rules/no-service-constructor-imports.ts": "55cefb7e7b4c8e0330ccf66ab71096a3976e1f18",
+        "assets/anti-slop/effect/rules/prefer-effect-match.ts": "d834540343ef1933adbe61e9eecbb6c8e9465372",
+        "assets/anti-slop/effect/shared/tagged-values.ts": "21d10a2f8d9f97af79bbbc2d15155c4322dbaeb0",
+        "assets/anti-slop/index.ts": "a3876ec07e4548f66ee353096b3ac851b7572f5b",
+        "assets/anti-slop/rules/no-array-filter-map.ts": "dc001b381465420ec98111507f1cde2e6c92fb6f",
+        "assets/anti-slop/rules/no-chained-type-assertions.ts": "0d118527804cfd00fe377af13293f3d2071492bf",
+        "assets/anti-slop/rules/no-conditional-empty-object-spread.ts": "ae7248d36e54851b67ad1f5d78813bf09ac3dd6a",
+        "assets/anti-slop/rules/no-known-value-widening.ts": "0df39ab89cc2d9fe482c92b55ef04ae2c245b46b",
+        "assets/anti-slop/rules/no-module-mocking.ts": "2d60d48c998cbedfb84f3a09daec6ca52e3e6de5",
+        "assets/anti-slop/rules/no-object-parameters.ts": "6589ebf5f587ecdad1989b9f89886370f0ed5350",
+        "assets/anti-slop/rules/no-reduce-accumulator-copy.ts": "47d8e2cf6b5c640b0a587b65457a543747123bac",
+        "assets/anti-slop/rules/no-reflect-apply.ts": "2cc30451bda68d90d84eb9744034a778ae783b20",
+        "assets/anti-slop/rules/no-reflect-get.ts": "cf630ecc005aa9cef09cdd4a701feea968674b47",
+        "assets/anti-slop/rules/no-runtime-typeof.ts": "43259eb9e65b480b3b64b03a4de0154511efcb51",
+        "assets/anti-slop/rules/no-shape-in-symbol-names.ts": "436d2a25255b4aa43b50cc117e8f15539924dbd8",
+        "assets/anti-slop/rules/no-unknown-parameters.ts": "b4a1545a7b2bc54b5eb8d5ce3090bf151d0cd6e0",
+        "assets/anti-slop/rules/no-unknown-returns.ts": "e1f43f8d055f848c61fda84e907d0dea4079c3ba",
+        "assets/anti-slop/rules/no-unknown-type-aliases.ts": "af5f08a5002fb26f94414be13f1ad848ae73d522",
+        "assets/anti-slop/rules/no-unsafe-dictionary-type.ts": "8cb615a14f97769bd8e37465a8334edd338dc839",
+        "assets/anti-slop/rules/no-widen-then-assert.ts": "c5e07f7fc55a8ebc1c19db58625552822beb0c1e",
+        "assets/anti-slop/rules/require-readable-spacing.ts": "40735c731b274007347fedd15f638e2ff1b159aa",
+        "assets/anti-slop/rules/require-safety-comment-for-type-assertion.ts": "bfea1a23a8358caf125b083452425649c7abe29d",
+        "assets/anti-slop/shared/array-method.ts": "87eb9d842f4d8b4cc0b8e26a7e686034abd4d828",
+        "assets/anti-slop/shared/dictionary-types.ts": "8db73ffab0fceb26cf6c0c534b3c4da71436396f",
+        "assets/anti-slop/shared/function-parameters.ts": "80de91d7a75258044257d6e89ba666c29c284609",
+        "assets/anti-slop/shared/lexical-type-parameters.ts": "7cdb18c911c9dd31066ead3beda0a9dfc6554018",
+        "assets/anti-slop/shared/reflect-method.ts": "43a7cfcc12e9e0bff173d1246d38ba880d83ed07",
+        "assets/anti-slop/shared/scope.ts": "602414abaa2ac38d778f52b452d3a7f7fad81fa3",
+        "assets/anti-slop/shared/type-alias-resolution.ts": "4744222a0a30874037eb8354b1aa744072c50330",
+        "assets/anti-slop/vendor/eslint-stylistic/LICENSE": "38dbc3547844ce7d5479008d9db1c042e1505b36",
+        "assets/anti-slop/vendor/eslint-stylistic/padding-line-ast.ts": "10f34cc8e5fcdd71ec6eed40e4369c6e4bfc7b89",
+        "assets/anti-slop/vendor/eslint-stylistic/padding-line-between-statements.ts": "8e2c99f314b16e47924814bff1f1faf53b414b78",
+        "assets/anti-slop/vendor/eslint-stylistic/padding-line-options.d.ts": "45068ec5246b423cd44ec6329185e0a30267ba72",
+        "assets/anti-slop/vendor/eslint-stylistic/UPSTREAM.md": "95d15ed3d206e90e930b1ae3acd5f3699e444899",
+        "references/update.md": "b2e7f6751a7a97406b768ed5bf950d883c17e9a6",
+        "scripts/install.mjs": "db1f155bd15c065ddb6024042dea7ca4992551b2",
+        "SKILL.md": "8c07e0b5058abbdabdec391064076883eab49d54"
+      },
+      "snapshotHash": "94b2c8fa34943c2115e84d99e88a6c367d6ad80feb5105b5df97270a746179d0",
+      "syncedAt": "2026-10-23T01:47:42.796Z"
+    },
     {
       "id": "frontend",
       "title": "Frontend Harness",
@@ -1082,7 +1325,7 @@
       "summary": "아이디어를 질문과 대안 비교를 통해 구체적인 설계로 정리합니다.",
       "when": "새 기능을 구현하기 전에 목적과 범위를 정할 때",
       "prompt": "$brainstorming로 이번 기능의 목적과 요구사항을 함께 구체화해줘. 현재 구조를 확인하고 접근법의 장단점을 비교한 뒤 구현 전에 설계를 제안해줘.",
-      "note": "설계 승인을 받은 뒤 구현으로 넘어갑니다.",
+      "note": "맥락을 먼저 조사하고 중요한 결정이 비어 있을 때 설계 대화를 진행합니다. 작고 명확한 요청은 바로 수행할 수 있으며 설계 대화에서는 접근법 선택·설계 문서 승인 후 writing-plans로 이어갑니다.",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
         "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
@@ -1099,7 +1342,7 @@
           "skills/brainstorming"
         ],
         "local": "external/development/brainstorming",
-        "baseline": "bb92a77741419a4ab5f06e711a283343f1ada0c3"
+        "baseline": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b"
       },
       "files": {
         "builder-check-prompt.md": "136e9c1d516ee1852abc5e556e76ce1b085d3827",
@@ -1108,11 +1351,11 @@
         "scripts/server.cjs": "fdc796122583f5d6687d9582eb265c2fa0cb7781",
         "scripts/start-server.sh": "016a8e4870142ce2adbe81a021d8b6b9073e7618",
         "scripts/stop-server.sh": "7cacfe9440043f7a46eac555cd835fad0769c425",
-        "SKILL.md": "22b98fc5bac68d46bc8f066df90155aa3815262d",
+        "SKILL.md": "7f5eef02f894c4f24cea313660c0465ce9c084ed",
         "visual-companion.md": "8dca065bd9adb9d4fa82a66acbb4176ea23259c6"
       },
-      "snapshotHash": "f1ed15ea4c9484aeea0a38885a338a395eed0542b406248a052f572379a45397",
-      "syncedAt": "2026-10-20T13:47:23.375Z"
+      "snapshotHash": "363b12f7bdd32f61c44844b206d58f6db8b85e98547cce07df4547315d9f57a5",
+      "syncedAt": "2026-10-23T01:44:23.286Z"
     },
     {
       "id": "writing-plans",
@@ -1139,13 +1382,13 @@
           "skills/writing-plans"
         ],
         "local": "external/development/writing-plans",
-        "baseline": "bb92a77741419a4ab5f06e711a283343f1ada0c3"
+        "baseline": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b"
       },
       "files": {
         "SKILL.md": "4cf0275d88d67aa4ef09f4bbca9970ed6ff74a00"
       },
-      "snapshotHash": "2e3cc6a22de114586890be872685af7a09285166493c5b50af352fffefee1f54",
-      "syncedAt": "2026-10-20T13:47:23.375Z"
+      "snapshotHash": "eea2ad1e1e1c1008914b14aa7e63d89546b43f5b0a053316e3f23a116caaec21",
+      "syncedAt": "2026-10-23T01:44:23.286Z"
     },
     {
       "id": "grill-me",
@@ -1155,7 +1398,7 @@
       "summary": "빠뜨린 결정과 가정을 질문으로 드러내는 인터뷰를 시작합니다.",
       "when": "계획의 빈틈을 구현 전에 찾고 싶을 때",
       "prompt": "$grill-me로 현재 계획을 날카롭게 검토해줘. 결정의 전제와 누락된 요구사항을 질문하고, 추천 답과 선택의 영향을 함께 제시해줘.",
-      "note": "grilling 스킬을 호출하는 진입점입니다. 개인 설정이 적용되어 있습니다.",
+      "note": "grilling을 호출하는 진입점입니다. 원본의 명시 호출 정책(disable-model-invocation 및 allow_implicit_invocation)을 그대로 유지합니다.",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
         "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
@@ -1175,11 +1418,11 @@
         "baseline": "5beb35b040e3de97e54fa9e386d7e42d15c295c2"
       },
       "files": {
-        "agents/openai.yaml": "f148c44e331ffaa23dc844d4eab083f2b38059fe",
-        "SKILL.md": "3c450aa82b148e6398e3e5d9908faca02e91d9ac"
+        "agents/openai.yaml": "4d6fb0c746c5d21364dce5d0cf8c51eab9712e7b",
+        "SKILL.md": "3947ff9c4ad980d14fc07fccbf659d47c114e81d"
       },
-      "snapshotHash": "c82252245d017398e8ccc595586e762603665d601d17da6d753f8e287be3a54c",
-      "syncedAt": "2026-10-20T13:47:23.375Z"
+      "snapshotHash": "f675f7c6259abf1cb5d1ef6cdda40bcb9990fe1a230f89141c86dddf2f03db10",
+      "syncedAt": "2026-10-23T01:44:23.286Z"
     },
     {
       "id": "grilling",
@@ -1452,10 +1695,10 @@
       "title": "Design Taste",
       "kind": "external",
       "category": "프론트엔드",
-      "summary": "랜딩 페이지와 포트폴리오에 맞는 개성 있는 시각적 방향을 잡습니다.",
-      "when": "획일적인 느낌을 줄이고 브랜드에 맞게 디자인할 때",
+      "summary": "랜딩 페이지와 앱 화면을 구분해 목적에 맞는 시각적 방향과 구현을 설계합니다.",
+      "when": "랜딩·포트폴리오 또는 대시보드·관리 화면의 디자인을 구성할 때",
       "prompt": "$design-taste-frontend로 이 랜딩 페이지의 대상과 목적을 읽고 적합한 시각적 방향을 정해줘. 색상과 타이포그래피를 일관되게 적용하고 장식보다 콘텐츠를 우선해줘.",
-      "note": "대시보드나 복잡한 다단계 제품 UI보다 랜딩·포트폴리오에 적합합니다.",
+      "note": "읽고 스크롤하는 페이지는 기본 절차, 조작하는 앱 화면은 references/app-screens.md의 별도 절차를 사용합니다.",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
         "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
@@ -1473,7 +1716,7 @@
           "skills/design-taste-frontend"
         ],
         "local": "external/frontend/taste",
-        "baseline": "63aba5f43b5056758b15bbe7d683da8c86a7a7ad"
+        "baseline": "6010f91a9935f1c167dfc500fb1a475681892e6b"
       },
       "files": {
         "assets/app.css": "865e4ed4804556aaff51897d22bf0c1bcbee9549",
@@ -1508,15 +1751,15 @@
         "scripts/draw.mjs": "6db3d89422057902457c97643c13f4b351d1459b",
         "scripts/inspect.mjs": "105b0e5e0a9038244e04cfea4c79b2c66ae5833f",
         "scripts/lib/app-draw.mjs": "e246a38f15d4f3b163a3d3aa5378c71462a4c24f",
-        "scripts/lib/cdp.mjs": "b3b8e01b9c4e603d432b83df13963a55d6aa63c5",
+        "scripts/lib/cdp.mjs": "03ef99c144923d0905ffc6222189bc8901836f4a",
         "scripts/lib/probe.mjs": "911094e566b35508a15b344febdf1a51a1cae0cf",
         "scripts/lib/rules.mjs": "558fcccf246ae4432fa05e30a32a25d9e46d214e",
         "scripts/lint.mjs": "9277761d18222e5fc75c85ed79aa032f3d086598",
         "scripts/scenes.mjs": "7bbde8e6bdf27859af0d54db1e1b2756de3a7d56",
         "SKILL.md": "433d92105c76671250013e0312d82cb413f552bc"
       },
-      "snapshotHash": "42ece9d5e5c6b6eebe52fef3087e7dbe8f84f113e5e5811a52de5ebc7881eeb0",
-      "syncedAt": "2026-10-20T13:47:23.375Z"
+      "snapshotHash": "84388ac72d8c9742e82e982dc8b1831db20475bad564e8647ce2149743771913",
+      "syncedAt": "2026-10-23T01:44:23.286Z"
     },
     {
       "id": "pdf",
@@ -1877,11 +2120,11 @@
       "summary": "한국어 번역투와 반복적인 문장 패턴을 자연스럽게 다듬습니다.",
       "when": "한국어 문서의 어색한 표현을 개선할 때",
       "prompt": "$korean-humanizer로 아래 한국어 글의 의미를 유지하면서 번역투, 과도한 쉼표와 반복 표현을 다듬어줘. 수정본을 먼저 주고 중요한 변경 이유만 설명해줘.",
-      "note": "DaleSeo/korean-skills 원본이며 연결 별칭과 내부 이름은 korean-humanizer입니다. install.sh가 재설치·업데이트 후에도 내부 이름을 자동 보정합니다.",
+      "note": "DaleSeo/korean-skills 원본의 내부 이름은 humanizer이고 연결 폴더 별칭은 korean-humanizer입니다. 원본 이름을 보정하지 않으므로 앱에서 혼동되면 DaleSeo 원본 경로나 스킬 파일을 명시합니다.",
       "usage": [
-        "로컬 스킬 폴더와 연결 상태를 확인합니다.",
-        "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
-        "추천 프롬프트를 복사하고 대상과 원하는 결과를 구체화합니다."
+        "한국어 텍스트와 원하는 어조를 준비합니다.",
+        "korean-humanizer 연결 폴더의 DaleSeo 원본을 선택합니다. 앱이 내부 이름 humanizer로 표시하거나 다른 Humanizer와 구분하지 못하면 연결된 SKILL.md 파일을 직접 지정합니다.",
+        "추천 프롬프트로 교정한 뒤 의미·사실·고유명사 보존 여부를 확인합니다."
       ],
       "callName": "korean-humanizer",
       "commands": [
@@ -1911,10 +2154,10 @@
         "references/structure-patterns.md": "d7ad93cbd034f54fdcff13e909c756e1fceac3bb",
         "references/translation-ese-patterns.md": "308f130bdfdd5fa4b3a77be97540011a975286dd",
         "references/vocabulary-patterns.md": "03ff30d3c60b8e3994a9dfe80b99ecb26fb2cea3",
-        "SKILL.md": "88f7c03dfc722edbd61a8f8ea05d3201b220f339"
+        "SKILL.md": "cc6a9a6c3e3cb7ffb32f90b2303d4780d6c8245d"
       },
-      "snapshotHash": "935eda759e3a49b4a0694863396fbc585eb2514c2a1529435a7e740f582dc988",
-      "syncedAt": "2026-10-06T14:54:06.022Z"
+      "snapshotHash": "72ab014f003c2252f2e8e6ebe099568f4a77702fae0433920082c6cd1db80977",
+      "syncedAt": "2026-10-23T01:44:23.286Z"
     },
     {
       "id": "korean-grammar-checker",
@@ -2219,7 +2462,7 @@
       "summary": "여러 에이전트 환경의 토큰·비용 낭비를 비교합니다.",
       "when": "여러 도구를 함께 쓰며 비용과 설정을 점검할 때",
       "prompt": "$fleet-auditor로 사용 중인 에이전트 환경의 토큰·비용 낭비를 조사해줘. 확인 가능한 로그를 근거로 유휴 사용, 모델 선택과 설정 중복을 구분하고 추정의 한계를 밝혀줘.",
-      "note": "각 도구의 설치와 로그 접근이 필요합니다.",
+      "note": "각 도구의 설치와 로그 접근이 필요합니다. 측정에 쓰는 Token Optimizer 스킬은 삭제·비활성화 후보에서 제외하며 확인 가능한 수치와 추정의 한계를 구분합니다.",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
         "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
@@ -2236,18 +2479,18 @@
           "plugins/token-optimizer/skills/fleet-auditor"
         ],
         "local": "external/development/fleet-auditor",
-        "baseline": "78c0ee33ed0bca0ec2c9ee0da5dc1cd4dd21af86"
+        "baseline": "549bb58b27c6d687e682ca44eaba51d55425176d"
       },
       "files": {
         "references/fleet-systems.md": "bc6ebb4c5636d948fd680003c53a277973cd7e5b",
         "references/report-template.md": "0a841c64d9b3d8d85c6bac0b777818c95b2e70d8",
         "references/waste-patterns.md": "3d34d514f6af4469f7ea0add12a0cd26c2a27916",
-        "scripts/fleet.py": "0252830648ba651a7c9f82a3bf577de7a9ea4982",
+        "scripts/fleet.py": "e033323f029aba62fd04c0b3cd86180c9825aa40",
         "scripts/shared.py": "aa9f818bb5be935d1a7caf4b0c9e4d13b1005f3b",
-        "SKILL.md": "d0ca7d4898744b62d2b246d3b64b19e5a35c40fb"
+        "SKILL.md": "3cbf5f9ce01268607e43468834b14a2bb59629b5"
       },
-      "snapshotHash": "02c350e20077692b07445811fe675c1837804f76a729bf8c5c6f15a9e4a5aeb8",
-      "syncedAt": "2026-10-20T13:47:23.375Z"
+      "snapshotHash": "01414d1994f8b6f913a82b227b39a26816629394a6c9c05bcd592d5a51b20291",
+      "syncedAt": "2026-10-23T01:44:23.286Z"
     },
     {
       "id": "resume-checkpoint",
@@ -2274,24 +2517,24 @@
           "plugins/token-optimizer/skills/resume-checkpoint"
         ],
         "local": "external/development/resume-checkpoint",
-        "baseline": "78c0ee33ed0bca0ec2c9ee0da5dc1cd4dd21af86"
+        "baseline": "549bb58b27c6d687e682ca44eaba51d55425176d"
       },
       "files": {
         "scripts/pull_checkpoint.py": "d56ab00b0c264376921b0124b8ce0e9a4acc797c",
         "SKILL.md": "c8b1652e2febcd982b2da9b9a0bc419a616e210c"
       },
-      "snapshotHash": "3c309a7d7e7de050531bcaff71a1e8c98a9491a772c7bb2b72bc2d457ca26de0",
-      "syncedAt": "2026-10-20T13:47:23.375Z"
+      "snapshotHash": "19fe9c1e989543b19ef9a3a8eb495f074b7de1ef020cb933b7b0c9568f59f5f7",
+      "syncedAt": "2026-10-23T01:44:23.286Z"
     },
     {
       "id": "token-coach",
       "title": "Token Coach",
       "kind": "external",
       "category": "환경·토큰",
-      "summary": "토큰을 효율적으로 쓰는 환경 구성을 계획합니다.",
+      "summary": "실제 사용량을 근거로 토큰 효율을 높일 우선순위와 실행 계획을 정합니다.",
       "when": "설정을 만들거나 빠르게 점검하고 싶을 때",
       "prompt": "$token-coach로 현재 에이전트 설정을 간단히 점검하고 토큰 효율을 높일 방법을 제안해줘. 필요한 지침과 기능은 유지하고 변경 전 근거를 설명해줘.",
-      "note": "전체 감사와 실제 수정은 Token Optimizer에서 다룹니다.",
+      "note": "먼저 로컬 사용량을 측정합니다. 전체 감사와 설정 수정은 Token Optimizer로 이어가며 측정용 스킬 자체를 미사용 정리 후보에서 제외합니다.",
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
         "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
@@ -2308,7 +2551,7 @@
           "plugins/token-optimizer/skills/token-coach"
         ],
         "local": "external/development/token-coach",
-        "baseline": "78c0ee33ed0bca0ec2c9ee0da5dc1cd4dd21af86"
+        "baseline": "549bb58b27c6d687e682ca44eaba51d55425176d"
       },
       "files": {
         "assets/coach-dashboard-tab.html": "5c53df9689f2d90d08e2c19e88f44dd5c35f14f9",
@@ -2321,20 +2564,26 @@
         "references/deterministic-stages.md": "7352e7985d5d705a5e3a2a34eab958083b153ab6",
         "references/keepwarm-consent.md": "c6ae2bbc8dbf07f6c407004f41cccc8a49d971ff",
         "references/quick-reference.md": "6b60ca4c2b657dff08ffe4cde7a612f66c44142e",
-        "SKILL.md": "a951a1a4c915008d1ef8d69074e0bd7057b536f4"
+        "SKILL.md": "6c77326c75d8a79ef23eca1d82492e621e8cf325"
       },
-      "snapshotHash": "828701b58631f4f0b469ed112f9bdda8214b85929b8847ad0bf9cee5c01bc443",
-      "syncedAt": "2026-10-20T13:47:23.375Z"
+      "snapshotHash": "f1bc0788fb32651a33b55c4de16d6884150c00550cc93f420c9f15945ba7c36d",
+      "syncedAt": "2026-10-23T01:44:23.286Z"
     },
     {
       "id": "token-dashboard",
       "title": "Token Dashboard",
       "kind": "external",
       "category": "환경·토큰",
-      "summary": "토큰 사용 추이와 세션 정보를 대시보드로 엽니다.",
-      "when": "사용량과 환경 정보를 화면에서 확인할 때",
+      "summary": "과거 세션의 비용을 조회하고 요청하면 토큰 사용 대시보드를 엽니다.",
+      "when": "특정 세션의 비용을 확인하거나 사용 기록을 화면에서 보고 싶을 때",
       "prompt": "$token-dashboard로 설치된 Token Optimizer 런타임을 확인하고 토큰 대시보드를 열어줘. 필요한 런타임이나 로그가 없으면 준비 사항을 알려줘.",
-      "note": "이 사이트 내부의 대시보드가 아닌 별도 로컬 런타임을 엽니다.",
+      "note": "비용 질문만으로 브라우저를 열지 않습니다. 대시보드는 별도 로컬 런타임과 로그가 필요합니다.",
+      "promptExamples": [
+        {
+          "title": "세션 비용 조회",
+          "prompt": "$token-dashboard로 지정한 과거 세션의 토큰 사용과 계산된 비용을 조회해줘. 세션 식별 근거와 요금 기준, 누락된 데이터를 구분하고 브라우저는 열지 마."
+        }
+      ],
       "usage": [
         "로컬 스킬 폴더와 연결 상태를 확인합니다.",
         "작업할 프로젝트를 열고 필요한 자료를 첨부합니다.",
@@ -2351,13 +2600,13 @@
           "plugins/token-optimizer/skills/token-dashboard"
         ],
         "local": "external/development/token-dashboard",
-        "baseline": "78c0ee33ed0bca0ec2c9ee0da5dc1cd4dd21af86"
+        "baseline": "549bb58b27c6d687e682ca44eaba51d55425176d"
       },
       "files": {
-        "SKILL.md": "7865db21dc98412435ca8ec345745a796077964d"
+        "SKILL.md": "29125578b5de9954e8cb4b7640c34a275ef19bc7"
       },
-      "snapshotHash": "84f0398e4db686d4b658e52b7b59546b23dea41b7f346df5b1f33b49e62d9c0e",
-      "syncedAt": "2026-10-20T13:47:23.375Z"
+      "snapshotHash": "c7ebda00019d0bac8e5bcb6e7cd5b8b9dd17c69fe08746e83a5f4d63d9f29ff5",
+      "syncedAt": "2026-10-23T01:44:23.286Z"
     },
     {
       "id": "token-optimizer",
@@ -2384,7 +2633,7 @@
           "plugins/token-optimizer/skills/token-optimizer"
         ],
         "local": "external/development/token-optimizer",
-        "baseline": "78c0ee33ed0bca0ec2c9ee0da5dc1cd4dd21af86"
+        "baseline": "549bb58b27c6d687e682ca44eaba51d55425176d"
       },
       "files": {
         "assets/active-compression-hero.svg": "3adc47925b05d861ae33f74b3db0bc3619cf1488",
@@ -2439,21 +2688,22 @@
         "scripts/activity_tracker.py": "a934a2fb66d7f4d1d142e2bba64c1bf06e612f5e",
         "scripts/antigravity_doctor.py": "06e7d6f7d6bcab8b6a03080de823ee19a871b398",
         "scripts/antigravity_hook_bridge.py": "a080c96a8148e9020910ccf5131d2c478c9a78c0",
-        "scripts/antigravity_install.py": "9a11ebdbab4db1846fc47efeca5868ca1c2ade1e",
+        "scripts/antigravity_install.py": "626210380d06f5520566623a392f72f8130cd76d",
         "scripts/antigravity_proto.py": "29c43181dc83affd2eb2227fcdf7b6e0e958496b",
         "scripts/antigravity_session.py": "60ba3e9658ac986c6494811e4877623249bceb25",
         "scripts/antigravity_state.py": "415f4641ddfdb43df6702140637e97925967eafe",
-        "scripts/archive_result.py": "534befe7e3d06d155469bcbb8a8ead954ada7510",
+        "scripts/archive_result.py": "9c753e43f83647ed442585dd4dfc091f561cff01",
         "scripts/bash_compress_hook.py": "a1febf991fd4942e6bca7b6d4d6a29518adde215",
         "scripts/bash_compress.py": "99348a686e7ca4fc452939c6984ccd2467498c5d",
         "scripts/bash_hook.py": "9df6d0cd76517e8a3592463901508fec5f78e97b",
         "scripts/bash_whitelist.py": "1e9f3f508523727bcdee8631c9e743a2359e73a5",
         "scripts/build_output_compress.py": "5631de0df41bea2471960cfd6665e944779b5735",
+        "scripts/cloud_kit.py": "e4922167a6d2af51d58fcb3c0c180f25fe10a663",
         "scripts/codex_command_compress.py": "3060f9b56164be4011992534390a981a04599ddc",
-        "scripts/codex_compact_prompt.py": "19c3e97ec6400ef358432b9c1e9399959603d026",
-        "scripts/codex_doctor.py": "740792bbadef26d0ccee2ba303a18b48b12537f0",
+        "scripts/codex_compact_prompt.py": "db04da470da68bade04f10a07cbf6b9dcdb1d1aa",
+        "scripts/codex_doctor.py": "b028a963e2ff251f27cf61a4a74979f5410b6d8b",
         "scripts/codex_hook_bridge.py": "8159ab4cec6c4796789f4a81d1a6b8f6959bca65",
-        "scripts/codex_install.py": "3365c60c4705f7371f3b2555be0b3809bc5f1677",
+        "scripts/codex_install.py": "7bb6e0b4603ec2c21a40776fca9921be8db66b17",
         "scripts/codex_io.py": "a8eb9d07ff022a5bf74a2f2681436c05d569777c",
         "scripts/codex_log_index.py": "210405cd6d7025b4506e0865fe6fa334a79f9849",
         "scripts/codex_models.py": "20f6ae3ab5510ddb60f0c5db82d597c634c76eea",
@@ -2462,12 +2712,12 @@
         "scripts/codex_statusline.py": "385d9542559826e9761997acf1be7a487baac116",
         "scripts/command_filters.py": "89aa27b9c75b45f4f25c2bdee70772d59a1ae7a8",
         "scripts/compression_backfill.py": "e24ddf26620aeef6c0eea1550ab3edecb3f4ef2a",
-        "scripts/compression_log.py": "025c870887c3312a4e80244b0f1e96453ab98daa",
+        "scripts/compression_log.py": "099968267479c3a1d5126184128fb13d46d40e16",
         "scripts/context_intel.py": "dd35f1c835548b37cbe67ff68ee82fa035f25db6",
         "scripts/context_pressure.py": "b1f2ed263a485440c2d6997b2a54a460c0f6566f",
         "scripts/copilot_doctor.py": "704960ef559c0ddf0d5fb087370a0db6b695fd46",
         "scripts/copilot_hook_bridge.py": "eb3e6bca746ce5b08f8e097ecfd6b721c2282301",
-        "scripts/copilot_install.py": "f0d615ff91260027ab7a075cc19d13cc43eeef40",
+        "scripts/copilot_install.py": "62d4fad3e6c84abdfaf1b22b06681da60a040dc4",
         "scripts/copilot_session.py": "c1a91b48c5ece689a15ac5dba22f28feab4698b4",
         "scripts/copilot_state.py": "ab2da88c6f1dd33ddffb201ad2cf689df3cc5dbc",
         "scripts/copilot_vscode.py": "ac27926520b430a3441f3e08677619357a3c3a78",
@@ -2476,7 +2726,7 @@
         "scripts/credential_patterns.py": "35184cdc3a5013b4d00f99175e024849815887b4",
         "scripts/cursor_doctor.py": "3ab711402ef4ac831c932ff61bfe301068faf9ef",
         "scripts/cursor_hook_bridge.py": "71c8da9b457ef73eec6b53c3760eb7652879bb32",
-        "scripts/cursor_install.py": "2f0cbfd800738fa6e15b6b7007be25cae80dd811",
+        "scripts/cursor_install.py": "c81f933d5ba9164b65d6ffed6679600e8b0a415a",
         "scripts/cursor_session.py": "5769c53c51000c695aad6be98ec29359d52db53f",
         "scripts/cursor_state.py": "112b8eb3ce2b8459b82b28e8c037edb3d9dd560f",
         "scripts/delta_diff.py": "f02cf83135fb5c42ab156076adaf71e8319e7333",
@@ -2499,12 +2749,12 @@
         "scripts/devin_doctor.py": "266d4145c78b810a06eb51dd4a1b3cc3b1f2e431",
         "scripts/devin_hooks.py": "2a38843ae36850188bdeaad254cf0065ba1ecb48",
         "scripts/devin_install.py": "665d9954d64464f4e54c5300b25f95b8bfa87f0c",
-        "scripts/devin_source.py": "79ede025c4a77a80f564a29d09141043b50e0cc0",
+        "scripts/devin_source.py": "9c217eae32a0664a646c42ec60d436fff161f9e4",
         "scripts/devin_state.py": "d2061a9bd594f89bd35457582d0ed15f50f8f7da",
         "scripts/devin_verify.py": "159a10722307d09b12576b1100b8ac33baa6e14c",
         "scripts/grok_doctor.py": "a7d00a0aac892064a713b394265016e17470df29",
         "scripts/grok_hook_bridge.py": "c2afdf84f5e79cc7841debe54bf89d1522e89893",
-        "scripts/grok_install.py": "56e438f817f928c03512946c96f265f2b34c0a6d",
+        "scripts/grok_install.py": "0a3014c70ebe779e393484c65b49b07c75583182",
         "scripts/grok_session.py": "29ef621b135e5305012f8939ede091269e54b81d",
         "scripts/grok_state.py": "b1804d57a0f240f082ee354234122ff552dd067f",
         "scripts/hermes_doctor.py": "c4b50d887ae62a8b235f0b5e214958864723ae23",
@@ -2512,22 +2762,22 @@
         "scripts/hermes_install.py": "500fe2642f574f1996545b654a4c59d6c6a2a839",
         "scripts/hermes_session.py": "d0c48b6599bac8d6180f000c0dab591e9cd88bd7",
         "scripts/hermes_state.py": "9e46a5432fe794383df3d29d51b95c48d3e7c796",
-        "scripts/hook_io.py": "4b75b60fd35af44469cba0c7d30e52b5ffe025da",
-        "scripts/hook_runtime.py": "4656c9eddef51ce0ddd15805d370d7e5b30f29a6",
+        "scripts/hook_io.py": "5732fc3f85bb4c225d19293bb43d77e7daa6d36d",
+        "scripts/hook_runtime.py": "dcc73553a8ea5fc061f6ccee9494b3a1b33e58d1",
         "scripts/injection.py": "1f6e99622a57167c8dfe75931c2bcd30bc2d11b6",
         "scripts/install_reconcile.py": "2cf012f75127da5140b91bb9256b78a9ac2b4f74",
-        "scripts/measure.py": "72590d14d544b08bdbc7e0093dd77184da6fbd4a",
+        "scripts/measure.py": "6d6fc9dd7d169c78edd8db6b5f1f1af6f2bddc1a",
         "scripts/outline.py": "45d288c52cd99fd0774aa5a30d623c74f1b8fc2e",
         "scripts/pipeline_analyzer.py": "688c1ffabda46297c71ef5bdb2cbad5cb90fdea9",
-        "scripts/plugin_env.py": "0325d9bf59ad71d9d5f202d535d8b25794fa04fe",
+        "scripts/plugin_env.py": "ae6f83b93fbfc0961e5fbd91e8f775e60d0cbeb0",
         "scripts/py_trust.py": "cd40748155a35d0539d9e6058e3dc42d2dec0685",
         "scripts/quality_cache_gate.py": "718d631c9e2ac1f954a7f8eb383e41d16df8ab32",
-        "scripts/read_cache.py": "4321889aed248d8cb59ea55efedc995950523497",
+        "scripts/read_cache.py": "de68e4c3e1afa4dfe08929da9b3eee4a198ff5f1",
         "scripts/recovery_output.py": "d7344594019269bee2ae76ba0fff64f742815b73",
         "scripts/refetch_fingerprint.py": "bf67b45cf3694c0f56eeb50963224cd53a5bf4ea",
         "scripts/refetch_guard.py": "2207f20c6ea38b9c0ebac69ef063e1d8919e282e",
         "scripts/routing_advisor.py": "ed081455f8424836db28ab8cc2323489a4d68566",
-        "scripts/runtime_env.py": "1ca55c45cbd427c11b501d4389655c03a16a7424",
+        "scripts/runtime_env.py": "ff4cef8f57a2be642e8891671cd0566fcac8724c",
         "scripts/session_store.py": "3a8eb716ddd8429c0757ec1ad2df90a8e11aab55",
         "scripts/spawn_utils.py": "bbc79acb807ceabdd42e8e4d87ba10a3c409e592",
         "scripts/statusline.js": "3a447a86f56523ec1cb50adc96fa3634e49d92ac",
@@ -2540,20 +2790,19 @@
         "scripts/utf8_io.py": "69f7277c10e7926ea1fe55ce94d0f36aafff0bce",
         "SKILL.md": "a6c9d093fbb600281df2493dbd77ddc624f1d9ac"
       },
-      "snapshotHash": "268cb493b56f90b34a8ef8a7eb4ff8ce95c3bd1f1f99e2c214d91dd7516f34da",
-      "syncedAt": "2026-10-20T13:47:23.375Z"
+      "snapshotHash": "3cc3ad5727143e9929003fe39630f7a1dabe409015cecd2d0ac760c8b979e9ff",
+      "syncedAt": "2026-10-23T01:44:23.286Z"
     }
   ],
   "workflows": [
     {
       "id": "build",
       "title": "아이디어에서 구현까지",
-      "description": "목적을 정하고, 계획을 세우고, 필요한 만큼 구현하세요.",
+      "description": "설계가 필요하면 목적·계획을 먼저 정하고, 구현·검증은 코드 품질 워크플로로 진행하세요.",
       "steps": [
         "brainstorming",
         "writing-plans",
-        "ponytail",
-        "pre-pr-verification"
+        "code-quality-workflow"
       ]
     },
     {

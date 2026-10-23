@@ -1,7 +1,10 @@
 import type { ExternalSource } from '../src/types.ts';
 export function externalSource(id: string): ExternalSource {
   if (['pdf','docx','pptx','xlsx','frontend-design'].includes(id)) return {repo:'anthropics/skills',paths:[`skills/${id}`],local:`external/${id==='frontend-design'?'frontend':'document'}/${id}`};
-  if (['brainstorming','writing-plans'].includes(id)) return {repo:'obra/superpowers',paths:[`skills/${id}`],local:`external/development/${id}`};
+  if (['brainstorming','writing-plans','verification-before-completion'].includes(id)) return {repo:'obra/superpowers',paths:[`skills/${id}`],local:`external/development/${id}`};
+  if(id==='karpathy-guidelines') return {repo:'multica-ai/andrej-karpathy-skills',paths:[`skills/${id}`],local:`external/development/${id}`};
+  if(id==='attention-kind') return {repo:'alexgreensh/attention-span',paths:[`plugins/attention-span/skills/${id}`],local:`external/writing/${id}`};
+  if(id==='install-anti-slop') return {repo:'dmmulroy/anti-slop',paths:[`skills/${id}`],local:`external/development/${id}`};
   if (['grill-me','grilling'].includes(id)) return {repo:'mattpocock/skills',paths:[`skills/productivity/${id}`],local:`external/development/${id}`};
   if(id.startsWith('ponytail')) return {repo:'DietrichGebert/ponytail',paths:[`skills/${id}`],local:`external/development/${id}`};
   if(id==='taste') return {repo:'Leonxlnx/taste-skill',paths:['skills/taste-skill','skills/design-taste-frontend'],local:'external/frontend/taste'};
