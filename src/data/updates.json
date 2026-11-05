@@ -1,8 +1,8 @@
 {
-  "checkedAt": "2026-11-04T06:41:45.768Z",
+  "checkedAt": "2026-11-05T07:00:08.570Z",
   "tools": {
     "karpathy-guidelines": {
-      "checkedAt": "2026-11-04T06:41:34.739Z",
+      "checkedAt": "2026-11-05T06:59:56.401Z",
       "baseline": "2c606141936f1eeef17fa3043a72095b4765b9c2",
       "snapshotHash": "3e3ba181955b21d5f25ed003a39a4d7ff9edf7777e4f56ad27fbfbef685aee9c",
       "path": "skills/karpathy-guidelines",
@@ -15,7 +15,7 @@
       "changedSinceLastCheck": false
     },
     "verification-before-completion": {
-      "checkedAt": "2026-11-04T06:41:35.376Z",
+      "checkedAt": "2026-11-05T06:59:57.318Z",
       "baseline": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
       "snapshotHash": "b3ca63f3c06d514c81e4e8eaa00fcf7856e02a1a0d50b8bf32a446cbf9ad78ef",
       "path": "skills/verification-before-completion",
@@ -25,10 +25,10 @@
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
       "latest": "22f0b463e7a5e579904dd6211a520321035526f7",
       "latestAt": "2026-11-03T22:17:07Z",
-      "changedSinceLastCheck": true
+      "changedSinceLastCheck": false
     },
     "attention-kind": {
-      "checkedAt": "2026-11-04T06:41:36.667Z",
+      "checkedAt": "2026-11-05T06:59:58.477Z",
       "baseline": "f4ae0de76ed3ab98fa9398a56f30bbfbaa146590",
       "snapshotHash": "f8f590a669d046da705bf33ef6013ced377024c5c6ec397cdc640814063e1ca3",
       "path": "plugins/attention-span/skills/attention-kind",
@@ -46,7 +46,7 @@
       "changedSinceLastCheck": false
     },
     "install-anti-slop": {
-      "checkedAt": "2026-11-04T06:41:37.700Z",
+      "checkedAt": "2026-11-05T06:59:59.541Z",
       "baseline": "13909c9e07590f5a85d93c62712259fe14a883f7",
       "snapshotHash": "94b2c8fa34943c2115e84d99e88a6c367d6ad80feb5105b5df97270a746179d0",
       "path": "skills/install-anti-slop",
@@ -59,7 +59,7 @@
       "changedSinceLastCheck": false
     },
     "brainstorming": {
-      "checkedAt": "2026-11-04T06:41:38.443Z",
+      "checkedAt": "2026-11-05T07:00:00.133Z",
       "baseline": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
       "snapshotHash": "363b12f7bdd32f61c44844b206d58f6db8b85e98547cce07df4547315d9f57a5",
       "path": "skills/brainstorming",
@@ -78,10 +78,10 @@
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
       "latest": "22f0b463e7a5e579904dd6211a520321035526f7",
       "latestAt": "2026-11-03T22:17:07Z",
-      "changedSinceLastCheck": true
+      "changedSinceLastCheck": false
     },
     "writing-plans": {
-      "checkedAt": "2026-11-04T06:41:38.443Z",
+      "checkedAt": "2026-11-05T07:00:00.133Z",
       "baseline": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
       "snapshotHash": "eea2ad1e1e1c1008914b14aa7e63d89546b43f5b0a053316e3f23a116caaec21",
       "path": "skills/writing-plans",
@@ -91,10 +91,10 @@
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
       "latest": "22f0b463e7a5e579904dd6211a520321035526f7",
       "latestAt": "2026-11-03T22:17:07Z",
-      "changedSinceLastCheck": true
+      "changedSinceLastCheck": false
     },
     "grill-me": {
-      "checkedAt": "2026-11-04T06:41:38.443Z",
+      "checkedAt": "2026-11-05T07:00:00.133Z",
       "baseline": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
       "snapshotHash": "f675f7c6259abf1cb5d1ef6cdda40bcb9990fe1a230f89141c86dddf2f03db10",
       "path": "skills/productivity/grill-me",
@@ -107,7 +107,7 @@
       "changedSinceLastCheck": false
     },
     "grilling": {
-      "checkedAt": "2026-11-04T06:41:39.310Z",
+      "checkedAt": "2026-11-05T07:00:00.993Z",
       "baseline": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
       "snapshotHash": "c5e3f09c5d7f2f5095ddd88a526fb6c0c7b45c6f624b008b93fe6ce879ad2977",
       "path": "skills/productivity/grilling",
@@ -125,7 +125,7 @@
       "changedSinceLastCheck": false
     },
     "ponytail": {
-      "checkedAt": "2026-11-04T06:41:39.310Z",
+      "checkedAt": "2026-11-05T07:00:00.993Z",
       "baseline": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "snapshotHash": "eb34a887f4020e11be97dbdbf5d2b71600ac61a43f7813025ee6f346077396a5",
       "path": "skills/ponytail",
@@ -138,7 +138,7 @@
       "changedSinceLastCheck": false
     },
     "ponytail-review": {
-      "checkedAt": "2026-11-04T06:41:40.268Z",
+      "checkedAt": "2026-11-05T07:00:01.911Z",
       "baseline": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "snapshotHash": "913dcc1a80b49ecbc649029a2475930fa0d4b0de619c22df8730b6533d6d412b",
       "path": "skills/ponytail-review",
@@ -151,7 +151,7 @@
       "changedSinceLastCheck": false
     },
     "ponytail-audit": {
-      "checkedAt": "2026-11-04T06:41:40.268Z",
+      "checkedAt": "2026-11-05T07:00:01.911Z",
       "baseline": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "snapshotHash": "5a7cdb6c7edb8f774e89dab7c1883423fc0a68a6e722e9c7803b72829fa60d38",
       "path": "skills/ponytail-audit",
@@ -164,7 +164,7 @@
       "changedSinceLastCheck": false
     },
     "ponytail-debt": {
-      "checkedAt": "2026-11-04T06:41:40.268Z",
+      "checkedAt": "2026-11-05T07:00:01.911Z",
       "baseline": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "snapshotHash": "f56a7f06c0d544b58a845fe2c32d6f8d5a5a9fde12b41a2cb0613a81522a98d6",
       "path": "skills/ponytail-debt",
@@ -177,7 +177,7 @@
       "changedSinceLastCheck": false
     },
     "ponytail-gain": {
-      "checkedAt": "2026-11-04T06:41:40.268Z",
+      "checkedAt": "2026-11-05T07:00:01.911Z",
       "baseline": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "snapshotHash": "3223952774f3f2f7814ba66fbb2448018b8269be007e99bff9f0d155cbee15b8",
       "path": "skills/ponytail-gain",
@@ -190,7 +190,7 @@
       "changedSinceLastCheck": false
     },
     "ponytail-help": {
-      "checkedAt": "2026-11-04T06:41:40.268Z",
+      "checkedAt": "2026-11-05T07:00:01.912Z",
       "baseline": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "snapshotHash": "608053914f7d5bdafa7a62633ba93481c1f02d3edfe6d0fec9e675a65c22c712",
       "path": "skills/ponytail-help",
@@ -203,7 +203,7 @@
       "changedSinceLastCheck": false
     },
     "frontend-design": {
-      "checkedAt": "2026-11-04T06:41:40.268Z",
+      "checkedAt": "2026-11-05T07:00:01.912Z",
       "baseline": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
       "snapshotHash": "9ec82feae7db448c6528a9bd414093bf811f2d2a15a411448c9933ac97b06208",
       "path": "skills/frontend-design",
@@ -216,7 +216,7 @@
       "changedSinceLastCheck": false
     },
     "taste": {
-      "checkedAt": "2026-11-04T06:41:41.229Z",
+      "checkedAt": "2026-11-05T07:00:03.123Z",
       "baseline": "6010f91a9935f1c167dfc500fb1a475681892e6b",
       "snapshotHash": "84388ac72d8c9742e82e982dc8b1831db20475bad564e8647ce2149743771913",
       "path": "skills/taste-skill",
@@ -224,45 +224,6609 @@
       "personal": "same",
       "changes": [
         {
+          "path": "README.md",
+          "type": "removed"
+        },
+        {
           "path": "SKILL.md",
           "type": "modified"
         },
         {
+          "path": "assets/app.css",
+          "type": "removed"
+        },
+        {
+          "path": "assets/backgrounds/backgrounds.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/backgrounds/backgrounds.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/backgrounds/check.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/backgrounds/check.mjs",
+          "type": "added"
+        },
+        {
+          "path": "assets/backgrounds/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/backgrounds/index.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/backgrounds/pick.mjs",
+          "type": "added"
+        },
+        {
+          "path": "assets/base.css",
+          "type": "removed"
+        },
+        {
+          "path": "assets/base.js",
+          "type": "removed"
+        },
+        {
           "path": "assets/charts.js",
-          "type": "modified"
+          "type": "removed"
+        },
+        {
+          "path": "assets/components/_lab.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/base.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-avatar/component.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-avatar/component.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-avatar/component.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-avatar/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-band/component.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-band/component.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-band/component.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-band/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-bars/component.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-bars/component.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-bars/component.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-bars/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-button/component.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-button/component.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-button/component.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-button/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-chart/component.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-chart/component.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-chart/component.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-chart/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-dither-object/component.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-dither-object/component.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-dither-object/component.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-dither-object/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-feature-card/component.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-feature-card/component.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-feature-card/component.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-feature-card/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-globe/component.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-globe/component.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-globe/component.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-globe/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-headline/component.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-headline/component.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-headline/component.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-headline/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-icon-tiles/component.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-icon-tiles/component.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-icon-tiles/component.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-icon-tiles/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-logos/component.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-logos/component.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-logos/component.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-logos/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-map/bake.mjs",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-map/component.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-map/component.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-map/component.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-map/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-map/sample-map.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-photo/component.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-photo/component.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-photo/component.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-photo/meeting-room.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-photo/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-pricing/component.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-pricing/component.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-pricing/component.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-pricing/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-progress/component.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-progress/component.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-progress/component.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-progress/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-prompt/component.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-prompt/component.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-prompt/component.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-prompt/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-search/component.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-search/component.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-search/component.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-search/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-spotlight/component.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-spotlight/component.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-spotlight/component.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-spotlight/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-stat/component.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-stat/component.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-stat/component.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-stat/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-tabs/component.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-tabs/component.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-tabs/component.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/fx-tabs/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/index.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/components/shared.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/diagrams/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/diagrams/diagram.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/diagrams/diagram.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/diagrams/lab.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/diagrams/mount.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/diagrams/presets.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/README.md",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/ascii-shade/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/ascii-shade/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/aurora-curtains/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/aurora-curtains/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/bayer-dither/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/bayer-dither/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/caustics/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/caustics/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/contour-lines/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/contour-lines/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/dot-terrain/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/dot-terrain/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/dotted-globe/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/dotted-globe/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/duotone-grade/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/duotone-grade/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/edge-glow/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/edge-glow/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/film-light-leak/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/film-light-leak/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/fluted-glass/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/fluted-glass/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/fx.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/gallery.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/god-rays/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/god-rays/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/gradient-mesh/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/gradient-mesh/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/grain-gradient/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/grain-gradient/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/grid-pulse/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/grid-pulse/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/halftone-screen/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/halftone-screen/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/index.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/lab.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/line-engraving/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/line-engraving/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/orb-sphere/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/orb-sphere/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/painterly-landscape/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/painterly-landscape/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/pick.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/prism-dispersion/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/prism-dispersion/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/ridgeline/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/ridgeline/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/ruled-grounds/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/ruled-grounds/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/silk-folds/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/silk-folds/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/soft-light-bars/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/soft-light-bars/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/spotlight-cone/effect.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/effects/spotlight-cone/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/adyen.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/after-effects.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ai.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/airbnb.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/airbyte.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/airflow.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/airtable.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/akamai.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/algolia.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/alpinejs.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/amd.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/amex.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/amplitude.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/android.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/angular.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ansible.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/anthropic.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/app-store.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/apple-pay.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/apple.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/arc.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/archlinux.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/arduino.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/argo.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/arm.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/asana.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/astro.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/audio.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/auth0.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/aws.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/azure.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/babel.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/basecamp.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/baseten.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/bash.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/battle-net.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/behance.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/bitbucket.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/bitcoin.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/blender.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/bluesky.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/bootstrap.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/box.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/brave.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/broadcom.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/buildkite.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/bun.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/c-plusplus.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/c-sharp.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/calendly.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/capacitorjs.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/cardano.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/cassandra.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/cerebras.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/cert.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/chartjs.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/chroma.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/chrome.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/circleci.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/claude-code.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/claude.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/clerk.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/clickup.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/cline.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/cloudflare-workers.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/cloudflare.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/coda.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/codecademy.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/codex.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/cohere.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/confluence.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/consul.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/contentful.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/coreweave.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/couchdb.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/coursera.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/crewai.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/css.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/curl.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/curseforge.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/cursor.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/cypress.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/d3.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/dart.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/dashlane.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/databricks.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/datadog.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/datocms.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/db.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/dbt.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/debian.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/deepgram.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/deepseek.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/default.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/deno.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/dify.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/digitalocean.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/discord.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/django.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/docker.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/docx.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/dotnet.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/dribbble.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/drizzle-orm.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/dropbox.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/drupal.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/dynatrace.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ea.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/elasticsearch.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/electron.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/elevenlabs.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/eml.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/envoy.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/epic-games.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/epub.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/esbuild.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/eslint.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ethereum.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/evernote.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/expo.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/express.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/facebook.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/fastapi.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/fastify.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/fastly.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/fedora.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/figma-file.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/figma.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/firebase.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/firefox.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/flask.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/flutter.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/fly.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/font.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/framer.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/frontapp.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/game-analytics.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/gdoc.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/gemini.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/getyourguide.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ghost.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/git.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/github-actions.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/github-copilot.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/github.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/gitlab.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/gmail.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/go.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/godot.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/gog.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/google-ads.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/google-analytics.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/google-bard.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/google-calendar.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/google-chat.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/google-chrome.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/google-cloud.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/google-docs.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/google-drive.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/google-forms.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/google-keep.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/google-maps.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/google-meet.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/google-pay.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/google-photos.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/google-play.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/google-sheets.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/google-slides.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/google-tasks.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/gradio.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/grafana.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/graphql.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/grok.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/groq.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/grpc.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/gsap.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/gsheet.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/gslides.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/gusto.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/hashicorp.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/hashnode.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/haskell.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/heap.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/helm.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/helpscout.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/heroku.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/homebrew.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/hono.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/hotjar.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/html.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/htmx.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/httpie.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/hubspot.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/hugging-face.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ibm.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/icons-credits.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/illustrator.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/image.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/indesign.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/influxdb.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/insomnia.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/instagram.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/intel.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/intellij-idea.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/intercom.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/invision.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ios.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/itch-io.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/java.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/javascript.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/jenkins.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/jest.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/jetbrains.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/jfrog.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/jira.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/joomla.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/js.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/json.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/jupyter.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/kafka.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/keynote.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/khan_academy.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/kiro.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/kong.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/kotlin.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/kraken.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/kubernetes.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/lancedb.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/langchain.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/langfuse.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/laravel.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/linear.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/linkedin.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/linkerd.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/linode.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/linux-tux.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/livekit.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/log.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/looker.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/loom.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/lovable.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/lua.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/mailchimp.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/mailgun.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/mariadb.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/mastercard.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/mastodon.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/material-ui.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/mcp.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/md.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/medium.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/medusa.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/meilisearch.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/mem0.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/messenger.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/meta.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/metabase.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/metamask.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/micron.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/microsoft-edge.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/midjourney.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/milvus.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/miro.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/mistral.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/mixpanel.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/mocha.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/modrinth.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/monday.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/mongodb.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/mysql.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/n8n.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/nats.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/neo4j.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/neon.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/neovim.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/nestjs.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/netflix.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/netlify.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/new-relic.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/nextjs.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/nginx.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ngrok.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/nodejs.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/nomad.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/notion.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/npm.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/nuxt.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/nvidia.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/nx.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/obsidian.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/odp.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ods.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/odt.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/okta.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ollama.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/onedrive.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/openai.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/openapi.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/opengl.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/openrouter.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/opensearch.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/openshift.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/openstack.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/opentelemetry.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/opera.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/opsgenie.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/oracle.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/p5js.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/packer.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/pagerduty.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/payload.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/paypal.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/pdf.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/penpot.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/perplexity.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/phoenix.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/photoshop.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/php.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/pinecone.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/pinterest.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/pipecat.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/pixijs.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/planetscale.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/playstation.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/playwright.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/pluralsight.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/pnpm.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/postgres.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/posthog.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/postman.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/power-bi.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/pptx.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/premiere.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/prettier.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/prisma.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/producthunt.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/prometheus.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/psd.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/pulumi.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/puppeteer.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/py.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/pycharm.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/python.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/pytorch.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/qdrant.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/qualcomm.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/quickbooks.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/qwik.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/rabbitmq.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/rails.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/railway.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/rancher.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/raspberry-pi.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/react.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/reddit.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/redhat.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/redis.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/remix.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/resend.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/retell.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/retool.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/revolut.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/riot-games.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/risc-v.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/roblox.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/rockstar.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/rocky-linux.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/rollbar.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ruby.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/rudderstack.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/rust.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/safari.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/salesforce.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/samsung.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/sanity.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/scala.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/segment.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/selenium.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/sendgrid.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/sentry.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/shopify.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/signal.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/singlestore.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/sk-hynix.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/sketch-file.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/sketch.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/slack.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/snowflake.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/snyk.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/solidjs.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/sonarqube.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/soundcloud.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/sparkpost.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/splunk.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/spotify.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/spring.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/sql.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/sqlite.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/square.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/squarespace.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/stability-ai.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/stackoverflow.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/steam.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/storyblok.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/storybook.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/strapi.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/streamlit.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/stripe.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/stytch.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/supabase.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/surrealdb.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/svelte-kit.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/svelte.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/svg.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/swagger.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/swift.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/tableau.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/tailscale.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/tailwindcss.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/tauri.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/teamcity.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/teams.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/telegram.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/tensorflow.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/terraform.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/testing-library.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/threads.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/threejs.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/tidal.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/tiktok.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/todoist.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/togetherai.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/traefik-proxy.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/trello.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/trpc.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ts.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/tsmc.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/tumblr.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/turborepo.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/twilio.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/twitch.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/txt.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/typeform.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/typescript.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/typesense.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ubisoft.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ubuntu.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/udemy.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-accessibility.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-activity.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-alarm-clock.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-align-left.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-antenna.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-aperture.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-app-window.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-archive.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-arrow-down-right.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-arrow-down.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-arrow-left-right.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-arrow-left.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-arrow-right.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-arrow-up-down.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-arrow-up-right.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-arrow-up.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-at-sign.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-atom.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-audio-lines.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-award.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-baby.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-badge-alert.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-badge-check.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-badge-percent.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-ban.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-banknote-arrow-up.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-banknote.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-bar-chart-3.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-barcode.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-bath.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-battery-full.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-bed-double.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-beer.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-bell-ring.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-bell.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-bike.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-binary.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-blocks.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-bluetooth.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-bold.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-book-open.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-bookmark.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-bot.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-box.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-boxes.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-braces.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-brackets.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-brain.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-brush.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-bug-off.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-bug.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-building-2.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-building.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-bus.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-cable.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-cake.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-calendar-check.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-calendar-clock.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-calendar-days.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-calendar.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-camera-off.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-camera.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-captions.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-car.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-castle.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-chart-area.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-chart-bar.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-chart-column.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-chart-gantt.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-chart-line.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-chart-no-axes-column.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-chart-pie.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-chart-spline.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-check-check.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-check.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-chevron-down.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-chevron-left.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-chevron-right.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-chevron-up.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-chevrons-up-down.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-church.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-circle-alert.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-circle-check-big.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-circle-check.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-circle-dollar-sign.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-circle-dot.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-circle-play.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-circle-question-mark.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-circle-user-round.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-circle-x.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-circuit-board.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-clapperboard.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-clipboard-check.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-clipboard-copy.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-clipboard-list.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-clipboard-paste.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-clock-3.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-clock.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-cloud-sun.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-cloud.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-code-xml.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-code.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-coffee.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-coins.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-columns-2.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-columns-3.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-compass.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-component.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-contact-round.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-contact.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-container.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-copy.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-corner-down-right.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-cpu.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-credit-card.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-croissant.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-crosshair.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-crown.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-cuboid.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-cup-soda.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-database.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-dices.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-download.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-dumbbell.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-ellipsis.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-ethernet-port.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-external-link.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-eye-off.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-eye.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-factory.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-file-audio.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-file-chart-column.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-file-check.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-file-code.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-file-down.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-file-image.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-file-json.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-file-lock.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-file-play.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-file-plus.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-file-search.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-file-spreadsheet.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-file-text.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-file-up.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-file.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-files.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-film.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-filter.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-fingerprint-pattern.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-flag.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-flame.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-flask-conical.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-flower-2.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-folder-git-2.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-folder-open.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-folder-plus.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-folder-sync.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-folder.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-frame.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-fullscreen.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-gamepad-2.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-gauge.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-gem.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-ghost.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-gift.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-git-branch.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-git-commit-horizontal.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-git-compare.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-git-fork.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-git-merge.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-git-pull-request.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-globe.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-graduation-cap.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-grid-2x2.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-grip-vertical.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-hammer.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-hand-coins.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-hand-heart.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-hand-metal.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-hand.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-handshake.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-hard-drive.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-hard-hat.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-hash.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-heading-1.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-headphones.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-heart-crack.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-heart-handshake.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-heart-pulse.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-heart.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-history.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-hotel.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-hourglass.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-house.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-ice-cream-cone.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-image.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-images.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-inbox.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-infinity.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-info.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-italic.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-joystick.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-key-round.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-key-square.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-key.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-keyboard.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-lamp.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-landmark.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-languages.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-laptop.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-laugh.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-layers.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-layout-dashboard.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-layout-grid.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-layout-panel-left.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-layout-template.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-leaf.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-library.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-life-buoy.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-lightbulb.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-line-chart.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-link-2.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-link.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-list-checks.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-list-ordered.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-list-todo.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-list.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-loader-circle.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-loader.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-locate.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-lock-keyhole.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-lock-open.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-lock.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-log-in.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-log-out.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-mail-check.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-mail-open.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-mail.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-map-pin.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-map.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-maximize-2.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-maximize.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-medal.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-megaphone.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-memory-stick.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-menu.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-merge.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-message-circle.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-message-square-more.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-message-square-text.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-message-square.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-messages-square.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-mic-vocal.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-mic.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-microchip.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-minimize.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-minus.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-monitor.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-moon.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-mountain.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-mouse-pointer-2.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-mouse-pointer-click.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-mouse.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-move-right.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-music-2.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-music.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-navigation.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-network.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-newspaper.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-notebook-pen.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-notebook.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-octagon-alert.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-orbit.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-package-check.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-package-open.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-package.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-palette.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-panel-left.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-panel-top.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-paperclip.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-pause.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-pen-line.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-pencil.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-percent.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-phone.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-pie-chart.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-piggy-bank.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-pilcrow.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-pizza.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-plane.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-play.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-plug-zap.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-plug.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-plus.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-podcast.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-pointer.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-printer.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-puzzle.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-qr-code.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-quote.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-radar.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-radio.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-receipt-text.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-receipt.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-refresh-cw.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-regex.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-repeat.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-rocket.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-rotate-ccw.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-route-off.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-route.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-router.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-rows-3.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-rss.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-ruler.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-salad.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-sandwich.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-satellite.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-scale.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-scan-barcode.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-scan-eye.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-scan-face.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-scan-line.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-scan-search.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-scan-text.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-scan.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-school.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-search.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-send-horizontal.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-send.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-server.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-settings.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-shapes.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-share-2.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-shield-alert.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-shield-check.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-shield-ellipsis.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-shield-x.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-shield.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-ship.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-shopping-bag.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-shopping-cart.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-shovel.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-shuffle.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-signal.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-signpost.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-siren.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-skip-forward.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-skull.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-sliders-horizontal.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-smartphone.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-smile.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-snowflake.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-sofa.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-soup.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-sparkles.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-speaker.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-spell-check.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-spline.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-split.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-square-check.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-square-function.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-square-stack.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-square-terminal.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-star.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-stethoscope.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-store.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-sun.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-sunrise.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-sword.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-swords.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-table.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-tablet.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-tag.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-tags.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-target.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-telescope.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-tent.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-terminal.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-test-tube.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-text-cursor-input.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-text-quote.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-thermometer.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-thumbs-up.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-ticket.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-timer.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-toggle-left.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-toggle-right.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-tractor.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-train-front.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-trash-2.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-trees.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-trending-down.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-trending-up.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-triangle-alert.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-trophy.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-truck.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-tv.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-type.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-umbrella.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-underline.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-unplug.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-upload.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-usb.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-user-check.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-user-cog.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-user-plus.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-user-round-plus.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-user-search.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-user.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-users-round.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-users.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-utensils.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-variable.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-video-off.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-video.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-volume-2.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-wallet-cards.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-wallet.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-wand-sparkles.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-warehouse.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-watch.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-waves.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-waypoints.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-webhook.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-wifi.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-wind.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-wine.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-workflow.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-wrench.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-x.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/ui-zap.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/unity.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/unrealengine.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/upstash.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/v0.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/vagrant.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/valve.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/vapi.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/vault.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/vercel.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/video.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/vim.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/vimeo.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/visa.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/visual-studio-code.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/vitejs.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/vitest.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/vmware.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/vue.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/vulkan.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/vultr.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/wandb.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/weaviate.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/webassembly.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/webflow.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/webgpu.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/webpack.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/webrtc.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/websocket.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/webstorm.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/whatsapp.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/windows.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/wix.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/woocommerce.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/wordpress.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/workos.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/x.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/xcode.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/xero.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/xlsx.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/xml.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/yaml.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/yarn.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/youtube.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/zapier.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/zendesk.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/zeplin.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/zig.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/zip.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/demo/zoom.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/icon.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/icons/index.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/check.mjs",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/deal.mjs",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/demo.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/fonts.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/hero-centred.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/hero-collage.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/hero-editorial.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/hero-film.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/hero-photo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/hero-place.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/hero-product.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/hero-split.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/hero-statement.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/hero-triptych.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/hero-word.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/heroes.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/img/credits.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/img/photo-1068.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/img/photo-1081.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/img/photo-465.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/img/photo-559.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/img/photo-855.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/img/photo-887.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/img/photo-949.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/img/photo-954.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/img/photo-beans-hand.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/img/photo-c166.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/img/photo-c400.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/img/photo-c7.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/img/photo-c70.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/img/photo-c8.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/img/photo-c823.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/img/photo-c96.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/img/photo-d534.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/img/photo-d540.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/img/photo-d88.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/img/photo-m61660576.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/img/photo-m61757972.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/layout-check.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/layout.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/layout/layout.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/_demo/credits.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/_demo/demo.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/_demo/in-card.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/_demo/photo-1049-tall.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/_demo/photo-1049.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/_demo/photo-1081.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/_demo/photo-640.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/_demo/photo-702-tall.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/_demo/photo-702.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/_demo/photo-855.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/_demo/photo-887.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/closing-lift/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/closing-lift/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/closing-lift/moment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/closing-lift/moment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/counter-rolls/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/counter-rolls/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/counter-rolls/moment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/counter-rolls/moment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/cursor-spotlight/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/cursor-spotlight/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/cursor-spotlight/moment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/cursor-spotlight/moment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/gallery.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/giant-type-pass/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/giant-type-pass/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/giant-type-pass/moment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/giant-type-pass/moment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/headline-arrives/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/headline-arrives/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/headline-arrives/moment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/headline-arrives/moment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/index.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/iris-opens/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/iris-opens/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/iris-opens/moment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/iris-opens/moment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/letters-assemble/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/letters-assemble/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/letters-assemble/moment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/letters-assemble/moment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/lib.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/line-carries-colour/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/line-carries-colour/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/line-carries-colour/moment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/line-carries-colour/moment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/lines-rise/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/lines-rise/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/lines-rise/moment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/lines-rise/moment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/liquid-hover/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/liquid-hover/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/liquid-hover/moment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/liquid-hover/moment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/liquid-type/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/liquid-type/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/liquid-type/moment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/liquid-type/moment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/marquee-row/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/marquee-row/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/marquee-row/moment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/marquee-row/moment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/moments.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/picture-develops/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/picture-develops/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/picture-develops/moment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/picture-develops/moment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/pinned-chapters/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/pinned-chapters/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/pinned-chapters/moment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/pinned-chapters/moment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/window-parallax/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/window-parallax/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/window-parallax/moment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/window-parallax/moment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/word-highlight/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/word-highlight/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/word-highlight/moment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/word-highlight/moment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/word-rotate/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/word-rotate/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/word-rotate/moment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/moments/word-rotate/moment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/motion/_hover-test.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/motion/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/motion/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/motion/motion.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/motion/motion.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/_print-core/README.md",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/_print-core/auto.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/_print-core/blank-ground.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/_print-core/cards.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/_print-core/demo.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/_print-core/demo.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/_print-core/index.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/_print-core/lint-glsl.mjs",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/_print-core/make-fallbacks.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/_print-core/print3d.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/_scenes/README.md",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/_scenes/auto.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/_scenes/demo.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/_scenes/demo.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/_scenes/index.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/_scenes/kit.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/_scenes/lint-glsl.mjs",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/dither-sequence/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/dither-sequence/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/dither-sequence/object.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/dot-object/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/dot-object/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/dot-object/object.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/exploded-layers/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/exploded-layers/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/exploded-layers/object.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/index.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/photo-dither/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/photo-dither/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/photo-dither/object.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/photo-engraving/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/photo-engraving/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/photo-engraving/object.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/photo-halftone/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/photo-halftone/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/photo-halftone/object.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/photo-kit/README.md",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/photo-kit/demo.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/photo-kit/demo.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/photo-kit/photo.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/photo-kit/photos.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/photo-kit/photos/concrete.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/photo-kit/photos/lamp.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/photo-kit/photos/platform.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/photo-kit/photos/room.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-cards/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-cards/fallback-dark.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-cards/fallback-render-dark.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-cards/fallback-render.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-cards/fallback.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-cards/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-cards/object.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-cup/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-cup/fallback-dark.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-cup/fallback-render-dark.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-cup/fallback-render.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-cup/fallback.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-cup/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-cup/object.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-globe/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-globe/fallback-dark.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-globe/fallback-render-dark.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-globe/fallback-render-sea-dark.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-globe/fallback-render-sea.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-globe/fallback-render.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-globe/fallback-sea-dark.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-globe/fallback-sea.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-globe/fallback.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-globe/land.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-globe/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-globe/object.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-lamp/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-lamp/fallback-dark.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-lamp/fallback-render-dark.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-lamp/fallback-render.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-lamp/fallback.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-lamp/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-lamp/object.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-wheel/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-wheel/fallback-dark.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-wheel/fallback-render-dark.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-wheel/fallback-render.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-wheel/fallback.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-wheel/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/print-wheel/object.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-render/README.md",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-render/auto.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-render/build.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-render/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-render/make-posters.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-render/make-posters.mjs",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-render/specs/city-bike.fallback-dark.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-render/specs/city-bike.fallback-render-dark.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-render/specs/city-bike.fallback-render.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-render/specs/city-bike.fallback.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-render/specs/city-bike.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-render/specs/desk-lamp.fallback-dark.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-render/specs/desk-lamp.fallback-render-dark.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-render/specs/desk-lamp.fallback-render.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-render/specs/desk-lamp.fallback.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-render/specs/desk-lamp.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-render/specs/robot-arm.fallback-dark.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-render/specs/robot-arm.fallback-render-dark.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-render/specs/robot-arm.fallback-render.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-render/specs/robot-arm.fallback.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-render/specs/robot-arm.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-render/views.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-turntable/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-turntable/fallback-camera-dark.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-turntable/fallback-camera-light.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-turntable/fallback-chair-dark.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-turntable/fallback-chair-light.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-turntable/fallback-cup-dark.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-turntable/fallback-cup-light.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-turntable/fallback-speaker-dark.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-turntable/fallback-speaker-light.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-turntable/make-fallbacks.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-turntable/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/product-turntable/object.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/split-reveal/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/split-reveal/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/objects/split-reveal/object.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m108358720-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m108358720-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m111881197-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m111881197-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m11317510-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m11317510-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m113462760-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m113462760-1800.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m113462760-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m117663639-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m117663639-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m130857602-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m130857602-1800.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m130857602-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m138226685-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m138226685-1800.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m138226685-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m138226686-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m138226686-1800.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m138226686-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m138547195-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m138547195-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m147143894-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m147143894-1800.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m147143894-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m147143898-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m147143898-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m155271467-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m155271467-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m162973523-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m162973523-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m164989354-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m164989354-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m175976897-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m175976897-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m179564041-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m179564041-1800.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m179564041-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m183016636-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m183016636-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m187311853-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m187311853-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m19113721-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m19113721-1800.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m19113721-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m19113729-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m19113729-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m21913761-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m21913761-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m28989985-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m28989985-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m33603558-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m33603558-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m33603672-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m33603672-1800.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m33603672-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m37164269-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m37164269-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m40088587-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m40088587-1600.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m41582884-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m41582884-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m44931831-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m44931831-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m94781083-1200.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/img/m94781083-2400.webp",
+          "type": "added"
+        },
+        {
+          "path": "assets/photos/photos.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/_demo/cards.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/_demo/concrete.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/_demo/credits.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/_demo/demo.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/_demo/globe.png",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/_demo/make-object.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/_demo/make-still.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/_demo/photo-507.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/_demo/photo-809.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/_demo/photo-c391.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/_demo/photo-c393.jpg",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/_demo/shoot.mjs",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/descend-through-weather/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/descend-through-weather/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/descend-through-weather/scene.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/descend-through-weather/scene.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/dot-becomes-the-full-stop/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/dot-becomes-the-full-stop/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/dot-becomes-the-full-stop/scene.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/dot-becomes-the-full-stop/scene.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/fixed-hero-object/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/fixed-hero-object/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/fixed-hero-object/scene.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/fixed-hero-object/scene.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/fly-into-the-shape/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/fly-into-the-shape/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/fly-into-the-shape/scene.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/fly-into-the-shape/scene.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/index.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/letter-bar-floods-the-ground/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/letter-bar-floods-the-ground/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/letter-bar-floods-the-ground/scene.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/letter-bar-floods-the-ground/scene.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/letter-physics/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/letter-physics/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/letter-physics/scene.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/letter-physics/scene.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/lib.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/object-through-giant-type/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/object-through-giant-type/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/object-through-giant-type/scene.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/object-through-giant-type/scene.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/parts-lock-into-the-whole/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/parts-lock-into-the-whole/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/parts-lock-into-the-whole/scene.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/parts-lock-into-the-whole/scene.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/powers-of-ten-pullback/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/powers-of-ten-pullback/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/powers-of-ten-pullback/scene.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/powers-of-ten-pullback/scene.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/print.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/product-assembles-into-its-action/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/product-assembles-into-its-action/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/product-assembles-into-its-action/scene.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/product-assembles-into-its-action/scene.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/scenes.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/scenes.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/shaped-window-over-fixed-world/demo.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/shaped-window-over-fixed-world/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/shaped-window-over-fixed-world/scene.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/shaped-window-over-fixed-world/scene.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/scenes/stage.css",
+          "type": "removed"
         },
         {
           "path": "assets/scenes/stage.js",
+          "type": "removed"
+        },
+        {
+          "path": "assets/starter.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/system.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/system.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/_lab/build-index.mjs",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/_lab/loops.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/_lab/object-card.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/_lab/selftest.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/apps/fragment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/apps/fragment.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/apps/fragment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/apps/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/base.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/calendar/fragment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/calendar/fragment.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/calendar/fragment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/calendar/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/cards.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/cards.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/chat/fragment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/chat/fragment.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/chat/fragment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/chat/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/checklist/fragment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/checklist/fragment.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/checklist/fragment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/checklist/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/code/fragment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/code/fragment.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/code/fragment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/code/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/cursor/fragment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/cursor/fragment.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/cursor/fragment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/cursor/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/diff-review/fragment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/diff-review/fragment.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/diff-review/fragment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/diff-review/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/doc/fragment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/doc/fragment.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/doc/fragment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/doc/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/files/fragment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/files/fragment.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/files/fragment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/files/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/asana.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/calendly.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/confluence.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/docker.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/dropbox.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/figma.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/git.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/github.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/gitlab.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/gmail.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/google-docs.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/google-drive.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/icons-credits.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/intercom.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/jira.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/kubernetes.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/linear.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/mastercard.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/md.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/messenger.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/nodejs.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/notion.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/npm.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/shopify.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/si-mastercard.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/slack.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/typescript.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/vercel.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/visa.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/whatsapp.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/icons/zendesk.svg",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/index.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/index.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/integrations/fragment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/integrations/fragment.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/integrations/fragment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/integrations/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/notify/fragment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/notify/fragment.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/notify/fragment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/notify/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/pipeline-board/fragment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/pipeline-board/fragment.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/pipeline-board/fragment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/pipeline-board/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/search/fragment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/search/fragment.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/search/fragment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/search/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/slider/fragment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/slider/fragment.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/slider/fragment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/slider/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/stat/fragment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/stat/fragment.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/stat/fragment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/stat/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/terminal-run/fragment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/terminal-run/fragment.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/terminal-run/fragment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/terminal-run/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/toggles/fragment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/toggles/fragment.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/toggles/fragment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/toggles/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/ui.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/voice/fragment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/voice/fragment.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/voice/fragment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/voice/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/window/fragment.css",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/window/fragment.html",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/window/fragment.js",
+          "type": "added"
+        },
+        {
+          "path": "assets/ui/window/meta.json",
+          "type": "added"
+        },
+        {
+          "path": "evals/evals.json",
+          "type": "removed"
+        },
+        {
+          "path": "library/app.json",
+          "type": "removed"
+        },
+        {
+          "path": "library/directions.json",
+          "type": "removed"
+        },
+        {
+          "path": "library/heroes.json",
+          "type": "removed"
+        },
+        {
+          "path": "library/motions.json",
+          "type": "removed"
+        },
+        {
+          "path": "library/palettes.json",
           "type": "modified"
+        },
+        {
+          "path": "library/photos.json",
+          "type": "removed"
+        },
+        {
+          "path": "library/sections.json",
+          "type": "removed"
+        },
+        {
+          "path": "library/sites.json",
+          "type": "removed"
         },
         {
           "path": "library/type.json",
           "type": "modified"
         },
         {
-          "path": "scripts/inspect.mjs",
-          "type": "modified"
+          "path": "references/app-screens.md",
+          "type": "removed"
         },
         {
-          "path": "scripts/lib/inspection-files.mjs",
+          "path": "references/backgrounds.md",
           "type": "added"
         },
         {
-          "path": "scripts/lib/probe.mjs",
+          "path": "references/cards.md",
+          "type": "added"
+        },
+        {
+          "path": "references/colour.md",
+          "type": "removed"
+        },
+        {
+          "path": "references/copy.md",
           "type": "modified"
         },
         {
-          "path": "scripts/lib/rules.mjs",
+          "path": "references/critique.md",
+          "type": "removed"
+        },
+        {
+          "path": "references/diagrams.md",
+          "type": "added"
+        },
+        {
+          "path": "references/effects-creative.md",
+          "type": "added"
+        },
+        {
+          "path": "references/effects-objects.md",
+          "type": "added"
+        },
+        {
+          "path": "references/effects-usage.md",
+          "type": "added"
+        },
+        {
+          "path": "references/icons.md",
+          "type": "added"
+        },
+        {
+          "path": "references/imagery.md",
+          "type": "removed"
+        },
+        {
+          "path": "references/layout-v4.md",
+          "type": "added"
+        },
+        {
+          "path": "references/layout.md",
+          "type": "removed"
+        },
+        {
+          "path": "references/moments.md",
+          "type": "added"
+        },
+        {
+          "path": "references/motion.md",
           "type": "modified"
+        },
+        {
+          "path": "references/perf.md",
+          "type": "added"
+        },
+        {
+          "path": "references/photos.md",
+          "type": "added"
+        },
+        {
+          "path": "references/research.md",
+          "type": "removed"
+        },
+        {
+          "path": "references/scenes.md",
+          "type": "modified"
+        },
+        {
+          "path": "references/sections-library.md",
+          "type": "added"
+        },
+        {
+          "path": "references/sections.md",
+          "type": "added"
+        },
+        {
+          "path": "references/system.md",
+          "type": "added"
+        },
+        {
+          "path": "references/tells.md",
+          "type": "removed"
+        },
+        {
+          "path": "references/type.md",
+          "type": "removed"
+        },
+        {
+          "path": "scripts/assets.mjs",
+          "type": "removed"
+        },
+        {
+          "path": "scripts/consistency.mjs",
+          "type": "added"
+        },
+        {
+          "path": "scripts/draw.mjs",
+          "type": "removed"
+        },
+        {
+          "path": "scripts/effects.mjs",
+          "type": "added"
+        },
+        {
+          "path": "scripts/fx-gallery.template.html",
+          "type": "added"
+        },
+        {
+          "path": "scripts/fx-lab.template.html",
+          "type": "added"
+        },
+        {
+          "path": "scripts/icons.mjs",
+          "type": "added"
+        },
+        {
+          "path": "scripts/inspect.mjs",
+          "type": "removed"
+        },
+        {
+          "path": "scripts/lib/app-draw.mjs",
+          "type": "removed"
+        },
+        {
+          "path": "scripts/lib/cdp.mjs",
+          "type": "removed"
+        },
+        {
+          "path": "scripts/lib/probe.mjs",
+          "type": "removed"
+        },
+        {
+          "path": "scripts/lib/rules.mjs",
+          "type": "removed"
+        },
+        {
+          "path": "scripts/lint.mjs",
+          "type": "removed"
+        },
+        {
+          "path": "scripts/moments.mjs",
+          "type": "added"
+        },
+        {
+          "path": "scripts/perf.mjs",
+          "type": "added"
+        },
+        {
+          "path": "scripts/photos.mjs",
+          "type": "added"
+        },
+        {
+          "path": "scripts/scenes.mjs",
+          "type": "removed"
+        },
+        {
+          "path": "scripts/shoot.mjs",
+          "type": "added"
+        },
+        {
+          "path": "scripts/start.mjs",
+          "type": "added"
         }
       ],
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
-      "latest": "12af471f627f866411b4bd785b19646d3672784c",
-      "latestAt": "2026-10-24T23:42:19Z",
-      "changedSinceLastCheck": false
+      "latest": "9b4bf937a1f69348126959c15d2f99a73e65699b",
+      "latestAt": "2026-11-05T01:12:12Z",
+      "changedSinceLastCheck": true
     },
     "pdf": {
-      "checkedAt": "2026-11-04T06:41:42.114Z",
+      "checkedAt": "2026-11-05T07:00:04.241Z",
       "baseline": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
       "snapshotHash": "3cc4f36dac3d13cb3bc083b648aaa290c51c0b43035e2c502390901907950db9",
       "path": "skills/pdf",
@@ -275,7 +6839,7 @@
       "changedSinceLastCheck": false
     },
     "docx": {
-      "checkedAt": "2026-11-04T06:41:42.114Z",
+      "checkedAt": "2026-11-05T07:00:04.241Z",
       "baseline": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
       "snapshotHash": "9eac0eecf80375ae67eebde0ab25a08f3e550e3a484ebe371a983ed6949b034f",
       "path": "skills/docx",
@@ -288,7 +6852,7 @@
       "changedSinceLastCheck": false
     },
     "xlsx": {
-      "checkedAt": "2026-11-04T06:41:42.114Z",
+      "checkedAt": "2026-11-05T07:00:04.241Z",
       "baseline": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
       "snapshotHash": "7d8020c10d80d40f32fa6daf62d0670074d526abb49c67b45975ffedc9c728a4",
       "path": "skills/xlsx",
@@ -301,7 +6865,7 @@
       "changedSinceLastCheck": false
     },
     "pptx": {
-      "checkedAt": "2026-11-04T06:41:42.114Z",
+      "checkedAt": "2026-11-05T07:00:04.242Z",
       "baseline": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
       "snapshotHash": "1dcc8c7e476ef25f61ffb55d81706cf9f9c4c346cba22002d072f521e2e74e3f",
       "path": "skills/pptx",
@@ -314,7 +6878,7 @@
       "changedSinceLastCheck": false
     },
     "humanizer": {
-      "checkedAt": "2026-11-04T06:41:42.115Z",
+      "checkedAt": "2026-11-05T07:00:04.242Z",
       "baseline": "8c307f367c91bd974002f10f2be2965d642c13df",
       "snapshotHash": "edf78ffb4eedf051e13475d071307c68464b8e280fd1e754025c1abd738aef59",
       "path": "",
@@ -327,7 +6891,7 @@
       "changedSinceLastCheck": false
     },
     "korean-humanizer": {
-      "checkedAt": "2026-11-04T06:41:42.883Z",
+      "checkedAt": "2026-11-05T07:00:05.186Z",
       "baseline": "ae12ba27982ebeff03b46dc738365aaa34260d9a",
       "snapshotHash": "72ab014f003c2252f2e8e6ebe099568f4a77702fae0433920082c6cd1db80977",
       "path": "skills/humanizer",
@@ -340,7 +6904,7 @@
       "changedSinceLastCheck": false
     },
     "korean-grammar-checker": {
-      "checkedAt": "2026-11-04T06:41:43.486Z",
+      "checkedAt": "2026-11-05T07:00:06.038Z",
       "baseline": "ae12ba27982ebeff03b46dc738365aaa34260d9a",
       "snapshotHash": "7c6ebe5173daeabaf11ca567fe9434593a068f92cf46fe39e25d518af0a9238d",
       "path": "skills/grammar-checker",
@@ -353,7 +6917,7 @@
       "changedSinceLastCheck": false
     },
     "korean-style-guide": {
-      "checkedAt": "2026-11-04T06:41:43.486Z",
+      "checkedAt": "2026-11-05T07:00:06.038Z",
       "baseline": "ae12ba27982ebeff03b46dc738365aaa34260d9a",
       "snapshotHash": "3e3f9e90b44ed42b9e1877f6142958c7dfc61f6e8e9275cf6c2167439550f585",
       "path": "skills/style-guide",
@@ -366,7 +6930,7 @@
       "changedSinceLastCheck": false
     },
     "caveman": {
-      "checkedAt": "2026-11-04T06:41:43.486Z",
+      "checkedAt": "2026-11-05T07:00:06.038Z",
       "baseline": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
       "snapshotHash": "cdf96ec445fd949ceba71ec39b8f82a6141d7e3bdcea9cc0952d08d4e22c68f2",
       "path": "skills/caveman",
@@ -379,7 +6943,7 @@
       "changedSinceLastCheck": false
     },
     "caveman-commit": {
-      "checkedAt": "2026-11-04T06:41:44.499Z",
+      "checkedAt": "2026-11-05T07:00:07.083Z",
       "baseline": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
       "snapshotHash": "080ff2aba5093294b35d3eb78e870fa6e0cfb31937d720b2f883de9017af0748",
       "path": "skills/caveman-commit",
@@ -392,7 +6956,7 @@
       "changedSinceLastCheck": false
     },
     "caveman-review": {
-      "checkedAt": "2026-11-04T06:41:44.499Z",
+      "checkedAt": "2026-11-05T07:00:07.083Z",
       "baseline": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
       "snapshotHash": "1a6f7dd81fd277acff3b1917f9555ffd64c0f56ea7c3651361221ed9cde8c307",
       "path": "skills/caveman-review",
@@ -405,7 +6969,7 @@
       "changedSinceLastCheck": false
     },
     "caveman-compress": {
-      "checkedAt": "2026-11-04T06:41:44.499Z",
+      "checkedAt": "2026-11-05T07:00:07.083Z",
       "baseline": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
       "snapshotHash": "398e6123a36fe67efca8855ab9d58ac2eeaf060fff9efca38ee87352834a4f00",
       "path": "skills/caveman-compress",
@@ -439,7 +7003,7 @@
       "changedSinceLastCheck": false
     },
     "caveman-help": {
-      "checkedAt": "2026-11-04T06:41:44.499Z",
+      "checkedAt": "2026-11-05T07:00:07.083Z",
       "baseline": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
       "snapshotHash": "947feef7b47f695213be10fd077ec4afbb35287de1881c3a36da50fa4ff89e0b",
       "path": "skills/caveman-help",
@@ -452,7 +7016,7 @@
       "changedSinceLastCheck": false
     },
     "caveman-stats": {
-      "checkedAt": "2026-11-04T06:41:44.499Z",
+      "checkedAt": "2026-11-05T07:00:07.084Z",
       "baseline": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
       "snapshotHash": "2c67f6799d23e3ab1fb1e47750404e31964e9679381dc9d9238c68d22bd1987c",
       "path": "skills/caveman-stats",
@@ -465,7 +7029,7 @@
       "changedSinceLastCheck": false
     },
     "fleet-auditor": {
-      "checkedAt": "2026-11-04T06:41:44.500Z",
+      "checkedAt": "2026-11-05T07:00:07.084Z",
       "baseline": "549bb58b27c6d687e682ca44eaba51d55425176d",
       "snapshotHash": "01414d1994f8b6f913a82b227b39a26816629394a6c9c05bcd592d5a51b20291",
       "path": "plugins/token-optimizer/skills/fleet-auditor",
@@ -487,7 +7051,7 @@
       "changedSinceLastCheck": false
     },
     "resume-checkpoint": {
-      "checkedAt": "2026-11-04T06:41:45.766Z",
+      "checkedAt": "2026-11-05T07:00:08.568Z",
       "baseline": "549bb58b27c6d687e682ca44eaba51d55425176d",
       "snapshotHash": "19fe9c1e989543b19ef9a3a8eb495f074b7de1ef020cb933b7b0c9568f59f5f7",
       "path": "plugins/token-optimizer/skills/resume-checkpoint",
@@ -500,7 +7064,7 @@
       "changedSinceLastCheck": false
     },
     "token-coach": {
-      "checkedAt": "2026-11-04T06:41:45.767Z",
+      "checkedAt": "2026-11-05T07:00:08.568Z",
       "baseline": "549bb58b27c6d687e682ca44eaba51d55425176d",
       "snapshotHash": "f1bc0788fb32651a33b55c4de16d6884150c00550cc93f420c9f15945ba7c36d",
       "path": "plugins/token-optimizer/skills/token-coach",
@@ -513,7 +7077,7 @@
       "changedSinceLastCheck": false
     },
     "token-dashboard": {
-      "checkedAt": "2026-11-04T06:41:45.767Z",
+      "checkedAt": "2026-11-05T07:00:08.569Z",
       "baseline": "549bb58b27c6d687e682ca44eaba51d55425176d",
       "snapshotHash": "c7ebda00019d0bac8e5bcb6e7cd5b8b9dd17c69fe08746e83a5f4d63d9f29ff5",
       "path": "plugins/token-optimizer/skills/token-dashboard",
@@ -526,7 +7090,7 @@
       "changedSinceLastCheck": false
     },
     "token-optimizer": {
-      "checkedAt": "2026-11-04T06:41:45.767Z",
+      "checkedAt": "2026-11-05T07:00:08.569Z",
       "baseline": "549bb58b27c6d687e682ca44eaba51d55425176d",
       "snapshotHash": "3cc3ad5727143e9929003fe39630f7a1dabe409015cecd2d0ac760c8b979e9ff",
       "path": "plugins/token-optimizer/skills/token-optimizer",
