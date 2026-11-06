@@ -1,8 +1,8 @@
 {
-  "checkedAt": "2026-11-05T07:00:08.570Z",
+  "checkedAt": "2026-11-06T07:00:16.078Z",
   "tools": {
     "karpathy-guidelines": {
-      "checkedAt": "2026-11-05T06:59:56.401Z",
+      "checkedAt": "2026-11-06T07:00:02.637Z",
       "baseline": "2c606141936f1eeef17fa3043a72095b4765b9c2",
       "snapshotHash": "3e3ba181955b21d5f25ed003a39a4d7ff9edf7777e4f56ad27fbfbef685aee9c",
       "path": "skills/karpathy-guidelines",
@@ -15,7 +15,7 @@
       "changedSinceLastCheck": false
     },
     "verification-before-completion": {
-      "checkedAt": "2026-11-05T06:59:57.318Z",
+      "checkedAt": "2026-11-06T07:00:03.425Z",
       "baseline": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
       "snapshotHash": "b3ca63f3c06d514c81e4e8eaa00fcf7856e02a1a0d50b8bf32a446cbf9ad78ef",
       "path": "skills/verification-before-completion",
@@ -28,7 +28,7 @@
       "changedSinceLastCheck": false
     },
     "attention-kind": {
-      "checkedAt": "2026-11-05T06:59:58.477Z",
+      "checkedAt": "2026-11-06T07:00:04.859Z",
       "baseline": "f4ae0de76ed3ab98fa9398a56f30bbfbaa146590",
       "snapshotHash": "f8f590a669d046da705bf33ef6013ced377024c5c6ec397cdc640814063e1ca3",
       "path": "plugins/attention-span/skills/attention-kind",
@@ -46,7 +46,7 @@
       "changedSinceLastCheck": false
     },
     "install-anti-slop": {
-      "checkedAt": "2026-11-05T06:59:59.541Z",
+      "checkedAt": "2026-11-06T07:00:06.200Z",
       "baseline": "13909c9e07590f5a85d93c62712259fe14a883f7",
       "snapshotHash": "94b2c8fa34943c2115e84d99e88a6c367d6ad80feb5105b5df97270a746179d0",
       "path": "skills/install-anti-slop",
@@ -59,7 +59,7 @@
       "changedSinceLastCheck": false
     },
     "brainstorming": {
-      "checkedAt": "2026-11-05T07:00:00.133Z",
+      "checkedAt": "2026-11-06T07:00:07.145Z",
       "baseline": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
       "snapshotHash": "363b12f7bdd32f61c44844b206d58f6db8b85e98547cce07df4547315d9f57a5",
       "path": "skills/brainstorming",
@@ -81,7 +81,7 @@
       "changedSinceLastCheck": false
     },
     "writing-plans": {
-      "checkedAt": "2026-11-05T07:00:00.133Z",
+      "checkedAt": "2026-11-06T07:00:07.145Z",
       "baseline": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
       "snapshotHash": "eea2ad1e1e1c1008914b14aa7e63d89546b43f5b0a053316e3f23a116caaec21",
       "path": "skills/writing-plans",
@@ -94,7 +94,7 @@
       "changedSinceLastCheck": false
     },
     "grill-me": {
-      "checkedAt": "2026-11-05T07:00:00.133Z",
+      "checkedAt": "2026-11-06T07:00:07.145Z",
       "baseline": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
       "snapshotHash": "f675f7c6259abf1cb5d1ef6cdda40bcb9990fe1a230f89141c86dddf2f03db10",
       "path": "skills/productivity/grill-me",
@@ -107,7 +107,7 @@
       "changedSinceLastCheck": false
     },
     "grilling": {
-      "checkedAt": "2026-11-05T07:00:00.993Z",
+      "checkedAt": "2026-11-06T07:00:08.304Z",
       "baseline": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
       "snapshotHash": "c5e3f09c5d7f2f5095ddd88a526fb6c0c7b45c6f624b008b93fe6ce879ad2977",
       "path": "skills/productivity/grilling",
@@ -125,7 +125,7 @@
       "changedSinceLastCheck": false
     },
     "ponytail": {
-      "checkedAt": "2026-11-05T07:00:00.993Z",
+      "checkedAt": "2026-11-06T07:00:08.304Z",
       "baseline": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "snapshotHash": "eb34a887f4020e11be97dbdbf5d2b71600ac61a43f7813025ee6f346077396a5",
       "path": "skills/ponytail",
@@ -138,7 +138,7 @@
       "changedSinceLastCheck": false
     },
     "ponytail-review": {
-      "checkedAt": "2026-11-05T07:00:01.911Z",
+      "checkedAt": "2026-11-06T07:00:09.291Z",
       "baseline": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "snapshotHash": "913dcc1a80b49ecbc649029a2475930fa0d4b0de619c22df8730b6533d6d412b",
       "path": "skills/ponytail-review",
@@ -151,7 +151,7 @@
       "changedSinceLastCheck": false
     },
     "ponytail-audit": {
-      "checkedAt": "2026-11-05T07:00:01.911Z",
+      "checkedAt": "2026-11-06T07:00:09.291Z",
       "baseline": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "snapshotHash": "5a7cdb6c7edb8f774e89dab7c1883423fc0a68a6e722e9c7803b72829fa60d38",
       "path": "skills/ponytail-audit",
@@ -164,7 +164,7 @@
       "changedSinceLastCheck": false
     },
     "ponytail-debt": {
-      "checkedAt": "2026-11-05T07:00:01.911Z",
+      "checkedAt": "2026-11-06T07:00:09.291Z",
       "baseline": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "snapshotHash": "f56a7f06c0d544b58a845fe2c32d6f8d5a5a9fde12b41a2cb0613a81522a98d6",
       "path": "skills/ponytail-debt",
@@ -177,7 +177,7 @@
       "changedSinceLastCheck": false
     },
     "ponytail-gain": {
-      "checkedAt": "2026-11-05T07:00:01.911Z",
+      "checkedAt": "2026-11-06T07:00:09.291Z",
       "baseline": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "snapshotHash": "3223952774f3f2f7814ba66fbb2448018b8269be007e99bff9f0d155cbee15b8",
       "path": "skills/ponytail-gain",
@@ -190,7 +190,7 @@
       "changedSinceLastCheck": false
     },
     "ponytail-help": {
-      "checkedAt": "2026-11-05T07:00:01.912Z",
+      "checkedAt": "2026-11-06T07:00:09.291Z",
       "baseline": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "snapshotHash": "608053914f7d5bdafa7a62633ba93481c1f02d3edfe6d0fec9e675a65c22c712",
       "path": "skills/ponytail-help",
@@ -203,7 +203,7 @@
       "changedSinceLastCheck": false
     },
     "frontend-design": {
-      "checkedAt": "2026-11-05T07:00:01.912Z",
+      "checkedAt": "2026-11-06T07:00:09.291Z",
       "baseline": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
       "snapshotHash": "9ec82feae7db448c6528a9bd414093bf811f2d2a15a411448c9933ac97b06208",
       "path": "skills/frontend-design",
@@ -216,7 +216,7 @@
       "changedSinceLastCheck": false
     },
     "taste": {
-      "checkedAt": "2026-11-05T07:00:03.123Z",
+      "checkedAt": "2026-11-06T07:00:10.402Z",
       "baseline": "6010f91a9935f1c167dfc500fb1a475681892e6b",
       "snapshotHash": "84388ac72d8c9742e82e982dc8b1831db20475bad564e8647ce2149743771913",
       "path": "skills/taste-skill",
@@ -6823,10 +6823,10 @@
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
       "latest": "9b4bf937a1f69348126959c15d2f99a73e65699b",
       "latestAt": "2026-11-05T01:12:12Z",
-      "changedSinceLastCheck": true
+      "changedSinceLastCheck": false
     },
     "pdf": {
-      "checkedAt": "2026-11-05T07:00:04.241Z",
+      "checkedAt": "2026-11-06T07:00:11.463Z",
       "baseline": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
       "snapshotHash": "3cc4f36dac3d13cb3bc083b648aaa290c51c0b43035e2c502390901907950db9",
       "path": "skills/pdf",
@@ -6839,7 +6839,7 @@
       "changedSinceLastCheck": false
     },
     "docx": {
-      "checkedAt": "2026-11-05T07:00:04.241Z",
+      "checkedAt": "2026-11-06T07:00:11.463Z",
       "baseline": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
       "snapshotHash": "9eac0eecf80375ae67eebde0ab25a08f3e550e3a484ebe371a983ed6949b034f",
       "path": "skills/docx",
@@ -6852,7 +6852,7 @@
       "changedSinceLastCheck": false
     },
     "xlsx": {
-      "checkedAt": "2026-11-05T07:00:04.241Z",
+      "checkedAt": "2026-11-06T07:00:11.463Z",
       "baseline": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
       "snapshotHash": "7d8020c10d80d40f32fa6daf62d0670074d526abb49c67b45975ffedc9c728a4",
       "path": "skills/xlsx",
@@ -6865,7 +6865,7 @@
       "changedSinceLastCheck": false
     },
     "pptx": {
-      "checkedAt": "2026-11-05T07:00:04.242Z",
+      "checkedAt": "2026-11-06T07:00:11.463Z",
       "baseline": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
       "snapshotHash": "1dcc8c7e476ef25f61ffb55d81706cf9f9c4c346cba22002d072f521e2e74e3f",
       "path": "skills/pptx",
@@ -6878,7 +6878,7 @@
       "changedSinceLastCheck": false
     },
     "humanizer": {
-      "checkedAt": "2026-11-05T07:00:04.242Z",
+      "checkedAt": "2026-11-06T07:00:11.463Z",
       "baseline": "8c307f367c91bd974002f10f2be2965d642c13df",
       "snapshotHash": "edf78ffb4eedf051e13475d071307c68464b8e280fd1e754025c1abd738aef59",
       "path": "",
@@ -6891,7 +6891,7 @@
       "changedSinceLastCheck": false
     },
     "korean-humanizer": {
-      "checkedAt": "2026-11-05T07:00:05.186Z",
+      "checkedAt": "2026-11-06T07:00:12.743Z",
       "baseline": "ae12ba27982ebeff03b46dc738365aaa34260d9a",
       "snapshotHash": "72ab014f003c2252f2e8e6ebe099568f4a77702fae0433920082c6cd1db80977",
       "path": "skills/humanizer",
@@ -6904,7 +6904,7 @@
       "changedSinceLastCheck": false
     },
     "korean-grammar-checker": {
-      "checkedAt": "2026-11-05T07:00:06.038Z",
+      "checkedAt": "2026-11-06T07:00:13.407Z",
       "baseline": "ae12ba27982ebeff03b46dc738365aaa34260d9a",
       "snapshotHash": "7c6ebe5173daeabaf11ca567fe9434593a068f92cf46fe39e25d518af0a9238d",
       "path": "skills/grammar-checker",
@@ -6917,7 +6917,7 @@
       "changedSinceLastCheck": false
     },
     "korean-style-guide": {
-      "checkedAt": "2026-11-05T07:00:06.038Z",
+      "checkedAt": "2026-11-06T07:00:13.407Z",
       "baseline": "ae12ba27982ebeff03b46dc738365aaa34260d9a",
       "snapshotHash": "3e3f9e90b44ed42b9e1877f6142958c7dfc61f6e8e9275cf6c2167439550f585",
       "path": "skills/style-guide",
@@ -6930,7 +6930,7 @@
       "changedSinceLastCheck": false
     },
     "caveman": {
-      "checkedAt": "2026-11-05T07:00:06.038Z",
+      "checkedAt": "2026-11-06T07:00:13.408Z",
       "baseline": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
       "snapshotHash": "cdf96ec445fd949ceba71ec39b8f82a6141d7e3bdcea9cc0952d08d4e22c68f2",
       "path": "skills/caveman",
@@ -6938,12 +6938,12 @@
       "personal": "same",
       "changes": [],
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
-      "latest": "2e068f735253cce28256744804785f01887d9646",
-      "latestAt": "2026-11-02T04:59:49Z",
-      "changedSinceLastCheck": false
+      "latest": "ca3a524022a9f31fb7ae46b66decf622080c2cfa",
+      "latestAt": "2026-11-06T00:26:46Z",
+      "changedSinceLastCheck": true
     },
     "caveman-commit": {
-      "checkedAt": "2026-11-05T07:00:07.083Z",
+      "checkedAt": "2026-11-06T07:00:14.430Z",
       "baseline": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
       "snapshotHash": "080ff2aba5093294b35d3eb78e870fa6e0cfb31937d720b2f883de9017af0748",
       "path": "skills/caveman-commit",
@@ -6951,12 +6951,12 @@
       "personal": "same",
       "changes": [],
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
-      "latest": "2e068f735253cce28256744804785f01887d9646",
-      "latestAt": "2026-11-02T04:59:49Z",
-      "changedSinceLastCheck": false
+      "latest": "ca3a524022a9f31fb7ae46b66decf622080c2cfa",
+      "latestAt": "2026-11-06T00:26:46Z",
+      "changedSinceLastCheck": true
     },
     "caveman-review": {
-      "checkedAt": "2026-11-05T07:00:07.083Z",
+      "checkedAt": "2026-11-06T07:00:14.430Z",
       "baseline": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
       "snapshotHash": "1a6f7dd81fd277acff3b1917f9555ffd64c0f56ea7c3651361221ed9cde8c307",
       "path": "skills/caveman-review",
@@ -6964,12 +6964,12 @@
       "personal": "same",
       "changes": [],
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
-      "latest": "2e068f735253cce28256744804785f01887d9646",
-      "latestAt": "2026-11-02T04:59:49Z",
-      "changedSinceLastCheck": false
+      "latest": "ca3a524022a9f31fb7ae46b66decf622080c2cfa",
+      "latestAt": "2026-11-06T00:26:46Z",
+      "changedSinceLastCheck": true
     },
     "caveman-compress": {
-      "checkedAt": "2026-11-05T07:00:07.083Z",
+      "checkedAt": "2026-11-06T07:00:14.430Z",
       "baseline": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
       "snapshotHash": "398e6123a36fe67efca8855ab9d58ac2eeaf060fff9efca38ee87352834a4f00",
       "path": "skills/caveman-compress",
@@ -6993,17 +6993,21 @@
           "type": "modified"
         },
         {
+          "path": "scripts/detect.py",
+          "type": "modified"
+        },
+        {
           "path": "scripts/validate.py",
           "type": "modified"
         }
       ],
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
-      "latest": "2e068f735253cce28256744804785f01887d9646",
-      "latestAt": "2026-11-02T04:59:49Z",
-      "changedSinceLastCheck": false
+      "latest": "ca3a524022a9f31fb7ae46b66decf622080c2cfa",
+      "latestAt": "2026-11-06T00:26:46Z",
+      "changedSinceLastCheck": true
     },
     "caveman-help": {
-      "checkedAt": "2026-11-05T07:00:07.083Z",
+      "checkedAt": "2026-11-06T07:00:14.430Z",
       "baseline": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
       "snapshotHash": "947feef7b47f695213be10fd077ec4afbb35287de1881c3a36da50fa4ff89e0b",
       "path": "skills/caveman-help",
@@ -7011,12 +7015,12 @@
       "personal": "same",
       "changes": [],
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
-      "latest": "2e068f735253cce28256744804785f01887d9646",
-      "latestAt": "2026-11-02T04:59:49Z",
-      "changedSinceLastCheck": false
+      "latest": "ca3a524022a9f31fb7ae46b66decf622080c2cfa",
+      "latestAt": "2026-11-06T00:26:46Z",
+      "changedSinceLastCheck": true
     },
     "caveman-stats": {
-      "checkedAt": "2026-11-05T07:00:07.084Z",
+      "checkedAt": "2026-11-06T07:00:14.430Z",
       "baseline": "bad48a0e1df55e05e3f52249afa35ecc1909ee76",
       "snapshotHash": "2c67f6799d23e3ab1fb1e47750404e31964e9679381dc9d9238c68d22bd1987c",
       "path": "skills/caveman-stats",
@@ -7024,18 +7028,22 @@
       "personal": "same",
       "changes": [],
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
-      "latest": "2e068f735253cce28256744804785f01887d9646",
-      "latestAt": "2026-11-02T04:59:49Z",
-      "changedSinceLastCheck": false
+      "latest": "ca3a524022a9f31fb7ae46b66decf622080c2cfa",
+      "latestAt": "2026-11-06T00:26:46Z",
+      "changedSinceLastCheck": true
     },
     "fleet-auditor": {
-      "checkedAt": "2026-11-05T07:00:07.084Z",
+      "checkedAt": "2026-11-06T07:00:14.430Z",
       "baseline": "549bb58b27c6d687e682ca44eaba51d55425176d",
       "snapshotHash": "01414d1994f8b6f913a82b227b39a26816629394a6c9c05bcd592d5a51b20291",
       "path": "plugins/token-optimizer/skills/fleet-auditor",
       "status": "changed",
       "personal": "same",
       "changes": [
+        {
+          "path": "SKILL.md",
+          "type": "modified"
+        },
         {
           "path": "scripts/fleet.py",
           "type": "modified"
@@ -7046,12 +7054,12 @@
         }
       ],
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
-      "latest": "3f29392d69525d4b5c324c7075bfdba3a83effe9",
-      "latestAt": "2026-11-01T22:49:29Z",
-      "changedSinceLastCheck": false
+      "latest": "55da0b1179afa98455fa1b1c6e3dd372afa8ec3f",
+      "latestAt": "2026-11-05T18:24:29Z",
+      "changedSinceLastCheck": true
     },
     "resume-checkpoint": {
-      "checkedAt": "2026-11-05T07:00:08.568Z",
+      "checkedAt": "2026-11-06T07:00:16.077Z",
       "baseline": "549bb58b27c6d687e682ca44eaba51d55425176d",
       "snapshotHash": "19fe9c1e989543b19ef9a3a8eb495f074b7de1ef020cb933b7b0c9568f59f5f7",
       "path": "plugins/token-optimizer/skills/resume-checkpoint",
@@ -7059,38 +7067,56 @@
       "personal": "same",
       "changes": [],
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
-      "latest": "3f29392d69525d4b5c324c7075bfdba3a83effe9",
-      "latestAt": "2026-11-01T22:49:29Z",
-      "changedSinceLastCheck": false
+      "latest": "55da0b1179afa98455fa1b1c6e3dd372afa8ec3f",
+      "latestAt": "2026-11-05T18:24:29Z",
+      "changedSinceLastCheck": true
     },
     "token-coach": {
-      "checkedAt": "2026-11-05T07:00:08.568Z",
+      "checkedAt": "2026-11-06T07:00:16.077Z",
       "baseline": "549bb58b27c6d687e682ca44eaba51d55425176d",
       "snapshotHash": "f1bc0788fb32651a33b55c4de16d6884150c00550cc93f420c9f15945ba7c36d",
       "path": "plugins/token-optimizer/skills/token-coach",
-      "status": "current",
+      "status": "changed",
       "personal": "same",
-      "changes": [],
+      "changes": [
+        {
+          "path": "SKILL.md",
+          "type": "modified"
+        },
+        {
+          "path": "references/deterministic-stages.md",
+          "type": "modified"
+        },
+        {
+          "path": "references/keepwarm-consent.md",
+          "type": "modified"
+        }
+      ],
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
-      "latest": "3f29392d69525d4b5c324c7075bfdba3a83effe9",
-      "latestAt": "2026-11-01T22:49:29Z",
-      "changedSinceLastCheck": false
+      "latest": "55da0b1179afa98455fa1b1c6e3dd372afa8ec3f",
+      "latestAt": "2026-11-05T18:24:29Z",
+      "changedSinceLastCheck": true
     },
     "token-dashboard": {
-      "checkedAt": "2026-11-05T07:00:08.569Z",
+      "checkedAt": "2026-11-06T07:00:16.078Z",
       "baseline": "549bb58b27c6d687e682ca44eaba51d55425176d",
       "snapshotHash": "c7ebda00019d0bac8e5bcb6e7cd5b8b9dd17c69fe08746e83a5f4d63d9f29ff5",
       "path": "plugins/token-optimizer/skills/token-dashboard",
-      "status": "current",
+      "status": "changed",
       "personal": "same",
-      "changes": [],
+      "changes": [
+        {
+          "path": "SKILL.md",
+          "type": "modified"
+        }
+      ],
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
-      "latest": "3f29392d69525d4b5c324c7075bfdba3a83effe9",
-      "latestAt": "2026-11-01T22:49:29Z",
-      "changedSinceLastCheck": false
+      "latest": "55da0b1179afa98455fa1b1c6e3dd372afa8ec3f",
+      "latestAt": "2026-11-05T18:24:29Z",
+      "changedSinceLastCheck": true
     },
     "token-optimizer": {
-      "checkedAt": "2026-11-05T07:00:08.569Z",
+      "checkedAt": "2026-11-06T07:00:16.078Z",
       "baseline": "549bb58b27c6d687e682ca44eaba51d55425176d",
       "snapshotHash": "3cc3ad5727143e9929003fe39630f7a1dabe409015cecd2d0ac760c8b979e9ff",
       "path": "plugins/token-optimizer/skills/token-optimizer",
@@ -7098,7 +7124,19 @@
       "personal": "same",
       "changes": [
         {
+          "path": "SKILL.md",
+          "type": "modified"
+        },
+        {
           "path": "assets/dashboard.html",
+          "type": "modified"
+        },
+        {
+          "path": "assets/hero-terminal.svg",
+          "type": "modified"
+        },
+        {
+          "path": "assets/quality-example.svg",
           "type": "modified"
         },
         {
@@ -7106,7 +7144,59 @@
           "type": "modified"
         },
         {
+          "path": "assets/status-bar.svg",
+          "type": "modified"
+        },
+        {
+          "path": "assets/user-profiles.svg",
+          "type": "modified"
+        },
+        {
           "path": "pricing/prices.json",
+          "type": "modified"
+        },
+        {
+          "path": "references/agent-prompts.md",
+          "type": "modified"
+        },
+        {
+          "path": "references/codex-workflow.md",
+          "type": "modified"
+        },
+        {
+          "path": "references/cursor-workflow.md",
+          "type": "modified"
+        },
+        {
+          "path": "references/implementation-playbook.md",
+          "type": "modified"
+        },
+        {
+          "path": "references/keepwarm-consent.md",
+          "type": "modified"
+        },
+        {
+          "path": "references/opencode-workflow.md",
+          "type": "modified"
+        },
+        {
+          "path": "references/optimization-checklist.md",
+          "type": "modified"
+        },
+        {
+          "path": "references/phase0-setup.md",
+          "type": "modified"
+        },
+        {
+          "path": "references/presentation-workflow.md",
+          "type": "modified"
+        },
+        {
+          "path": "references/session-continuity.md",
+          "type": "modified"
+        },
+        {
+          "path": "references/token-flow-architecture.md",
           "type": "modified"
         },
         {
@@ -7128,6 +7218,18 @@
         {
           "path": "scripts/antigravity_session.py",
           "type": "modified"
+        },
+        {
+          "path": "scripts/archive_result.py",
+          "type": "modified"
+        },
+        {
+          "path": "scripts/archive_window.py",
+          "type": "added"
+        },
+        {
+          "path": "scripts/checkpoint_state.py",
+          "type": "added"
         },
         {
           "path": "scripts/codex_doctor.py",
@@ -7234,14 +7336,22 @@
           "type": "modified"
         },
         {
+          "path": "scripts/session_activity.py",
+          "type": "added"
+        },
+        {
           "path": "scripts/session_store.py",
+          "type": "modified"
+        },
+        {
+          "path": "scripts/statusline.js",
           "type": "modified"
         }
       ],
       "reason": "스킬 폴더 전체 파일 기준으로 비교했습니다.",
-      "latest": "3f29392d69525d4b5c324c7075bfdba3a83effe9",
-      "latestAt": "2026-11-01T22:49:29Z",
-      "changedSinceLastCheck": false
+      "latest": "55da0b1179afa98455fa1b1c6e3dd372afa8ec3f",
+      "latestAt": "2026-11-05T18:24:29Z",
+      "changedSinceLastCheck": true
     }
   }
 }
